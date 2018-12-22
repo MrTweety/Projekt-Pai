@@ -28,30 +28,30 @@ class User extends Model
         $email = trim($data['email']);
         $password = trim($data['password']);
 
-        //echo $email;
-
-
         $query = "SELECT * FROM user WHERE email = :email";
         $stmt = $this->db->prepare($query);
         $stmt->bindParam(':email', $email);
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        //print_r($result);
-
         echo $password;
-        echo "<br>";
         echo $result['password'];
 
-        if ($stmt->rowCount() > 0) {
-            if ($password == $result['password']) {
+            if ($stmt->rowCount() > 0) {
+            if ($password == $result['password'])
+
+            {
                 $_SESSION['user_id'] = $result['user_id'];
                 return true;
-            } else {
+            }
+            else
+                {
 //                $this->errors[] = "Invalid email or password";
                 return false;
-            }
-        } else {
+                }
+        }
+
+        else {
 //            $this->errors[] = "Invalid email or password";
             return false;
         }
@@ -62,14 +62,17 @@ class User extends Model
     {
 
         $email = trim($data['email']);
+        $password = trim($data['password']);
+        $passwordconfirm = trim($data['password-confirmation']);
 
-        if ($this->find_by_email($email))
+        if ($this->find_by_email($email) or ($password!= $passwordconfirm))
         {
             return false;
         }
         else {
 
-            $password = trim($data['password']);
+
+
 
 
             $query = "INSERT INTO user (`user_id`, `email`, `password`) VALUES (null, :email, :password)";

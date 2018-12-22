@@ -42,8 +42,6 @@
                 </form>
             </div>
         </div>
-
-
         <div id="Register" class="container tab-pane fade"><br>
             <div class="container">
                 <div class="row">
