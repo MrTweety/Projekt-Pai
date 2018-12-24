@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40583a97-bec7-44ec-862b-7037cc11a83b" name="Default" comment="">
+    <list default="true" id="40583a97-bec7-44ec-862b-7037cc11a83b" name="Default" comment="Lekkie zmiany">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/home/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/home/index2.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +46,13 @@
         <item name="test@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="test: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="typ_konta: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="test@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="test: schema" type="76f4a085:MysqlImplModel$Schema" />
         <item name="user: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
@@ -53,32 +61,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/HomeController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        <entry file="das://54d4ee80-2a9a-4156-b3c4-38d5bee93d1f/schema/test/table/typ_konta">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/home/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="37" column="53" lean-forward="true" selection-start-line="37" selection-start-column="53" selection-end-line="37" selection-end-column="61" />
-              <folding>
-                <element signature="n#head#0;n#html#0;n#!!top" />
-                <element signature="n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="41" selection-start-line="41" selection-end-line="41" />
+            <state relative-caret-position="258">
+              <caret line="72" column="61" selection-start-line="72" selection-start-column="61" selection-end-line="72" selection-end-column="61" />
               <folding>
                 <element signature="n#__construct#0;n#User#0;n#!!top" />
               </folding>
@@ -86,7 +81,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="das://54d4ee80-2a9a-4156-b3c4-38d5bee93d1f/schema/test/table/user">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
@@ -99,10 +94,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/UserController.php">
+        <entry file="das://54d4ee80-2a9a-4156-b3c4-38d5bee93d1f/schema/test/table/user/index/user_type_fk">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="31" column="49" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
+            <state relative-caret-position="17">
+              <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/core/App.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-51">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+              <folding>
+                <element signature="e#6#106#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -209,8 +216,9 @@
     </option>
   </component>
   <component name="PhpDebugGeneral" listening_started="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="y" value="3" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-57" />
+    <option name="y" value="115" />
     <option name="width" value="1386" />
     <option name="height" value="725" />
   </component>
@@ -237,6 +245,12 @@
               <item name="htdocs" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="htdocs" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
@@ -272,7 +286,7 @@
     <property name="database.data.extractors.current.id" value="SQL Inserts" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="node" />
-    <property name="settings.editor.selected.configurable" value="database.data.csv.formats" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -343,12 +357,20 @@
       <workItem from="1544973234283" duration="1845000" />
       <workItem from="1545233012773" duration="101000" />
       <workItem from="1545407144692" duration="282000" />
-      <workItem from="1545470414718" duration="14691000" />
+      <workItem from="1545470414718" duration="23374000" />
     </task>
+    <task id="LOCAL-00001" summary="Lekkie zmiany">
+      <created>1545499668476</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1545499668476</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146012000" />
+    <option name="totallyTimeSpent" value="154695000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -364,11 +386,11 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.20499243" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.21860817" />
       <window_info id="Structure" order="2" weight="0.24962178" />
       <window_info anchor="bottom" id="Database Console" weight="0.32843137" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" weight="0.32843137" />
-      <window_info anchor="bottom" id="Version Control" order="1" />
+      <window_info anchor="bottom" id="Version Control" order="1" weight="0.32843137" />
       <window_info anchor="bottom" id="Terminal" order="2" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.32919255" />
@@ -382,7 +404,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Database" order="3" visible="true" weight="0.1376702" />
+      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.20877458" />
     </layout>
     <layout-to-restore>
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -409,10 +431,11 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Lekkie zmiany" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lekkie zmiany" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/static/index.php" />
-    <entry file="file://$PROJECT_DIR$/app/assets/js/app.js" />
-    <entry file="file://$PROJECT_DIR$/app/assets/js/show.js" />
     <entry file="file://$PROJECT_DIR$/app/controllers/DesignerController.php" />
     <entry file="file://$PROJECT_DIR$/app/views/home/client.php" />
     <entry file="file://$PROJECT_DIR$/app/views/home/designer.php" />
@@ -461,13 +484,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/init.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="31" lean-forward="true" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/Stronka/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -489,13 +505,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/core/Model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="27" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/core/Controller.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="434">
@@ -507,16 +516,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/core/App.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#6#106#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -558,17 +557,133 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://54d4ee80-2a9a-4156-b3c4-38d5bee93d1f/schema/test/table/typ_konta">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+    <entry file="file://$PROJECT_DIR$/app/controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DATABASE/54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.SCHEMA:test">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
-          <filtering enabled="true" />
+          <ID>DATABASE</ID>
+          <OriginalElement>54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.SCHEMA:test</OriginalElement>
+          <nodes>
+            <node x="216.0" y="135.0">54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.kraj_pochodzenia</node>
+            <node x="428.25" y="124.0">54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.adres</node>
+            <node x="615.0" y="636.0">54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.transakcja</node>
+            <node x="377.125" y="892.0">54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.koszyk</node>
+            <node x="314.0" y="424.0">54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.cechy</node>
+            <node x="0.0" y="157.0">54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.model</node>
+            <node x="52.5" y="669.0">54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.oferta</node>
+            <node x="738.0" y="424.0">54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.sposob_zaplaty</node>
+            <node x="272.5" y="680.5">54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.cechy_somochod</node>
+            <node x="0.0" y="1033.0">54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.user</node>
+            <node x="527.0" y="336.0">54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.uzytkownik</node>
+            <node x="0.0" y="0.0">54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.marka</node>
+            <node x="115.75" y="413.0">54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.samochod</node>
+            <node x="936.0" y="0.0">54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.faktury</node>
+            <node x="637.25" y="168.0">54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.typ_konta</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.samochod" target="54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.model">
+              <point x="-36.75" y="-48.0" />
+              <point x="152.5" y="311.0" />
+              <point x="98.0" y="311.0" />
+              <point x="0.0" y="48.0" />
+            </edge>
+            <edge source="54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.samochod" target="54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.kraj_pochodzenia">
+              <point x="36.75" y="-48.0" />
+              <point x="226.0" y="311.0" />
+              <point x="280.5" y="311.0" />
+              <point x="0.0" y="70.0" />
+            </edge>
+            <edge source="54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.koszyk" target="54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.oferta">
+              <point x="-40.25" y="-48.0" />
+              <point x="417.375" y="867.0" />
+              <point x="152.5" y="867.0" />
+              <point x="0.0" y="70.0" />
+            </edge>
+            <edge source="54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.oferta" target="54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.samochod">
+              <point x="0.0" y="-70.0" />
+              <point x="-36.75" y="48.0" />
+            </edge>
+            <edge source="54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.cechy_somochod" target="54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.cechy">
+              <point x="46.0" y="-58.5" />
+              <point x="0.0" y="37.0" />
+            </edge>
+            <edge source="54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.transakcja" target="54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.sposob_zaplaty">
+              <point x="51.75" y="-103.0" />
+              <point x="770.25" y="611.0" />
+              <point x="814.5" y="611.0" />
+              <point x="0.0" y="37.0" />
+            </edge>
+            <edge source="54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.model" target="54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.marka">
+              <point x="0.0" y="-48.0" />
+              <point x="0.0" y="37.0" />
+            </edge>
+            <edge source="54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.uzytkownik" target="54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.typ_konta">
+              <point x="47.75" y="-125.0" />
+              <point x="670.25" y="311.0" />
+              <point x="722.25" y="311.0" />
+              <point x="0.0" y="37.0" />
+            </edge>
+            <edge source="54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.transakcja" target="54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.uzytkownik">
+              <point x="-51.75" y="-103.0" />
+              <point x="666.75" y="611.0" />
+              <point x="622.5" y="611.0" />
+              <point x="0.0" y="125.0" />
+            </edge>
+            <edge source="54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.uzytkownik" target="54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.adres">
+              <point x="-47.75" y="-125.0" />
+              <point x="574.75" y="311.0" />
+              <point x="522.75" y="311.0" />
+              <point x="0.0" y="81.0" />
+            </edge>
+            <edge source="54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.koszyk" target="54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.transakcja">
+              <point x="40.25" y="-48.0" />
+              <point x="497.875" y="867.0" />
+              <point x="718.5" y="867.0" />
+              <point x="0.0" y="103.0" />
+            </edge>
+            <edge source="54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.cechy_somochod" target="54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.samochod">
+              <point x="-46.0" y="-58.5" />
+              <point x="318.5" y="611.0" />
+              <point x="226.0" y="611.0" />
+              <point x="36.75" y="48.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0882506527415143" x="549.8059021113244" y="991.7531190019195" />
+          <SelectedNodes>
+            <node>54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.TABLE:test.typ_konta</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Key columns</Category>
+            <Category>Columns</Category>
+          </Categories>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/core/Model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/home/registered.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
+        <state relative-caret-position="-7">
           <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://54d4ee80-2a9a-4156-b3c4-38d5bee93d1f/schema/test/table/uzytkownik">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -579,38 +694,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/home/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="37" column="53" lean-forward="true" selection-start-line="37" selection-start-column="53" selection-end-line="37" selection-end-column="61" />
-          <folding>
-            <element signature="n#head#0;n#html#0;n#!!top" />
-            <element signature="n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
+        <state relative-caret-position="343">
+          <caret line="34" column="26" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
+        <state relative-caret-position="400">
           <caret line="31" column="49" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/User.php">
+    <entry file="file://$PROJECT_DIR$/app/init.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-          <folding>
-            <element signature="n#__construct#0;n#User#0;n#!!top" />
-          </folding>
+        <state relative-caret-position="68">
+          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://54d4ee80-2a9a-4156-b3c4-38d5bee93d1f/schema/test/table/typ_konta">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://54d4ee80-2a9a-4156-b3c4-38d5bee93d1f/schema/test/table/user/index/user_type_fk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -621,6 +736,26 @@
           <column-attributes>
             <column name="user_id" languageId="XML" />
           </column-attributes>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/core/App.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#6#106#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="72" column="61" selection-start-line="72" selection-start-column="61" selection-end-line="72" selection-end-column="61" />
+          <folding>
+            <element signature="n#__construct#0;n#User#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>

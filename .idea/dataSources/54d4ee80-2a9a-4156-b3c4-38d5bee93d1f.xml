@@ -1476,107 +1476,131 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="339" parent="252" name="email">
+    <column id="339" parent="252" name="login">
       <Position>2</Position>
-      <DataType>varchar(50)|0s</DataType>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="340" parent="252" name="password">
+    <column id="340" parent="252" name="email">
       <Position>3</Position>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="341" parent="252" name="PRIMARY">
+    <column id="341" parent="252" name="password">
+      <Position>4</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="342" parent="252" name="user_type">
+      <Position>5</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="343" parent="252" name="user_type_fk">
+      <ColNames>user_type</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="344" parent="252" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>user_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="342" parent="253" name="id_uzyt">
+    <foreign-key id="345" parent="252" name="user_type_fk">
+      <ColNames>user_type</ColNames>
+      <RefSchemaName>test</RefSchemaName>
+      <RefTableName>typ_konta</RefTableName>
+      <RefColNames>id_typ_konta</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <column id="346" parent="253" name="id_uzyt">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="343" parent="253" name="id_typ">
+    <column id="347" parent="253" name="id_typ">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="344" parent="253" name="imie">
+    <column id="348" parent="253" name="imie">
       <Position>3</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="345" parent="253" name="nazwisko">
+    <column id="349" parent="253" name="nazwisko">
       <Position>4</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="346" parent="253" name="email">
+    <column id="350" parent="253" name="email">
       <Position>5</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="347" parent="253" name="login">
+    <column id="351" parent="253" name="login">
       <Position>6</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="348" parent="253" name="haslo">
+    <column id="352" parent="253" name="haslo">
       <Position>7</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="349" parent="253" name="id_adres">
+    <column id="353" parent="253" name="id_adres">
       <Position>8</Position>
       <DataType>int(11)|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="350" parent="253" name="NIP">
+    <column id="354" parent="253" name="NIP">
       <Position>9</Position>
       <DataType>int(10)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="351" parent="253" name="nazwa_firmy">
+    <column id="355" parent="253" name="nazwa_firmy">
       <Position>10</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="352" parent="253" name="id_typ">
+    <index id="356" parent="253" name="id_typ">
       <ColNames>id_typ</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="353" parent="253" name="id_adres">
+    <index id="357" parent="253" name="id_adres">
       <ColNames>id_adres</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="354" parent="253" name="PRIMARY">
+    <key id="358" parent="253" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_uzyt</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="355" parent="253" name="FK_uzytkownik_typ_konta">
+    <foreign-key id="359" parent="253" name="FK_uzytkownik_typ_konta">
       <ColNames>id_typ</ColNames>
       <RefSchemaName>test</RefSchemaName>
       <RefTableName>typ_konta</RefTableName>
       <RefColNames>id_typ_konta</RefColNames>
       <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <foreign-key id="356" parent="253" name="FK_uzytkownik_Adres">
+    <foreign-key id="360" parent="253" name="FK_uzytkownik_Adres">
       <ColNames>id_adres</ColNames>
       <RefSchemaName>test</RefSchemaName>
       <RefTableName>adres</RefTableName>

@@ -28,10 +28,10 @@
             <div class="container">
                 <h2>Stacked form</h2>
                 <form action="/user/auth" method="post">
-                    <div class="form-block">
-                        <label for="email" >Email:</label>
-                        <input type="email" name="email" placeholder="e-mail" id="email"  />
 
+                    <div class="field">
+                        <label for="login" >Login:</label>
+                        <input type="text" name="login" placeholder="login" id="login"  />
                     </div>
                     <div class="form-block">
                         <label for="password" >Password:</label>
@@ -48,17 +48,28 @@
                     <div class="form-block">
                         <form class="login-form" method="POST" action="/user/create">
                             <div class="field"><h1>Sign up</h1></div>
+
+                            <div class="field">
+                                <label for="login" >Login:</label>
+                                <input type="text" name="login" placeholder="login" id="login"  />
+                            </div>
+
                             <div class="field">
                                 <label for="email" >Email:</label>
                                 <input type="email" name="email" placeholder="e-mail" id="email"  />
                             </div>
                             <div class="field">
                                 <label for="password" >Password:</label>
-                                <input type="password" name="password" placeholder="Password" id="password"  />
+
+
+                            <input type="password" id="password" name="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Hasło musi zawierać przynajmniej jedną liczbę, jedną małą oraz jedną dużą literę i mieć przynajmniej 8 znaków długości." required>
                             </div>
+
+
+
                             <div class="field">
                                 <label for="password-confirmation" >Confirm Password:</label>
-                                <input type="password" name="password-confirmation" placeholder="Confirm password" id="password-confirmation"  />
+                                <input type="password" name="password_confirmation" placeholder="Confirm password" id="password-confirmation"  />
                             </div>
 
                             <div class="field">

@@ -8,9 +8,38 @@
 
 class User extends Model
 {
+    public static $ADMIN_TYPE = 0;
+    public static $CLIENT_TYPE = 1;
+
     public function __construct()
     {
         parent::__construct();
+    }
+
+    public function is_logged_in(){
+        if(isset($_SESSION['user_id'])){
+            return true;
+        }
+    }
+
+    public function get_id(){
+        return $_SESSION['user_id'];
+    }
+
+    public function get_type(){
+        return $_SESSION['user_type'];
+    }
+
+
+
+
+    public function find_by_login($login){
+        $query = "SELECT * FROM user WHERE login = :login";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':login', $login);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result;
     }
 
     public function find_by_email($email){
@@ -25,12 +54,12 @@ class User extends Model
 
     public function auth($data)
     {
-        $email = trim($data['email']);
+        $login = trim($data['login']);
         $password = trim($data['password']);
 
-        $query = "SELECT * FROM user WHERE email = :email";
+        $query = "SELECT * FROM user WHERE login = :login";
         $stmt = $this->db->prepare($query);
-        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':login', $login);
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -38,18 +67,18 @@ class User extends Model
         echo $result['password'];
 
             if ($stmt->rowCount() > 0) {
-            if ($password == $result['password'])
-
-            {
+            if ($password == $result['password']) {
                 $_SESSION['user_id'] = $result['user_id'];
+                $_SESSION['email'] = $result['email'];
+                $_SESSION['user_type'] =$result['user_type'];
+
                 return true;
             }
-            else
-                {
+            else {
 //                $this->errors[] = "Invalid email or password";
                 return false;
-                }
-        }
+            }
+            }
 
         else {
 //            $this->errors[] = "Invalid email or password";
@@ -60,29 +89,28 @@ class User extends Model
 
     public function insert($data)
     {
-
+        $login = trim($data['login']);
         $email = trim($data['email']);
         $password = trim($data['password']);
-        $passwordconfirm = trim($data['password-confirmation']);
+        $password_confirm = trim($data['password_confirmation']);
 
-        if ($this->find_by_email($email) or ($password!= $passwordconfirm))
+
+
+        if($this->find_by_login($login) or $this->find_by_email($email) or ($password!= $password_confirm))
         {
             return false;
         }
         else {
-
-
-
-
-
-            $query = "INSERT INTO user (`user_id`, `email`, `password`) VALUES (null, :email, :password)";
+            $user_type = 1;
+            $query = "INSERT INTO user (`user_id`,`login`,`email`, `password`,`user_type`) VALUES (null,:login, :email, :password,:user_type)";
 
 
             $stmt = $this->db->prepare($query);
 
-
+            $stmt->bindParam(":login", $login);
             $stmt->bindParam(":email", $email);
             $stmt->bindParam(":password", $password);
+            $stmt->bindParam(":user_type", $user_type);
 
 
             $stmt->execute();
