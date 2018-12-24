@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40583a97-bec7-44ec-862b-7037cc11a83b" name="Default" comment="Lekkie zmiany">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/home/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/index.php" afterDir="false" />
-    </list>
+    <list default="true" id="40583a97-bec7-44ec-862b-7037cc11a83b" name="Default" comment="Logowanie i rejestracja gotowe" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -357,7 +351,7 @@
       <workItem from="1544973234283" duration="1845000" />
       <workItem from="1545233012773" duration="101000" />
       <workItem from="1545407144692" duration="282000" />
-      <workItem from="1545470414718" duration="23374000" />
+      <workItem from="1545470414718" duration="23744000" />
     </task>
     <task id="LOCAL-00001" summary="Lekkie zmiany">
       <created>1545499668476</created>
@@ -366,11 +360,18 @@
       <option name="project" value="LOCAL" />
       <updated>1545499668476</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Logowanie i rejestracja gotowe">
+      <created>1545648932665</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1545648932665</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154695000" />
+    <option name="totallyTimeSpent" value="155065000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -386,7 +387,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.21860817" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.21860817" />
       <window_info id="Structure" order="2" weight="0.24962178" />
       <window_info anchor="bottom" id="Database Console" weight="0.32843137" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" weight="0.32843137" />
@@ -433,7 +434,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Lekkie zmiany" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lekkie zmiany" />
+    <MESSAGE value="Logowanie i rejestracja gotowe" />
+    <option name="LAST_COMMIT_MESSAGE" value="Logowanie i rejestracja gotowe" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/controllers/DesignerController.php" />
