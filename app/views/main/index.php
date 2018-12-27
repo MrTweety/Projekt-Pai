@@ -10,10 +10,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="../../../public/css/home_page.css" type="text/css">
+    <link rel="stylesheet" href="../../../public/css/login.css" type="text/css">
 
 </head>
-<body>
-
+<body onload="load_login_form()">
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
@@ -33,7 +33,7 @@
         <li><a href="#">Contact</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"> <span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="#" id="load_login_form"> <span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
     </div>
   </div>
@@ -41,12 +41,14 @@
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-      <li data-target="#myCarousel" data-slide-to="3"></li>
-    </ol>
+    <div id="indicators">
+        <ol class="carousel-indicators" >
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+    </div>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
@@ -95,8 +97,9 @@
       <span class="sr-only">Next</span>
     </a>
 </div>
-  
 
+<div id="log_form" class="modal"></div>
+  
 
 <div class="container text-center">    
   <h3>O nas:</h3><br>
@@ -107,6 +110,21 @@
   <p>Footer Text</p>
 </footer>
 
+<script>
+
+function load_login_form()
+{
+    $("#log_form").load("../user/login.php");
+}
+
+$(document).ready( function() {
+    $("#load_login_form").on("click", function() {
+        document.getElementById('log_form').style.display='block';
+        document.getElementById('indicators').style.display='none';
+    });
+});
+
+</script>
 
 
 </body>
