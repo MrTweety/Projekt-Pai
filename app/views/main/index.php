@@ -10,59 +10,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 
-    <style>
-    /* Remove the navbar's default margin-bottom and rounded borders */ 
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-    }
-    
-    /* Add a gray background color and some padding to the footer */
-    footer {
-      background-color: #f2f2f2;
-      padding: 25px;
-    }
-    
-  .carousel-inner img {
-      width: 100%; /* Set width to 100% */
-      margin: auto;
-      min-height:200px;
-  }
-
-  /* Hide the carousel text when the screen is less than 600 pixels wide */
-  @media (max-width: 600px) {
-    .carousel-caption {
-      display: none; 
-    }
-  }
-
-
-    .bestCar
-    {
-        text-align: center;
-    }
-
-    .bestCar img
-    {
-        width: 100%;
-        height: auto;
-    }
-
-    .bestCar p
-    {
-        margin-bottom: 30px;
-    }
-
-    .bestCar figcaption
-    {
-        margin-top: 8px;
-    }
-  </style>
-
 
 </head>
-<body>
-
+<body onload="load_login_form()">
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
@@ -76,13 +26,13 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="#">Home</a></li>
+        <li class="active" id="home_page"><a href="#"> <span class="glyphicon glyphicon-home"></span> Strona główna </a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Projects</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="#" id="load_login_form"> <span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
     </div>
   </div>
@@ -90,12 +40,14 @@
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-      <li data-target="#myCarousel" data-slide-to="3"></li>
-    </ol>
+    <div id="indicators">
+        <ol class="carousel-indicators" >
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+    </div>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
@@ -135,188 +87,36 @@
     </div>
 
     <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" title="poprzednia oferta">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
     </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next" title="następna oferta">
       <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
 </div>
 
-<div class="bestCar">
-
-    <h3>What We Do</h3><br>
-
-    <div class="container">
-
-
-        <div class="row">
-
-            <div class="col-sm-3">
-
-                <figure>
-                    <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                    <figcaption>Tekst</figcaption>
-                </figure>
-
-            </div>
-
-            <div class="col-sm-3">
-
-                <figure>
-                    <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                    <figcaption>Tekst</figcaption>
-                </figure>
-
-            </div>
-
-            <div class="col-sm-3">
-
-                <figure>
-                    <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                    <figcaption>Tekst</figcaption>
-                </figure>
-
-            </div>
-
-            <div class="col-sm-3">
-
-                <figure>
-                    <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                    <figcaption>Tekst</figcaption>
-                </figure>
-
-            </div>
-
-
-            <div class="col-sm-3">
-
-                <figure>
-                    <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                    <figcaption>Tekst</figcaption>
-                </figure>
-
-            </div>
-
-            <div class="col-sm-3">
-
-                <figure>
-                    <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                    <figcaption>Tekst</figcaption>
-                </figure>
-
-            </div>
-
-            <div class="col-sm-3">
-
-                <figure>
-                    <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                    <figcaption>Tekst</figcaption>
-                </figure>
-
-            </div>
-
-            <div class="col-sm-3">
-
-                <figure>
-                    <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                    <figcaption>Tekst</figcaption>
-                </figure>
-
-            </div>
-
-            <div class="col-sm-3">
-
-                <figure>
-                    <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                    <figcaption>Tekst</figcaption>
-                </figure>
-
-            </div>
-
-            <div class="col-sm-3">
-
-                <figure>
-                    <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                    <figcaption>Tekst</figcaption>
-                </figure>
-
-            </div>
-
-            <div class="col-sm-3">
-
-                <figure>
-                    <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                    <figcaption>Tekst</figcaption>
-                </figure>
-
-            </div>
-
-            <div class="col-sm-3">
-
-                <figure>
-                    <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                    <figcaption>Tekst</figcaption>
-                </figure>
-
-            </div>
-
-            <div class="col-sm-3">
-
-                <figure>
-                    <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                    <figcaption>Tekst</figcaption>
-                </figure>
-
-            </div>
-
-            <div class="col-sm-3">
-
-                <figure>
-                    <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                    <figcaption>Tekst</figcaption>
-                </figure>
-
-            </div>
-
-            <div class="col-sm-3">
-
-                <figure>
-                    <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                    <figcaption>Tekst</figcaption>
-                </figure>
-
-            </div>
-
-            <div class="col-sm-3">
-
-                <figure>
-                    <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                    <figcaption>Tekst</figcaption>
-                </figure>
-
-            </div>
-
-
-
-
-
-
-
-
-      </div>
-    </div>
-</div>
-
-
-<br>
 
 <footer class="container-fluid text-center">
   <p>Footer Text</p>
 </footer>
 
+<script>
+
+function load_login_form()
+{
+    $("#log_form").load("../user/login.php");
+}
+
+$(document).ready( function() {
+    $("#load_login_form").on("click", function() {
+        document.getElementById('log_form').style.display='block';
+        document.getElementById('indicators').style.display='none';
+    });
+});
+
+</script>
 
 
 </body>
