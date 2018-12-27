@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40583a97-bec7-44ec-862b-7037cc11a83b" name="Default" comment="4x4">
+      <change afterPath="$PROJECT_DIR$/app/views/user/login.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/home_page.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/main/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/main/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -70,8 +74,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/main/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="299" column="18" selection-start-line="299" selection-start-column="18" selection-end-line="299" selection-end-column="18" />
+            <state relative-caret-position="2295">
+              <caret line="255" column="10" selection-start-line="255" selection-start-column="10" selection-end-line="255" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -80,7 +84,7 @@
         <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa13676.33355/main.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
-              <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+              <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -384,7 +388,7 @@
       <workItem from="1545233012773" duration="101000" />
       <workItem from="1545407144692" duration="282000" />
       <workItem from="1545470414718" duration="14691000" />
-      <workItem from="1545919504858" duration="8066000" />
+      <workItem from="1545919504858" duration="8459000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1545922666937</created>
@@ -407,7 +411,21 @@
       <option name="project" value="LOCAL" />
       <updated>1545947805779</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="4x4">
+      <created>1545948415464</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1545948415464</updated>
+    </task>
+    <task id="LOCAL-00005" summary="4x4">
+      <created>1545948563953</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1545948563953</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -428,7 +446,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154078000" />
+    <option name="totallyTimeSpent" value="154471000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -702,14 +720,14 @@
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa13676.33355/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/main/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="299" column="18" selection-start-line="299" selection-start-column="18" selection-end-line="299" selection-end-column="18" />
+        <state relative-caret-position="2295">
+          <caret line="255" column="10" selection-start-line="255" selection-start-column="10" selection-end-line="255" selection-end-column="10" />
         </state>
       </provider>
     </entry>

@@ -11,18 +11,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 
     <style>
-    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    /* Remove the navbar's default margin-bottom and rounded borders */
     .navbar {
       margin-bottom: 0;
       border-radius: 0;
     }
-    
+
     /* Add a gray background color and some padding to the footer */
     footer {
       background-color: #f2f2f2;
       padding: 25px;
     }
-    
+
   .carousel-inner img {
       width: 100%; /* Set width to 100% */
       margin: auto;
@@ -32,7 +32,7 @@
   /* Hide the carousel text when the screen is less than 600 pixels wide */
   @media (max-width: 600px) {
     .carousel-caption {
-      display: none; 
+      display: none;
     }
   }
 
@@ -298,6 +298,14 @@
                 </figure>
 
             </div>
+
+
+
+
+
+
+
+
       </div>
     </div>
 </div>
