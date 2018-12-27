@@ -41,7 +41,7 @@
 <body>
 
 
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -70,14 +70,17 @@
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
     </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
+
       <div class="item active">
         <img src="https://placehold.it/1200x400?text=IMAGE" alt="Image">
         <div class="carousel-caption">
-          <h3>Sell $</h3>
+          <h3>Zdjęcie 1</h3>
           <p>Money Money.</p>
         </div>      
       </div>
@@ -85,10 +88,27 @@
       <div class="item">
         <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
         <div class="carousel-caption">
-          <h3>More Sell $</h3>
+          <h3>Zdjęcie 2</h3>
           <p>Lorem ipsum...</p>
         </div>      
       </div>
+
+      <div class="item">
+        <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
+        <div class="carousel-caption">
+          <h3>Zdjęcie 3</h3>
+          <p>Lorem ipsum...</p>
+        </div>      
+      </div>
+
+      <div class="item">
+        <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
+        <div class="carousel-caption">
+          <h3>Zdjęcie 4</h3>
+          <p>Lorem ipsum...</p>
+        </div>      
+      </div>
+
     </div>
 
     <!-- Left and right controls -->
