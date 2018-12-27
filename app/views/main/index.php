@@ -8,9 +8,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="../../../public/css/home_page.css" type="text/css">
-    <link rel="stylesheet" href="../../../public/css/login.css" type="text/css">
 
 </head>
 <body onload="load_login_form()">
@@ -98,13 +97,6 @@
     </a>
 </div>
 
-<div id="log_form" class="modal"></div>
-  
-
-<div class="container text-center">    
-  <h3>O nas:</h3><br>
-  
-</div><br>
 
 <footer class="container-fluid text-center">
   <p>Footer Text</p>
