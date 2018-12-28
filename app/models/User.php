@@ -14,7 +14,7 @@ class User extends Model
     }
 
     public function find_by_email($email){
-        $query = "SELECT * FROM `user` WHERE email = :email";
+        $query = "SELECT * FROM `uzytkownik` WHERE email = :email";
         $stmt = $this->db->prepare($query);
         $stmt->bindParam(':email', $email);
         $stmt->execute();
