@@ -58,6 +58,8 @@ class User extends Model
     }
 
 
+
+
     public function insert($data)
     {
 
