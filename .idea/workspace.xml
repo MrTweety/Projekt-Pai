@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40583a97-bec7-44ec-862b-7037cc11a83b" name="Default" comment="4x4">
+    <list default="true" id="40583a97-bec7-44ec-862b-7037cc11a83b" name="Default" comment="Search">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/main/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/main/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/user/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/user/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/home_page.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/home_page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/login.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -101,8 +97,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/main/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="674">
-              <caret line="408" column="18" selection-start-line="408" selection-start-column="18" selection-end-line="408" selection-end-column="18" />
+            <state relative-caret-position="170">
+              <caret line="318" column="71" selection-start-line="318" selection-start-column="65" selection-end-line="318" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -119,8 +115,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://F:/05 Semestr 2018_2019/PAI/Labolatoria/public_html/a/kartkowka/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="111" selection-start-line="111" selection-end-line="215" selection-end-column="9" />
+            <state relative-caret-position="340">
+              <caret line="144" column="6" lean-forward="true" selection-start-line="143" selection-end-line="156" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -418,7 +414,7 @@
       <workItem from="1545233012773" duration="101000" />
       <workItem from="1545407144692" duration="282000" />
       <workItem from="1545470414718" duration="14691000" />
-      <workItem from="1545919504858" duration="19105000" />
+      <workItem from="1545919504858" duration="19354000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1545922666937</created>
@@ -476,7 +472,14 @@
       <option name="project" value="LOCAL" />
       <updated>1545951336659</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Search">
+      <created>1545998382728</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1545998382728</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -497,7 +500,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="165117000" />
+    <option name="totallyTimeSpent" value="165366000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -588,7 +591,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
     <MESSAGE value="4x4" />
-    <option name="LAST_COMMIT_MESSAGE" value="4x4" />
+    <MESSAGE value="Search" />
+    <option name="LAST_COMMIT_MESSAGE" value="Search" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -825,8 +829,8 @@
     </entry>
     <entry file="file://F:/05 Semestr 2018_2019/PAI/Labolatoria/public_html/a/kartkowka/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="111" selection-start-line="111" selection-end-line="215" selection-end-column="9" />
+        <state relative-caret-position="340">
+          <caret line="144" column="6" lean-forward="true" selection-start-line="143" selection-end-line="156" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -839,8 +843,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/main/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="674">
-          <caret line="408" column="18" selection-start-line="408" selection-start-column="18" selection-end-line="408" selection-end-column="18" />
+        <state relative-caret-position="170">
+          <caret line="318" column="71" selection-start-line="318" selection-start-column="65" selection-end-line="318" selection-end-column="71" />
         </state>
       </provider>
     </entry>
