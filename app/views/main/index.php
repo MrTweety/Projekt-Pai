@@ -8,9 +8,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 
     <link rel="stylesheet" href="../../../public/css/home_page.css" type="text/css">
     <link rel="stylesheet" href="../../../public/css/login.css" type="text/css">
+
+
+
+
+
+
+
 
 </head>
 <body onload="load_login_form()">
@@ -254,11 +262,115 @@
         </div>
 </div>
 
-<br>
+<br />
+
+<div class = "search">
+    <div class="container">
+        <form class="container-fluid text-center" action="/action_page.php">
+
+
+
+            <div class="form-group col-md-6">
+                <label for="mark">typ</label>
+                <select id="mark" class="form-control" name="mark">
+
+                </select>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="model">typ</label>
+                <select id="model" class="form-control" name="model">
+
+                </select>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="rok_od">typ</label>
+                <select id="rok_od" class="form-control" name="rok_od">
+
+                </select>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="rok_do">typ</label>
+                <select id="rok_do" class="form-control" name="rok_do">
+
+                </select>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="cena_od">typ</label>
+                <select id="cena_od" class="form-control" name="cena_od">
+
+                </select>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="cena_do">typ</label>
+                <select id="cena_do" class="form-control" name="cena_do">
+
+                </select>
+            </div>
+
+
+
+
+            <button type="button" class="btn btn-info">
+                <span class="glyphicon glyphicon-search"></span> Search
+            </button>
+
+            <span class="psw"><a href="#">Szczegółowe wyszukiwanie</a></span>
+
+
+        </form>
+    </div>
+</div>
+
+
+
+<br />
 
 <footer class="container-fluid text-center">
     <p>Footer Text</p>
 </footer>
+
+<div class="form-group col-md-4">
+    <label for="inputState2">typ</label>
+    <select id="inputState2" class="form-control" name="inputState2">
+
+    </select>
+
+</div>
+
+<div class="form-group col-md-4">
+    <label for="inputState">typ</label>
+    <select id="inputState" class="form-control" name="inputState">
+
+    </select>
+
+</div>
+
+<script>
+
+    //typ lonta
+    $('#inputState').ready(function() {
+
+
+        $.ajax({url: 'se.php',
+            success: function(output) {
+                //alert(output);
+                $('#inputState').html(output);
+            },
+            error: function () {
+                alert("error");
+            }});
+
+    });
+
+</script>
+
+
+
 
 <script>
 
@@ -275,6 +387,9 @@
     });
 
 </script>
+
+
+
 
 
 </body>
