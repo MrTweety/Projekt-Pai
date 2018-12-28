@@ -1,14 +1,26 @@
 <?php
 
-$host = "149.156.136.151";
-$db_user = "mgaczorek";
-$db_password = "30071966F";
+$host = "localhost";
+$db_user = "root";
+$db_password = "";
 $db_name = "mgaczorek";
+
+
+
 
 //$link = new mysqli($host, $db_user, $db_password, $db_name);
 
 $link = mysqli_connect($host, $db_user, $db_password, $db_name) or die();
-$sql = 'select id_typ_konta, typ_konta from Typ_konta';
+
+
+
+
+if (isset($_POST["marka"]) && $_POST["marka"]!= -1) {
+    $marka = $_POST["marka"];
+    $sql = "select id_model, model_nazwa from model where id_marka = '$marka'";
+}else{
+    $sql = 'select id_model, model_nazwa from model';
+}
 $result = $link->query($sql);
 
 $typ =[];
@@ -17,8 +29,8 @@ if (mysqli_num_rows($result) > 0) {
     // output data of each row
     $i = 0;
     while($row = mysqli_fetch_assoc($result)) {
-        $typ[$i]['id_typ_konta'] = $row['id_typ_konta'];
-        $typ[$i]['typ_konta'] = $row['typ_konta'];
+        $typ[$i]['id_tab'] = $row['id_model'];
+        $typ[$i]['name_tab'] = $row['model_nazwa'];
 
         $i++;
     }

@@ -5,15 +5,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" id="bootstrap-css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 
+
+
     <link rel="stylesheet" href="../../../public/css/home_page.css" type="text/css">
     <link rel="stylesheet" href="../../../public/css/login.css" type="text/css">
 
-
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
 
 
@@ -264,63 +266,65 @@
 
 <br />
 
-<div class = "search">
+
+
+<div class = "search" >
     <div class="container">
         <form class="container-fluid text-center" action="/action_page.php">
 
+            <div class="row card-body py-2 mb-3 bg-dark twhite">
+                <a href="#" class="link-dark"><h4><i class="fa fa-car"></i> Search Options</h4></a>
+            </div>
 
-
-            <div class="form-group col-md-6">
-                <label for="mark">typ</label>
+            <div class="form-group col-sm-6">
+                <label for="mark">Marka Pojazdu</label>
                 <select id="mark" class="form-control" name="mark">
 
                 </select>
             </div>
 
-            <div class="form-group col-md-6">
-                <label for="model">typ</label>
+            <div class="form-group col-sm-6">
+                <label for="model">Model Pojazdu</label>
                 <select id="model" class="form-control" name="model">
 
                 </select>
             </div>
 
-            <div class="form-group col-md-6">
-                <label for="rok_od">typ</label>
-                <select id="rok_od" class="form-control" name="rok_od">
+<!--            <div class="form-group col-sm-6">-->
+<!--                <label for="rok_od">typ</label>-->
+<!--                <select id="rok_od" class="form-control" name="rok_od">-->
+<!---->
+<!--                </select>-->
+<!--            </div>-->
+<!---->
+<!--            <div class="form-group col-sm-6">-->
+<!--                <label for="rok_do">typ</label>-->
+<!--                <select id="rok_do" class="form-control" name="rok_do">-->
+<!---->
+<!--                </select>-->
+<!--            </div>-->
+<!---->
+<!--            <div class="form-group col-sm-6">-->
+<!--                <label for="cena_od">typ</label>-->
+<!--                <select id="cena_od" class="form-control" name="cena_od">-->
+<!---->
+<!--                </select>-->
+<!--            </div>-->
+<!---->
+<!--            <div class="form-group col-sm-6">-->
+<!--                <label for="cena_do">typ</label>-->
+<!--                <select id="cena_do" class="form-control" name="cena_do">-->
+<!---->
+<!--                </select>-->
+<!--            </div>-->
 
-                </select>
+
+
+            <div class="form-group row py-2 mb-3">
+                <button type="button" class="btn btn-info ">
+                    <span class="glyphicon glyphicon-search"></span> Search
+                </button>
             </div>
-
-            <div class="form-group col-md-6">
-                <label for="rok_do">typ</label>
-                <select id="rok_do" class="form-control" name="rok_do">
-
-                </select>
-            </div>
-
-            <div class="form-group col-md-6">
-                <label for="cena_od">typ</label>
-                <select id="cena_od" class="form-control" name="cena_od">
-
-                </select>
-            </div>
-
-            <div class="form-group col-md-6">
-                <label for="cena_do">typ</label>
-                <select id="cena_do" class="form-control" name="cena_do">
-
-                </select>
-            </div>
-
-
-
-
-            <button type="button" class="btn btn-info">
-                <span class="glyphicon glyphicon-search"></span> Search
-            </button>
-
-            <span class="psw"><a href="#">Szczegółowe wyszukiwanie</a></span>
-
 
         </form>
     </div>
@@ -334,42 +338,96 @@
     <p>Footer Text</p>
 </footer>
 
-<div class="form-group col-md-4">
-    <label for="inputState2">typ</label>
-    <select id="inputState2" class="form-control" name="inputState2">
 
-    </select>
-
-</div>
-
-<div class="form-group col-md-4">
-    <label for="inputState">typ</label>
-    <select id="inputState" class="form-control" name="inputState">
-
-    </select>
-
-</div>
 
 <script>
 
-    //typ lonta
-    $('#inputState').ready(function() {
 
 
-        $.ajax({url: 'se.php',
-            success: function(output) {
-                //alert(output);
-                $('#inputState').html(output);
-            },
-            error: function () {
-                alert("error");
-            }});
+    $('#mark').ready(function() {
+
+        $.ajax({
+            type: "POST",
+            url: 'search_marka.php',
+
+            success: function(data)
+            {
+                helpers.buildDropdown(
+                    jQuery.parseJSON(data),
+                    $('#mark'),
+                    'Marka Pojazdu'
+
+                );
+            }
+        });
 
     });
 
+    $('#model').ready(function() {
+
+        $.ajax({
+            type: "POST",
+            url: 'search_model.php',
+
+            success: function(data)
+            {
+                helpers.buildDropdown(
+                    jQuery.parseJSON(data),
+                    $('#model'),
+                    'Model Pojazdu'
+
+                );
+            }
+        });
+
+    });
+
+
+    $('#mark').change(function() {
+
+
+        $.ajax({
+            type: "POST",
+            url: 'search_model.php',
+            data: {marka :$('#mark').val()},
+
+            success: function(data)
+            {
+                helpers.buildDropdown(
+                    jQuery.parseJSON(data),
+                    $('#model'),
+                    'Model Pojazdu'
+
+                );
+            }
+        });
+
+    });
+
+
+
+
+
+    var helpers =
+        {
+            buildDropdown: function(result, dropdown, emptyMessage)
+            {
+                // Remove current options
+                dropdown.html('');
+                // Add the empty option with the empty message
+                dropdown.append('<option value="-1">' + emptyMessage + '</option>');
+                // Check result isnt empty
+                if(result != '')
+                {
+                    // Loop through each of the results and append the option to the dropdown
+                    $.each(result, function(k, v) {
+                        dropdown.append('<option value="' + v.id_tab + '">' + v.name_tab + '</option>');
+                    });
+                }
+            }
+        }
+
 </script>
-
-
 
 
 <script>
