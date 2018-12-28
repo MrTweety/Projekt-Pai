@@ -25,23 +25,23 @@ class User extends Model
 
     public function auth($data)
     {
-        $email = trim($data['email']);
+        $login = trim($data['login']);
         $password = trim($data['password']);
 
-        $query = "SELECT * FROM user WHERE email = :email";
+        $query = "SELECT * FROM uzytkownik WHERE login = :login";
         $stmt = $this->db->prepare($query);
-        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':login', $login);
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
         echo $password;
-        echo $result['password'];
+        echo $result['haslo'];
 
             if ($stmt->rowCount() > 0) {
-            if ($password == $result['password'])
+            if ($password == $result['haslo'])
 
             {
-                $_SESSION['user_id'] = $result['user_id'];
+                $_SESSION['id_uzyt'] = $result['id_uzyt'];
                 return true;
             }
             else
