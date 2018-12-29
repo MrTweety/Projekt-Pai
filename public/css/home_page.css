@@ -62,7 +62,7 @@ button:hover
     min-height: 350px;
     background-position: 70% 76%;
     padding: 10px;
-    dispaly: block;
+    display: block;
     /*background-color: #f3f3f3;*/
     margin: 10px 0 10px 0; /* 5% from the top, 15% from the bottom and centered */
     width: 100%; /* Could be more or less, depending on screen size */
