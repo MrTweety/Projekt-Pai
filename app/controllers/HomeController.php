@@ -12,12 +12,13 @@ class HomeController extends Controller
     {
         $this->partial('header');
         $this->partial('nawigacja');
-        $this->partial('slajdery');
-        $this->partial('panel_zdjecia');
-        $this->partial('wyszukiwanie');
+
+
+
+        $this->view('home/index');
         $this->partial('footer');
 
-       $this->view('home/index');
+
     }
 
     public function isLogin(){
