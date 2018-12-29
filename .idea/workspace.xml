@@ -1,20 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40583a97-bec7-44ec-862b-7037cc11a83b" name="Default" comment="Logowanie">
-      <change afterPath="$PROJECT_DIR$/app/views/user/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/54d4ee80-2a9a-4156-b3c4-38d5bee93d1f.xml" beforeDir="false" />
+    <list default="true" id="40583a97-bec7-44ec-862b-7037cc11a83b" name="Default" comment="com">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/core/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/Model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/home/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/main/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/main/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/main/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/main/search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/user/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/user/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/home_page.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/home_page.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,15 +28,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/main/search.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="230" column="44" selection-start-line="230" selection-start-column="33" selection-end-line="230" selection-end-column="44" />
+            <state relative-caret-position="399">
+              <caret line="228" column="68" lean-forward="true" selection-start-line="228" selection-start-column="68" selection-end-line="228" selection-end-column="68" />
               <folding>
-                <element signature="n#style#0;n#table#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#2;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#2;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#section#2;n#body#0;n#html#0;n#!!top" />
               </folding>
             </state>
           </provider>
@@ -74,7 +62,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/login.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="153">
               <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
             </state>
           </provider>
@@ -89,11 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/home_page.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="38" column="24" lean-forward="true" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
+            <state relative-caret-position="535">
+              <caret line="101" column="1" selection-start-line="101" selection-start-column="1" selection-end-line="101" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -101,7 +89,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/main/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-375">
+            <state relative-caret-position="7514">
               <caret line="442" column="35" selection-start-line="442" selection-start-column="35" selection-end-line="442" selection-end-column="35" />
             </state>
           </provider>
@@ -120,7 +108,7 @@
         <entry file="file://F:/05 Semestr 2018_2019/PAI/Labolatoria/public_html/a/kartkowka/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="408">
-              <caret line="118" column="9" lean-forward="true" selection-start-line="118" selection-start-column="9" selection-end-line="118" selection-end-column="9" />
+              <caret line="118" column="9" selection-start-line="118" selection-start-column="9" selection-end-line="118" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -231,8 +219,8 @@
         <option value="$PROJECT_DIR$/app/views/main/search_marka.php" />
         <option value="$PROJECT_DIR$/app/views/main/search_model.php" />
         <option value="$PROJECT_DIR$/app/views/main/index.php" />
-        <option value="$PROJECT_DIR$/app/views/main/search.php" />
         <option value="$PROJECT_DIR$/public/css/home_page.css" />
+        <option value="$PROJECT_DIR$/app/views/main/search.php" />
       </list>
     </option>
   </component>
@@ -286,6 +274,18 @@
               <item name="PAI" type="b2602c69:ProjectViewProjectNode" />
               <item name="PAI" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PAI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PAI" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PAI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PAI" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -375,6 +375,7 @@
       <workItem from="1545407144692" duration="282000" />
       <workItem from="1545470414718" duration="14691000" />
       <workItem from="1545919504858" duration="32235000" />
+      <workItem from="1546087852532" duration="3185000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1545922666937</created>
@@ -446,7 +447,14 @@
       <option name="project" value="LOCAL" />
       <updated>1545998403753</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="com">
+      <created>1546086837016</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1546086837016</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -470,7 +478,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="185180000" />
+    <option name="totallyTimeSpent" value="189168000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -486,7 +494,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.14712153" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.14872068" />
       <window_info id="Structure" order="2" weight="0.24962178" />
       <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.50053304" side_tool="true" weight="0.3261105" />
       <window_info anchor="bottom" id="Version Control" order="1" sideWeight="0.49946696" weight="0.3261105" />
@@ -576,7 +584,8 @@
     <MESSAGE value="test" />
     <MESSAGE value="4x4" />
     <MESSAGE value="Search" />
-    <option name="LAST_COMMIT_MESSAGE" value="Search" />
+    <MESSAGE value="com" />
+    <option name="LAST_COMMIT_MESSAGE" value="com" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -617,28 +626,10 @@
     <entry file="file://$PROJECT_DIR$/app/controllers/ContactController.php" />
     <entry file="file://$PROJECT_DIR$/app/views/user/auth.php" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/54d4ee80-2a9a-4156-b3c4-38d5bee93d1f/console.sql" />
-    <entry file="das://54d4ee80-2a9a-4156-b3c4-38d5bee93d1f/schema/test/table/user.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://54d4ee80-2a9a-4156-b3c4-38d5bee93d1f/schema/test/table/user.sql" />
     <entry file="file://$PROJECT_DIR$/app/views/home/index2.php" />
-    <entry file="das://54d4ee80-2a9a-4156-b3c4-38d5bee93d1f/schema/test/table/transakcja">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://54d4ee80-2a9a-4156-b3c4-38d5bee93d1f/schema/test/table/user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://54d4ee80-2a9a-4156-b3c4-38d5bee93d1f/schema/test/table/transakcja" />
+    <entry file="das://54d4ee80-2a9a-4156-b3c4-38d5bee93d1f/schema/test/table/user" />
     <entry file="file://$PROJECT_DIR$/public/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -646,20 +637,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa13676.33355/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa13676.20202/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="16" selection-start-line="16" selection-end-line="35" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa13676.33355/main.css" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa13676.20202/main.css" />
     <entry file="file://F:/05 Semestr 2018_2019/PAI/Labolatoria/public_html/a/archiwum3_jquert/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-255">
@@ -727,13 +706,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://54d4ee80-2a9a-4156-b3c4-38d5bee93d1f/schema/test/table/typ_konta">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://54d4ee80-2a9a-4156-b3c4-38d5bee93d1f/schema/test/table/typ_konta" />
     <entry file="file://F:/05 Semestr 2018_2019/PAI/Labolatoria/public_html/se.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -748,13 +721,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://54d4ee80-2a9a-4156-b3c4-38d5bee93d1f/schema/test/table/cechy_somochod">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://54d4ee80-2a9a-4156-b3c4-38d5bee93d1f/schema/test/table/cechy_somochod" />
     <entry file="file://$PROJECT_DIR$/app/views/main/search_model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
@@ -796,13 +763,6 @@
     <entry file="file://F:/05 Semestr 2018_2019/PAI/Labolatoria/public_html/info.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/login.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://F:/05 Semestr 2018_2019/PAI/Labolatoria/public_html/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -814,20 +774,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="33" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://F:/05 Semestr 2018_2019/PAI/Labolatoria/public_html/a/kartkowka/info.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="31" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -845,20 +791,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://F:/05 Semestr 2018_2019/PAI/Labolatoria/public_html/a/kartkowka/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="118" column="9" lean-forward="true" selection-start-line="118" selection-start-column="9" selection-end-line="118" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/main/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-375">
-          <caret line="442" column="35" selection-start-line="442" selection-start-column="35" selection-end-line="442" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/main/search_easy.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -866,22 +798,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/main/search.php">
+    <entry file="file://$PROJECT_DIR$/public/css/login.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="230" column="44" selection-start-line="230" selection-start-column="33" selection-end-line="230" selection-end-column="44" />
-          <folding>
-            <element signature="n#style#0;n#table#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#2;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" />
-          </folding>
+        <state relative-caret-position="153">
+          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/main/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7514">
+          <caret line="442" column="35" selection-start-line="442" selection-start-column="35" selection-end-line="442" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/05 Semestr 2018_2019/PAI/Labolatoria/public_html/a/kartkowka/info.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="31" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/05 Semestr 2018_2019/PAI/Labolatoria/public_html/a/kartkowka/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="118" column="9" selection-start-line="118" selection-start-column="9" selection-end-line="118" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/home_page.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="38" column="24" lean-forward="true" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
+        <state relative-caret-position="535">
+          <caret line="101" column="1" selection-start-line="101" selection-start-column="1" selection-end-line="101" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/main/search.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="228" column="68" lean-forward="true" selection-start-line="228" selection-start-column="68" selection-end-line="228" selection-end-column="68" />
+          <folding>
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#2;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#section#2;n#body#0;n#html#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>

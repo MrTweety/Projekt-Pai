@@ -1,10 +1,3 @@
-<?php
-//
-//if (isset($_POST) && (($_POST['marka']!=-1) ||($_POST['model']!=-1) ))
-//?>
-
-
-
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -12,12 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-
-
-
-    <link rel="stylesheet" href="../../../public/css/home_page.css" type="text/css">
-    <link rel="stylesheet" href="../../../public/css/login.css" type="text/css">
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
@@ -42,7 +29,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" id="bootstrap-css">
 
-
+    <link rel="stylesheet" href="../../../public/css/home_page.css" type="text/css">
+    <link rel="stylesheet" href="../../../public/css/login.css" type="text/css">
 </head>
 <body onload="load_login_form()">
 
@@ -235,12 +223,12 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-3">
-                                            <img src="https://dynamic.realestateindia.com/proj_images/project14122/proj_img-14122_1-small.jpg">
+                                            <img src="https://stmed.net/sites/default/files/old-car-wallpapers-32461-3779533.jpg">
                                         </div>
                                         <div class="col-md-6  card-body">
                                             <div class="list-title">
                                                 <ul class="list-inline list-unstyled">
-                                                    <li class="list-inline-item"><a href="#"><h4>Nugget Casino Resort</h4></a></li>
+                                                    <li class="list-inline-item"><a href="#"><h4>1969 Dodge Charger</h4></a></li>
                                                     <li class="list-inline-item text-warning"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half"></i></li>
                                                     <li class="list-inline-item text-success"><i class="fa fa-thumbs-up"></i></li>
                                                 </ul>
@@ -255,9 +243,9 @@
 
 
                                         </div>
-                                        <div class="col-md-3 border-left card-body">
+                                        <div class="col-md-3 border-left h-100 ">
                                             <ul class="list-unstyled">
-                                                <li><h3>Very Good</h3></li>
+                                                <li><h3>200 000$</h3></li>
                                                 <li class="text-secondary"><small>8067 Reviews  </small></li>
                                             </ul>
                                             <button type="button" class="btn btn-outline-primary">Book Now</button>
@@ -275,12 +263,12 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-3">
-                                            <img src="https://dynamic.realestateindia.com/proj_images/project14122/proj_img-14122_1-small.jpg">
+                                            <img src="https://stmed.net/sites/default/files/old-car-wallpapers-32461-9153660.jpg">
                                         </div>
                                         <div class="col-md-6  card-body">
                                             <div class="list-title">
                                                 <ul class="list-inline list-unstyled">
-                                                    <li class="list-inline-item"><a href="#"><h4>Nugget Casino Resort</h4></a></li>
+                                                    <li class="list-inline-item"><a href="#"><h4>1962 Ferrari 250 GTE</h4></a></li>
                                                     <li class="list-inline-item text-warning"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half"></i></li>
                                                     <li class="list-inline-item text-success"><i class="fa fa-thumbs-up"></i></li>
                                                 </ul>
@@ -297,7 +285,7 @@
                                         </div>
                                         <div class="col-md-3 border-left card-body">
                                             <ul class="list-unstyled">
-                                                <li><h3>Very Good</h3></li>
+                                                <li><h3>1 000 000zł</h3></li>
                                                 <li class="text-secondary"><small>8067 Reviews  </small></li>
                                             </ul>
                                             <button type="button" class="btn btn-outline-primary">Book Now</button>
@@ -308,11 +296,52 @@
                         </div>
                     </div>
                     </div>
+                    <div class ="listing_box">
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <img src="https://cmzone-vzbqbxhynotw9ion96xv.netdna-ssl.com/wp-content/uploads/2012/05/1969-Chevrolet-Camaro.jpg">
+                                            </div>
+                                            <div class="col-md-6  card-body">
+                                                <div class="list-title">
+                                                    <ul class="list-inline list-unstyled">
+                                                        <li class="list-inline-item"><a href="#"><h4>1969 Chevrolet Camaro</h4></a></li>
+                                                        <li class="list-inline-item text-warning"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half"></i></li>
+                                                        <li class="list-inline-item text-success"><i class="fa fa-thumbs-up"></i></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="list-location">
+                                                    <a href="#"><i class="fa fa-map-marker"></i><small> Sparks, Reno – Show on map (4.7 km from center)</small> </a>
+                                                </div>
+                                                <div class="list-descrip">
+                                                    <small>This Sparks casino hotel is located in the Sierra Nevada Mountains. This resort features free airport shuttle services, a casino, a nightclub and 8 restaurants and bars. </small>
+                                                </div>
+
+
+
+                                            </div>
+                                            <div class="col-md-3 border-left card-body">
+                                                <ul class="list-unstyled">
+                                                    <li><h3>1 000 000zł</h3></li>
+                                                    <li class="text-secondary"><small>8067 Reviews  </small></li>
+                                                </ul>
+                                                <button type="button" class="btn btn-outline-primary">Book Now</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
 
 
 
-                <div class="row mb-3">
+
+                    <div class="row mb-3">
                     <div class="col-md-12">
                         <small> 42 properties found in Reno.  </small>
                     </div>
@@ -360,9 +389,6 @@
 
 <script>
 
-    var model = <?php echo $_POST['model'] ?>;
-
-    alert('model:'+model  + 'marka:'+marka);
 
 
 
