@@ -3,10 +3,24 @@
 
 class UserController extends Controller
 {
-    public function index(){
-        echo "zx";
+
+    public function login(){
+        $this->view('user/login');
     }
 
+    public function register(){
+
+        $this->partial('header');
+        $this->partial('nav');
+
+
+
+        $this->view('user/register');
+        $this->partial('footer');
+
+
+
+    }
 
     public function auth(){
         if (!isset($_POST) || empty($_POST)){
@@ -16,8 +30,11 @@ class UserController extends Controller
             $user = $this->model('User');
             if ($user->auth($_POST)){
                 $this->redirect("/home/isLogin");
+
+
             }else {
                 $this->redirect("/home/notLogin");
+
             }
         }
     }
