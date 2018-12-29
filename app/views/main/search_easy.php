@@ -50,8 +50,8 @@ if (mysqli_num_rows($result) > 0) {
         $i++;
     }
 }
-//echo json_encode(['data' => $data]);
-echo json_encode($data);
+echo json_encode(['data' => $data]);
+//echo json_encode($data);
 
 
 

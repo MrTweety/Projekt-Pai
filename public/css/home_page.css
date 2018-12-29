@@ -1,22 +1,23 @@
-/* Remove the navbar's default margin-bottom and rounded borders */ 
+/* Remove the navbar's default margin-bottom and rounded borders */
 .navbar {
     margin-bottom: 0;
     border-radius: 0;
-  }
-  
-  /* Add a gray background color and some padding to the footer */
+}
+
+/* Add a gray background color and some padding to the footer */
 footer {
     background-color: rgb(168, 164, 164);
     padding: 20px;
-  }
-  
+    margin: 10px 0 10px 0;
+}
+
 .carousel-inner img {
     width: 100%; /* Set width to 100% */
     margin: auto;
     min-height:200px;
 }
 
-button:hover 
+button:hover
 {
     opacity: 0.8;
 }
@@ -48,22 +49,21 @@ button:hover
 
 /* Hide the carousel text when the screen is less than 600 pixels wide */
 @media (max-width: 600px) {
-  .carousel-caption {
-    display: none; 
-  }
+    .carousel-caption {
+        display: none;
+    }
 }
 
 
 
 
-/* Modal Content/Box */
+
 .search {
     background-image: url("../img/vintage-cars.jpg");
-    min-height: 350px;
+    min-height: 320px;
     background-position: 70% 76%;
-    padding: 10px;
-    dispaly: block;
-    /*background-color: #f3f3f3;*/
+    padding: 20px;
+    display: block;
     margin: 10px 0 10px 0; /* 5% from the top, 15% from the bottom and centered */
     width: 100%; /* Could be more or less, depending on screen size */
 
@@ -85,3 +85,33 @@ button:hover
 .link-dark:hover {
     color: cornflowerblue;
 }
+
+
+/*search.php*/
+
+.listing_box{
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid lightgrey;
+
+}
+
+.border-left{
+    border-left: 1px solid lightgrey;
+    height:100% ; !important;
+}
+
+.card-body{
+
+
+}
+
+
+h1 {font-size:12px;}
+h2{font-size:22px;font-weight:bold;}
+h3{font-size:20px;font-weight:bold;}
+h4{font-size:18px;font-weight:bold;}
+h5{font-size:12px;}
+h6{font-size:12px;}
+p{font-size:14px;}
+img {width:100%;}
