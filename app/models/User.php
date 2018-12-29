@@ -8,42 +8,13 @@
 
 class User extends Model
 {
-    public static $ADMIN_TYPE = 0;
-    public static $CLIENT_TYPE = 1;
-
     public function __construct()
     {
         parent::__construct();
     }
 
-    public function is_logged_in(){
-        if(isset($_SESSION['user_id'])){
-            return true;
-        }
-    }
-
-    public function get_id(){
-        return $_SESSION['user_id'];
-    }
-
-    public function get_type(){
-        return $_SESSION['user_type'];
-    }
-
-
-
-
-    public function find_by_login($login){
-        $query = "SELECT * FROM user WHERE login = :login";
-        $stmt = $this->db->prepare($query);
-        $stmt->bindParam(':login', $login);
-        $stmt->execute();
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        return $result;
-    }
-
     public function find_by_email($email){
-        $query = "SELECT * FROM `user` WHERE email = :email";
+        $query = "SELECT * FROM `uzytkownik` WHERE email = :email";
         $stmt = $this->db->prepare($query);
         $stmt->bindParam(':email', $email);
         $stmt->execute();
@@ -52,33 +23,45 @@ class User extends Model
         return $result;
     }
 
+    public function find_by_login($login){
+        $query = "SELECT * FROM `uzytkownik` WHERE login = :login";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':login', $login);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $result;
+    }
+
+
+
     public function auth($data)
     {
         $login = trim($data['login']);
         $password = trim($data['password']);
 
-        $query = "SELECT * FROM user WHERE login = :login";
+        $query = "SELECT * FROM uzytkownik WHERE login = :login";
         $stmt = $this->db->prepare($query);
         $stmt->bindParam(':login', $login);
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
         echo $password;
-        echo $result['password'];
+        echo $result['haslo'];
 
             if ($stmt->rowCount() > 0) {
-            if ($password == $result['password']) {
-                $_SESSION['user_id'] = $result['user_id'];
-                $_SESSION['email'] = $result['email'];
-                $_SESSION['user_type'] =$result['user_type'];
+            if ($password == $result['haslo'])
 
+            {
+                $_SESSION['id_uzyt'] = $result['id_uzyt'];
                 return true;
             }
-            else {
+            else
+                {
 //                $this->errors[] = "Invalid email or password";
                 return false;
-            }
-            }
+                }
+        }
 
         else {
 //            $this->errors[] = "Invalid email or password";
@@ -89,28 +72,54 @@ class User extends Model
 
     public function insert($data)
     {
-        $login = trim($data['login']);
+
+
+
+        $imie = trim($data['imie']);
+        $nazwisko = trim($data['nazwisko']);
+
+
+
         $email = trim($data['email']);
+
+        $login=trim($data['login']);
+
         $password = trim($data['password']);
-        $password_confirm = trim($data['password_confirmation']);
+        $cpassword = trim($data['cpassword']);
 
 
 
-        if($this->find_by_login($login) or $this->find_by_email($email) or ($password!= $password_confirm))
+        $NIP=trim($data['NIP']);
+        $nazwa_firmy=trim($data['nazwa_firmy']);
+
+
+        if ($this->find_by_email($email) or ($password!= $cpassword) or $this->find_by_login($login))
+
         {
             return false;
         }
         else {
-            $user_type = 1;
-            $query = "INSERT INTO user (`user_id`,`login`,`email`, `password`,`user_type`) VALUES (null,:login, :email, :password,:user_type)";
 
+
+            $query = "INSERT INTO uzytkownik (`id_uzyt`,`id_adres`, `id_typ`, `imie`, `nazwisko`, `email`, `login`, `haslo`,`NIP`,`nazwa_firmy`) VALUES (NULL, NULL,1,:imie,:nazwisko,:email,:login,:password,:NIP,:nazwa_firmy)";
 
             $stmt = $this->db->prepare($query);
 
-            $stmt->bindParam(":login", $login);
+
+
+
+
+            $stmt->bindParam(":imie", $imie);
+            $stmt->bindParam(":nazwisko", $nazwisko);
+
             $stmt->bindParam(":email", $email);
+            $stmt->bindParam(":login", $login);
             $stmt->bindParam(":password", $password);
-            $stmt->bindParam(":user_type", $user_type);
+
+
+            $stmt->bindParam(":NIP", $NIP);
+            $stmt->bindParam(":nazwa_firmy", $nazwa_firmy);
+
 
 
             $stmt->execute();
@@ -119,4 +128,6 @@ class User extends Model
 
     }
 }
+
+
 
