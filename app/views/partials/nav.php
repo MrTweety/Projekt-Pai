@@ -16,7 +16,7 @@
                 <li><a href="#">Contact</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a onclick="load_login_form()" id="load_login_form"> <span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li><a onclick="load_login_form()" id="load_login_form" href="#"> <span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 <li><a href="user/register"  id="Register"> <span class="glyphicon glyphicon-log-in"></span> Register</a></li>
 
             </ul>

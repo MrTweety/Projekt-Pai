@@ -12,7 +12,7 @@
 
 
 </head>
-<body onload="load_login_form()">
+<body>
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
