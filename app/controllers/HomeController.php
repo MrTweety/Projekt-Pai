@@ -10,7 +10,15 @@ class HomeController extends Controller
 {
     public function index()
     {
-       $this->view('home/index');
+        $this->partial('header');
+        $this->partial('nav');
+
+
+
+        $this->view('home/index');
+        $this->partial('footer');
+
+
     }
 
     public function isLogin(){

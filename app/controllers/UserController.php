@@ -3,12 +3,23 @@
 
 class UserController extends Controller
 {
-    public function index(){
-        echo "zx";
-    }
 
     public function login(){
         $this->view('user/login');
+    }
+
+    public function register(){
+
+        $this->partial('header');
+        $this->partial('nav');
+
+
+
+        $this->view('user/register');
+        $this->partial('footer');
+
+
+
     }
 
     public function auth(){
