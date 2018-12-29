@@ -1,3 +1,10 @@
+<?php
+//
+//if (isset($_POST) && (($_POST['marka']!=-1) ||($_POST['model']!=-1) ))
+//?>
+
+
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -87,8 +94,8 @@
 
 
             <div class="col-sm-6">
-                <label for="mark">Marka Pojazdu</label>
-                <select id="mark" class="form-control" name="mark">
+                <label for="marka">Marka Pojazdu</label>
+                <select id="marka" class="form-control" name="marka">
 
                 </select>
             </div>
@@ -221,82 +228,89 @@
 
             <div class="col-md-12">
                 <div class="row">
-                <div class="row mb-3">
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <img src="https://dynamic.realestateindia.com/proj_images/project14122/proj_img-14122_1-small.jpg">
-                                    </div>
-                                    <div class="col-md-6  card-body">
-                                        <div class="list-title">
-                                            <ul class="list-inline list-unstyled">
-                                                <li class="list-inline-item"><a href="#"><h4>Nugget Casino Resort</h4></a></li>
-                                                <li class="list-inline-item text-warning"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half"></i></li>
-                                                <li class="list-inline-item text-success"><i class="fa fa-thumbs-up"></i></li>
+                    <div class ="listing_box">
+                    <div class="row mb-3">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <img src="https://dynamic.realestateindia.com/proj_images/project14122/proj_img-14122_1-small.jpg">
+                                        </div>
+                                        <div class="col-md-6  card-body">
+                                            <div class="list-title">
+                                                <ul class="list-inline list-unstyled">
+                                                    <li class="list-inline-item"><a href="#"><h4>Nugget Casino Resort</h4></a></li>
+                                                    <li class="list-inline-item text-warning"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half"></i></li>
+                                                    <li class="list-inline-item text-success"><i class="fa fa-thumbs-up"></i></li>
+                                                </ul>
+                                            </div>
+                                            <div class="list-location">
+                                                <a href="#"><i class="fa fa-map-marker"></i><small> Sparks, Reno – Show on map (4.7 km from center)</small> </a>
+                                            </div>
+                                            <div class="list-descrip">
+                                                <small>This Sparks casino hotel is located in the Sierra Nevada Mountains. This resort features free airport shuttle services, a casino, a nightclub and 8 restaurants and bars. </small>
+                                            </div>
+
+
+
+                                        </div>
+                                        <div class="col-md-3 border-left card-body">
+                                            <ul class="list-unstyled">
+                                                <li><h3>Very Good</h3></li>
+                                                <li class="text-secondary"><small>8067 Reviews  </small></li>
                                             </ul>
+                                            <button type="button" class="btn btn-outline-primary">Book Now</button>
                                         </div>
-                                        <div class="list-location">
-                                            <a href="#"><i class="fa fa-map-marker"></i><small> Sparks, Reno – Show on map (4.7 km from center)</small> </a>
-                                        </div>
-                                        <div class="list-descrip">
-                                            <small>This Sparks casino hotel is located in the Sierra Nevada Mountains. This resort features free airport shuttle services, a casino, a nightclub and 8 restaurants and bars. </small>
-                                        </div>
-
-
-
-                                    </div>
-                                    <div class="col-md-3 border-left card-body">
-                                        <ul class="list-unstyled">
-                                            <li><h3>Very Good</h3></li>
-                                            <li class="text-secondary"><small>8067 Reviews  </small></li>
-                                        </ul>
-                                        <button type="button" class="btn btn-outline-primary">Book Now</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <img src="https://dynamic.realestateindia.com/proj_images/project14122/proj_img-14122_1-small.jpg">
-                                    </div>
-                                    <div class="col-md-6  card-body">
-                                        <div class="list-title">
-                                            <ul class="list-inline list-unstyled">
-                                                <li class="list-inline-item"><a href="#"><h4>Nugget Casino Resort</h4></a></li>
-                                                <li class="list-inline-item text-warning"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half"></i></li>
-                                                <li class="list-inline-item text-success"><i class="fa fa-thumbs-up"></i></li>
+                    </div>
+                    <div class ="listing_box">
+                    <div class="row mb-3">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <img src="https://dynamic.realestateindia.com/proj_images/project14122/proj_img-14122_1-small.jpg">
+                                        </div>
+                                        <div class="col-md-6  card-body">
+                                            <div class="list-title">
+                                                <ul class="list-inline list-unstyled">
+                                                    <li class="list-inline-item"><a href="#"><h4>Nugget Casino Resort</h4></a></li>
+                                                    <li class="list-inline-item text-warning"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half"></i></li>
+                                                    <li class="list-inline-item text-success"><i class="fa fa-thumbs-up"></i></li>
+                                                </ul>
+                                            </div>
+                                            <div class="list-location">
+                                                <a href="#"><i class="fa fa-map-marker"></i><small> Sparks, Reno – Show on map (4.7 km from center)</small> </a>
+                                            </div>
+                                            <div class="list-descrip">
+                                                <small>This Sparks casino hotel is located in the Sierra Nevada Mountains. This resort features free airport shuttle services, a casino, a nightclub and 8 restaurants and bars. </small>
+                                            </div>
+
+
+
+                                        </div>
+                                        <div class="col-md-3 border-left card-body">
+                                            <ul class="list-unstyled">
+                                                <li><h3>Very Good</h3></li>
+                                                <li class="text-secondary"><small>8067 Reviews  </small></li>
                                             </ul>
+                                            <button type="button" class="btn btn-outline-primary">Book Now</button>
                                         </div>
-                                        <div class="list-location">
-                                            <a href="#"><i class="fa fa-map-marker"></i><small> Sparks, Reno – Show on map (4.7 km from center)</small> </a>
-                                        </div>
-                                        <div class="list-descrip">
-                                            <small>This Sparks casino hotel is located in the Sierra Nevada Mountains. This resort features free airport shuttle services, a casino, a nightclub and 8 restaurants and bars. </small>
-                                        </div>
-
-
-
-                                    </div>
-                                    <div class="col-md-3 border-left card-body">
-                                        <ul class="list-unstyled">
-                                            <li><h3>Very Good</h3></li>
-                                            <li class="text-secondary"><small>8067 Reviews  </small></li>
-                                        </ul>
-                                        <button type="button" class="btn btn-outline-primary">Book Now</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                    </div>
+
+
+
 
                 <div class="row mb-3">
                     <div class="col-md-12">
@@ -318,6 +332,8 @@
         </div>
     </div>
 </section>
+
+
 <section class="cta py-5 bg-primary text-white">
     <div class="container">
         <div class="row text-center">
@@ -341,6 +357,111 @@
 
 </footer>
 <!-- Footer -->
+
+<script>
+
+    var model = <?php echo $_POST['model'] ?>;
+
+    alert('model:'+model  + 'marka:'+marka);
+
+
+
+    $('#marka').ready(function() {
+        $.ajax({
+            type: "POST",
+            url: 'search_marka.php',
+            success: function(data)
+            {
+                helpers.buildDropdown(
+                    jQuery.parseJSON(data),
+                    $('#marka'),
+                    'Marka Pojazdu',
+                    <?php if(isset( $_POST['marka'])) echo $_POST['marka']; else echo -1  ?>
+                );
+            }
+        });
+
+
+
+    });
+
+    $('#model').ready(function() {
+
+        $.ajax({
+            type: "POST",
+            url: 'search_model.php',
+
+            success: function(data)
+            {
+                helpers.buildDropdown(
+                    jQuery.parseJSON(data),
+                    $('#model'),
+                    'Model Pojazdu',
+                    <?php if(isset( $_POST['model'])) echo $_POST['model']; else echo -1  ?>
+
+                );
+            }
+        });
+
+    });
+
+
+    $('#marka').change(function() {
+
+
+        $.ajax({
+            type: "POST",
+            url: 'search_model.php',
+            data: {marka :$('#mark').val()},
+
+            success: function(data)
+            {
+                helpers.buildDropdown(
+                    jQuery.parseJSON(data),
+                    $('#model'),
+                    'Model Pojazdu'
+
+                );
+            }
+        });
+
+    });
+
+
+
+
+
+    var helpers =
+        {
+            buildDropdown: function(result, dropdown, emptyMessage, def = -1)
+            {
+                // Remove current options
+                dropdown.html('');
+                // Add the empty option with the empty message
+                dropdown.append('<option value="-1">' + emptyMessage + '</option>');
+                // Check result isnt empty
+                if(result != '')
+                {
+                    // Loop through each of the results and append the option to the dropdown
+                    $.each(result, function(k, v) {
+                        if (v.id_tab!= def)
+                            dropdown.append('<option value="' + v.id_tab + '">' + v.name_tab + '</option>');
+                        else
+                            dropdown.append('<option selected="selected" value="' + v.id_tab + '">' + v.name_tab + '</option>');
+
+                    });
+                }
+            }
+        }
+
+
+
+
+
+
+
+</script>
+
 
 
 <script>

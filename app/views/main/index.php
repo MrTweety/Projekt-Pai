@@ -273,15 +273,15 @@
 
 <div class = "search" >
     <div class="container">
-        <form class="container-fluid text-center" action="/action_page.php">
+        <form id ="form_search" class="container-fluid text-center" method="post" action="search.php">
 
             <div class="row card-body py-2 mb-3 bg-dark twhite">
                 <a href="#" class="link-dark"><h4><i class="fa fa-car"></i> Search Options</h4></a>
             </div>
 
             <div class="form-group col-sm-6">
-                <label for="mark">Marka Pojazdu</label>
-                <select id="mark" class="form-control" name="mark">
+                <label for="marka">Marka Pojazdu</label>
+                <select id="marka" class="form-control" name="marka">
 
                 </select>
             </div>
@@ -324,7 +324,12 @@
 
 
             <div class="form-group row py-2 mb-3">
-                <button type="button" class="btn btn-info ">
+                <button id="sub" type="submit" class="btn btn-info " onclick="$(function(){
+    $('form').submit{
+       document.sessionStorage["form-data"] =  $('this').serialize();
+                document.location.href = 'another-page.html';
+                }
+                });">
                     <span class="glyphicon glyphicon-search"></span> Search
                 </button>
             </div>
@@ -390,8 +395,7 @@
 <script>
 
 
-
-    $('#mark').ready(function() {
+    $('#marka').ready(function() {
 
         $.ajax({
             type: "POST",
@@ -401,7 +405,7 @@
             {
                 helpers.buildDropdown(
                     jQuery.parseJSON(data),
-                    $('#mark'),
+                    $('#marka'),
                     'Marka Pojazdu'
 
                 );
@@ -430,13 +434,13 @@
     });
 
 
-    $('#mark').change(function() {
+    $('#marka').change(function() {
 
 
         $.ajax({
             type: "POST",
             url: 'search_model.php',
-            data: {marka :$('#mark').val()},
+            data: {marka :$('#marka').val()},
 
             success: function(data)
             {
@@ -473,6 +477,11 @@
                 }
             }
         }
+
+
+
+
+
 
 </script>
 

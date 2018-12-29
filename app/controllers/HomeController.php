@@ -18,7 +18,7 @@ class HomeController extends Controller
     }
 
     public function notLogin(){
-        $this->view("home/index");
+        $this->redirect('/');
     }
 
     public function notRegister(){
