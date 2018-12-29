@@ -179,11 +179,19 @@
             <th>Tekst</th>
             <th>Login</th>
             <th>Hasło.</th>
+            <th>Imie</th>
+            <th>Tekst</th>
+            <th>Login</th>
+            <th>Hasło.</th>
         </tr>
         </thead>
 
         <tfoot>
         <tr>
+            <th>Imie</th>
+            <th>Tekst</th>
+            <th>Login</th>
+            <th>Hasło.</th>
             <th>Imie</th>
             <th>Tekst</th>
             <th>Login</th>
@@ -199,13 +207,19 @@
         table = $('#example').DataTable( {
             "ajax": "search_easy.php",
             "columns": [
-                { "data": "imie" },
-                { "data": "nazwisko" },
-                { "data": "login" },
-                { "data": "pswd" },
+                { "data": "id_oferta" },
+                { "data": "img" },
+                { "data": "marka" },
+                { "data": "model" },
+                { "data": "kraj" },
+                { "data": "wyswietlenia" },
+                { "data": "cena_netto" },
+                { "data": "data_zlozenia" },
+
             ]
         } );
     } );
+
 
 </script>
 
@@ -215,100 +229,23 @@
         <div class="row">
 
             <div class="col-md-12">
-                <div class="row">
-                    <div class ="listing_box">
-                    <div class="row mb-3">
-                        <div class="col-md-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <img src="https://stmed.net/sites/default/files/old-car-wallpapers-32461-3779533.jpg">
-                                        </div>
-                                        <div class="col-md-6  card-body">
-                                            <div class="list-title">
-                                                <ul class="list-inline list-unstyled">
-                                                    <li class="list-inline-item"><a href="#"><h4>1969 Dodge Charger</h4></a></li>
-                                                    <li class="list-inline-item text-warning"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half"></i></li>
-                                                    <li class="list-inline-item text-success"><i class="fa fa-thumbs-up"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="list-location">
-                                                <a href="#"><i class="fa fa-map-marker"></i><small> Sparks, Reno – Show on map (4.7 km from center)</small> </a>
-                                            </div>
-                                            <div class="list-descrip">
-                                                <small>This Sparks casino hotel is located in the Sierra Nevada Mountains. This resort features free airport shuttle services, a casino, a nightclub and 8 restaurants and bars. </small>
-                                            </div>
+                <div class="row ">
+                    <div id ="listing">
 
 
-
-                                        </div>
-                                        <div class="col-md-3 border-left h-100 ">
-                                            <ul class="list-unstyled">
-                                                <li><h3>200 000$</h3></li>
-                                                <li class="text-secondary"><small>8067 Reviews  </small></li>
-                                            </ul>
-                                            <button type="button" class="btn btn-outline-primary">Book Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                    <div class ="listing_box">
-                    <div class="row mb-3">
-                        <div class="col-md-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <img src="https://stmed.net/sites/default/files/old-car-wallpapers-32461-9153660.jpg">
-                                        </div>
-                                        <div class="col-md-6  card-body">
-                                            <div class="list-title">
-                                                <ul class="list-inline list-unstyled">
-                                                    <li class="list-inline-item"><a href="#"><h4>1962 Ferrari 250 GTE</h4></a></li>
-                                                    <li class="list-inline-item text-warning"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half"></i></li>
-                                                    <li class="list-inline-item text-success"><i class="fa fa-thumbs-up"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="list-location">
-                                                <a href="#"><i class="fa fa-map-marker"></i><small> Sparks, Reno – Show on map (4.7 km from center)</small> </a>
-                                            </div>
-                                            <div class="list-descrip">
-                                                <small>This Sparks casino hotel is located in the Sierra Nevada Mountains. This resort features free airport shuttle services, a casino, a nightclub and 8 restaurants and bars. </small>
-                                            </div>
-
-
-
-                                        </div>
-                                        <div class="col-md-3 border-left card-body">
-                                            <ul class="list-unstyled">
-                                                <li><h3>1 000 000zł</h3></li>
-                                                <li class="text-secondary"><small>8067 Reviews  </small></li>
-                                            </ul>
-                                            <button type="button" class="btn btn-outline-primary">Book Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                    <div class ="listing_box">
+                        <div class ="listing_box">
                         <div class="row mb-3">
                             <div class="col-md-12">
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-3">
-                                                <img src="https://cmzone-vzbqbxhynotw9ion96xv.netdna-ssl.com/wp-content/uploads/2012/05/1969-Chevrolet-Camaro.jpg">
+                                                <img src="https://stmed.net/sites/default/files/old-car-wallpapers-32461-3779533.jpg">
                                             </div>
                                             <div class="col-md-6  card-body">
                                                 <div class="list-title">
                                                     <ul class="list-inline list-unstyled">
-                                                        <li class="list-inline-item"><a href="#"><h4>1969 Chevrolet Camaro</h4></a></li>
+                                                        <li class="list-inline-item"><a href="#"><h4>1969 Dodge Charger</h4></a></li>
                                                         <li class="list-inline-item text-warning"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half"></i></li>
                                                         <li class="list-inline-item text-success"><i class="fa fa-thumbs-up"></i></li>
                                                     </ul>
@@ -323,9 +260,9 @@
 
 
                                             </div>
-                                            <div class="col-md-3 border-left card-body">
+                                            <div class="col-md-3 border-left h-100 ">
                                                 <ul class="list-unstyled">
-                                                    <li><h3>1 000 000zł</h3></li>
+                                                    <li><h3>200 000$</h3></li>
                                                     <li class="text-secondary"><small>8067 Reviews  </small></li>
                                                 </ul>
                                                 <button type="button" class="btn btn-outline-primary">Book Now</button>
@@ -335,6 +272,9 @@
                                 </div>
                             </div>
                         </div>
+                        </div>
+
+
                     </div>
 
 
@@ -361,6 +301,54 @@
         </div>
     </div>
 </section>
+
+
+<script>
+
+    $(document).ready(function() {
+
+        $.ajax({
+            type: "POST",
+            url: 'search_easy.php',
+
+            success: function(data)
+            {
+                build.buildListing(
+                    jQuery.parseJSON(data),
+                    $('#listingggg'),
+
+                );
+            }
+        });
+
+    });
+
+
+    var build =
+        {
+            buildListing: function(result, listing )
+            {
+                // Remove current options
+                listing.html('');
+                // Check result isnt empty
+                if(result != '')
+                {
+                    // Loop through each of the results and append the option to the dropdown
+                    $.each(result, function(k, v) {
+                            listing.append('<option value="' + v.id_tab + '">' + v.name_tab + '</option>');
+
+
+
+
+                    });
+                }
+            }
+        }
+
+</script>
+
+
+
 
 
 <section class="cta py-5 bg-primary text-white">
@@ -498,9 +486,11 @@
     }
 
     $(document).ready( function() {
+        // $('.listing_box').hide();
         $("#load_login_form").on("click", function() {
             document.getElementById('log_form').style.display='block';
             document.getElementById('indicators').style.display='none';
+
         });
     });
 
