@@ -10,6 +10,13 @@ class HomeController extends Controller
 {
     public function index()
     {
+        $this->partial('header');
+        $this->partial('nawigacja');
+        $this->partial('slajdery');
+        $this->partial('panel_zdjecia');
+        $this->partial('wyszukiwanie');
+        $this->partial('footer');
+
        $this->view('home/index');
     }
 
