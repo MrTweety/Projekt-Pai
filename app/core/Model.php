@@ -8,7 +8,7 @@
 
 class Model {
     private $host = "localhost";
-    private $db_name = "test";
+    private $db_name = "dawidektr";
     private $username = "root";
     private $password = "";
 
