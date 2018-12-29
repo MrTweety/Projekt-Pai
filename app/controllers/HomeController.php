@@ -11,7 +11,7 @@ class HomeController extends Controller
     public function index()
     {
         $this->partial('header');
-        $this->partial('nawigacja');
+        $this->partial('nav');
 
 
 

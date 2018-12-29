@@ -22,7 +22,7 @@
 
 
 
-
+    <script src="/app/js/skrypty.js"></script>
 
 
 </head>

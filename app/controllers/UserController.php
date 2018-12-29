@@ -11,10 +11,12 @@ class UserController extends Controller
     public function register(){
 
         $this->partial('header');
-        $this->partial('nawigacja');
+        $this->partial('nav');
+
+
+
         $this->view('user/register');
         $this->partial('footer');
-
 
 
 
