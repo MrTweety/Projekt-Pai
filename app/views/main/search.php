@@ -31,6 +31,13 @@
 
     <link rel="stylesheet" href="../../../public/css/home_page.css" type="text/css">
     <link rel="stylesheet" href="../../../public/css/login.css" type="text/css">
+
+
+<!--    dropdown-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/i18n/defaults-*.min.js"></script>
+
 </head>
 <body onload="load_login_form()">
 
@@ -83,14 +90,14 @@
 
             <div class="col-sm-6">
                 <label for="marka">Marka Pojazdu</label>
-                <select id="marka" class="form-control" name="marka">
+                <select id="marka" class="form-control" name="marka" data-size="5">
 
                 </select>
             </div>
 
             <div class=" col-sm-6">
                 <label for="model">Model Pojazdu</label>
-                <select id="model" class="form-control" name="model">
+                <select id="model" class="form-control" name="model" data-size="5"">
 
                 </select>
             </div>
@@ -171,7 +178,7 @@
 
 
 
-<section id="tabelka">
+<div id="tabelka">
     <table id="example" class="display" style="width:100%">
         <thead>
         <tr>
@@ -198,30 +205,53 @@
             <th>Hasło.</th>
         </tr>
         </tfoot>
+    </table>
 
-</section>
+        <script>
 
-<script>
-    //tabelka
-    $(document).ready(function() {
-        table = $('#example').DataTable( {
-            "ajax": "search_easy.php",
-            "columns": [
-                { "data": "id_oferta" },
-                { "data": "img" },
-                { "data": "marka" },
-                { "data": "model" },
-                { "data": "kraj" },
-                { "data": "wyswietlenia" },
-                { "data": "cena_netto" },
-                { "data": "data_zlozenia" },
-
-            ]
-        } );
-    } );
+            // szukajka na start database!!!!!
+            $(document).ready(function()
+            {
+                var mar = <?php if(isset( $_POST['marka'])) echo $_POST['marka']; else echo -1  ?>;
+                var mod = <?php if(isset( $_POST['model'])) echo $_POST['model']; else echo -1  ?>;
 
 
-</script>
+                $.ajax(
+                    {
+                        type: "POST",
+                        url: 'search_easy.php',
+                        data: {marka :mar , model: mod},
+
+
+                        success: function(data)
+                        {
+                            var dane = jQuery.parseJSON(data);
+                            table = $('#example').DataTable(
+                                {
+                                    "data": dane,
+                                    "dom": "<tabelka>",
+                                    "columns": [
+                                        { "data": "id_oferta" },
+                                        { "data": "img" },
+                                        { "data": "marka" },
+                                        { "data": "model" },
+                                        { "data": "kraj" },
+                                        { "data": "wyswietlenia" },
+                                        { "data": "cena_netto" },
+                                        { "data": "data_zlozenia" },
+
+                                    ]
+                                } );
+                        }
+                    });
+
+            });
+
+        </script>
+
+</div>
+
+
 
 
 <section class="listings">
@@ -346,9 +376,6 @@
         }
 
 </script>
-
-
-
 
 
 <section class="cta py-5 bg-primary text-white">
