@@ -11,7 +11,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <link rel="stylesheet" href="/public/css/home_page.css" type="text/css">
 
-    <!--<link rel="stylesheet" href="../../../public/css/home_page.css" type="text/css">-->
+<!--    <link rel="stylesheet" href="../../../public/css/home_page.css" type="text/css">-->
 
     <link rel="stylesheet" href="/public/css/login.css" type="text/css">
 
@@ -22,7 +22,7 @@
 
 
 
-
+    <script src="/app/js/skrypty.js"></script>
 
 
 </head>

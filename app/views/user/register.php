@@ -1,4 +1,4 @@
-<div id="Register" class="container tab-pane fade"><br>
+<div id="Register" class="container tab-pane"><br>
     <div class="container">
         <div class="row">
             <div class="form-block">
