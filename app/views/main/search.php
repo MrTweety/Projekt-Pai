@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
+    <style>
+        .ada{
+            margin-left: auto ;
+            margin-right: auto ;
+            background-color: red;
+            width: 90%;
+            padding: 10px;
+            margin 10px;
+        }
+
+    </style>
+
     <title>Strona glowna</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -37,6 +49,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/i18n/defaults-*.min.js"></script>
+
+
+
+
+<!--    footer-->
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../public/css/footer-distributed-with-address-and-phones.css">
+
+
 
 </head>
 <body onload="load_login_form()">
@@ -232,7 +254,7 @@
                                     "dom": "<tabelka>",
                                     "columns": [
                                         { "data": "id_oferta" },
-                                        { "data": "img" },
+                                        { "data": "imgg" },
                                         { "data": "marka" },
                                         { "data": "model" },
                                         { "data": "kraj" },
@@ -308,15 +330,7 @@
                     </div>
 
 
-
-
-
-                    <div class="row mb-3">
-                    <div class="col-md-12">
-                        <small> 42 properties found in Reno.  </small>
-                    </div>
-                </div>
-                <div class="row">
+                <div id="strony"><div class="row">
                     <div class="col-md-12">
                         <ul class="pagination">
                             <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
@@ -325,7 +339,7 @@
                             <li class="page-item"><a class="page-link" href="#">3</a></li>
                             <li class="page-item"><a class="page-link" href="#">Next</a></li>
                         </ul>
-                    </div>
+                    </div></div>
                 </div>
             </div>
         </div>
@@ -334,18 +348,23 @@
 
 
 <script>
+    var count = 0;
+    var mar = <?php if(isset( $_POST['marka'])) echo $_POST['marka']; else echo -1  ?>;
+    var mod = <?php if(isset( $_POST['model'])) echo $_POST['model']; else echo -1  ?>;
 
     $(document).ready(function() {
 
         $.ajax({
             type: "POST",
             url: 'search_easy.php',
+            data: {marka :mar , model: mod},
+            data: {marka :mar , model: mod},
 
             success: function(data)
             {
                 build.buildListing(
                     jQuery.parseJSON(data),
-                    $('#listingggg'),
+                    $('#listing'),
 
                 );
             }
@@ -354,24 +373,82 @@
     });
 
 
+
+
+
     var build =
         {
+
+
+
             buildListing: function(result, listing )
             {
                 // Remove current options
                 listing.html('');
+
                 // Check result isnt empty
                 if(result != '')
                 {
                     // Loop through each of the results and append the option to the dropdown
                     $.each(result, function(k, v) {
-                            listing.append('<option value="' + v.id_tab + '">' + v.name_tab + '</option>');
+                            //listing.append('<div class="ada"><img src="../../../public/img/'+v.imga +'.jpg"/></div>');
+                        ++count;
+                        listing.append(
+
+                        '<div class ="listing_box" id ="oferta'+v.id_oferta+'" >'+
+                            '                        <div class="row mb-3">'+
+                            '                            <div class="col-md-12">'+
+                            '                                <div class="card">'+
+                            '                                    <div class="card-body">'+
+                            '                                        <div class="row">'+
+                            '                                            <div class="col-md-3">'+
+                            v.imgg+
+                            '                                            </div>'+
+                            '                                            <div class="col-md-6  card-body">'+
+                            '                                                <div class="list-title">'+
+                            '                                                    <ul class="list-inline list-unstyled">'+
+                            '                                                        <li class="list-inline-item"><a href="#"><h4>'+ v.marka+' '+v.model +'</h4></a></li>'+
+                            '                                                        <li class="list-inline-item text-warning"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half"></i></li>'+
+                            '                                                        <li class="list-inline-item text-success"><i class="fa fa-thumbs-up"></i></li>'+
+                            '                                                    </ul>'+
+                            '                                                </div>'+
+                            '                                                <div class="list-location">'+
+                            '                                                    <a href="#"><i class="fa fa-map-marker"></i><small> '+ v.kraj+' '+v.data_zlozenia +'</small> </a>'+
+                            '                                                </div>'+
+                            '                                                <div class="list-descrip">'+
+                            '                                                    <small>This Sparks casino hotel is located  in the Sierra Kurwa Mountains. This resort features free airport shuttle services, a casino, a nightclub and 8 restaurants and bars. </small>'+
+                            '                                                </div>'+
+                            ''+
+                            ''+
+                            ''+
+                            '                                            </div>'+
+                            '                                            <div class="col-md-3 border-left h-100 ">'+
+                            '                                                <ul class="list-unstyled">'+
+                            '                                                    <li><h3>'+ v.cena_netto +' zł '+'</h3></li>'+
+                            '                                                    <li class="text-secondary"><small>'+ v.wyswietlenia +' Reviews</small></li>'+
+                            '                                                </ul>'+
+                            '                                                <button type="button" class="btn btn-outline-primary">Buy Now</button>'+
+                            '                                            </div>'+
+                            '                                        </div>'+
+                            '                                    </div>'+
+                            '                                </div>'+
+                            '                            </div>'+
+                            '                        </div>'+
+                            '                        </div>'
+
+                    );
 
 
 
 
                     });
                 }
+
+                listing.append('<div class="row mb-3">'+
+                '                        <div class="col-md-12">'+
+                '                            <small>'+ count +' properties found in Classic4you.  </small><br /><br />'+
+                '                        </div>'+
+                '                    </div>');
             }
         }
 
@@ -392,12 +469,64 @@
 
 
 <!-- Footer -->
-<footer class="page-footer font-small special-color-dark pt-4">
+<footer class="footer-distributed">
 
-    <div class="footer-copyright text-center py-3">© 2018 Copyright:
-        <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+    <div class="footer-left">
+
+        <h3>Classic<span>4you</span></h3>
+
+        <p class="footer-links">
+            <a href="#">Strona główna</a>
+            ·
+            <a href="#">About</a>
+            ·
+            <a href="#">projects</a>
+            ·
+            <a href="#">Faq</a>
+            ·
+            <a href="#">Contact</a>
+        </p>
+
+        <p class="footer-company-name">Classic4you &copy; 2019</p>
     </div>
 
+    <div class="footer-center">
+        <div id ="footer-center-center" >
+
+        <div>
+            <i class="fa fa-map-marker"></i>
+            <p><span>Aleja Słowackiego Juliusza 46</span> Kraków, Polska</p>
+        </div>
+
+        <div>
+            <i class="fa fa-phone"></i>
+            <p>+1 555 123456</p>
+        </div>
+
+        <div>
+            <i class="fa fa-envelope"></i>
+            <p><a href="mailto:support@company.com">support@Classic4you.com</a></p>
+        </div>
+        </div>
+    </div>
+
+    <div class="footer-right">
+
+        <p class="footer-company-about">
+            <span>About the company</span>
+            Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+        </p>
+
+        <div class="footer-icons">
+
+            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a>
+            <a href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus"></i></a>
+
+        </div>
+
+    </div>
 
 </footer>
 <!-- Footer -->
@@ -504,9 +633,9 @@
 </script>
 
 
-
 <script>
-
+    $('#tabelka').hide();
+    $('#strony').hide();
     function load_login_form()
     {
         $("#log_form").load("../user/login.php");

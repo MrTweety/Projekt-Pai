@@ -121,7 +121,8 @@ if (mysqli_num_rows($result) > 0) {
         $data[$i]['id_oferta'] = $row['id_oferta'];
         $data[$i]['cena_netto'] = $row['cena_netto'];
         $data[$i]['data_zlozenia'] = $row['data_zlozenia'];
-        $data[$i]['img'] = '<img src="../../../public/img/' . $row['img'] . '.jpg">';
+        $data[$i]['imgg'] = '<img src="../../../public/img/' . $row['img'] . '.jpg">';
+        $data[$i]['imga'] = $row['img'] ;
         $data[$i]['wyswietlenia'] = $row['wyswietlenia'];
         $data[$i]['kraj'] = $row['pl'];
         $data[$i]['model'] = $row['model_nazwa'];

@@ -5,11 +5,11 @@
 }
 
 /* Add a gray background color and some padding to the footer */
-footer {
-    background-color: rgb(168, 164, 164);
-    padding: 20px;
-    margin: 10px 0 10px 0;
-}
+/*footer {*/
+    /*background-color: rgb(168, 164, 164) ;*/
+    /*padding: 20px;*/
+    /*margin: 10px 0 10px 0;*/
+/*}*/
 
 .carousel-inner img {
     width: 100%; /* Set width to 100% */
