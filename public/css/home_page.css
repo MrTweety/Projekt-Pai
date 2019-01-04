@@ -4,6 +4,19 @@
     border-radius: 0;
 }
 
+.navbar h3{
+    color:  #ffffff;
+    font: normal 36px 'Cookie', cursive;
+    margin: 0;
+}
+
+.navbar h3 span{
+    color:  #5383d3;
+}
+
+
+
+
 /* Add a gray background color and some padding to the footer */
 /*footer {*/
     /*background-color: rgb(168, 164, 164) ;*/

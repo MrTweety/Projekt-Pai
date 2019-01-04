@@ -30,7 +30,7 @@
 <body onload="load_login_form()">
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
-    <a class="navbar-brand " href="#">Classic4you.eu</a>
+    <a class="navbar-brand " href="#"><h3>Classic<span>4you.eu</span></h3></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
