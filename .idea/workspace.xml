@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="40583a97-bec7-44ec-862b-7037cc11a83b" name="Default" comment="indexx-&gt;bootstrap4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/main/indexx.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/main/indexx.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/main/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/main/search.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/home_page.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/home_page.css" afterDir="false" />
     </list>
@@ -32,8 +31,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/main/search.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="568">
-              <caret line="74" column="52" selection-start-line="74" selection-start-column="32" selection-end-line="74" selection-end-column="52" />
+            <state relative-caret-position="408">
+              <caret line="24" column="80" selection-start-line="24" selection-start-column="80" selection-end-line="24" selection-end-column="80" />
             </state>
           </provider>
         </entry>
@@ -47,20 +46,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/css/home_page.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" selection-start-line="1" selection-start-column="2" selection-end-line="4" selection-end-column="3" />
+            <state relative-caret-position="348">
+              <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/main/indexx.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="64" column="43" lean-forward="true" selection-start-line="64" selection-start-column="43" selection-end-line="64" selection-end-column="43" />
+            <state relative-caret-position="119">
+              <caret line="7" selection-start-line="7" selection-end-line="24" selection-end-column="80" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -226,9 +225,9 @@
         <option value="$PROJECT_DIR$/app/views/main/search_easy.php" />
         <option value="$PROJECT_DIR$/app/views/main/search_model.php" />
         <option value="$PROJECT_DIR$/public/css/footer-distributed-with-address-and-phones.css" />
+        <option value="$PROJECT_DIR$/app/views/main/indexx.php" />
         <option value="$PROJECT_DIR$/app/views/main/search.php" />
         <option value="$PROJECT_DIR$/public/css/home_page.css" />
-        <option value="$PROJECT_DIR$/app/views/main/indexx.php" />
       </list>
     </option>
   </component>
@@ -384,7 +383,7 @@
       <workItem from="1546093834533" duration="49000" />
       <workItem from="1546093952664" duration="10316000" />
       <workItem from="1546534848875" duration="12355000" />
-      <workItem from="1546612011464" duration="12261000" />
+      <workItem from="1546612011464" duration="12391000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1545922666937</created>
@@ -540,7 +539,14 @@
       <option name="project" value="LOCAL" />
       <updated>1546621595277</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="indexx-&gt;bootstrap4">
+      <created>1546624678837</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1546624678838</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -564,7 +570,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="230676000" />
+    <option name="totallyTimeSpent" value="230806000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -899,27 +905,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/main/indexx.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="24" selection-end-column="80" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/main/search.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
-          <caret line="74" column="52" selection-start-line="74" selection-start-column="32" selection-end-line="74" selection-end-column="52" />
+        <state relative-caret-position="408">
+          <caret line="24" column="80" selection-start-line="24" selection-start-column="80" selection-end-line="24" selection-end-column="80" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/home_page.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-start-column="2" selection-end-line="4" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/main/indexx.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="64" column="43" lean-forward="true" selection-start-line="64" selection-start-column="43" selection-end-line="64" selection-end-column="43" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="348">
+          <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
         </state>
       </provider>
     </entry>
