@@ -26,6 +26,7 @@ button:hover
 {
     text-align: center;
     color: red;
+    margin-top: 20px;
 
 }
 
@@ -84,6 +85,7 @@ button:hover
 /* mouse over link */
 .link-dark:hover {
     color: cornflowerblue;
+    text-decoration: none;
 }
 
 

@@ -5,122 +5,121 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" id="bootstrap-css">
+    <!--    bootstrap,jquery-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <!--    bootstrap,jquery-->
 
+    <!--font-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <!--font-->
 
-
-
-
+    <!--    footer-->
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../../../public/css/footer-distributed-with-address-and-phones.css">
+    <!--    footer-->
 
     <link rel="stylesheet" href="../../../public/css/home_page.css" type="text/css">
     <link rel="stylesheet" href="../../../public/css/login.css" type="text/css">
-
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-
-
-
 
 
 
 </head>
 <body onload="load_login_form()">
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Classic4you.eu</a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li class="active" id="home_page"><a href="#"> <span class="glyphicon glyphicon-home"></span> Strona główna </a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#" id="load_login_form"> <span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul>
-        </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
+    <a class="navbar-brand " href="#">Classic4you.eu</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto" >
+            <li class="nav-item active" class="active" id="home_page">
+                <a class="nav-link" href="#" ><i class='fa fa-home'></i> Strona główna <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+        </ul>
+
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Search</button>
+            <a href="#" id="load_login_form " class="btn btn btn-dark my-2 my-sm-0 mr-sm-2"><i class="fa fa-user"></i> Sing up</a>
+            <a href="#" id="load_login_form " class="btn btn btn-dark my-2 my-sm-0 mr-sm-2"><i class="fa fa-sign-in"></i> Login</a>
+        </form>
+
     </div>
 </nav>
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <div id="indicators">
-        <ol class="carousel-indicators" >
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
-        </ol>
+<div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-top: 56px">
+    <ul class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ul>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Los Angeles" width="1100" height="500">
+            <div class="carousel-caption">
+                <h3>Los Angeles</h3>
+                <p>We had such a great time in LA!</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Chicago" width="1100" height="500">
+            <div class="carousel-caption">
+                <h3>Chicago</h3>
+                <p>Thank you, Chicago!</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="New York" width="1100" height="500">
+            <div class="carousel-caption">
+                <h3>New York</h3>
+                <p>We love the Big Apple!</p>
+            </div>
+        </div>
     </div>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-
-        <div class="item active">
-            <img src="https://placehold.it/1200x400?text=IMAGE" alt="Image">
-            <div class="carousel-caption">
-                <h3>Zdjęcie 1</h3>
-                <p>Money Money.</p>
-            </div>
-        </div>
-
-        <div class="item">
-            <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
-            <div class="carousel-caption">
-                <h3>Zdjęcie 2</h3>
-                <p>Lorem ipsum...</p>
-            </div>
-        </div>
-
-        <div class="item">
-            <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
-            <div class="carousel-caption">
-                <h3>Zdjęcie 3</h3>
-                <p>Lorem ipsum...</p>
-            </div>
-        </div>
-
-        <div class="item">
-            <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
-            <div class="carousel-caption">
-                <h3>Zdjęcie 4</h3>
-                <p>Lorem ipsum...</p>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" title="poprzednia oferta">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
+    <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
     </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next" title="następna oferta">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
+    <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
     </a>
 </div>
+
 
 <div id="log_form" class="modal"></div>
 
 
-<div class=" bestCar ">
+<div class="bestCar ">
 
     <h3>What We Do</h3><br>
 
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 col-md-5 col-md-offset-1">
+            <div class="col-sm-6 col-md-5 offset-1">
                  <figure>
                      <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
                      <figcaption><p>Tekst</p></figcaption>
@@ -273,67 +272,31 @@
 
 <div class = "search" >
     <div class="container">
-        <form id ="form_search" class="container-fluid text-center" method="post" action="search.php">
 
-            <div class="row card-body py-2 mb-3 bg-dark twhite">
-                <a href="#" class="link-dark"><h4><i class="fa fa-car"></i> Search Options</h4></a>
+
+
+
+        <form id ="form_search" class="" method="post" action="search.php">
+            <div class="form-row text-center">
+                <div class="form-group col-12">
+                    <a href="#" class="link-dark"><h4><i class="fa fa-car"></i> Search Options</h4></a>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="marka">Marka Pojazdu</label>
+                    <select id="marka" class="form-control" name="marka"
+                    ></select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="model">Model Pojazdu</label>
+                    <select id="model" class="form-control" name="model" ></select>
+                </div>
+                <div class="form-group col-md-12">
+                    <button id="sub" type="submit" class="btn btn-info " >
+                        <span class="glyphicon glyphicon-search"></span> Search
+                    </button>
+                </div>
             </div>
-
-            <div class="form-group col-sm-6">
-                <label for="marka">Marka Pojazdu</label>
-                <select id="marka" class="form-control" name="marka">
-
-                </select>
-            </div>
-
-            <div class="form-group col-sm-6">
-                <label for="model">Model Pojazdu</label>
-                <select id="model" class="form-control" name="model">
-
-                </select>
-            </div>
-
-<!--            <div class="form-group col-sm-6">-->
-<!--                <label for="rok_od">typ</label>-->
-<!--                <select id="rok_od" class="form-control" name="rok_od">-->
-<!---->
-<!--                </select>-->
-<!--            </div>-->
-<!---->
-<!--            <div class="form-group col-sm-6">-->
-<!--                <label for="rok_do">typ</label>-->
-<!--                <select id="rok_do" class="form-control" name="rok_do">-->
-<!---->
-<!--                </select>-->
-<!--            </div>-->
-<!---->
-<!--            <div class="form-group col-sm-6">-->
-<!--                <label for="cena_od">typ</label>-->
-<!--                <select id="cena_od" class="form-control" name="cena_od">-->
-<!---->
-<!--                </select>-->
-<!--            </div>-->
-<!---->
-<!--            <div class="form-group col-sm-6">-->
-<!--                <label for="cena_do">typ</label>-->
-<!--                <select id="cena_do" class="form-control" name="cena_do">-->
-<!---->
-<!--                </select>-->
-<!--            </div>-->
-
-
-
-            <div class="form-group row py-2 mb-3">
-                <button id="sub" type="submit" class="btn btn-info " onclick="$(function(){
-    $('form').submit{
-       document.sessionStorage["form-data"] =  $('this').serialize();
-                document.location.href = 'another-page.html';
-                }
-                });">
-                    <span class="glyphicon glyphicon-search"></span> Search
-                </button>
-            </div>
-
         </form>
     </div>
 </div>
@@ -343,52 +306,69 @@
 <br />
 
 <!-- Footer -->
-<footer class="page-footer font-small special-color-dark pt-4">
 
-    <!-- Footer Elements -->
-    <div class="container">
+<footer class="footer-distributed">
 
-        <!-- Social buttons -->
-        <ul class="list-unstyled list-inline text-center">
-            <li class="list-inline-item">
-                <a class="btn-floating btn-fb mx-1">
-                    <i class="fab fa-facebook-f"> </i>
-                </a>
-            </li>
-            <li class="list-inline-item">
-                <a class="btn-floating btn-tw mx-1">
-                    <i class="fab fa-twitter"> </i>
-                </a>
-            </li>
-            <li class="list-inline-item">
-                <a class="btn-floating btn-gplus mx-1">
-                    <i class="fab fa-google-plus-g"> </i>
-                </a>
-            </li>
-            <li class="list-inline-item">
-                <a class="btn-floating btn-li mx-1">
-                    <i class="fab fa-linkedin-in"> </i>
-                </a>
-            </li>
-            <li class="list-inline-item">
-                <a class="btn-floating btn-dribbble mx-1">
-                    <i class="fab fa-dribbble"> </i>
-                </a>
-            </li>
-        </ul>
-        <!-- Social buttons -->
+    <div class="footer-left">
+
+        <h3>Classic<span>4you</span></h3>
+
+        <p class="footer-links">
+            <a href="#">Strona główna</a>
+            ·
+            <a href="#">About</a>
+            ·
+            <a href="#">projects</a>
+            ·
+            <a href="#">Faq</a>
+            ·
+            <a href="#">Contact</a>
+        </p>
+
+        <p class="footer-company-name">Classic4you &copy; 2019</p>
+    </div>
+
+    <div class="footer-center">
+        <div id ="footer-center-center" >
+
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>Aleja Słowackiego Juliusza 46</span> Kraków, Polska</p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>+1 555 123456</p>
+            </div>
+
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:support@company.com">support@Classic4you.com</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-right">
+
+        <p class="footer-company-about">
+            <span>About the company</span>
+            Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+        </p>
+
+        <div class="footer-icons">
+
+            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a>
+            <a href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus"></i></a>
+
+        </div>
 
     </div>
-    <!-- Footer Elements -->
-
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2018 Copyright:
-        <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
-    </div>
-    <!-- Copyright -->
 
 </footer>
 <!-- Footer -->
+
 
 
 

@@ -1,18 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <style>
-        .ada{
-            margin-left: auto ;
-            margin-right: auto ;
-            background-color: red;
-            width: 90%;
-            padding: 10px;
-            margin 10px;
-        }
-
-    </style>
-
     <title>Strona glowna</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -56,6 +44,7 @@
 <!--    footer-->
     <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
     <link rel="stylesheet" href="../../../public/css/footer-distributed-with-address-and-phones.css">
 
 
