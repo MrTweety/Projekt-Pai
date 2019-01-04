@@ -23,13 +23,19 @@
 
     <link rel="stylesheet" href="../../../public/css/home_page.css" type="text/css">
     <link rel="stylesheet" href="../../../public/css/login.css" type="text/css">
-
-
+<!---->
+<!--    <style>-->
+<!--        /* Make the image fully responsive */-->
+<!--        .carousel-inner img {-->
+<!--            width: 100%;-->
+<!--            height: 100%;-->
+<!--        }-->
+<!--    </style>-->
 
 </head>
 <body onload="load_login_form()">
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top ">
     <a class="navbar-brand " href="#"><h3>Classic<span>4you.eu</span></h3></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -37,7 +43,7 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto" >
-            <li class="nav-item active" class="active" id="home_page">
+            <li class="nav-item active" id="home_page">
                 <a class="nav-link" href="#" ><i class='fa fa-home'></i> Strona główna <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
@@ -49,52 +55,42 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Contact</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </li>
+
         </ul>
 
         <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Search</button>
-            <a href="#" id="load_login_form " class="btn btn btn-dark my-2 my-sm-0 mr-sm-2"><i class="fa fa-user"></i> Sing up</a>
-            <a href="#" id="load_login_form " class="btn btn btn-dark my-2 my-sm-0 mr-sm-2"><i class="fa fa-sign-in"></i> Login</a>
+<!--            <input class="form-control mr-sm-1" type="search" placeholder="Search" aria-label="Search">-->
+<!--            <button class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Search</button>-->
+            <a href="#" id="load" class="btn btn btn-dark my-2 my-sm-0 mr-sm-2"><i class="fa fa-user"></i> Sing up</a>
+            <a href="#" id="load_login_form" class="btn btn btn-dark my-2 my-sm-0 mr-sm-2"><i class="fa fa-sign-in"></i> Login</a>
         </form>
 
     </div>
 </nav>
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-top: 56px">
+<div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel" style="margin-top: 56px" >
     <ul class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
     </ul>
     <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Los Angeles" width="1100" height="500">
+        <div  class="carousel-item active">
+            <img src="https://placehold.it/1100x400?text=Another Image Maybe" alt="Los Angeles" >
             <div class="carousel-caption">
                 <h3>Los Angeles</h3>
                 <p>We had such a great time in LA!</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Chicago" width="1100" height="500">
+            <img class="d-block w-100" src="https://placehold.it/1100x400?text=Another Image Maybe" alt="Chicago" w>
             <div class="carousel-caption">
                 <h3>Chicago</h3>
                 <p>Thank you, Chicago!</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="New York" width="1100" height="500">
+            <img class="d-block w-100" src="https://placehold.it/1100x400?text=Another Image Maybe" alt="New York" >
             <div class="carousel-caption">
                 <h3>New York</h3>
                 <p>We love the Big Apple!</p>
@@ -468,6 +464,11 @@
 
 <script>
 
+    $('.carousel').carousel({
+        interval: 3000
+    })
+
+
     function load_login_form()
     {
         $("#log_form").load("../user/login.php");
@@ -477,8 +478,11 @@
         $("#load_login_form").on("click", function() {
             document.getElementById('log_form').style.display='block';
             document.getElementById('indicators').style.display='none';
+
         });
     });
+
+
 
 </script>
 
