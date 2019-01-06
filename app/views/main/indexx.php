@@ -44,7 +44,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto" >
             <li class="nav-item active" id="home_page">
-                <a class="nav-link" href="#" ><i class='fa fa-home'></i> Strona główna <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/app/views/main/indexx.php" ><i class='fa fa-home'></i> Strona główna <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">About</a>
@@ -68,7 +68,9 @@
     </div>
 </nav>
 
-<div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel" style="margin-top: 56px" >
+
+<!--<div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel" style="margin-top: 56px" >-->
+<div id="myCarousel" class="carousel slide " data-ride="carousel" style="margin-top: 56px" >
     <ul class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -375,7 +377,8 @@
 
         $.ajax({
             type: "POST",
-            url: 'search_marka.php',
+            url: 'search_select.php',
+            data:{select:"marka"},
 
             success: function(data)
             {
@@ -394,7 +397,8 @@
 
         $.ajax({
             type: "POST",
-            url: 'search_model.php',
+            url: 'search_select.php',
+            data:{select:"model"},
 
             success: function(data)
             {
@@ -415,8 +419,8 @@
 
         $.ajax({
             type: "POST",
-            url: 'search_model.php',
-            data: {marka :$('#marka').val()},
+            url: 'search_select.php',
+            data: {marka :$('#marka').val(), select:"model"},
 
             success: function(data)
             {

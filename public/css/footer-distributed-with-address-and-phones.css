@@ -8,7 +8,7 @@
 	font: bold 16px sans-serif;
 
 	padding: 55px 50px;
-	margin-top: 80px;
+	margin-top: 10px;
 }
 
 .footer-distributed .footer-left,
@@ -153,15 +153,12 @@
 		font: bold 14px sans-serif;
 	}
 
-	#footer-center-center{
-		margin-left: auto ;
-		margin-right: auto ;
-		text-align: left;
-		width: 40%;
-	}
-
-
-
+	/*#footer-center-center{*/
+		/*margin-left: auto ;*/
+		/*margin-right: auto ;*/
+		/*text-align: left;*/
+		/*width: 50%;*/
+	/*}*/
 
 	.footer-distributed .footer-left,
 	.footer-distributed .footer-center,

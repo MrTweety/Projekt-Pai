@@ -4,6 +4,10 @@
     /*border-radius: 0;*/
 /*}*/
 
+body{
+    background-color: rgba(0,0,0,0.3); /* Black w/ opacity */
+}
+
 .navbar h3{
     color:  #ffffff;
     font: normal 36px 'Cookie', cursive;
@@ -62,7 +66,7 @@ button:hover
 
 
 /* Hide the carousel text when the screen is less than 600 pixels wide */
-@media (max-width: 600px) {
+@media (max-width: 880px) {
     .carousel-caption {
         display: none;
     }
@@ -78,8 +82,44 @@ button:hover
     background-position: 70% 76%;
     padding: 20px;
     display: block;
-    margin: 10px 0 10px 0; /* 5% from the top, 15% from the bottom and centered */
+    margin: 0px 0 0 0; /* 5% from the top, 15% from the bottom and centered */
     width: 100%; /* Could be more or less, depending on screen size */
+
+}
+
+.search2 {
+    background-image: url("../img/vintage-cars.jpg");
+    /*color: #bcbcbc !important;*/
+    color: black;
+    font-weight: bold;
+    min-height: 350px;
+    background-position: 70% 76%;
+    padding: 20px;
+    display: block;
+    margin: 0; /* 5% from the top, 15% from the bottom and centered */
+    width: 100%; /* Could be more or less, depending on screen size */
+
+}
+
+
+.search2 label {
+    display: none;
+
+}
+
+
+@media (max-width: 880px) {
+
+    .search2 label {
+        display: none;
+
+    }
+    .search2 {
+        min-height: 320px;
+    }
+}
+
+.cta{
 
 }
 
