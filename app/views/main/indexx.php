@@ -23,7 +23,7 @@
 
     <link rel="stylesheet" href="../../../public/css/home_page.css" type="text/css">
     <link rel="stylesheet" href="../../../public/css/login.css" type="text/css">
-<!---->
+
 <!--    <style>-->
 <!--        /* Make the image fully responsive */-->
 <!--        .carousel-inner img {-->
@@ -69,8 +69,8 @@
 </nav>
 
 
-<!--<div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel" style="margin-top: 56px" >-->
-<div id="myCarousel" class="carousel slide " data-ride="carousel" style="margin-top: 56px" >
+<div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel" style="margin-top: 56px" >
+<!--<div id="myCarousel" class="carousel slide " data-ride="carousel" style="margin-top: 56px" >-->
     <ul class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -78,21 +78,21 @@
     </ul>
     <div class="carousel-inner">
         <div  class="carousel-item active">
-            <img src="https://placehold.it/1100x400?text=Another Image Maybe" alt="Los Angeles" >
+            <img class="d-block w-100" src="../../../public/img/slider1.jpg" alt="Los Angeles" " >
             <div class="carousel-caption">
                 <h3>Los Angeles</h3>
                 <p>We had such a great time in LA!</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="https://placehold.it/1100x400?text=Another Image Maybe" alt="Chicago" w>
+            <img class="d-block w-100" src="../../../public/img/slider2.jpg" alt="Chicago" w>
             <div class="carousel-caption">
                 <h3>Chicago</h3>
                 <p>Thank you, Chicago!</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="https://placehold.it/1100x400?text=Another Image Maybe" alt="New York" >
+            <img class="d-block w-100" src="../../../public/img/slider3.jpg" alt="New York" >
             <div class="carousel-caption">
                 <h3>New York</h3>
                 <p>We love the Big Apple!</p>
@@ -274,7 +274,7 @@
 
 
 
-        <form id ="form_search" class="" method="post" action="search.php">
+        <form id ="form_search" class="" method="GET" action="search.php">
             <div class="form-row text-center">
                 <div class="form-group col-12">
                     <a href="#" class="link-dark"><h4><i class="fa fa-car"></i> Search Options</h4></a>
@@ -434,6 +434,8 @@
         });
 
     });
+
+
 
 
 

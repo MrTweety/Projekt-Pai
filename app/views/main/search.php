@@ -29,7 +29,7 @@
 <body onload="load_login_form()">
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top ">
-    <a class="navbar-brand " href="#"><h3>Classic<span>4you.eu</span></h3></a>
+    <a class="navbar-brand " href="indexx.php"><h3>Classic<span>4you.eu</span></h3></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -79,6 +79,7 @@
         <form class=" cointeiner text-center " method="post">
             <div class="row">
             <div class=" col-sm-12  ">
+
                 <h4><i class="fa fa-car"></i> Search Options</h4>
             </div>
 
@@ -97,31 +98,81 @@
             </div>
 
                         <div class="form-group col-sm-3">
-                            <label for="rok_od">Rok prod. od</label>
-<!--                            <select id="rok_od" class="form-control" name="rok_od">-->
-<!--                            </select>-->
-                            <input type="number" class="form-control" id="rok_od" placeholder="Rok prod. od">
+<!--                            <label for="rok_od">Rok prod. od</label>-->
+                            <select id="rok_od" class="form-control" name="rok_od">
+                            </select>
+<!--                            <input type="number" class="form-control" id="rok_od" placeholder="Rok prod. od">-->
                         </div>
 
                         <div class="form-group col-sm-3">
-                            <label for="rok_do">Rok prod. do</label>
-<!--                            <select id="rok_do" class="form-control" name="rok_do">-->
-<!--                            </select>-->
-                            <input type="number" class="form-control" id="rok_do" placeholder="Rok prod. do">
+<!--                            <label for="rok_do">Rok prod. do</label>-->
+                            <select id="rok_do" class="form-control" name="rok_do">
+                            </select>
+<!--                            <input type="number" class="form-control" id="rok_do" placeholder="Rok prod. do">-->
                         </div>
 
                         <div class="form-group col-sm-3">
                             <label for="cena_od">Cena od</label>
 <!--                            <select id="cena_od" class="form-control" name="cena_od">-->
 <!--                            </select>-->
-                            <input type="number" class="form-control" id="cena_od" placeholder="Cena od">
+<!--                            <input type="number" class="form-control" id="cena_od" placeholder="Cena od">-->
+                            <select id="cena_od" class="form-control" name="cena_od">
+                                <option selected="" value="-1">Cena od</option>
+                                <option value="2000">2,000</option>
+                                <option value="4000">4,000</option>
+                                <option value="6000">6,000</option>
+                                <option value="8000">8,000</option>
+                                <option value="10000">10,000</option>
+                                <option value="15000">15,000</option>
+                                <option value="20000">20,000</option>
+                                <option value="25000">25,000</option>
+                                <option value="30000">30,000</option>
+                                <option value="35000">35,000</option>
+                                <option value="40000">40,000</option>
+                                <option value="45000">45,000</option>
+                                <option value="50000">50,000</option>
+                                <option value="60000">60,000</option>
+                                <option value="70000">70,000</option>
+                                <option value="80000">80,000</option>
+                                <option value="90000">90,000</option>
+                                <option value="100000">100,000</option>
+                                <option value="125000">125,000</option>
+                                <option value="150000">150,000</option>
+                                <option value="175000">175,000</option>
+
+                            </select>
                         </div>
 
                         <div class="form-group col-sm-3">
                             <label for="cena_do">Cena do</label>
 <!--                            <select id="cena_do" class="form-control" name="cena_do">-->
 <!--                            </select>-->
-                            <input type="number" class="form-control" id="cena_do" placeholder="Cena do">
+<!--                            <input type="number" class="form-control" id="cena_do" placeholder="Cena do">-->
+                            <select id="cena_do" class="form-control" name="cena_od">
+                                <option selected="" value="-1">Cena od</option>
+                                <option value="2000">2,000</option>
+                                <option value="4000">4,000</option>
+                                <option value="6000">6,000</option>
+                                <option value="8000">8,000</option>
+                                <option value="10000">10,000</option>
+                                <option value="15000">15,000</option>
+                                <option value="20000">20,000</option>
+                                <option value="25000">25,000</option>
+                                <option value="30000">30,000</option>
+                                <option value="35000">35,000</option>
+                                <option value="40000">40,000</option>
+                                <option value="45000">45,000</option>
+                                <option value="50000">50,000</option>
+                                <option value="60000">60,000</option>
+                                <option value="70000">70,000</option>
+                                <option value="80000">80,000</option>
+                                <option value="90000">90,000</option>
+                                <option value="100000">100,000</option>
+                                <option value="125000">125,000</option>
+                                <option value="150000">150,000</option>
+                                <option value="175000">175,000</option>
+                                <option value="1000000">1000000</option>
+                            </select>
                         </div>
 
                 <div class="form-group col-sm-3">
@@ -140,16 +191,18 @@
 
             <div class="form-group col-sm-3">
                 <label for="przebieg_od">Przebieg od</label>
-<!--                <select id="przebieg_od" class="form-control" name="przebieg_od">-->
-<!--                </select>-->
-                <input type="number" class="form-control" id="przebieg_od" placeholder="Przebieg od">
+                <select id="przebieg_od" class="form-control" name="przebieg_od">
+
+                </select>
+<!--                <input type="number" class="form-control" id="przebieg_od" placeholder="Przebieg od">-->
             </div>
 
             <div class="form-group col-sm-3">
                 <label for="przebieg_do">Przebieg do</label>
-<!--                <select id="przebieg_do" class="form-control" name="przebieg_do">-->
-<!--                </select>-->
-                <input type="number" class="form-control" id="przebieg_do" placeholder="Przebieg do">
+                <select id="przebieg_do" class="form-control" name="przebieg_do">
+
+                </select>
+<!--                <input type="number" class="form-control" id="przebieg_do" placeholder="Przebieg do">-->
             </div>
 
 
@@ -170,8 +223,6 @@
 
 
 <br />
-
-
 
 <!--<div id="tabelka">-->
 <!--    <table id="example" class="display" style="width:100%">-->
@@ -278,21 +329,37 @@
 </section>
 
 
+
 <script>
 
+    var mar    = <?php if(isset( $_GET['marka'])) echo $_GET['marka']; else echo -1;  ?>;
+    var mod    = <?php if(isset( $_GET['model'])) echo $_GET['model']; else echo -1; ?> ;
+    var cenaOd = <?php if(isset( $_GET['cenaOd'])) echo $_GET['cenaOd']; else echo -1; ?> ;
+    var cenaDo = <?php if(isset( $_GET['cenaDo'])) echo $_GET['cenaDo']; else echo -1; ?> ;
+    var rokOd = <?php if(isset( $_GET['rokOd'])) echo $_GET['rokOd']; else echo -1; ?> ;
+    var rokDo = <?php if(isset( $_GET['rokDo'])) echo $_GET['rokDo']; else echo -1; ?> ;
+    var przebiegOd = <?php if(isset( $_GET['przebiegOd'])) echo $_GET['przebiegOd']; else echo -1; ?> ;
+    var przebiegDo = <?php if(isset( $_GET['przebiegDo'])) echo $_GET['przebiegDo']; else echo -1; ?> ;
+    var kolor =  <?php if(isset( $_GET['kolor'])) echo '"'.$_GET['kolor'].'"'; else echo -1; ?>;
+    var kraj   = <?php if(isset($_GET['kraj'])) echo $_GET['kraj']; else echo -1  ?>;
+    // kolor ="niebieski";
 
-    var mar = <?php if(isset( $_POST['marka'])) echo $_POST['marka']; else echo -1  ?>;
-    var mod = <?php if(isset( $_POST['model'])) echo $_POST['model']; else echo -1  ?>;
+    console.log(kolor);
+    console.log(mod);
 
     $(document).ready(function() {
 
         $.ajax({
-            type: "POST",
+            type: "get",
             url: 'search_easy.php',
-            data: {marka :mar , model: mod},
+
+            data: {marka :mar , model: mod, cenaOd: cenaOd, cenaDo: cenaDo, rokOd: rokOd, rokDo: rokDo, przebiegOd: przebiegOd, przebiegDo: przebiegDo, kolor: kolor, kraj: kraj},
+
 
             success: function(data)
             {
+                //alert(window.location.pathname );
+
                 build.buildListing(
                     jQuery.parseJSON(data),
                     $('#listing'),
@@ -307,13 +374,17 @@
     $('#button_search').click(function() {
 
         $.ajax({
-            type: "POST",
+            type: "get",
             url: 'search_easy.php',
              data: {marka :$('#marka').val() , model: $('#model').val(), cenaOd: $('#cena_od').val(), cenaDo: $('#cena_do').val(), rokOd: $('#rok_od').val(), rokDo: $('#rok_do').val(), przebiegOd: $('#przebieg_od').val(), przebiegDo: $('#przebieg_do').val(), kolor: $('#kolor').val(), kraj: $('#kraj').val()},
             // data: {marka : 1 , model: -1},
 
+
                 success: function(data)
                 {
+
+                   // window.location.replace(window.location.pathname+this.url.substring(15));
+                    history.pushState({}, "search", window.location.pathname+this.url.substring(15));
                     build.buildListing(
                         jQuery.parseJSON(data),
                         $('#listing'),
@@ -365,7 +436,7 @@
                             '                                                    <a href="#"><i class="fa fa-map-marker"></i><small> '+ v.kraj+' '+v.data_zlozenia +'</small> </a>'+
                             '                                                </div>'+
                             '                                                <div class="list-descrip">'+
-                            '                                                    <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis magna ut sapien mollis aliquam. Curabitur egestas a lorem eu placerat. Cras in consequat metus, nec tristique nisl. <br /><br />'+
+                            '                                                    <small>'+v.opis.substring(0,137)+'...<br /><br />'+
                               v.cechy +
                             '                                                </div>'+
                             '</small>'+
@@ -500,7 +571,7 @@
                     jQuery.parseJSON(data),
                     $('#marka'),
                     'Marka Pojazdu',
-                    <?php if(isset( $_POST['marka'])) echo $_POST['marka']; else echo -1  ?>
+                    <?php if(isset( $_GET['marka'])) echo $_GET['marka']; else echo -1;  ?>
                 );
             }
         });
@@ -522,13 +593,16 @@
                     jQuery.parseJSON(data),
                     $('#model'),
                     'Model Pojazdu',
-                    <?php if(isset( $_POST['model'])) echo $_POST['model']; else echo -1  ?>
+                    <?php if(isset( $_GET['model'])) echo $_GET['model']; else echo -1  ?>
 
                 );
             }
         });
 
     });
+
+
+
 
 
         $('#kolor').ready(function() {
@@ -543,7 +617,8 @@
                 helpers.buildDropdown(
                     jQuery.parseJSON(data),
                     $('#kolor'),
-                    'Kolor Pojazdu'
+                    'Kolor Pojazdu',
+                 <?php if(isset( $_GET['kolor'])) echo '"'.$_GET['kolor'].'"'; else echo -1; ?>
 
 
                 );
@@ -565,13 +640,16 @@
                 helpers.buildDropdown(
                     jQuery.parseJSON(data),
                     $('#kraj'),
-                    'Kraj pochodzenia'
+                    'Kraj pochodzenia',
+                    <?php if(isset($_GET['kraj'])) echo $_GET['kraj']; else echo -1  ?>
 
                 );
             }
         });
 
     });
+
+
 
 
 
@@ -604,14 +682,11 @@
         {
             buildDropdown: function(result, dropdown, emptyMessage, def = -1)
             {
-                // Remove current options
+
                 dropdown.html('');
-                // Add the empty option with the empty message
                 dropdown.append('<option value="-1">' + emptyMessage + '</option>');
-                // Check result isnt empty
                 if(result != '' )
                 {
-                    // Loop through each of the results and append the option to the dropdown
                     $.each(result, function(k, v) {
                         if (v.id_tab!= def)
                             dropdown.append('<option value="' + v.id_tab + '">' + v.name_tab + '</option>');
@@ -625,6 +700,145 @@
 
 
 
+
+    $(document).ready(function() {
+
+        $.ajax({
+            type: "POST",
+            url: 'search_select.php',
+            data:{select:"rok"},
+
+
+            success: function(data)
+            {
+                helpers2.buildDropdown(
+                    jQuery.parseJSON(data),
+                    $('#rok_od'),
+                    $('#rok_do'),
+                    'Rok od',
+                    'Rok do',
+                    <?php if(isset( $_GET['rokOd'])) echo $_GET['rokOd']; else echo -1; ?>,
+                    <?php if(isset( $_GET['rokDo'])) echo $_GET['rokDo']; else echo -1; ?>
+                );
+            }
+        });
+
+    });
+
+
+
+
+
+    $(document).ready(function() {
+
+        $.ajax({
+            type: "POST",
+            url: 'search_select.php',
+            data:{select:"przebieg"},
+
+
+            success: function(data)
+            {
+                helpers2.buildDropdown(
+                    jQuery.parseJSON(data),
+                    $('#przebieg_od'),
+                    $('#przebieg_do'),
+                    'Przebieg od',
+                    'Przebieg do',
+                    <?php if(isset( $_GET['przebiegOd'])) echo $_GET['przebiegOd']; else echo -1; ?>,
+                    <?php if(isset( $_GET['przebiegDo'])) echo $_GET['przebiegDo']; else echo -1; ?>,
+                    "100000",
+                    "100000"
+                );
+            }
+        });
+
+    });
+
+
+    $(document).ready(function() {
+
+        $.ajax({
+            type: "POST",
+            url: 'search_select.php',
+            data:{select:"cena"},
+
+
+            success: function(data)
+            {
+                helpers2.buildDropdown(
+                    jQuery.parseJSON(data),
+                    $('#cena_od'),
+                    $('#cena_do'),
+                    'Cena od',
+                    'Cena do',
+                    <?php if(isset( $_GET['cenaOd'])) echo $_GET['cenaOd']; else echo -1; ?>,
+                    <?php if(isset( $_GET['cenaDo'])) echo $_GET['cenaDo']; else echo -1; ?>,
+                    "100000",
+                    "100000"
+                );
+            }
+        });
+
+    });
+
+
+
+    var helpers2 =
+        {
+            buildDropdown: function(result, dropdown,dropdown2, emptyMessage,emptyMessage2, def = -1, def2 = -1,inter = 1,start = 0)
+    {
+
+                dropdown.html('');
+                dropdown2.html('');
+                dropdown.append('<option value="-1">' + emptyMessage + '</option>');
+                dropdown2.append('<option value="-1">' + emptyMessage2 + '</option>');
+                if(result != '' )
+                {
+
+
+
+                    inter= parseInt(inter);
+                    $.each(result, function(k, v) {
+                        var Maxx = parseInt(v.id_tab);
+                        var Minn = parseInt(v.name_tab);
+
+
+                        // console.log(inter);
+                        // console.log(Maxx);
+                        // console.log(Minn);
+
+
+                        if(parseInt(start)){
+                            start=parseInt(start);
+                            if(Minn>start){
+                                Minn = start;
+                            }else Minn = 0;
+
+                        }
+
+
+                        // console.log(start);
+
+                        while(Minn <= (Maxx+inter) ) {
+
+                            if (Minn != def)
+                                dropdown.append('<option value="' + Minn + '">' + Minn + '</option>');
+                            else
+                                dropdown.append('<option selected="selected" value="' + Minn + '">' + Minn + '</option>');
+
+                            if (Minn != def2)
+                                dropdown2.append('<option value="' + Minn + '">' + Minn + '</option>');
+                            else
+                                dropdown2.append('<option selected="selected" value="' + Minn + '">' + Minn + '</option>');
+
+                            Minn+=inter;
+                        }
+
+                    });
+                }
+            }
+        }
 
 
 
@@ -651,8 +865,6 @@
 
 
 </script>
-
-
 
 </body>
 </html>

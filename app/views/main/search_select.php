@@ -62,17 +62,11 @@ if(isset($_POST["select"])){
         $cecha = $_POST["cecha"];
 
         $sql = "SELECT DISTINCT\n"
-
             . "    Cechy_somochod.wartosc\n"
-
             . "FROM\n"
-
             . "    Cechy_somochod,\n"
-
             . "    Cechy\n"
-
             . "WHERE\n"
-
             . "    cechy.id_cechy = cechy_somochod.id_cechy AND Cechy.nazwa_cechy = \"". $cecha ." \" ORDER BY Cechy_somochod.wartosc";
 
 
@@ -114,6 +108,64 @@ if(isset($_POST["select"])){
             }
         }
     }
+    elseif($_POST["select"] == "rok"){
+        $sql = "SELECT\n"
+            . "MAX(cechy_somochod.wartosc)as MaxR, MIN(cechy_somochod.wartosc) as MinR\n"
+            . "FROM\n"
+            . "cechy_somochod\n"
+            . "INNER JOIN cechy ON cechy_somochod.id_cechy = cechy.id_cechy\n"
+            . "WHERE\n"
+            . "cechy.id_cechy = 2";
+
+        $result = $link->query($sql);
+        $typ =[];
+
+        if (mysqli_num_rows($result) > 0) {
+            // output data of each row
+            $row = mysqli_fetch_assoc($result);
+            $typ[0]['id_tab'] = $row['MaxR'];
+            $typ[0]['name_tab'] = $row['MinR'];
+        }
+    }
+    elseif($_POST["select"] == "przebieg"){
+        $sql = "SELECT\n"
+            . "MAX(cechy_somochod.wartosc)as MaxP, MIN(cechy_somochod.wartosc) as MinP\n"
+            . "FROM\n"
+            . "cechy_somochod\n"
+            . "INNER JOIN cechy ON cechy_somochod.id_cechy = cechy.id_cechy\n"
+            . "WHERE\n"
+            . "cechy.id_cechy = 8";
+
+        $result = $link->query($sql);
+        $typ =[];
+
+        if (mysqli_num_rows($result) > 0) {
+            // output data of each row
+            $row = mysqli_fetch_assoc($result);
+            $typ[0]['id_tab'] = $row['MaxP'];
+            $typ[0]['name_tab'] = $row['MinP'];
+        }
+    }
+
+    elseif($_POST["select"] == "cena"){
+
+        $sql = "SELECT\n"
+            . "MIN(cena_netto)MinC, MAX(cena_netto) as MaxC\n"
+            . "FROM\n"
+            . "oferta";
+
+        $result = $link->query($sql);
+        $typ =[];
+
+        if (mysqli_num_rows($result) > 0) {
+            // output data of each row
+            $row = mysqli_fetch_assoc($result);
+            $typ[0]['id_tab'] = $row['MaxC'];
+            $typ[0]['name_tab'] = $row['MinC'];
+        }
+    }
+
+
 
 
 
