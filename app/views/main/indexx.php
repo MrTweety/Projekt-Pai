@@ -21,19 +21,30 @@
     <link rel="stylesheet" href="../../../public/css/footer-distributed-with-address-and-phones.css">
     <!--    footer-->
 
+    <!--    gallery-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" />
+    <link rel="stylesheet" href="../../../public/css/compact-gallery.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <!--    gallery-->
+
     <link rel="stylesheet" href="../../../public/css/home_page.css" type="text/css">
     <link rel="stylesheet" href="../../../public/css/login.css" type="text/css">
+    <script src="../../../public/js/my_js.js"></script>
 
-<!--    <style>-->
-<!--        /* Make the image fully responsive */-->
-<!--        .carousel-inner img {-->
-<!--            width: 100%;-->
-<!--            height: 100%;-->
-<!--        }-->
-<!--    </style>-->
+
+
+
+
+    <style>
+        /* Make the image fully responsive */
+        .carousel-inner img {
+            width: 100%;
+            max-height: 500px;
+        }
+    </style>
 
 </head>
-<body onload="load_login_form()">
+<body onload="load_login_form()" style="background-color: white !important;m">
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top ">
     <a class="navbar-brand " href="#"><h3>Classic<span>4you.eu</span></h3></a>
@@ -71,33 +82,39 @@
 
 <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel" style="margin-top: 56px" >
 <!--<div id="myCarousel" class="carousel slide " data-ride="carousel" style="margin-top: 56px" >-->
-    <ul class="carousel-indicators">
+    <ul class="carousel-indicators" id="indexToSlider">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
     </ul>
-    <div class="carousel-inner">
-        <div  class="carousel-item active">
-            <img class="d-block w-100" src="../../../public/img/slider1.jpg" alt="Los Angeles" " >
-            <div class="carousel-caption">
-                <h3>Los Angeles</h3>
-                <p>We had such a great time in LA!</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img class="d-block w-100" src="../../../public/img/slider2.jpg" alt="Chicago" w>
-            <div class="carousel-caption">
-                <h3>Chicago</h3>
-                <p>Thank you, Chicago!</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img class="d-block w-100" src="../../../public/img/slider3.jpg" alt="New York" >
-            <div class="carousel-caption">
-                <h3>New York</h3>
-                <p>We love the Big Apple!</p>
-            </div>
-        </div>
+
+    <div class="carousel-inner" id="indexCarousel" >
+
+<!--        <div  class="carousel-item active " >-->
+<!--            <a href="search.php">-->
+<!--            <img class="d-block " src="../../../public/img/slider/slider1.jpg" alt="Los Angeles" " >-->
+<!--              <img class="d-block " src="https://dummyimage.com/1500/600/4f4f4f.jpg" alt="Los Angeles" " >-->
+<!--            <div class="carousel-caption">-->
+<!--                <h3>Los Angeles</h3>-->
+<!--                <p>We had such a great time in LA!</p>-->
+<!--            </div>-->
+<!--            </a>-->
+<!--        </div>-->
+<!--        <div class="carousel-item">-->
+<!--            <img class="d-block " src="../../../public/img/slider/slider2.jpg" alt="Chicago" w>-->
+<!--            <div class="carousel-caption">-->
+<!--                <h3>Chicago</h3>-->
+<!--                <p>Thank you, Chicago!</p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="carousel-item">-->
+<!--            <img class="d-block " src="../../../public/img/slider/slider3.jpg" alt="New York" >-->
+<!--            <div class="carousel-caption">-->
+<!--                <h3>New York</h3>-->
+<!--                <p>We love the Big Apple!</p>-->
+<!--            </div>-->
+<!--        </div>-->
+
     </div>
     <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
         <span class="carousel-control-prev-icon"></span>
@@ -113,165 +130,31 @@
 
 <div class="bestCar ">
 
-    <h3>What We Do</h3><br>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6 col-md-5 offset-1">
-                 <figure>
-                     <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                     <figcaption><p>Tekst</p></figcaption>
-                 </figure>
+    <section class="gallery-block compact-gallery">
+        <div class="container">
+            <div class="heading">
+                <h2>Proponowane Oferty:</h2>
             </div>
 
-                <div class="col-sm-6 col-md-5">
 
-                    <figure>
-                        <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                        <figcaption><p>Tekst</p></figcaption>
-                    </figure>
-
-                </div>
-
-                <div class="col-sm-6 col-md-4">
-
-                    <figure>
-                        <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                        <figcaption><p>Tekst</p></figcaption>
-                    </figure>
-
-                </div>
-
-                <div class="col-sm-6 col-md-4">
-
-                    <figure>
-                        <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                        <figcaption><p>Tekst</p></figcaption>
-                    </figure>
-
-                </div>
-
-
-                <div class="col-sm-6 col-md-4">
-
-                    <figure>
-                        <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                        <figcaption><p>Tekst</p></figcaption>
-                    </figure>
-
-                </div>
-
-                <div class="col-sm-6 col-md-4">
-
-                    <figure>
-                        <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                        <figcaption><p>Tekst</p></figcaption>
-                    </figure>
-
-                </div>
-
-                <div class="col-sm-6 col-md-4">
-
-                    <figure>
-                        <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                        <figcaption><p>Tekst</p></figcaption>
-                    </figure>
-
-                </div>
-
-                <div class="col-sm-6 col-md-4">
-
-                    <figure>
-                        <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                        <figcaption><p>Tekst</p></figcaption>
-                    </figure>
-
-                </div>
-
-                <div class="col-sm-6 col-md-3">
-
-                    <figure>
-                        <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                        <figcaption><p>Tekst</p></figcaption>
-                    </figure>
-
-                </div>
-
-                <div class="col-sm-6 col-md-3">
-
-                    <figure>
-                        <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                        <figcaption><p>Tekst</p></figcaption>
-                    </figure>
-
-                </div>
-
-                <div class="col-sm-6 col-md-3">
-
-                    <figure>
-                        <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                        <figcaption><p>Tekst</p></figcaption>
-                    </figure>
-
-                </div>
-
-                <div class="col-sm-6 col-md-3">
-
-                    <figure>
-                        <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                        <figcaption><p>Tekst</p></figcaption>
-                    </figure>
-
-                </div>
-
-                <div class="col-sm-6 col-md-3">
-
-                    <figure>
-                        <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                        <figcaption><p>Tekst</p></figcaption>
-                    </figure>
-
-                </div>
-
-                <div class="col-sm-6 col-md-3">
-
-                    <figure>
-                        <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                        <figcaption><p>Tekst</p></figcaption>
-                    </figure>
-
-                </div>
-
-                <div class="col-sm-6 col-md-3">
-
-                    <figure>
-                        <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                        <figcaption><p>Tekst</p></figcaption>
-                    </figure>
-
-                </div>
-
-                <div class="col-sm-6 col-md-3">
-
-                    <figure>
-                        <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                        <figcaption><p>Tekst</p></figcaption>
-                    </figure>
-
-                </div>
+            <div class="row no-gutters" id="indexOffer">
 
             </div>
+
         </div>
+    </section>
+
+
+
+
 </div>
 
 <br />
 
 
 
-<div class = "search" >
+<div class = "search bg-white" >
     <div class="container">
-
-
 
 
         <form id ="form_search" class="" method="GET" action="search.php">
@@ -372,6 +255,47 @@
 
 <script>
 
+    $(document).ready(function() {
+
+        $.ajax({
+            type: "get",
+            url: 'search_easy.php',
+            data:{page:"index"},
+
+            success: function(data)
+            {
+                //alert(window.location.pathname );
+
+                build.buildIndexOffer(
+                    jQuery.parseJSON(data),
+                    $('#indexOffer'),
+
+                );
+            }
+        });
+
+    });
+
+    $(document).ready(function() {
+
+        $.ajax({
+            type: "POST",
+            url: 'slider.php',
+
+            success: function(data)
+            {
+                //alert(window.location.pathname );
+
+                build.buildIndexSlider(
+                    jQuery.parseJSON(data),
+                    $('#indexCarousel'),
+
+                );
+            }
+        });
+
+    });
+
 
     $('#marka').ready(function() {
 
@@ -430,40 +354,11 @@
                     'Model Pojazdu'
 
                 );
-            }
+            },
+            complete: function() {}
         });
 
     });
-
-
-
-
-
-
-
-    var helpers =
-        {
-            buildDropdown: function(result, dropdown, emptyMessage)
-            {
-                // Remove current options
-                dropdown.html('');
-                // Add the empty option with the empty message
-                dropdown.append('<option value="-1">' + emptyMessage + '</option>');
-                // Check result isnt empty
-                if(result != '')
-                {
-                    // Loop through each of the results and append the option to the dropdown
-                    $.each(result, function(k, v) {
-                        dropdown.append('<option value="' + v.id_tab + '">' + v.name_tab + '</option>');
-                    });
-                }
-            }
-        }
-
-
-
-
-
 
 </script>
 
@@ -489,10 +384,11 @@
     });
 
 
+    $( document ).ajaxComplete(function() {
+        baguetteBox.run('.compact-gallery', { animation: 'slideIn'});
+    });
 
 </script>
-
-
 
 
 

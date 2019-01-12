@@ -4,7 +4,7 @@ $host = "localhost";
 $db_user = "root";
 $db_password = "";
 $db_name = "mgaczorek";
-$where = 0;
+
 
 
 if(isset($_POST["select"])){
@@ -35,7 +35,7 @@ if(isset($_POST["select"])){
 
 
         if (isset($_POST["marka"]) && $_POST["marka"]!= -1) {
-            $marka = $_POST["marka"];
+            $marka = mysqli_real_escape_string($link, $_POST["marka"]);
             $sql = "select id_model, model_nazwa from model where id_marka = '$marka'";
         }else{
             $sql = 'select id_model, model_nazwa from model';
@@ -59,7 +59,7 @@ if(isset($_POST["select"])){
 
     }elseif ($_POST["select"] == "kolor"){
 
-        $cecha = $_POST["cecha"];
+        $cecha  = mysqli_real_escape_string($link, $_POST["select"]);
 
         $sql = "SELECT DISTINCT\n"
             . "    Cechy_somochod.wartosc\n"
