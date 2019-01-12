@@ -110,7 +110,7 @@ var build =
                         '                                            <div class="col-md-6  card-body">'+
                         '                                                <div class="list-title">'+
                         '                                                    <ul class="list-inline list-unstyled">'+
-                        '                                                        <li class="list-inline-item"><a href="#"><h4>'+ v.marka+' '+v.model +'</h4></a></li>'+
+                        '                                                        <li class="list-inline-item"><a href="offer.php?oferta='+v.id_oferta+'"><h4>'+ v.marka+' '+v.model +'</h4></a></li>'+
                         // '                                                        <li class="list-inline-item text-warning"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half"></i></li>'+
                         // '                                                        <li class="list-inline-item text-success"><i class="fa fa-thumbs-up"></i></li>'+
                         '                                                    </ul>'+
