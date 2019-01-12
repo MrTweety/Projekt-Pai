@@ -1,57 +1,65 @@
-/* Remove the navbar's default margin-bottom and rounded borders */ 
-.navbar {
-    margin-bottom: 0;
-    border-radius: 0;
-  }
-  
-  /* Add a gray background color and some padding to the footer */
-footer {
-    background-color: rgb(168, 164, 164);
-    padding: 20px;
-    margin: 10px 0 10px 0;
-  }
-  
+/* Remove the navbar's default margin-bottom and rounded borders */
+/*.navbar {*/
+    /*margin-bottom: 0;*/
+    /*border-radius: 0;*/
+/*}*/
+
+body{
+    background-color: rgba(0,0,0,0.2); /* Black w/ opacity */
+}
+
+.navbar h3{
+    color:  #ffffff;
+    font: normal 36px 'Cookie', cursive;
+    margin: 0;
+}
+
+.navbar h3 span{
+    color:  #5383d3;
+}
+
 .carousel-inner img {
     width: 100%; /* Set width to 100% */
     margin: auto;
     min-height:200px;
 }
 
-button:hover 
+button:hover
 {
     opacity: 0.8;
 }
 
-.bestCar
-{
-    text-align: center;
-    color: red;
+/*.bestCar*/
+/*{*/
+    /*text-align: center;*/
+    /*color: red;*/
+    /*margin-top: 20px;*/
 
-}
+/*}*/
 
-.bestCar img
-{
-    width: 100%;
-    height: auto;
-}
+/*.bestCar img*/
+/*{*/
+    /*width: 100%;*/
+    /*height: auto;*/
+/*}*/
 
-.bestCar p
-{
-    margin-bottom: 20px;
-}
+/*.bestCar p*/
+/*{*/
+    /*margin-bottom: 20px;*/
+/*}*/
 
-.bestCar figcaption
-{
-    margin-top: 8px;
-}
+/*.bestCar figcaption*/
+/*{*/
+    /*margin-top: 8px;*/
+/*}*/
 
 
 
 /* Hide the carousel text when the screen is less than 600 pixels wide */
-@media (max-width: 600px) {
-  .carousel-caption {
-    display: none; 
-  }
+@media (max-width: 880px) {
+    .carousel-caption {
+        display: none;
+    }
 }
 
 
@@ -60,12 +68,52 @@ button:hover
 
 .search {
     background-image: url("../img/vintage-cars.jpg");
+    /*background-image: url("../img/slider22.jpg");*/
     min-height: 320px;
     background-position: 70% 76%;
     padding: 20px;
+    font-weight: bold;
     display: block;
-    margin: 10px 0 10px 0; /* 5% from the top, 15% from the bottom and centered */
+    margin: 0 ;
     width: 100%; /* Could be more or less, depending on screen size */
+    box-shadow: 3px 1px 3px 1px rgba(0, 0, 0, 0.12);
+
+}
+
+.search2 {
+    background-image: url("../img/vintage-cars.jpg");
+    /*background-image: url("../img/slider22.jpg");*/
+    /*color: #bcbcbc !important;*/
+    /*color: #008cba;*/
+    font-weight: bold;
+    min-height: 350px;
+    background-position: 70% 76%;
+    padding: 20px;
+    display: block;
+    margin: 0; /* 5% from the top, 15% from the bottom and centered */
+    width: 100%; /* Could be more or less, depending on screen size */
+
+}
+
+
+.search2 label {
+    display: none;
+
+}
+
+
+@media (max-width: 880px) {
+
+    .search2 label {
+        display: none;
+
+    }
+    .search2 {
+        min-height: 320px;
+    }
+}
+
+.cta{
 
 }
 
@@ -84,27 +132,13 @@ button:hover
 /* mouse over link */
 .link-dark:hover {
     color: cornflowerblue;
+    text-decoration: none;
 }
 
 
 /*search.php*/
 
-.listing_box{
-    padding: 10px;
-    margin: 10px;
-    border: 1px solid lightgrey;
 
-}
-
-.border-left{
-    border-left: 1px solid lightgrey;
-    height:100% ; !important;
-}
-
-.card-body{
-
-
-}
 
 
 h1 {font-size:12px;}
@@ -115,3 +149,49 @@ h5{font-size:12px;}
 h6{font-size:12px;}
 p{font-size:14px;}
 img {width:100%;}
+
+
+
+
+#return-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.7);
+    width: 50px;
+    height: 50px;
+    /*display: block;*/
+    text-decoration: none;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    /*-ms-transition: all 0.3s ease;*/
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top i {
+    color: #fff;
+    margin: 0;
+    position: relative;
+    left: 16px;
+    top: 13px;
+    font-size: 19px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+#return-to-top:hover i {
+    color: #fff;
+    top: 5px;
+}
+
+
