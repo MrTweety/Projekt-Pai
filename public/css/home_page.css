@@ -1,8 +1,7 @@
 /* Remove the navbar's default margin-bottom and rounded borders */
-/*.navbar {*/
-    /*margin-bottom: 0;*/
-    /*border-radius: 0;*/
-/*}*/
+.navbar {
+    z-index: 100;
+}
 
 body{
     background-color: rgba(0,0,0,0.2); /* Black w/ opacity */
@@ -12,6 +11,7 @@ body{
     color:  #ffffff;
     font: normal 36px 'Cookie', cursive;
     margin: 0;
+
 }
 
 .navbar h3 span{
