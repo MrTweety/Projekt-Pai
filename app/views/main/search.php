@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <title>Strona glowna</title>
+    <title>Classic4you</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -20,6 +20,13 @@
     <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="../../../public/css/footer-distributed-with-address-and-phones.css">
     <!--    footer-->
+
+
+    <!--    gallery-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" />
+    <link rel="stylesheet" href="../../../public/css/compact-gallery.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <!--    gallery-->
 
     <link rel="stylesheet" href="../../../public/css/home_page.css" type="text/css">
     <link rel="stylesheet" href="../../../public/css/login.css" type="text/css">
@@ -485,6 +492,8 @@
 <script>
 
 
+
+
     $('#marka').ready(function() {
         $.ajax({
             type: "POST",
@@ -600,6 +609,32 @@
     });
 
 
+
+
+
+    // var helpers =
+    //     {
+    //         buildDropdown: function(result, dropdown, emptyMessage, def = -1)
+    //         {
+    //
+    //             dropdown.html('');
+    //             dropdown.append('<option value="-1">' + emptyMessage + '</option>');
+    //             if(result != '' )
+    //             {
+    //                 $.each(result, function(k, v) {
+    //                     if (v.id_tab!= def)
+    //                         dropdown.append('<option value="' + v.id_tab + '">' + v.name_tab + '</option>');
+    //                     else
+    //                         dropdown.append('<option selected="selected" value="' + v.id_tab + '">' + v.name_tab + '</option>');
+    //
+    //                 });
+    //             }
+    //         }
+    //     }
+
+
+
+
     $(document).ready(function() {
 
         $.ajax({
@@ -623,6 +658,9 @@
         });
 
     });
+
+
+
 
 
     $(document).ready(function() {
@@ -677,6 +715,13 @@
         });
 
     });
+
+
+
+
+
+
+
 
 </script>
 

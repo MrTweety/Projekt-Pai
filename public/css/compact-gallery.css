@@ -1,10 +1,10 @@
 .gallery-block{
-    padding-bottom: 60px;
+    padding-bottom: 10px;
     padding-top: 60px;
 }
 
 .gallery-block .heading{
-    margin-bottom: 50px;
+    /*margin-bottom: 50px;*/
     text-align: center;
 }
 

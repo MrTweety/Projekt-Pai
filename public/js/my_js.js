@@ -191,13 +191,67 @@ var build =
 
                 });
             }
+        },
 
-            listing.append('<div class="row mb-3">'+
-                '                        <div class="col-md-12">'+
-                '                            <small>'+ count +' properties found in Classic4you.  </small><br /><br />'+
-                '                        </div>'+
-                '                    </div>');
+
+        buildIndexSlider: function(result, listing )
+        {
+            // Remove current options
+            listing.html('');
+            var count = 0;
+            // Check result isnt empty
+            if(result != '')
+            {
+                // Loop through each of the results and append the option to the dropdown
+                $.each(result, function(k, v) {
+                    //listing.append('<div class="ada"><img src="../../../public/img/'+v.imga +'.jpg"/></div>');
+                    ++count;
+                    if(count<=1)
+                    listing.append(
+                        '        <div  class="carousel-item  active" >'+
+                        '            <a href="'+v.goToHref+'">'+
+                         '            <img class="d-block " src="../../../'+v.imga+'" alt="Los Angeles"  >'+
+                        '            <div class="carousel-caption">'+
+                        '                <h3>'+v.tytul+'</h3>'+
+                        '                <p>'+v.opis+'</p>'+
+                        '            </div>'+
+                        '            </a>'+
+                        '        </div>'
+
+
+
+
+                ); else listing.append(
+                        '        <div  class="carousel-item " >'+
+                        '            <a href="'+v.goToHref+'">'+
+                        '            <img class="d-block " src="../../../'+v.imga+'" alt="Los Angeles"  >'+
+                        '            <div class="carousel-caption">'+
+                        '                <h3>'+v.tytul+'</h3>'+
+                        '                <p>'+v.opis+'</p>'+
+                        '            </div>'+
+                        '            </a>'+
+                        '        </div>')
+
+
+
+
+                });
+
+                var toSlider = $('#indexToSlider');
+                toSlider.html('');
+                for (i = 0; i < count ; i++) {
+                    if(i==0) {
+                        toSlider.append('<li data-target="#myCarousel" data-slide-to="'+i+'" class="active"></li>');
+                    } else{
+                        toSlider.append('<li data-target="#myCarousel" data-slide-to="'+i+'"></li>');
+                    }
+                }
+
+
+
+            }
         }
+
 
 
 
