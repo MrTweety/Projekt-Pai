@@ -79,7 +79,7 @@
   <div class="col-lg-9">
 
     <div class="card mt-4">
-      <!-- <img class="card-img-top img-fluid" src="http://placehold.it/900x400" alt=""> -->
+      <!-- <img class="card-img-top img-fluid" id ="zdjecie" src="http://placehold.it/900x400" alt=""> -->
 
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -89,13 +89,13 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                <img class="d-block w-100" src="http://placehold.it/900x400" alt="First slide">
+                <img class="d-block w-100 zdjecie" src="http://placehold.it/900x400" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                <img class="d-block w-100" src="http://placehold.it/900x400" alt="Second slide">
+                <img class="d-block w-100 zdjecie" src="http://placehold.it/900x400" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                <img class="d-block w-100" src="http://placehold.it/900x400" alt="Third slide">
+                <img class="d-block w-100 zdjecie" src="http://placehold.it/900x400" alt="Third slide">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -110,22 +110,25 @@
 
 
       <div class="card-body">
-        <h3 class="card-title" id="nazwa_samochodu">Product Name</h3>
-        <h4>$24.99</h4>
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente dicta fugit fugiat hic aliquam itaque facere, soluta. Totam id dolores, sint aperiam sequi pariatur praesentium animi perspiciatis molestias iure, ducimus!</p>
-        <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-        4.0 stars
+        <div class="d-flex justify-content-between">
+            <h3 class="card-title" id="nazwa_samochodu">Nazwa Samochodu</h3>
+            <h4 id="cena">cena</h4>
+        </div>
+        
+        <p class="card-text" id="opis">opis</p>
       </div>
     </div>
     <!-- /.card -->
 
     <div class="card card-outline-secondary my-4">
       <div class="card-header">
-        Product Reviews
+        <h3>Szczegółowy opis:</h3>
       </div>
       <div class="card-body">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-        <small class="text-muted">Posted by Anonymous on 3/1/17</small>
+        <div class="d-flex justify-content-between">
+            <h4>Kraj pochodzenia: </h4>
+            <div id="kraj">Kraj</div>
+        </div>
         <hr>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
         <small class="text-muted">Posted by Anonymous on 3/1/17</small>
@@ -143,7 +146,7 @@
 
 
   <div class="col-lg-3">
-    <h1 class="my-4"> <div class="logo"> <h3>Classic<span>4you</span></h3> </div> </h1>
+    <h1 class="my-4"> <div class="logo"> <a href="indexx.php"><h3>Classic<span>4you.eu</span></h3></a> </div> </h1>
     <div class="list-group">
       <a href="#" class="list-group-item">Dodaj do koszyka</a>
       <a href="#" class="list-group-item">Category 2</a>
@@ -238,22 +241,77 @@
 
 <script>
 
-$(document).ready(function() {
+var insert =
+{
+    data :function(resoult,place)
+    {
+        if(resoult != '')
+        {
+            document.getElementById(place).innerHTML = resoult;
+        }
 
+    }
+}
+
+var insert_photo =
+{
+    photo :function(resoult,place)
+    {
+        if(resoult != '')
+        {
+            document.getElementsByClassName(place)[0].src = resoult;
+            document.getElementsByClassName(place)[1].src = resoult;
+            document.getElementsByClassName(place)[2].src = resoult;
+        }
+
+    }
+}
+
+var ofer = <?php if(isset( $_GET['oferta'])) echo $_GET['oferta']; else echo -1;  ?>;
+
+$(document).ready(function() {
 $.ajax({
     type: "get",
     url: 'item.php',
-
-    data: {id_oferta: id_oferta},
+    data: {id_oferta: ofer},
 
 
     success: function(data)
     {
-        alert(data);
+        re = jQuery.parseJSON(data);
+        var nazwa =' '+ re[0].marka +' '+re[0].model;
+        var cena = Number(re[0].cena);
+
+
+        insert.data(
+            nazwa,
+            'nazwa_samochodu',
+            );
+        
+        insert.data(
+            cena.toLocaleString()+ " PLN",
+            'cena',
+            );
+
+        insert.data(
+            re[0].opis,
+            'opis',
+            );
+
+        insert.data(
+            re[0].kraj,
+            'kraj',
+            );
+
+        insert_photo.photo(
+            '../../../public/img/'+re[0].zdjecie,
+            'zdjecie',
+            );
     }
 });
 
 });
+
 
 </script>
 

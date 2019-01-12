@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="../../../public/css/compact-gallery.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <!--    gallery-->
-
+    
     <link rel="stylesheet" href="../../../public/css/home_page.css" type="text/css">
     <link rel="stylesheet" href="../../../public/css/login.css" type="text/css">
     <script src="../../../public/js/my_js.js"></script>

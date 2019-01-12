@@ -16,3 +16,11 @@
 .logo h3 span{
 	color:  #5383d3;
 }
+
+
+.logo a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
