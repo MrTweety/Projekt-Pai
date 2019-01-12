@@ -1,60 +1,71 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <title>Strona glowna</title>
+    <title>Classic4you</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-
-
-    <!--    database-->
-<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">-->
-<!--        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>-->
-
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+    <!--    bootstrap,jquery-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <!--    bootstrap,jquery-->
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <!--font-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <!--font-->
+
+    <!--    footer-->
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../../../public/css/footer-distributed-with-address-and-phones.css">
+    <!--    footer-->
 
 
-    <!--    database-->
-
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" id="bootstrap-css">
+    <!--    gallery-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" />
+    <link rel="stylesheet" href="../../../public/css/compact-gallery.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <!--    gallery-->
 
     <link rel="stylesheet" href="../../../public/css/home_page.css" type="text/css">
     <link rel="stylesheet" href="../../../public/css/login.css" type="text/css">
+    <script src="../../../public/js/my_js.js"></script>
+
+
 </head>
 <body onload="load_login_form()">
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Classic4you.eu</a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li class="active" id="home_page"><a href="#"> <span class="glyphicon glyphicon-home"></span> Strona główna </a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#" id="load_login_form"> <span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul>
-        </div>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top ">
+    <a class="navbar-brand " href="indexx.php"><h3>Classic<span>4you.eu</span></h3></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto" >
+            <li class="nav-item active" id="home_page">
+                <a class="nav-link" href="indexx.php" ><i class='fa fa-home'></i> Strona główna <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+            </li>
+
+        </ul>
+
+        <form class="form-inline my-2 my-lg-0">
+            <!--            <input class="form-control mr-sm-1" type="search" placeholder="Search" aria-label="Search">-->
+            <!--            <button class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Search</button>-->
+            <a href="#" id="load" class="btn btn btn-dark my-2 my-sm-0 mr-sm-2"><i class="fa fa-user"></i> Sing up</a>
+            <a href="#" id="load_login_form" class="btn btn btn-dark my-2 my-sm-0 mr-sm-2"><i class="fa fa-sign-in"></i> Login</a>
+        </form>
+
     </div>
 </nav>
 
@@ -69,94 +80,146 @@
 
 
 
-<section class = "search" >
+<section class = "search2" >
 
-    <div class="container">
+    <div class="container" style="margin-top: 56px;">
 
-        <form class=" cointeiner text-center " action="/action_page.php">
+        <form class=" cointeiner text-center " method="post">
             <div class="row">
             <div class=" col-sm-12  ">
+
                 <h4><i class="fa fa-car"></i> Search Options</h4>
             </div>
 
 
 
-            <div class="col-sm-6">
+            <div class="form-group col-sm-6">
                 <label for="marka">Marka Pojazdu</label>
-                <select id="marka" class="form-control" name="marka">
-
+                <select id="marka" class="form-control" name="marka" >
                 </select>
             </div>
 
-            <div class=" col-sm-6">
+            <div class="form-group  col-sm-6">
                 <label for="model">Model Pojazdu</label>
-                <select id="model" class="form-control" name="model">
-
+                <select id="model" class="form-control" name="model" >
                 </select>
             </div>
 
                         <div class="form-group col-sm-3">
-                            <label for="rok_od">Rok prod. od</label>
+<!--                            <label for="rok_od">Rok prod. od</label>-->
                             <select id="rok_od" class="form-control" name="rok_od">
-
                             </select>
+<!--                            <input type="number" class="form-control" id="rok_od" placeholder="Rok prod. od">-->
                         </div>
 
                         <div class="form-group col-sm-3">
-                            <label for="rok_do">Rok prod. do</label>
+<!--                            <label for="rok_do">Rok prod. do</label>-->
                             <select id="rok_do" class="form-control" name="rok_do">
-
                             </select>
+<!--                            <input type="number" class="form-control" id="rok_do" placeholder="Rok prod. do">-->
                         </div>
 
                         <div class="form-group col-sm-3">
                             <label for="cena_od">Cena od</label>
+<!--                            <select id="cena_od" class="form-control" name="cena_od">-->
+<!--                            </select>-->
+<!--                            <input type="number" class="form-control" id="cena_od" placeholder="Cena od">-->
                             <select id="cena_od" class="form-control" name="cena_od">
+                                <option selected="" value="-1">Cena od</option>
+                                <option value="2000">2,000</option>
+                                <option value="4000">4,000</option>
+                                <option value="6000">6,000</option>
+                                <option value="8000">8,000</option>
+                                <option value="10000">10,000</option>
+                                <option value="15000">15,000</option>
+                                <option value="20000">20,000</option>
+                                <option value="25000">25,000</option>
+                                <option value="30000">30,000</option>
+                                <option value="35000">35,000</option>
+                                <option value="40000">40,000</option>
+                                <option value="45000">45,000</option>
+                                <option value="50000">50,000</option>
+                                <option value="60000">60,000</option>
+                                <option value="70000">70,000</option>
+                                <option value="80000">80,000</option>
+                                <option value="90000">90,000</option>
+                                <option value="100000">100,000</option>
+                                <option value="125000">125,000</option>
+                                <option value="150000">150,000</option>
+                                <option value="175000">175,000</option>
 
                             </select>
                         </div>
 
                         <div class="form-group col-sm-3">
                             <label for="cena_do">Cena do</label>
-                            <select id="cena_do" class="form-control" name="cena_do">
-
+<!--                            <select id="cena_do" class="form-control" name="cena_do">-->
+<!--                            </select>-->
+<!--                            <input type="number" class="form-control" id="cena_do" placeholder="Cena do">-->
+                            <select id="cena_do" class="form-control" name="cena_od">
+                                <option selected="" value="-1">Cena od</option>
+                                <option value="2000">2,000</option>
+                                <option value="4000">4,000</option>
+                                <option value="6000">6,000</option>
+                                <option value="8000">8,000</option>
+                                <option value="10000">10,000</option>
+                                <option value="15000">15,000</option>
+                                <option value="20000">20,000</option>
+                                <option value="25000">25,000</option>
+                                <option value="30000">30,000</option>
+                                <option value="35000">35,000</option>
+                                <option value="40000">40,000</option>
+                                <option value="45000">45,000</option>
+                                <option value="50000">50,000</option>
+                                <option value="60000">60,000</option>
+                                <option value="70000">70,000</option>
+                                <option value="80000">80,000</option>
+                                <option value="90000">90,000</option>
+                                <option value="100000">100,000</option>
+                                <option value="125000">125,000</option>
+                                <option value="150000">150,000</option>
+                                <option value="175000">175,000</option>
+                                <option value="1000000">1000000</option>
                             </select>
                         </div>
 
                 <div class="form-group col-sm-3">
-                    <label for="cena_do">Kolor</label>
-                    <select id="cena_do" class="form-control" name="cena_do">
+                    <label for="kolor">Kolor</label>
+                    <select id="kolor" class="form-control" name="kolor">
 
                     </select>
                 </div>
 
             <div class="form-group col-sm-3">
-                <label for="cena_do">Kraj</label>
-                <select id="cena_do" class="form-control" name="cena_do">
+                <label for="kraj">Kraj</label>
+                <select id="kraj" class="form-control" name="kraj">
 
                 </select>
             </div>
 
             <div class="form-group col-sm-3">
-                <label for="cena_do">Stan pojazdu</label>
-                <select id="cena_do" class="form-control" name="cena_do">
+                <label for="przebieg_od">Przebieg od</label>
+                <select id="przebieg_od" class="form-control" name="przebieg_od">
 
                 </select>
+<!--                <input type="number" class="form-control" id="przebieg_od" placeholder="Przebieg od">-->
             </div>
 
             <div class="form-group col-sm-3">
-                <label for="cena_do">Cechy</label>
-                <select id="cena_do" class="form-control" name="cena_do">
+                <label for="przebieg_do">Przebieg do</label>
+                <select id="przebieg_do" class="form-control" name="przebieg_do">
 
                 </select>
+<!--                <input type="number" class="form-control" id="przebieg_do" placeholder="Przebieg do">-->
             </div>
 
 
 
             <div class="col-sm-12">
-                <button type="button" class="btn btn-info ">
-                    <span class="glyphicon glyphicon-search"></span> Search
-                </button>
+<!--                <button type="submit" class="btn btn-info ">-->
+                <a href="#" id="button_search" class="btn btn-info"><i class="fa fa-sign-in"></i> <span class="glyphicon glyphicon-search"></span> Search</a>
+
+<!--                </button>-->
             </div>
             </div>
         </form>
@@ -169,59 +232,80 @@
 
 <br />
 
-
-
-<section id="tabelka">
-    <table id="example" class="display" style="width:100%">
-        <thead>
-        <tr>
-            <th>Imie</th>
-            <th>Tekst</th>
-            <th>Login</th>
-            <th>Hasło.</th>
-            <th>Imie</th>
-            <th>Tekst</th>
-            <th>Login</th>
-            <th>Hasło.</th>
-        </tr>
-        </thead>
-
-        <tfoot>
-        <tr>
-            <th>Imie</th>
-            <th>Tekst</th>
-            <th>Login</th>
-            <th>Hasło.</th>
-            <th>Imie</th>
-            <th>Tekst</th>
-            <th>Login</th>
-            <th>Hasło.</th>
-        </tr>
-        </tfoot>
-
-</section>
-
+<!--<div id="tabelka">-->
+<!--    <table id="example" class="display" style="width:100%">-->
+<!--        <thead>-->
+<!--        <tr>-->
+<!--            <th>Imie</th>-->
+<!--            <th>Tekst</th>-->
+<!--            <th>Login</th>-->
+<!--            <th>Hasło.</th>-->
+<!--            <th>Imie</th>-->
+<!--            <th>Tekst</th>-->
+<!--            <th>Login</th>-->
+<!--            <th>Hasło.</th>-->
+<!--        </tr>-->
+<!--        </thead>-->
+<!---->
+<!--        <tfoot>-->
+<!--        <tr>-->
+<!--            <th>Imie</th>-->
+<!--            <th>Tekst</th>-->
+<!--            <th>Login</th>-->
+<!--            <th>Hasło.</th>-->
+<!--            <th>Imie</th>-->
+<!--            <th>Tekst</th>-->
+<!--            <th>Login</th>-->
+<!--            <th>Hasło.</th>-->
+<!--        </tr>-->
+<!--        </tfoot>-->
+<!--    </table>-->
+<!---->
+<!---->
+<!---->
+<!--</div>-->
 <script>
-    //tabelka
-    $(document).ready(function() {
-        table = $('#example').DataTable( {
-            "ajax": "search_easy.php",
-            "columns": [
-                { "data": "id_oferta" },
-                { "data": "img" },
-                { "data": "marka" },
-                { "data": "model" },
-                { "data": "kraj" },
-                { "data": "wyswietlenia" },
-                { "data": "cena_netto" },
-                { "data": "data_zlozenia" },
 
-            ]
-        } );
-    } );
-
+    //// szukajka na start database!!!!!
+    //$(document).ready(function()
+    //{
+    //    var mar = <?php //if(isset( $_POST['marka'])) echo $_POST['marka']; else echo -1  ?>//;
+    //    var mod = <?php //if(isset( $_POST['model'])) echo $_POST['model']; else echo -1  ?>//;
+    //
+    //
+    //    $.ajax(
+    //        {
+    //            type: "POST",
+    //            url: 'search_easy.php',
+    //            data: {marka :mar , model: mod},
+    //
+    //
+    //            success: function(data)
+    //            {
+    //                var dane = jQuery.parseJSON(data);
+    //                table = $('#example').DataTable(
+    //                    {
+    //                        "data": dane,
+    //                        "dom": "<tabelka>",
+    //                        "columns": [
+    //                            { "data": "id_oferta" },
+    //                            { "data": "imgg" },
+    //                            { "data": "marka" },
+    //                            { "data": "model" },
+    //                            { "data": "kraj" },
+    //                            { "data": "wyswietlenia" },
+    //                            { "data": "cena_netto" },
+    //                            { "data": "data_zlozenia" },
+    //
+    //                        ]
+    //                    } );
+    //            }
+    //        });
+    //
+    //});
 
 </script>
+
 
 
 <section class="listings">
@@ -233,60 +317,10 @@
                     <div id ="listing">
 
 
-                        <div class ="listing_box">
-                        <div class="row mb-3">
-                            <div class="col-md-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <img src="https://stmed.net/sites/default/files/old-car-wallpapers-32461-3779533.jpg">
-                                            </div>
-                                            <div class="col-md-6  card-body">
-                                                <div class="list-title">
-                                                    <ul class="list-inline list-unstyled">
-                                                        <li class="list-inline-item"><a href="#"><h4>1969 Dodge Charger</h4></a></li>
-                                                        <li class="list-inline-item text-warning"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half"></i></li>
-                                                        <li class="list-inline-item text-success"><i class="fa fa-thumbs-up"></i></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="list-location">
-                                                    <a href="#"><i class="fa fa-map-marker"></i><small> Sparks, Reno – Show on map (4.7 km from center)</small> </a>
-                                                </div>
-                                                <div class="list-descrip">
-                                                    <small>This Sparks casino hotel is located in the Sierra Nevada Mountains. This resort features free airport shuttle services, a casino, a nightclub and 8 restaurants and bars. </small>
-                                                </div>
-
-
-
-                                            </div>
-                                            <div class="col-md-3 border-left h-100 ">
-                                                <ul class="list-unstyled">
-                                                    <li><h3>200 000$</h3></li>
-                                                    <li class="text-secondary"><small>8067 Reviews  </small></li>
-                                                </ul>
-                                                <button type="button" class="btn btn-outline-primary">Book Now</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-
-
                     </div>
 
 
-
-
-
-                    <div class="row mb-3">
-                    <div class="col-md-12">
-                        <small> 42 properties found in Reno.  </small>
-                    </div>
-                </div>
-                <div class="row">
+                <div id="strony"><div class="row">
                     <div class="col-md-12">
                         <ul class="pagination">
                             <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
@@ -295,7 +329,7 @@
                             <li class="page-item"><a class="page-link" href="#">3</a></li>
                             <li class="page-item"><a class="page-link" href="#">Next</a></li>
                         </ul>
-                    </div>
+                    </div></div>
                 </div>
             </div>
         </div>
@@ -303,19 +337,40 @@
 </section>
 
 
+
 <script>
+
+    var mar    = <?php if(isset( $_GET['marka'])) echo $_GET['marka']; else echo -1;  ?>;
+    var mod    = <?php if(isset( $_GET['model'])) echo $_GET['model']; else echo -1; ?> ;
+    var cenaOd = <?php if(isset( $_GET['cenaOd'])) echo $_GET['cenaOd']; else echo -1; ?> ;
+    var cenaDo = <?php if(isset( $_GET['cenaDo'])) echo $_GET['cenaDo']; else echo -1; ?> ;
+    var rokOd = <?php if(isset( $_GET['rokOd'])) echo $_GET['rokOd']; else echo -1; ?> ;
+    var rokDo = <?php if(isset( $_GET['rokDo'])) echo $_GET['rokDo']; else echo -1; ?> ;
+    var przebiegOd = <?php if(isset( $_GET['przebiegOd'])) echo $_GET['przebiegOd']; else echo -1; ?> ;
+    var przebiegDo = <?php if(isset( $_GET['przebiegDo'])) echo $_GET['przebiegDo']; else echo -1; ?> ;
+    var kolor =  <?php if(isset( $_GET['kolor'])) echo '"'.$_GET['kolor'].'"'; else echo -1; ?>;
+    var kraj   = <?php if(isset($_GET['kraj'])) echo $_GET['kraj']; else echo -1  ?>;
+    // kolor ="niebieski";
+
+    console.log(kolor);
+    console.log(mod);
 
     $(document).ready(function() {
 
         $.ajax({
-            type: "POST",
+            type: "get",
             url: 'search_easy.php',
+
+            data: {marka :mar , model: mod, cenaOd: cenaOd, cenaDo: cenaDo, rokOd: rokOd, rokDo: rokDo, przebiegOd: przebiegOd, przebiegDo: przebiegDo, kolor: kolor, kraj: kraj},
+
 
             success: function(data)
             {
+                //alert(window.location.pathname );
+
                 build.buildListing(
                     jQuery.parseJSON(data),
-                    $('#listingggg'),
+                    $('#listing'),
 
                 );
             }
@@ -324,31 +379,34 @@
     });
 
 
-    var build =
-        {
-            buildListing: function(result, listing )
-            {
-                // Remove current options
-                listing.html('');
-                // Check result isnt empty
-                if(result != '')
+    $('#button_search').click(function() {
+
+        $.ajax({
+            type: "get",
+            url: 'search_easy.php',
+             data: {marka :$('#marka').val() , model: $('#model').val(), cenaOd: $('#cena_od').val(), cenaDo: $('#cena_do').val(), rokOd: $('#rok_od').val(), rokDo: $('#rok_do').val(), przebiegOd: $('#przebieg_od').val(), przebiegDo: $('#przebieg_do').val(), kolor: $('#kolor').val(), kraj: $('#kraj').val()},
+            // data: {marka : 1 , model: -1},
+
+
+                success: function(data)
                 {
-                    // Loop through each of the results and append the option to the dropdown
-                    $.each(result, function(k, v) {
-                            listing.append('<option value="' + v.id_tab + '">' + v.name_tab + '</option>');
 
+                   // window.location.replace(window.location.pathname+this.url.substring(15));
+                    history.pushState({}, "search", window.location.pathname+this.url.substring(15));
+                    build.buildListing(
+                        jQuery.parseJSON(data),
+                        $('#listing'),
 
-
-
-                    });
+                    );
                 }
-            }
-        }
+            });
+
+    });
+
+
+
 
 </script>
-
-
-
 
 
 <section class="cta py-5 bg-primary text-white">
@@ -364,13 +422,69 @@
 
 
 
-<!-- Footer -->
-<footer class="page-footer font-small special-color-dark pt-4">
 
-    <div class="footer-copyright text-center py-3">© 2018 Copyright:
-        <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+<!-- Footer -->
+
+<a href="javascript:" id="return-to-top"><i class="fa fa-arrow-up"></i></a>
+
+<footer class="footer-distributed">
+
+    <div class="footer-left">
+
+        <h3>Classic<span>4you</span></h3>
+
+        <p class="footer-links">
+            <a href="#">Strona główna</a>
+            ·
+            <a href="#">About</a>
+            ·
+            <a href="#">projects</a>
+            ·
+            <a href="#">Faq</a>
+            ·
+            <a href="#">Contact</a>
+        </p>
+
+        <p class="footer-company-name">Classic4you &copy; 2019</p>
     </div>
 
+    <div class="footer-center">
+        <div id ="footer-center-center" >
+
+        <div>
+            <i class="fa fa-map-marker"></i>
+            <p><span>Aleja Słowackiego Juliusza 46</span> Kraków, Polska</p>
+        </div>
+
+        <div>
+            <i class="fa fa-phone"></i>
+            <p>+1 555 123456</p>
+        </div>
+
+        <div>
+            <i class="fa fa-envelope"></i>
+            <p><a href="mailto:support@company.com">support@Classic4you.com</a></p>
+        </div>
+        </div>
+    </div>
+
+    <div class="footer-right">
+
+        <p class="footer-company-about">
+            <span>About the company</span>
+            Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+        </p>
+
+        <div class="footer-icons">
+
+            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a>
+            <a href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus"></i></a>
+
+        </div>
+
+    </div>
 
 </footer>
 <!-- Footer -->
@@ -383,14 +497,15 @@
     $('#marka').ready(function() {
         $.ajax({
             type: "POST",
-            url: 'search_marka.php',
+            url: 'search_select.php',
+            data:{select:"marka"},
             success: function(data)
             {
                 helpers.buildDropdown(
                     jQuery.parseJSON(data),
                     $('#marka'),
                     'Marka Pojazdu',
-                    <?php if(isset( $_POST['marka'])) echo $_POST['marka']; else echo -1  ?>
+                    <?php if(isset( $_GET['marka'])) echo $_GET['marka']; else echo -1;  ?>
                 );
             }
         });
@@ -403,7 +518,8 @@
 
         $.ajax({
             type: "POST",
-            url: 'search_model.php',
+            url: 'search_select.php',
+            data:{select:"model"},
 
             success: function(data)
             {
@@ -411,7 +527,7 @@
                     jQuery.parseJSON(data),
                     $('#model'),
                     'Model Pojazdu',
-                    <?php if(isset( $_POST['model'])) echo $_POST['model']; else echo -1  ?>
+                    <?php if(isset( $_GET['model'])) echo $_GET['model']; else echo -1  ?>
 
                 );
             }
@@ -420,13 +536,64 @@
     });
 
 
+
+
+
+        $('#kolor').ready(function() {
+
+        $.ajax({
+            type: "POST",
+            url: 'search_select.php',
+            data:{select:"kolor"},
+
+            success: function(data)
+            {
+                helpers.buildDropdown(
+                    jQuery.parseJSON(data),
+                    $('#kolor'),
+                    'Kolor Pojazdu',
+                 <?php if(isset( $_GET['kolor'])) echo '"'.$_GET['kolor'].'"'; else echo -1; ?>
+
+
+                );
+            }
+        });
+
+    });
+
+    $('#kraj').ready(function() {
+
+        $.ajax({
+            type: "POST",
+            url: 'search_select.php',
+            data:{select:"kraj"},
+
+
+            success: function(data)
+            {
+                helpers.buildDropdown(
+                    jQuery.parseJSON(data),
+                    $('#kraj'),
+                    'Kraj pochodzenia',
+                    <?php if(isset($_GET['kraj'])) echo $_GET['kraj']; else echo -1  ?>
+
+                );
+            }
+        });
+
+    });
+
+
+
+
+
     $('#marka').change(function() {
 
 
         $.ajax({
             type: "POST",
-            url: 'search_model.php',
-            data: {marka :$('#mark').val()},
+            url: 'search_select.php',
+            data: {marka :$('#marka').val(),select:"model"},
 
             success: function(data)
             {
@@ -445,28 +612,110 @@
 
 
 
-    var helpers =
-        {
-            buildDropdown: function(result, dropdown, emptyMessage, def = -1)
-            {
-                // Remove current options
-                dropdown.html('');
-                // Add the empty option with the empty message
-                dropdown.append('<option value="-1">' + emptyMessage + '</option>');
-                // Check result isnt empty
-                if(result != '')
-                {
-                    // Loop through each of the results and append the option to the dropdown
-                    $.each(result, function(k, v) {
-                        if (v.id_tab!= def)
-                            dropdown.append('<option value="' + v.id_tab + '">' + v.name_tab + '</option>');
-                        else
-                            dropdown.append('<option selected="selected" value="' + v.id_tab + '">' + v.name_tab + '</option>');
+    // var helpers =
+    //     {
+    //         buildDropdown: function(result, dropdown, emptyMessage, def = -1)
+    //         {
+    //
+    //             dropdown.html('');
+    //             dropdown.append('<option value="-1">' + emptyMessage + '</option>');
+    //             if(result != '' )
+    //             {
+    //                 $.each(result, function(k, v) {
+    //                     if (v.id_tab!= def)
+    //                         dropdown.append('<option value="' + v.id_tab + '">' + v.name_tab + '</option>');
+    //                     else
+    //                         dropdown.append('<option selected="selected" value="' + v.id_tab + '">' + v.name_tab + '</option>');
+    //
+    //                 });
+    //             }
+    //         }
+    //     }
 
-                    });
-                }
+
+
+
+    $(document).ready(function() {
+
+        $.ajax({
+            type: "POST",
+            url: 'search_select.php',
+            data:{select:"rok"},
+
+
+            success: function(data)
+            {
+                helpers2.buildDropdown(
+                    jQuery.parseJSON(data),
+                    $('#rok_od'),
+                    $('#rok_do'),
+                    'Rok od',
+                    'Rok do',
+                    <?php if(isset( $_GET['rokOd'])) echo $_GET['rokOd']; else echo -1; ?>,
+                    <?php if(isset( $_GET['rokDo'])) echo $_GET['rokDo']; else echo -1; ?>
+                );
             }
-        }
+        });
+
+    });
+
+
+
+
+
+    $(document).ready(function() {
+
+        $.ajax({
+            type: "POST",
+            url: 'search_select.php',
+            data:{select:"przebieg"},
+
+
+            success: function(data)
+            {
+                helpers2.buildDropdown(
+                    jQuery.parseJSON(data),
+                    $('#przebieg_od'),
+                    $('#przebieg_do'),
+                    'Przebieg od',
+                    'Przebieg do',
+                    <?php if(isset( $_GET['przebiegOd'])) echo $_GET['przebiegOd']; else echo -1; ?>,
+                    <?php if(isset( $_GET['przebiegDo'])) echo $_GET['przebiegDo']; else echo -1; ?>,
+                    "100000",
+                    "100000"
+                );
+            }
+        });
+
+    });
+
+
+    $(document).ready(function() {
+
+        $.ajax({
+            type: "POST",
+            url: 'search_select.php',
+            data:{select:"cena"},
+
+
+            success: function(data)
+            {
+                helpers2.buildDropdown(
+                    jQuery.parseJSON(data),
+                    $('#cena_od'),
+                    $('#cena_do'),
+                    'Cena od',
+                    'Cena do',
+                    <?php if(isset( $_GET['cenaOd'])) echo $_GET['cenaOd']; else echo -1; ?>,
+                    <?php if(isset( $_GET['cenaDo'])) echo $_GET['cenaDo']; else echo -1; ?>,
+                    "100000",
+                    "100000"
+                );
+            }
+        });
+
+    });
+
 
 
 
@@ -477,9 +726,9 @@
 </script>
 
 
-
 <script>
-
+    // $('#tabelka').hide();
+    $('#strony').hide();
     function load_login_form()
     {
         $("#log_form").load("../user/login.php");
@@ -495,9 +744,22 @@
     });
 
 
+
+    // ===== Scroll to Top ====
+    $(window).scroll(function() {
+        if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+            $('#return-to-top').fadeIn(200);    // Fade in the arrow
+        } else {
+            $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+        }
+    });
+    $('#return-to-top').click(function() {      // When arrow is clicked
+        $('body,html').animate({
+            scrollTop : 0                       // Scroll to top of body
+        }, 500);
+    });
+
 </script>
-
-
 
 </body>
 </html>
