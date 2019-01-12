@@ -80,8 +80,8 @@
     </div>
 </nav>
 <div id="wrapper">
-    <div id="sidebar " >
-        <ul class="sidebar navbar-nav">
+    <div id="sidebar " class="sticky">
+        <ul class="sidebar navbar-nav ">
             <li class="nav-item active">
                 <a class="nav-link" href="index.html">
                     <i class="fa fa-dashboard"></i>
@@ -94,15 +94,25 @@
                     <span>Pages</span>
                     <i class="fa fa-chevron-down "></i>
                 </a>
-                <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                    <h6 class="dropdown-header">Login Screens:</h6>
-                    <a class="dropdown-item" href="login.html">Login</a>
-                    <a class="dropdown-item" href="register.html">Register</a>
-                    <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
-                    <div class="dropdown-divider"></div>
+                <div class="dropdown-menu" aria-labelledby="pagesDropdown " >
+                    <h6 class="dropdown-header">Oferta:</h6>
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="dropdown-item ">
+                            <a class="dropdown-item active" data-toggle="tab" href="#home">Home</a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a class="dropdown-item" data-toggle="tab" href="#menu1">Menu 1</a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a class="dropdown-item" data-toggle="tab" href="#menu2">Menu 2</a>
+                        </li>
+                    </ul>
+
                     <h6 class="dropdown-header">Other Pages:</h6>
                     <a class="dropdown-item" href="404.html">404 Page</a>
                     <a class="dropdown-item" href="blank.html">Blank Page</a>
+                    <div class="dropdown-divider"></div>
+
                 </div>
             </li>
             <li class="nav-item">
@@ -119,79 +129,95 @@
 
     </div>
     <div id="content-wrapper">
-        <div style="height:100px; background-color: #00fa00"></div>
-        <div style="height:100px; background-color: #0000bf"></div>
-        <div style="height:100px; background-color: #f08a24"></div>
+        <div style="height:400px; background-color: white">
+            <div class="tab-content">
+                <div id="home" class="container tab-pane active"><br>
+                    <h3>HOME</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div id="menu1" class="container tab-pane fade"><br>
+                    <h3>Menu 1</h3>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <div id="menu2" class="container tab-pane fade"><br>
+                    <h3>Menu 2</h3>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                </div>
+            </div>
+
+        </div>
+        <div style="height:200px; background-color: #0000bf"></div>
+        <div style="height:400px; background-color: #f08a24"></div>
+
+
+<!--        <footer class="footer-distributed" >-->
+<!---->
+<!--            <div class="footer-left">-->
+<!---->
+<!--                <h3>Classic<span>4you</span></h3>-->
+<!---->
+<!--                <p class="footer-links">-->
+<!--                    <a href="#">Strona główna</a>-->
+<!--                    ·-->
+<!--                    <a href="#">About</a>-->
+<!--                    ·-->
+<!--                    <a href="#">projects</a>-->
+<!--                    ·-->
+<!--                    <a href="#">Faq</a>-->
+<!--                    ·-->
+<!--                    <a href="#">Contact</a>-->
+<!--                </p>-->
+<!---->
+<!--                <p class="footer-company-name">Classic4you &copy; 2019</p>-->
+<!--            </div>-->
+<!---->
+<!--            <div class="footer-center">-->
+<!--                <div id ="footer-center-center" >-->
+<!---->
+<!--                    <div>-->
+<!--                        <i class="fa fa-map-marker"></i>-->
+<!--                        <p><span>Aleja Słowackiego Juliusza 46</span> Kraków, Polska</p>-->
+<!--                    </div>-->
+<!---->
+<!--                    <div>-->
+<!--                        <i class="fa fa-phone"></i>-->
+<!--                        <p>+1 555 123456</p>-->
+<!--                    </div>-->
+<!---->
+<!--                    <div>-->
+<!--                        <i class="fa fa-envelope"></i>-->
+<!--                        <p><a href="mailto:support@company.com">support@Classic4you.com</a></p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!---->
+<!--            <div class="footer-right">-->
+<!---->
+<!--                <p class="footer-company-about">-->
+<!--                    <span>About the company</span>-->
+<!--                    Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.-->
+<!--                </p>-->
+<!---->
+<!--                <div class="footer-icons">-->
+<!---->
+<!--                    <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>-->
+<!--                    <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>-->
+<!--                    <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a>-->
+<!--                    <a href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus"></i></a>-->
+<!---->
+<!--                </div>-->
+<!---->
+<!--            </div>-->
+<!---->
+<!--        </footer>-->
+        <div><?php include_once '../partials/footer.php'?></div>
 
     </div>
-
-
-
-
-
 
 </div>
-<footer class="footer-distributed" >
 
-    <div class="footer-left">
 
-        <h3>Classic<span>4you</span></h3>
 
-        <p class="footer-links">
-            <a href="#">Strona główna</a>
-            ·
-            <a href="#">About</a>
-            ·
-            <a href="#">projects</a>
-            ·
-            <a href="#">Faq</a>
-            ·
-            <a href="#">Contact</a>
-        </p>
-
-        <p class="footer-company-name">Classic4you &copy; 2019</p>
-    </div>
-
-    <div class="footer-center">
-        <div id ="footer-center-center" >
-
-            <div>
-                <i class="fa fa-map-marker"></i>
-                <p><span>Aleja Słowackiego Juliusza 46</span> Kraków, Polska</p>
-            </div>
-
-            <div>
-                <i class="fa fa-phone"></i>
-                <p>+1 555 123456</p>
-            </div>
-
-            <div>
-                <i class="fa fa-envelope"></i>
-                <p><a href="mailto:support@company.com">support@Classic4you.com</a></p>
-            </div>
-        </div>
-    </div>
-
-    <div class="footer-right">
-
-        <p class="footer-company-about">
-            <span>About the company</span>
-            Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
-        </p>
-
-        <div class="footer-icons">
-
-            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
-            <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
-            <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a>
-            <a href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus"></i></a>
-
-        </div>
-
-    </div>
-
-</footer>
-<!-- Footer -->
 
 
 
