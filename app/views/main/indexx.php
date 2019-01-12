@@ -23,6 +23,16 @@
 
     <link rel="stylesheet" href="../../../public/css/home_page.css" type="text/css">
     <link rel="stylesheet" href="../../../public/css/login.css" type="text/css">
+    <script src="../../../public/js/my_js.js"></script>
+
+
+    <!--    gallery-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" />
+    <link rel="stylesheet" href="../../../public/css/compact-gallery.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+
+    <!--    gallery-->
+
 
 <!--    <style>-->
 <!--        /* Make the image fully responsive */-->
@@ -33,7 +43,7 @@
 <!--    </style>-->
 
 </head>
-<body onload="load_login_form()">
+<body onload="load_login_form()" style="background-color: white !important;m">
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top ">
     <a class="navbar-brand " href="#"><h3>Classic<span>4you.eu</span></h3></a>
@@ -113,165 +123,31 @@
 
 <div class="bestCar ">
 
-    <h3>What We Do</h3><br>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6 col-md-5 offset-1">
-                 <figure>
-                     <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                     <figcaption><p>Tekst</p></figcaption>
-                 </figure>
+    <section class="gallery-block compact-gallery">
+        <div class="container">
+            <div class="heading">
+                <h2>Proponowane Oferty:</h2>
             </div>
 
-                <div class="col-sm-6 col-md-5">
 
-                    <figure>
-                        <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                        <figcaption><p>Tekst</p></figcaption>
-                    </figure>
-
-                </div>
-
-                <div class="col-sm-6 col-md-4">
-
-                    <figure>
-                        <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                        <figcaption><p>Tekst</p></figcaption>
-                    </figure>
-
-                </div>
-
-                <div class="col-sm-6 col-md-4">
-
-                    <figure>
-                        <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                        <figcaption><p>Tekst</p></figcaption>
-                    </figure>
-
-                </div>
-
-
-                <div class="col-sm-6 col-md-4">
-
-                    <figure>
-                        <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                        <figcaption><p>Tekst</p></figcaption>
-                    </figure>
-
-                </div>
-
-                <div class="col-sm-6 col-md-4">
-
-                    <figure>
-                        <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                        <figcaption><p>Tekst</p></figcaption>
-                    </figure>
-
-                </div>
-
-                <div class="col-sm-6 col-md-4">
-
-                    <figure>
-                        <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                        <figcaption><p>Tekst</p></figcaption>
-                    </figure>
-
-                </div>
-
-                <div class="col-sm-6 col-md-4">
-
-                    <figure>
-                        <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                        <figcaption><p>Tekst</p></figcaption>
-                    </figure>
-
-                </div>
-
-                <div class="col-sm-6 col-md-3">
-
-                    <figure>
-                        <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                        <figcaption><p>Tekst</p></figcaption>
-                    </figure>
-
-                </div>
-
-                <div class="col-sm-6 col-md-3">
-
-                    <figure>
-                        <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                        <figcaption><p>Tekst</p></figcaption>
-                    </figure>
-
-                </div>
-
-                <div class="col-sm-6 col-md-3">
-
-                    <figure>
-                        <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                        <figcaption><p>Tekst</p></figcaption>
-                    </figure>
-
-                </div>
-
-                <div class="col-sm-6 col-md-3">
-
-                    <figure>
-                        <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                        <figcaption><p>Tekst</p></figcaption>
-                    </figure>
-
-                </div>
-
-                <div class="col-sm-6 col-md-3">
-
-                    <figure>
-                        <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                        <figcaption><p>Tekst</p></figcaption>
-                    </figure>
-
-                </div>
-
-                <div class="col-sm-6 col-md-3">
-
-                    <figure>
-                        <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                        <figcaption><p>Tekst</p></figcaption>
-                    </figure>
-
-                </div>
-
-                <div class="col-sm-6 col-md-3">
-
-                    <figure>
-                        <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                        <figcaption><p>Tekst</p></figcaption>
-                    </figure>
-
-                </div>
-
-                <div class="col-sm-6 col-md-3">
-
-                    <figure>
-                        <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                        <figcaption><p>Tekst</p></figcaption>
-                    </figure>
-
-                </div>
+            <div class="row no-gutters" id="indexOffer">
 
             </div>
+
         </div>
+    </section>
+
+
+
+
 </div>
 
 <br />
 
 
 
-<div class = "search" >
+<div class = "search bg-white" >
     <div class="container">
-
-
 
 
         <form id ="form_search" class="" method="GET" action="search.php">
@@ -372,6 +248,29 @@
 
 <script>
 
+    $(document).ready(function() {
+
+        $.ajax({
+            type: "get",
+            url: 'search_easy.php',
+            data:{page:"index"},
+
+            success: function(data)
+            {
+                //alert(window.location.pathname );
+
+                build.buildIndexOffer(
+                    jQuery.parseJSON(data),
+                    $('#indexOffer'),
+
+                );
+            }
+        });
+
+    });
+
+
+
 
     $('#marka').ready(function() {
 
@@ -430,7 +329,8 @@
                     'Model Pojazdu'
 
                 );
-            }
+            },
+            complete: function() {}
         });
 
     });
@@ -439,26 +339,6 @@
 
 
 
-
-
-    var helpers =
-        {
-            buildDropdown: function(result, dropdown, emptyMessage)
-            {
-                // Remove current options
-                dropdown.html('');
-                // Add the empty option with the empty message
-                dropdown.append('<option value="-1">' + emptyMessage + '</option>');
-                // Check result isnt empty
-                if(result != '')
-                {
-                    // Loop through each of the results and append the option to the dropdown
-                    $.each(result, function(k, v) {
-                        dropdown.append('<option value="' + v.id_tab + '">' + v.name_tab + '</option>');
-                    });
-                }
-            }
-        }
 
 
 
@@ -489,10 +369,15 @@
     });
 
 
-
 </script>
 
+<script>
 
+    $( document ).ajaxComplete(function() {
+        baguetteBox.run('.compact-gallery', { animation: 'slideIn'});
+    });
+
+</script>
 
 
 
