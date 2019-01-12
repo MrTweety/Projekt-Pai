@@ -64,6 +64,7 @@ elseif (( $_GET["marka"] != -1) && ( $_GET["model"] != -1))
     $model =  mysqli_real_escape_string($link, $_GET["model"]);
 
     if($where==0)$sql = $sql. " WHERE \n";
+    else $sql = $sql. " AND \n";
     ++$where;
     $sql = $sql
         . "Marka.id_marka =".$marka."\n"
@@ -76,6 +77,7 @@ elseif (( $_GET["marka"] != -1) && ( $_GET["model"] == -1))
     $marka =  mysqli_real_escape_string($link, $_GET["marka"]);
 
     if($where==0)$sql = $sql. " WHERE \n";
+    else $sql = $sql. " AND \n";
     ++$where;
     $sql = $sql . "Marka.id_marka =".$marka."\n";
 }
@@ -86,6 +88,7 @@ elseif (( $_GET["marka"] == -1) && ( $_GET["model"] != -1))
 
 
     if($where==0)$sql = $sql. " WHERE \n";
+    else $sql = $sql. " AND \n";
     ++$where;
     $sql = $sql . "Model.id_model =" .$model."\n";
 }
