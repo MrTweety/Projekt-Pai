@@ -82,35 +82,35 @@
       <!-- <img class="card-img-top img-fluid" src="http://placehold.it/900x400" alt=""> -->
 
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="http://placehold.it/900x400" alt="First slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="http://placehold.it/900x400" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="http://placehold.it/900x400" alt="Third slide">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                <img class="d-block w-100" src="http://placehold.it/900x400" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                <img class="d-block w-100" src="http://placehold.it/900x400" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                <img class="d-block w-100" src="http://placehold.it/900x400" alt="Third slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
 
 
       <div class="card-body">
-        <h3 class="card-title">Product Name</h3>
+        <h3 class="card-title" id="nazwa_samochodu">Product Name</h3>
         <h4>$24.99</h4>
         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente dicta fugit fugiat hic aliquam itaque facere, soluta. Totam id dolores, sint aperiam sequi pariatur praesentium animi perspiciatis molestias iure, ducimus!</p>
         <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
@@ -235,6 +235,27 @@
 
 </footer>
 <!-- Footer -->
+
+<script>
+
+$(document).ready(function() {
+
+$.ajax({
+    type: "get",
+    url: 'item.php',
+
+    data: {id_oferta: id_oferta},
+
+
+    success: function(data)
+    {
+        alert(data);
+    }
+});
+
+});
+
+</script>
 
 
 <script>
