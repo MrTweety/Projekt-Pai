@@ -125,7 +125,7 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link"data-toggle="tab"  href="#charts">
+                <a class="nav-link" data-toggle="tab"  href="#charts">
                     <i class="fa fa-area-chart"></i>
                     <span>Charts</span></a>
             </li>
@@ -143,7 +143,7 @@
                     <h3>dashboard</h3>
 
                         <div class="container myadd" style="margin-top: 56px;">
-                        <form class=" cointeiner text-center " method="post">
+                        <form class=" cointeiner text-center " enctype="multipart/form-data" id="fupForm">
                             <div class="row">
                                 <div class=" col-sm-12  ">
 
@@ -188,7 +188,7 @@
                                 </div>
 
                                 <div class="form-group col-sm-3">
-                                    <label for="kraj">Napęd</label>
+                                    <label for="naped">Napęd</label>
                                     <select id="naped" class="form-control" name="naped">
                                         <option selected value="-1">Napęd</option>
                                         <option  value="przód"> przód</option>
@@ -197,7 +197,7 @@
 
                                 </div>
                                 <div class="form-group col-sm-3">
-                                    <label for="przebieg_od">Rodzaj paliwa</label>
+                                    <label for="paliwo">Rodzaj paliwa</label>
                                     <!--                                <input type="number" class="form-control" id="paliwo" placeholder="Rodzaj paliwa">-->
                                     <select id="paliwo" class="form-control" name="paliwo">
                                         <option selected value="-1">Rodzaj paliwa</option>
@@ -220,7 +220,7 @@
                                 <div class="form-group col-sm-3">
                                     <label for="skrzynia">Typ skrzyni</label>
                                     <!--                                <input type="number" class="form-control" id="skrzynia" placeholder="Typ skrzyni">-->
-                                    <select id="nadwozie" class="form-control" name="nadwozie">
+                                    <select id="skrzynia" class="form-control" name="skrzynia">
                                         <option selected value="-1">Typ nadwozia</option>
                                         <option  value="manualna"> manualna </option>
                                         <option  value="automatyczna"> automatyczna </option>
@@ -282,25 +282,15 @@
                                     <!--                <button type="submit" class="btn btn-info ">-->
                                     <a href="#" id="button_dodaj" class="btn btn-info"><i class="fa fa-sign-in"></i> <span class="glyphicon glyphicon-search"></span>Dodaj</a>
                                     <button id="reset" type="button" class="btn btn-info" value="Reset">Reset</button>
-                                    <a href="#" id="button_s" class="btn btn-info"><i class="fa fa-sign-in"></i> <span class="glyphicon glyphicon-search"></span>zapisz</a>
 
                                     <!--                </button>-->
                                 </div>
+
+                                <div id="alert"></div>
                             </div>
                         </form>
 
-                            <form action="admin_add.php" method="post" enctype="multipart/form-data">
-                                Select image to upload:
-                                <input type="file" name="fileToUpload" id="fileToUpload">
-                                <input type="submit" value="Upload Image" name="submit">
-                            </form>
 
-
-                            <form action="admin_add.php" method="POST" ENCTYPE="multipart/form-data">
-                                <input type="file" name="plik"/><br/>
-                                <input type="submit" value="Wyślij plik"/>
-
-                            </form>
 
                     </div>
 
@@ -383,69 +373,68 @@ $link -> query ('SET CHARACTER_SET utf8_unicode_ci');
                                                    } );
                                                } );
 
-                        // oferta = $(document).ready(function()
-                        // {
-                        //
-                        //      $.ajax(
-                        //         {
-                        //             type: "POST",
-                        //             url: 'admin_select.php',
-                        //             data: {select :'oferta'},
-                        //
-                        //
-                        //             success: function(data)
-                        //             {
-                        //                 var dane = jQuery.parseJSON(data);
-                        //                 table = $('#tabOferta').DataTable(
-                        //                     {
-                        //                         "data": dane,
-                        //                         // "dom": "<tabelkaAdmin>",
-                        //                         "columns": [
-                        //                             { "data": "id_oferta" },
-                        //                             { "data": "imgg" },
-                        //                             { "data": "marka" },
-                        //                             { "data": "model" },
-                        //                             { "data": "kraj" },
-                        //                             //{ "data": "wyswietlenia" },
-                        //                             { "data": "cena_netto" },
-                        //                             { "data": "opis" },
-                        //                             { "data": "cechy" },
-                        //                             { "data": "usun" },
-                        //
-                        //                         ]
-                        //                     } );
-                        //             }
-                        //         });
-                        //
-                        // });
-                        //
-                        //
-                        // $( document ).ajaxComplete(function() {
-                        //     //table.ajax.reload();
-                        // });
 
                     </script>
 
                     <script>
 
+
+
                         $('#button_dodaj').click(function() {
+
+                            var file_data = $('#profile_pic').prop('files')[0];
+                            var form_data = new FormData();
+                            form_data.append('fileToUpload', file_data);
+                            form_data.append('marka', $('#marka').val());
+                            form_data.append('model', $('#model').val());
+                            form_data.append('cena', $('#cena').val());
+                            form_data.append('kraj',  $('#kraj').val());
+                            form_data.append('kolor', $('#kolor').val());
+                            form_data.append('naped', $('#naped').val());
+                            form_data.append('rok',  $('#rok').val());
+                            form_data.append('pojemnosc',  $('#pojemnosc').val());
+                            form_data.append('moc',  $('#moc').val());
+                            form_data.append('drzwi',  $('#drzwi').val());
+                            form_data.append('miejsca',  $('#miejsca').val());
+                            form_data.append('przebieg',  $('#przebieg').val());
+                            form_data.append('paliwo', $('#paliwo').val());
+                            form_data.append('skrzynia',  $('#skrzynia').val());
+                            form_data.append('opis',  $('#opis').val());
+                            form_data.append('nadwozie',  $('#nadwozie').val());
+                            form_data.append('select', "oferta");
+                            alert(form_data);
+
 
                             $.ajax({
                                 type: "POST",
                                 url: 'admin_add.php',
-                                data: {select:"oferta", marka :$('#marka').val() , model: $('#model').val(), kolor: $('#kolor').val(), kraj: $('#kraj').val(),
-                                    naped :$('#naped').val() , rok: $('#rok').val(), pojemnosc: $('#pojemnosc').val(), moc: $('#moc').val(),
-                                    drzwi: $('#drzwi').val(), miejsca: $('#miejsca').val(), przebieg: $('#przebieg').val(), paliwo :$('#paliwo').val(),
-                                    skrzynia: $('#skrzynia').val(), opis: $('#opis').val(), nadwozie: $('#nadwozie').val(), cena: $('#cena').val(), profile_pic: $('#profile_pic').val()},
+                                // dataType: 'text',
+                                cache: false,
+                                contentType: false,
+                                processData: false,
+                                data: form_data,
+                                // data: form_data,
+                                //  data: {select:"oferta", marka :$('#marka').val() , model: $('#model').val(), kolor: $('#kolor').val(), kraj: $('#kraj').val(),
+                                //       naped :$('#naped').val() , rok: $('#rok').val(), pojemnosc: $('#pojemnosc').val(), moc: $('#moc').val(),
+                                //       drzwi: $('#drzwi').val(), miejsca: $('#miejsca').val(), przebieg: $('#przebieg').val(), paliwo :$('#paliwo').val(),
+                                //      skrzynia: $('#skrzynia').val(), opis: $('#opis').val(), nadwozie: $('#nadwozie').val(), cena: $('#cena').val(),form_data},
 
 
-                                // success: function()
-                                // {
-                                //     oferta.ajax.reload();
-                                //     alert("abx");
-                                //
-                                //
-                                // },
+                                success: function(php_script_response){
+                                    alert(php_script_response);
+                                    var dane = jQuery.parseJSON(php_script_response);
+
+
+                                    if(parseInt(dane.flaga)==1)
+                                        $( "#alert" ).html('<div class="alert alert-success" role="alert">'+
+                                            '  <strong>Well done! </strong>'+dane.zdjecie+
+                                            '</div>');
+                                    else
+                                        $( "#alert" ).html('<div class="alert alert-danger" role="alert">'+
+                                            '  <strong>Warning! </strong>'+dane.zdjecie+
+                                            '</div>');
+                                }
+                                    ,
                                 complete: function()
                                 {
                                     oferta.ajax.reload();
