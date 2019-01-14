@@ -8,7 +8,13 @@ body {
 }
 
 .tab-content{
-    margin: 0!important;
+  margin: 0!important;
+}
+
+.tab-pane{
+  background-color: rgba(0,0,0,0.1)!important;
+  margin: 0px;
+  padding: 15px;
 }
 
 
@@ -29,9 +35,18 @@ body {
     background-color: #212529;
 
 }
-a#pageDropdown.nav-link{
-    background-color: #00bf00!important;
-    width: 90%!important;
+
+
+.dropdown-toggle{
+  background-color: #212529!important;
+  /*color: rgba(0,0,0,0.5);*/
+  color: rgba(255, 255, 255, 0.5)!important;
+}
+
+li .nav-link.active{
+  background-color: #212529!important;
+  /*color: rgba(0,0,0,0.5);*/
+  color: whitesmoke!important;
 }
 
 
@@ -50,12 +65,16 @@ ul.nav-drop li a.dropdown-item.active{
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+
 }
 #wrapper #content-wrapper {
   overflow-x: hidden;
   width: 100%;
+  height: 1000px;
 
 }
+
+
 .navbar-nav .form-inline .input-group {
   width: 100%;
 }
@@ -213,3 +232,7 @@ ul.nav-drop li a.dropdown-item.active{
   overflow-y: auto;
 }
 
+/*.footer {*/
+  /*position: absolute;*/
+  /*bottom: 0;*/
+/*}*/
