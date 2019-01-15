@@ -173,11 +173,16 @@ if($flaga==1){
         };
     }
 
-    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-    //$target_file_name = basename($_FILES["fileToUpload"]["name"]);
-    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-    $newName="Id_".$last_oferta_id.'.'.$imageFileType;
-    //echo $_FILES["fileToUpload"]["tmp_name"];
+    if(!isset($_FILES["fileToUpload"])) {
+        $uploadOk = 0;
+    }
+    if($uploadOk==1){
+        $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+        //$target_file_name = basename($_FILES["fileToUpload"]["name"]);
+        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+        $newName="Id_".$last_oferta_id.'.'.$imageFileType;
+        //echo $_FILES["fileToUpload"]["tmp_name"];
+    }
 
 // Check if image file is a actual image or fake image
     if(isset($_POST["submit"])) {
@@ -190,6 +195,8 @@ if($flaga==1){
             $uploadOk = 0;
         }
     }
+
+
 // Check if file already exists
     if (file_exists($target_dir.$newName)) {
         $data['zdjecie'] = "Sorry, file already exists.";

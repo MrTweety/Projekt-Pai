@@ -61,7 +61,7 @@
     </style>
 
 </head>
-<body onload="load_login_form()" style="background-color: white !important;m">
+<body  style="background-color: white !important;">
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top ">
     <a class="navbar-brand " href="#"><h3>Classic<span>4you.eu</span></h3></a>
@@ -83,7 +83,14 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Contact</a>
             </li>
-
+            <li class="nav-item">
+            <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle1" href="#">
+                <i class="fa fa-bars"></i>
+            </button>
+                <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle2" href="#">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </li>
         </ul>
 
         <form class="form-inline my-2 my-lg-0">
@@ -100,14 +107,20 @@
 <div id="wrapper">
     <div id="sidebar" >
             <ul class="nav flex-column nav-pills sidebar" role="tablist">
-            <li class="nav-item active">
-                <a class="nav-link "   data-toggle="tab" href="#dashboard">
-                    <i class="fa fa-dashboard"></i>
-                    <span>Dashboard</span>
+                <li class="nav-item active">
+                    <a class="nav-link active"   data-toggle="tab" href="#dashboard1">
+                        <i class="fa fa-dashboard"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+            <li class="nav-item ">
+                <a class="nav-link "   data-toggle="tab" href="#oferta">
+                    <i class="fa fa-table"></i>
+                    <span>Oferta</span>
                 </a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle active" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle " href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-folder"></i>
                     <span>Pages</span>
                     <i class="fa fa-chevron-down "></i>
@@ -117,11 +130,11 @@
                             <a class="dropdown-item " data-toggle="tab" href="#usersAdmin">Użytkownicy</a>
                             <a class="dropdown-item" data-toggle="tab" href="#menu1">Menu 1</a>
                             <a class="dropdown-item" data-toggle="tab" href="#menu2">Menu 2</a>
-                    <h6 class="dropdown-header">Other Pages:</h6>
-                    <a class="dropdown-item" href="404.html">404 Page</a>
+<!--                    <h6 class="dropdown-header">Other Pages:</h6>-->
+<!--                    <a class="dropdown-item" href="404.html">404 Page</a>-->
 
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="blank.html">Blank Page</a>
+<!--                    <div class="dropdown-divider"></div>-->
+<!--                    <a class="dropdown-item" href="blank.html">Blank Page</a>-->
                 </div>
             </li>
             <li class="nav-item">
@@ -131,7 +144,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" data-toggle="tab" href="#tables">
-                    <i class="fa fa fa-table"></i>
+                    <i class="fa fa-table"></i>
                     <span>Tables</span></a>
             </li>
         </ul>
@@ -139,10 +152,13 @@
     </div>
     <div id="content-wrapper">
             <div class="tab-content" style="width: 100%;">
-                <div id="dashboard" class="tab-pane active" style="height:auto; background-color: white; width: 100%!important;"><br>
-                    <h3>dashboard</h3>
+                <div id="dashboard1" class="tab-pane active " style="height:auto; background-color: white; width: 100%!important;"><br>
+                    <h3>Dashboard</h3>
+                </div>
+                <div id="oferta" class="tab-pane fade" style="height:auto; background-color: white; width: 100%!important;"><br>
+                    <h3>Oferta</h3>
 
-                        <div class="container myadd" style="margin-top: 56px;">
+                        <div class="container myAddOfert" style="margin-top: 56px;">
                         <form class=" cointeiner text-center " enctype="multipart/form-data" id="fupForm">
                             <div class="row">
                                 <div class=" col-sm-12  ">
@@ -179,7 +195,7 @@
 
                                 <div class="form-group col-sm-3">
                                     <label for="cena">Cena</label>
-                                    <input type="number" class="form-control" id="cena" placeholder="Cena">
+                                    <input type="number" class="form-control" id="cena" placeholder="Cena" required>
                                 </div>
 
                                 <div class="form-group col-sm-3">
@@ -281,7 +297,7 @@
                                 <div class="col-sm-12">
                                     <!--                <button type="submit" class="btn btn-info ">-->
                                     <a href="#" id="button_dodaj" class="btn btn-info"><i class="fa fa-sign-in"></i> <span class="glyphicon glyphicon-search"></span>Dodaj</a>
-                                    <button id="reset" type="button" class="btn btn-info" value="Reset">Reset</button>
+                                    <button id="reset" type="reset" class="btn btn-info" value="Reset">Reset</button>
 
                                     <!--                </button>-->
                                 </div>
@@ -294,8 +310,9 @@
 
                     </div>
 
-
-
+                    <a href="#" id="button_1" class="btn btn-info"><i class="fa fa-sign-in"></i> <span class="glyphicon glyphicon-search"></span>Dodaj Oferte</a>
+                    <a href="#" id="button_2" class="btn btn-info"><i class="fa fa-sign-in"></i> <span class="glyphicon glyphicon-search"></span>Ukryj panel dodawania</a>
+                    <div id="alert2" style="margin-top: 10px;"></div>
                     <div id="tabelkaOfera">
                         <table id="tabOferta" class="display" style="width:100%">
                             <thead>
@@ -328,23 +345,10 @@
 
 
                     </div>
-<?php
-$host = "localhost";
-$db_user = "root";
-$db_password = "";
-$db_name = "mgaczorek";
-$link = mysqli_connect($host, $db_user, $db_password, $db_name) or die();
-$link -> query ('SET NAMES utf8');
-$link -> query ('SET CHARACTER_SET utf8_unicode_ci');
 
 
-                    if(isset($_GET['usun'])){
-                    $_GET['usun']  = mysqli_real_escape_string($link, $_GET['usun']);
-                    //$link->query( "delete from uzytkownik where id_uzyt = '$_GET[usun]' limit 1;");
-                    //echo mysqli_error($link);
-                        //table.reload();
-                    }
-?>
+
+
 
                     <script>
 
@@ -355,28 +359,115 @@ $link -> query ('SET CHARACTER_SET utf8_unicode_ci');
 
 
 
-                                               $(document).ready(function() {
-                                                   oferta = $('#tabOferta').DataTable( {
+                    $(document).ready(function() {
+                        oferta = $('#tabOferta').DataTable( {
 
-                                                       "ajax": {"url":"admin_select.php","type": "POST","data": {"select" :'oferta'}},
-                                                       "columns": [
-                                                               { "data": "id_oferta" },
-                                                               { "data": "imgg" },
-                                                               { "data": "marka" },
-                                                               { "data": "model" },
-                                                               { "data": "kraj" },
-                                                               { "data": "cena_netto" },
-                                                               { "data": "opis" },
-                                                               { "data": "cechy" },
-                                                               { "data": "usun" },
-                                                       ]
-                                                   } );
-                                               } );
+                            "ajax": {"url":"admin_select.php","type": "POST","data": {"select" :'oferta'}},
+                            "columns": [
+                                { "data": "id_oferta" },
+                                { "data": "imgg" },
+                                { "data": "marka" },
+                                { "data": "model" },
+                                { "data": "kraj" },
+                                { "data": "cena_netto" },
+                                { "data": "opis" },
+                                { "data": "cechy" },
+                                { "data": "usun" },
+                            ]
+                        } );
+                    } );
 
 
                     </script>
 
                     <script>
+
+
+                        //Addpanel
+                        $(document).ready(function()
+                        {
+                            $( ".myAddOfert" ).hide();
+                            $( "#button_2" ).hide();
+                        });
+
+                        $('#button_1').click(function() {
+                            $( ".myAddOfert" ).show();
+                            $( "#button_2" ).show();
+                            $( "#button_1" ).hide();
+                        });
+
+                        $('#button_2').click(function() {
+                            $( ".myAddOfert" ).hide();
+                            $( "#button_2" ).hide();
+                            $( "#button_1" ).show()
+                        });
+
+
+                        //panel boczny
+                        $(document).ready(function()
+                        {
+                            // $( "#sidebar" ).hide();
+                            $( "#sidebarToggle1" ).hide();
+                        });
+
+                        $('#sidebarToggle1').click(function() {
+                            $( "#sidebar" ).show();
+                            $( "#sidebarToggle2" ).show();
+                            $( "#sidebarToggle1" ).hide();
+                        });
+
+                        $('#sidebarToggle2').click(function() {
+                            $( "#sidebar" ).hide();
+                            $( "#sidebarToggle2" ).hide();
+                            $( "#sidebarToggle1" ).show()
+                        });
+
+
+                        function myFunction(id, name) {
+                            //alert(id+' '+name);
+                            if(parseInt(name) == 2){var select = "oferta";}
+
+                            var txt = 0;
+                            if (confirm("Czy na pewno chcesz usunąć pozycję o id = "+id+"?")) {
+                                txt = 1;
+                            } else {
+                                txt = 0;
+                            }
+
+                            if(parseInt(txt) == 1)
+                            {
+                            $.ajax({
+                                type: "POST",
+                                url: 'admin_delete.php',
+                                data: {select: select, oferta : id},
+
+
+                                success: function(php_script_response){
+
+                                    var dane = jQuery.parseJSON(php_script_response);
+
+                                    if(parseInt(dane.flaga)==1)
+                                        $( "#alert2" ).html('<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>'+
+                                            '  <strong>Well done! </strong>'+dane.Alert+
+                                            '</div>');
+                                    else
+                                        $( "#alert2" ).html('<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>'+
+                                            '  <strong>Warning! </strong>'+dane.Alert+
+                                            '</div>');
+                                }
+                                ,
+                                complete: function()
+                                {
+                                    oferta.ajax.reload();
+
+                                }
+
+
+                            });
+                            }
+
+
+                        }
 
 
 
@@ -402,7 +493,7 @@ $link -> query ('SET CHARACTER_SET utf8_unicode_ci');
                             form_data.append('opis',  $('#opis').val());
                             form_data.append('nadwozie',  $('#nadwozie').val());
                             form_data.append('select', "oferta");
-                            alert(form_data);
+                            //alert(form_data);
 
 
                             $.ajax({
@@ -413,24 +504,18 @@ $link -> query ('SET CHARACTER_SET utf8_unicode_ci');
                                 contentType: false,
                                 processData: false,
                                 data: form_data,
-                                // data: form_data,
-                                //  data: {select:"oferta", marka :$('#marka').val() , model: $('#model').val(), kolor: $('#kolor').val(), kraj: $('#kraj').val(),
-                                //       naped :$('#naped').val() , rok: $('#rok').val(), pojemnosc: $('#pojemnosc').val(), moc: $('#moc').val(),
-                                //       drzwi: $('#drzwi').val(), miejsca: $('#miejsca').val(), przebieg: $('#przebieg').val(), paliwo :$('#paliwo').val(),
-                                //      skrzynia: $('#skrzynia').val(), opis: $('#opis').val(), nadwozie: $('#nadwozie').val(), cena: $('#cena').val(),form_data},
-
 
                                 success: function(php_script_response){
-                                    alert(php_script_response);
+                                    //alert(php_script_response);
                                     var dane = jQuery.parseJSON(php_script_response);
 
 
                                     if(parseInt(dane.flaga)==1)
-                                        $( "#alert" ).html('<div class="alert alert-success" role="alert">'+
+                                        $( "#alert" ).html('<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>'+
                                             '  <strong>Well done! </strong>'+dane.zdjecie+
                                             '</div>');
                                     else
-                                        $( "#alert" ).html('<div class="alert alert-danger" role="alert">'+
+                                        $( "#alert" ).html('<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>'+
                                             '  <strong>Warning! </strong>'+dane.zdjecie+
                                             '</div>');
                                 }
@@ -568,9 +653,11 @@ $link -> query ('SET CHARACTER_SET utf8_unicode_ci');
 
                 </div>
 
-
                 <div id="usersAdmin" class="tab-pane  w-100 fade " ><br>
                     <h3>Administratorzy </h3>
+
+                    <div id="alert3" style="margin-top: 10px;"></div>
+
                     <div id="tabelkaAdmin">
                         <table id="tabAdmin" class="display" style="width:100%">
                             <thead>
@@ -600,69 +687,80 @@ $link -> query ('SET CHARACTER_SET utf8_unicode_ci');
 
 
 
+
+
+
+
                     </div>
-                    <?php
-                    $host = "localhost";
-                    $db_user = "root";
-                    $db_password = "";
-                    $db_name = "mgaczorek";
-                    $link = mysqli_connect($host, $db_user, $db_password, $db_name) or die();
-                    $link -> query ('SET NAMES utf8');
-                    $link -> query ('SET CHARACTER_SET utf8_unicode_ci');
-
-
-                    if(isset($_GET['usun'])){
-                        $_GET['usun']  = mysqli_real_escape_string($link, $_GET['usun']);
-                        //$link->query( "delete from uzytkownik where id_uzyt = '$_GET[usun]' limit 1;");
-                        //echo mysqli_error($link);
-                        //table.reload();
-                    }
-                    ?>
-
                     <script>
 
-                        // szukajka na start database!!!!!
-                        $(document).ready(function()
-                        {
+                        function myFunction(id, name) {
+                            //alert(id+' '+name);
+                            if(parseInt(name) == 3){var select = "admin";}
 
-                            $.ajax(
-                                {
+                            var txt = 0;
+                            if (confirm("Czy na pewno chcesz usunąć pozycję o id = "+id+"?")) {
+                                txt = 1;
+                            } else {
+                                txt = 0;
+                            }
+
+                            if(parseInt(txt) == 1)
+                            {
+                                $.ajax({
                                     type: "POST",
-                                    url: 'admin_select.php',
-                                    data: {select :'admin'},
+                                    url: 'admin_delete.php',
+                                    data: {select: select, admin : id},
 
 
-                                    success: function(data)
-                                    {
+                                    success: function(data){
+
                                         var dane = jQuery.parseJSON(data);
-                                        table = $('#tabAdmin').DataTable(
-                                            {
-                                                "data": dane,
-                                                // "dom": "<tabelkaAdmin>",
-                                                "columns": [
-                                                    { "data": "id_uzyt" },
-                                                    { "data": "imie" },
-                                                    { "data": "nazwisko" },
-                                                    { "data": "email" },
-                                                    { "data": "login" },
-                                                    { "data": "typKonta" },
-                                                    { "data": "usun" },
-                                                    // { "data": "data_zlozenia" },
 
-                                                ]
-                                            } );
+                                        if(parseInt(dane.flaga)==1)
+                                            $( "#alert3" ).html('<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>'+
+                                                '  <strong>Well done! </strong>'+dane.Alert+
+                                                '</div>');
+                                        else
+                                            $( "#alert3" ).html('<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>'+
+                                                '  <strong>Warning! </strong>'+dane.Alert+
+                                                '</div>');
+                                    },
+                                    complete: function()
+                                    {
+                                        admintab.ajax.reload();
                                     }
+
+
                                 });
+                            }
 
-                        });
 
-
+                        }
 
 
                     </script>
+
+                    <script>
+
+                        $(document).ready(function() {
+                            admintab = $('#tabAdmin').DataTable( {
+
+                                "ajax": {"url":"admin_select.php","type": "POST","data": {"select" :"admin"}},
+                                "columns": [
+                                    { "data": "id_uzyt" },
+                                    { "data": "imie" },
+                                    { "data": "nazwisko" },
+                                    { "data": "email" },
+                                    { "data": "login" },
+                                    { "data": "typKonta" },
+                                    { "data": "usun" },
+                                ]
+                            } );
+                        } );
+
+                    </script>
                 </div>
-
-
 
 
 
@@ -704,7 +802,16 @@ $link -> query ('SET CHARACTER_SET utf8_unicode_ci');
 
 
 
-        <div><?php include_once '../partials/footer.php'?></div>
+<!--        <div>--><?php //include_once '../partials/footer.php'?><!--</div>-->
+
+        <div id="rozmiar" class="alert alert-danger alert-dismissible">
+            <div class="row">
+                <div class="col-9"><strong>Uaaga!</strong> Zalecane jest stosowania wyswietlaczy o wiekszym rozmiarze.</div>
+                <div class="col-3"><button type="button" class="close" data-dismiss="alert">&times;</button></div>
+            </div>
+
+
+        </div>
 
     </div>
 

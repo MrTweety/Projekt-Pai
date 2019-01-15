@@ -42,14 +42,14 @@ if($_POST["select"] == "admin") {
             $data[$i]['email'] = $row['email'];
             $data[$i]['login'] = $row['login'];
             $data[$i]['typKonta'] = $row['typ_konta'];
-            $data[$i]['usun'] = '<a class="btn btn-success" style="margin:2px;" href = "?edit='.$row['id_uzyt'].'">edit</a>'.'<a class="btn btn-danger" style="margin:2px;" href = "?usun='.$row['id_uzyt'].'">unuń</a>';
+            $data[$i]['usun'] = '<button type="button" class="btn btn-danger " value="'.$row['id_uzyt'].' "onclick="myFunction('.$row['id_uzyt'].',3)">Usuń</button>';//'<a class="btn btn-success" style="margin:2px;" href = "?edit='.$row['id_uzyt'].'">edit</a>'.'<a class="btn btn-danger" style="margin:2px;" href = "?usun='.$row['id_uzyt'].'">unuń</a>';
 //        $data[$i]['model'] = $row['model_nazwa'];
 //        $data[$i]['marka'] = $row['marka_nazwa'];
 //        $data[$i]['opis'] = $row['opis'];
 //        $data[$i]['cechy'] = $row['Result'];
             $i++;
         }
-        echo json_encode($data);
+        echo json_encode(['data' => $data]);
     }
 
 }elseif ($_POST["select"] == "oferta"){
@@ -97,7 +97,7 @@ if($_POST["select"] == "admin") {
             $data[$i]['marka'] = $row['marka_nazwa'];
             $data[$i]['opis'] = '<p style="width: 300px;">'.$row['opis'].'</p>';
             $data[$i]['cechy'] = '<p style="width: 300px;">'.$row['Result'].'</p>';
-            $data[$i]['usun'] = '<a class="btn btn-success" style="margin:2px;" href = "?edit='.$row['id_oferta'].'">edit</a>'.'<a class="btn btn-danger" style="margin:2px;" href = "?usun='.$row['id_oferta'].'">unuń</a>';
+            $data[$i]['usun'] = '<button type="button" class="btn btn-danger " value="'.$row['id_oferta'].' "onclick="myFunction('.$row['id_oferta'].',2)">Usuń</button>';//'<a class="btn btn-success" style="margin:2px;" href = "?edit='.$row['id_oferta'].'">edit</a>'.'<a class="btn btn-danger" style="margin:2px;" href = "?usun='.$row['id_oferta'].'">unuń</a>';
 
             $i++;
         }
