@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: user
- * Date: 2018-12-15
- * Time: 19:32
- */
 
 class User extends Model
 {
