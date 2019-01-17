@@ -167,7 +167,7 @@
         <form id ="form_search" class="" method="GET" action="main/search">
             <div class="form-row text-center">
                 <div class="form-group col-12">
-                    <a href="#" class="link-dark"><h4><i class="fa fa-car"></i> Search Options</h4></a>
+                    <a href="main/search" class="link-dark"><h4><i class="fa fa-car"></i> Search Options</h4></a>
                 </div>
 
                 <div class="form-group col-md-6">

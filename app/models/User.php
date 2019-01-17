@@ -38,6 +38,7 @@ class User extends Model
     public function auth($data)
     {
         $login = trim($data['login']);
+        $login = strtolower($login);
         $password = trim($data['password']);
 
         $query = "SELECT * FROM uzytkownik WHERE login = :login";
@@ -82,8 +83,9 @@ class User extends Model
 
 
         $email = trim($data['email']);
-
+        $email = strtolower($email);
         $login=trim($data['login']);
+        $login = strtolower($login);
 
         $password = trim($data['password']);
         $cpassword = trim($data['cpassword']);
@@ -102,8 +104,8 @@ class User extends Model
         else {
 
 
-            $query = "INSERT INTO uzytkownik (`id_uzyt`,`id_adres`, `id_typ`, `imie`, `nazwisko`, `email`, `login`, `haslo`,`NIP`,`nazwa_firmy`) VALUES (NULL, NULL,1,:imie,:nazwisko,:email,:login,:password,:NIP,:nazwa_firmy)";
-
+            $query = "INSERT INTO uzytkownik (`id_uzyt`,`id_adres`, `id_typ`, `imie`, `nazwisko`, `email`, `login`, `haslo`,`NIP`,`nazwa_firmy`) VALUES (NULL, NULL,2,:imie,:nazwisko,:email,:login,:password,:NIP,:nazwa_firmy)";
+            $password = password_hash($password, PASSWORD_DEFAULT);
             $stmt = $this->db->prepare($query);
 
 
@@ -118,6 +120,7 @@ class User extends Model
             $stmt->bindParam(":nazwa_firmy", $nazwa_firmy);
 
             $stmt->execute();
+
             return true;
         }
 

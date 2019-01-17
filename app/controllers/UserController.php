@@ -4,6 +4,23 @@
 class UserController extends Controller
 {
 
+    public function index()
+    {
+
+        $this->view('user/index');
+    }
+
+
+
+
+    public function search(){
+        $this->partial('header');
+        $this->partial('nav');
+        $this->view("user/search");
+        $this->partial('footer');
+
+    }
+
     public function login(){
         $this->view('user/login');
     }
@@ -12,8 +29,6 @@ class UserController extends Controller
 
         $this->partial('header');
         $this->partial('nav');
-
-
 
         $this->view('user/register');
         $this->partial('footer');
@@ -46,9 +61,11 @@ class UserController extends Controller
         }else {
             $user = $this->model('User');
             if ($user->insert($_POST)){
-                $this->redirect("/home/Registered");
+//                $this->redirect("/home/Registered");
+                echo 1;
             }else {
-                $this->redirect("/home/notRegister");
+//                $this->redirect("/home/notRegister");
+                echo 2;
             }
         }
     }

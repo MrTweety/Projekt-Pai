@@ -10,19 +10,19 @@ class HomeController extends Controller
 {
     public function index()
     {
-//        $this->partial('header');
-//        $this->partial('nav');
-//
-//
-//
-//        $this->view('home/index');
-//        $this->partial('footer');
-        $this->view('main/indexx');
+        $this->partial('header');
+        $this->partial('nav');
+        $this->view('home/index');
+        $this->partial('footer');
+
+//        $this->view('main/indexx');
 
 
     }
 
     public function isLogin(){
+        $this->partial('header');
+        $this->partial('nav');
         $this->view("home/isLogin");
     }
 
@@ -34,8 +34,11 @@ class HomeController extends Controller
         $this->view("home/index");
     }
     public function Registered(){
+        $this->partial('header');
+        $this->partial('nav');
         $this->view("home/registered");
     }
+
 
 
 
