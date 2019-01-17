@@ -10,13 +10,14 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $this->partial('header');
-        $this->partial('nav');
-
-
-
-        $this->view('home/index');
-        $this->partial('footer');
+//        $this->partial('header');
+//        $this->partial('nav');
+//
+//
+//
+//        $this->view('home/index');
+//        $this->partial('footer');
+        $this->view('main/indexx');
 
 
     }
