@@ -1,3 +1,5 @@
+<?php echo password_hash("user", PASSWORD_DEFAULT )?>
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -162,7 +164,7 @@
     <div class="container">
 
 
-        <form id ="form_search" class="" method="GET" action="search.php">
+        <form id ="form_search" class="" method="GET" action="main/search">
             <div class="form-row text-center">
                 <div class="form-group col-12">
                     <a href="#" class="link-dark"><h4><i class="fa fa-car"></i> Search Options</h4></a>
@@ -264,7 +266,7 @@
 
         $.ajax({
             type: "get",
-            url: 'search_easy.php',
+            url: 'app/views/main/search_easy.php',
             data:{page:"index"},
 
             success: function(data)
@@ -285,7 +287,7 @@
 
         $.ajax({
             type: "POST",
-            url: 'slider.php',
+            url: 'app/views/main/slider.php',
 
             success: function(data)
             {
@@ -306,7 +308,7 @@
 
         $.ajax({
             type: "POST",
-            url: 'search_select.php',
+            url: 'app/views/main/search_select.php',
             data:{select:"marka"},
 
             success: function(data)
@@ -326,7 +328,7 @@
 
         $.ajax({
             type: "POST",
-            url: 'search_select.php',
+            url: 'app/views/main/search_select.php',
             data:{select:"model"},
 
             success: function(data)
@@ -348,7 +350,7 @@
 
         $.ajax({
             type: "POST",
-            url: 'search_select.php',
+            url: 'app/views/main/search_select.php',
             data: {marka :$('#marka').val(), select:"model"},
 
             success: function(data)
@@ -377,7 +379,7 @@
 
     function load_login_form()
     {
-        $("#log_form").load("../user/login.php");
+        $("#log_form").load("../app/views/user/login.php");
     }
 
     $(document).ready( function() {

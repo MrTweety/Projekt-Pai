@@ -42,7 +42,7 @@ if($_POST["select"] == "admin") {
             $data[$i]['email'] = $row['email'];
             $data[$i]['login'] = $row['login'];
             $data[$i]['typKonta'] = $row['typ_konta'];
-            $data[$i]['usun'] = '<button type="button" class="btn btn-danger " value="'.$row['id_uzyt'].' "onclick="myFunction('.$row['id_uzyt'].',3)">Usuń</button>';//'<a class="btn btn-success" style="margin:2px;" href = "?edit='.$row['id_uzyt'].'">edit</a>'.'<a class="btn btn-danger" style="margin:2px;" href = "?usun='.$row['id_uzyt'].'">unuń</a>';
+            $data[$i]['usun'] = '<button type="button" class="btn btn-danger " value="'.$row['id_uzyt'].' "onclick="myFunction2('.$row['id_uzyt'].',3)">Usuń</button>';//'<a class="btn btn-success" style="margin:2px;" href = "?edit='.$row['id_uzyt'].'">edit</a>'.'<a class="btn btn-danger" style="margin:2px;" href = "?usun='.$row['id_uzyt'].'">unuń</a>';
 //        $data[$i]['model'] = $row['model_nazwa'];
 //        $data[$i]['marka'] = $row['marka_nazwa'];
 //        $data[$i]['opis'] = $row['opis'];

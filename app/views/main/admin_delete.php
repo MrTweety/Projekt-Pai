@@ -32,7 +32,7 @@ if($_POST["select"] == "admin") {
     if($flaga==1) {
         mysqli_commit($link);
         $data['flaga'] = 1;
-        $data['Alert'] = $data['Alert']." Oferta została usunieta.";
+        $data['Alert'] = $data['Alert']." Admin został usuniety.";
     }
     else{
         mysqli_rollback($link);
@@ -119,7 +119,7 @@ if($_POST["select"] == "admin") {
         $data['Alert'] = $data['Alert'].$e->getMessage();
     }
 
-mysqli_rollback($link);
+//mysqli_rollback($link);
 
     if($flaga==1) {
         mysqli_commit($link);
