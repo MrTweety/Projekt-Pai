@@ -1,6 +1,8 @@
+<?php echo password_hash("admin")?>
+
 <!DOCTYPE html>
 <html lang="pl">
-<head>
+<head>s
     <title>Strona glowna</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
