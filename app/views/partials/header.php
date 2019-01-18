@@ -5,25 +5,48 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" id="bootstrap-css">
+    <!--    bootstrap,jquery-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <link rel="stylesheet" href="/public/css/home_page.css" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <!--    bootstrap,jquery-->
 
-    <!--<link rel="stylesheet" href="../../../public/css/home_page.css" type="text/css">-->
-
-    <link rel="stylesheet" href="/public/css/login.css" type="text/css">
-
-
-
-
+    <!--font-->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <!--font-->
+
+    <!--    footer-->
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../../../public/css/footer-distributed-with-address-and-phones.css">
+    <!--    footer-->
+
+    <!--    gallery-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" />
+    <link rel="stylesheet" href="../../../public/css/compact-gallery.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <!--    gallery-->
+
+    <!--    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>-->
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
+
+    <link rel="stylesheet" href="../../../public/css/home_page.css" type="text/css">
+    <link rel="stylesheet" href="../../../public/css/login.css" type="text/css">
+    <script src="../../../public/js/my_js.js"></script>
+<!--    <script src="app/js/skrypty.js"></script>-->
 
 
 
-    <script src="/app/js/skrypty.js"></script>
 
+    <style>
+        /* Make the image fully responsive */
+        .carousel-inner img {
+            width: 100%;
+            max-height: 500px;
+        }
+    </style>
 
 </head>
 <body>

@@ -1,5 +1,20 @@
 
 
+function load_login_form()
+{
+    $("#log_form").load("/user/login");
+}
+
+$(document).ready( function() {
+    $("#load_login_form").on("click", function() {
+        document.getElementById('log_form').style.display='block';
+        document.getElementById('indicators').style.display='none';
+    });
+});
+
+
+
+
 var helpers =
     {
         buildDropdown: function(result, dropdown, emptyMessage, def = -1)
@@ -40,22 +55,21 @@ var helpers2 =
                 $.each(result, function(k, v) {
                     var Maxx = parseInt(v.id_tab);
                     var Minn = parseInt(v.name_tab);
+console.log("strt: "+parseInt(start));
 
 
-                    // console.log(inter);
-                    // console.log(Maxx);
-                    // console.log(Minn);
-
-
-                    if(parseInt(start)){
+                    if(parseInt(start)!=0){
+                        console.log("strtt: "+parseInt(start));
                         start=parseInt(start);
-                        if(Minn>start){
+                        if(start<0) start = Minn;
+                        else if(Minn>start){
                             Minn = start;
                         }else Minn = 0;
-
+                        console.log("strttt: "+parseInt(start));
                     }
 
-
+                    console.log("Min: "+Minn);
+                    console.log("Max: "+Maxx);
                     // console.log(start);
 
                     while(Minn <= (Maxx+inter) ) {

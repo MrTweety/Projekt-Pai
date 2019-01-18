@@ -1,8 +1,12 @@
-<div id="Register" class="container tab-pane fade"><br>
+<!--@TODO do zrobienie od nowa, name i id inputu zaleceane zostawić bez zmian, proces rejestracji dziala, ajax działa zajebiscie z MVC!!!!!! -->
+<!--@TODO dodac adres-->
+
+<div id="Register" class="container tab-pane"  style="margin-top: 66px;"><br>
     <div class="container">
         <div class="row">
             <div class="form-block">
-                <form class="login-form" method="POST" action="/user/create">
+<!--                <form class="login-form" method="POST" action="/user/create">-->
+                <form class="login-form">
                     <div class="field"><h1>Sign up</h1></div>
                     <div class="field">
                         <label for="imie" >Imię:</label>
@@ -45,9 +49,39 @@
 
 
                     <div class="field">
-                        <button class="btn" id="login-btn">Register</button>
+                        <button class="btn" id="login-btn" type="button">Register</button>
                     </div>
                 </form>
+
+                <script>
+
+                    $('#login-btn').click(function () {
+
+                        $.ajax({
+                            type: "POST",
+                            url: '/user/create',
+                            data: {
+                                login: $('#login').val(),
+                                cpassword: $('#cpassword').val(),
+                                password: $('#password').val(),
+
+                                imie: $('#imie').val(),
+                                nazwisko: $('#nazwisko').val(),
+                                email: $('#email').val(),
+                                NIP: $('#NIP').val(),
+                                nazwa_firmy: $('#nazwa_firmy').val(),
+                            },
+                            // data: {marka : 1 , model: -1},
+
+
+                            success: function (data) {
+                                alert(data);
+                            }
+                        });
+
+                    });
+
+                </script>
             </div>
         </div>
     </div>
