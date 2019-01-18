@@ -116,6 +116,15 @@
         </div>
         
         <p class="card-text" id="opis">opis</p>
+
+        <div class="row justify-content-end">
+            <p>
+                Ilość wyświetleń: 
+                <p id="ilosc_wyswietlen">
+                    liczba
+                </p>
+            </p>
+        </div>
       </div>
     </div>
     <!-- /.card -->
@@ -129,14 +138,11 @@
             <h4>Kraj pochodzenia: </h4>
             <div id="kraj">Kraj</div>
         </div>
-        <hr>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-        <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-        <hr>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-        <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-        <hr>
-        <a href="#" class="btn btn-success">Leave a Review</a>
+
+        <div id="offers">
+
+        </div>
+
       </div>
     </div>
     <!-- /.card -->
@@ -146,11 +152,12 @@
 
 
   <div class="col-lg-3">
-    <h1 class="my-4"> <div class="logo"> <a href="indexx.php"><h3>Classic<span>4you.eu</span></h3></a> </div> </h1>
-    <div class="list-group">
-      <a href="#" class="list-group-item">Dodaj do koszyka</a>
-      <a href="#" class="list-group-item">Category 2</a>
-      <a href="#" class="list-group-item">Category 3</a>
+    <div class="sticky-top" style="z-index: 1">
+        <br><br>
+        <h1 class="my-4"> <div class="logo"> <a href="indexx.php"><h3>Classic<span>4you.eu</span></h3></a> </div> </h1>
+        <div class="list-group">
+        <a href="#" class="list-group-item" id="buy_button">Dodaj do koszyka</a>
+        </div>
     </div>
   </div>
   <!-- /.col-lg-3 -->
@@ -250,11 +257,8 @@ var insert =
             document.getElementById(place).innerHTML = resoult;
         }
 
-    }
-}
+    },
 
-var insert_photo =
-{
     photo :function(resoult,place)
     {
         if(resoult != '')
@@ -264,7 +268,29 @@ var insert_photo =
             document.getElementsByClassName(place)[2].src = resoult;
         }
 
-    }
+    },
+
+    buildOffer: function(result, listing)
+        {
+            // Remove current options
+            listing.html('');
+            var size = Object.keys(result).length;
+            if(result != '')
+            {
+                for(var x = 1; x<=size; x++)
+                {
+                    listing.append(
+                        '<hr>'+
+                        '<div class="d-flex justify-content-between">'+
+                            '<h4>'+ result[x].a +'</h4>'+
+                            '<div >' + result[x].b +'</div>'+
+                        '</div>'
+
+                    );
+                }
+
+            }
+        }
 }
 
 var ofer = <?php if(isset( $_GET['oferta'])) echo $_GET['oferta']; else echo -1;  ?>;
@@ -272,13 +298,15 @@ var ofer = <?php if(isset( $_GET['oferta'])) echo $_GET['oferta']; else echo -1;
 $(document).ready(function() {
 $.ajax({
     type: "get",
-    url: 'item.php',
+    url: '../app/views/main/item.php',
     data: {id_oferta: ofer},
 
 
     success: function(data)
     {
+        // alert(data);
         re = jQuery.parseJSON(data);
+        
         var nazwa =' '+ re[0].marka +' '+re[0].model;
         var cena = Number(re[0].cena);
 
@@ -295,6 +323,7 @@ $.ajax({
 
         insert.data(
             re[0].opis,
+            // re[4].kolor,
             'opis',
             );
 
@@ -303,10 +332,20 @@ $.ajax({
             'kraj',
             );
 
-        insert_photo.photo(
+        insert.data(
+            re[0].wyswietlenia,
+            'ilosc_wyswietlen',
+            );
+
+        insert.photo(
             '../../../public/img/'+re[0].zdjecie,
             'zdjecie',
             );
+
+        insert.buildOffer(
+            re,
+            $('#offers'),
+        );
     }
 });
 
@@ -321,7 +360,7 @@ $.ajax({
     
     function load_login_form()
     {
-        $("#log_form").load("../user/login.php");
+        $("#log_form").load("../app/views/user/login.php");
     }
 
     $(document).ready( function() {

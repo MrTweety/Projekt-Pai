@@ -3,7 +3,7 @@
 $host = "localhost";
 $db_user = "root";
 $db_password = "";
-$db_name = "mgaczorek";
+$db_name = "guma";
 $link = mysqli_connect($host, $db_user, $db_password, $db_name) or die();
 $link -> query ('SET NAMES utf8');
 $link -> query ('SET CHARACTER_SET utf8_unicode_ci');
