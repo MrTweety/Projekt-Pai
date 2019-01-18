@@ -32,7 +32,7 @@ class App
                 $this->method = $url[1];
                 unset($url[1]);
             }else{ // default
-                $this->controller->redirect('/');
+                $this->controller->redirect('/'); //NOT PAGE
             }
         }
 

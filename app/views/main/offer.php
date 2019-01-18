@@ -271,7 +271,7 @@ var ofer = <?php if(isset( $_GET['oferta'])) echo $_GET['oferta']; else echo -1;
 
 $(document).ready(function() {
 $.ajax({
-    type: "get",
+    type: "POST",
     url: 'item.php',
     data: {id_oferta: ofer},
 
