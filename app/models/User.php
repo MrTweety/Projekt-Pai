@@ -13,7 +13,42 @@ class User extends Model
         parent::__construct();
     }
 
-    public function find_by_email($email){
+
+
+    public function is_logged_in()
+    {
+        if (!isset($_COOKIE['id'])) {
+            return false;
+        }
+        $query = "select id_uzyt from sesja where id = :id and ip = :REMOTE_ADDR  AND web = :HTTP_USER_AGENT;";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':id', $_COOKIE['id']);
+        $stmt->bindParam(':REMOTE_ADDR', $_SERVER['REMOTE_ADDR']);
+        $stmt->bindParam(':HTTP_USER_AGENT', $_SERVER['HTTP_USER_AGENT']);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        if (!empty($result['id_uzyt'])) {
+            return true;
+        } else {
+            return false;
+        }
+
+
+    }
+
+    public function get_id()
+    {
+        return $_SESSION['user_id'];
+    }
+
+    public function get_type()
+    {
+        return $_SESSION['user_type'];
+    }
+
+
+    public function find_by_email($email)
+    {
         $query = "SELECT * FROM `uzytkownik` WHERE email = :email";
         $stmt = $this->db->prepare($query);
         $stmt->bindParam(':email', $email);
@@ -23,7 +58,8 @@ class User extends Model
         return $result;
     }
 
-    public function find_by_login($login){
+    public function find_by_login($login)
+    {
         $query = "SELECT * FROM `uzytkownik` WHERE login = :login";
         $stmt = $this->db->prepare($query);
         $stmt->bindParam(':login', $login);
@@ -32,7 +68,6 @@ class User extends Model
 
         return $result;
     }
-
 
 
     public function auth($data)
@@ -47,25 +82,36 @@ class User extends Model
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        echo $password;
-        echo $result['haslo'];
+//        echo $password;
+//        echo $result['haslo'];
 
-            if ($stmt->rowCount() > 0) {
+        if ($stmt->rowCount() > 0) {
 //            if ($password == $result['haslo'])
-                if (password_verify($password, $result['haslo']))
+            if (password_verify($password, $result['haslo'])) {
+                //@TODO CIESTECZKAv1
+                $id = sha1(time() . time() . microtime() . rand(100, 200) . $_SERVER['REMOTE_ADDR']);
 
-            {
-                $_SESSION['id_uzyt'] = $result['id_uzyt'];
+                $q2 = "delete from sesja where id_uzyt = :id_uzyt";
+                $stmt = $this->db->prepare($q2);
+                $stmt->bindParam(':id_uzyt', $result['id_uzyt']);
+                $stmt->execute();
+                $q3 = "insert into sesja(id_uzyt, id, ip, web) values(:id_uzyt, :id, :REMOTE_ADDR,:HTTP_USER_AGENT )";
+                $stmt = $this->db->prepare($q3);
+                $stmt->bindParam(':id_uzyt', $result['id_uzyt']);
+                $stmt->bindParam(':id', $id);
+                $stmt->bindParam(':REMOTE_ADDR', $_SERVER['REMOTE_ADDR']);
+                $stmt->bindParam(':HTTP_USER_AGENT', $_SERVER['HTTP_USER_AGENT']);
+                $stmt->execute();
+
+                setcookie("id", $id);
+
+//                $_SESSION['id_uzyt'] = $result['id_uzyt'];
                 return true;
-            }
-            else
-                {
+            } else {
 //                $this->errors[] = "Invalid email or password";
                 return false;
-                }
-        }
-
-        else {
+            }
+        } else {
 //            $this->errors[] = "Invalid email or password";
             return false;
         }
@@ -76,32 +122,26 @@ class User extends Model
     {
 
 
-
         $imie = trim($data['imie']);
         $nazwisko = trim($data['nazwisko']);
 
 
-
         $email = trim($data['email']);
         $email = strtolower($email);
-        $login=trim($data['login']);
+        $login = trim($data['login']);
         $login = strtolower($login);
 
         $password = trim($data['password']);
         $cpassword = trim($data['cpassword']);
 
 
+        $NIP = trim($data['NIP']);
+        $nazwa_firmy = trim($data['nazwa_firmy']);
 
-        $NIP=trim($data['NIP']);
-        $nazwa_firmy=trim($data['nazwa_firmy']);
 
-
-        if ($this->find_by_email($email) or ($password!= $cpassword) or $this->find_by_login($login))
-
-        {
+        if ($this->find_by_email($email) or ($password != $cpassword) or $this->find_by_login($login)) {
             return false;
-        }
-        else {
+        } else {
 
 
             $query = "INSERT INTO uzytkownik (`id_uzyt`,`id_adres`, `id_typ`, `imie`, `nazwisko`, `email`, `login`, `haslo`,`NIP`,`nazwa_firmy`) VALUES (NULL, NULL,2,:imie,:nazwisko,:email,:login,:password,:NIP,:nazwa_firmy)";
