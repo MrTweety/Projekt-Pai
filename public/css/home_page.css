@@ -116,7 +116,10 @@ button:hover
 /* .cta{
 
 } */
-
+.link
+{
+    text-decoration: none;
+}
 
 /* unvisited link */
 .link-dark:link {

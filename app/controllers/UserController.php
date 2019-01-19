@@ -45,16 +45,16 @@ class UserController extends Controller
         $user = $this->model('User');
         
         if (!$user->is_logged_in()){
-            // $this->partial('header');
-            // $this->partial('nav');
+            $this->partial('header');
+            $this->partial('nav');
             $this->view("user/offer");
-            // $this->partial('footer');
+            $this->partial('footer');
         }else {
 
-            // $this->partial('header');
-            // $this->partial('nav_user');
-            // $this->view("user/search");
-            // $this->partial('footer');
+            $this->partial('header');
+            $this->partial('nav_user');
+            $this->view("user/search");
+            $this->partial('footer');
         }
     }
 
