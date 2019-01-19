@@ -17,10 +17,12 @@ class UserController extends Controller
             switch ($user->get_type()) {
 
                 case '1':
-                    $this->partial("nav_admin");
+                    $dataP=$user->get_name();
+                    $this->partial("nav_admin",$dataP);
                     break;
                 case '2':
-                    $this->partial("nav_user");
+                    $dataP=$user->get_name();
+                    $this->partial("nav_user",$dataP);
                     break;
                 default:
                     $this->partial("nav");
@@ -29,6 +31,8 @@ class UserController extends Controller
             $this->view('user/index');
             echo "\nzalogowano";
             $this->partial("footer");
+
+            echo $user->get_id();
         }
 
     }
@@ -53,18 +57,18 @@ class UserController extends Controller
 
     public function auth()
     {
+
         if (!isset($_POST) || empty($_POST)) {
             $this->redirect("/");
             die();
         } else {
             $user = $this->model('User');
             if ($user->auth($_POST)) {
-                $this->redirect("/user");
-                echo $user->get_type();
+                $this->redirect("/user/index");
 
 
             } else {
-                $this->redirect("/home/isLogin");
+                $this->redirect("/");
 
             }
         }
@@ -134,10 +138,12 @@ class UserController extends Controller
             switch ($user->get_type()) {
 
                 case '1':
-                    $this->partial("nav_admin");
+                    $dataP=$user->get_name();
+                    $this->partial("nav_admin",$dataP);
                     break;
                 case '2':
-                    $this->partial("nav_user");
+                    $dataP=$user->get_name();
+                    $this->partial("nav_user",$dataP);
                     break;
             }
 
@@ -148,5 +154,23 @@ class UserController extends Controller
 
     }
 
+
+
+
+    public function check($params =[],$params2 =[])
+    {
+
+        $user = $this->model('User');
+        $aa= $user->get_name();
+        echo $aa['imie'];
+
+        echo "\n\nwitaj ".$params.$params2;
+        $order="ala";
+        $this->view('home/isLogin',$order);
+
+        $this->partial('footer',$order);
+
+
+    }
 
 }

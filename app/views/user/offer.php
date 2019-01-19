@@ -1,4 +1,7 @@
-<div class="container " style="margin-top: 66px">
+
+<!-- Page Content -->
+<div class="container" style="margin-top: 66px">
+
     <div class="row">
 
 
@@ -56,14 +59,10 @@
                         <div id="kraj">Kraj</div>
                     </div>
                     <hr>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore,
-                        similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum.
-                        Sequi mollitia, necessitatibus quae sint natus.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
                     <small class="text-muted">Posted by Anonymous on 3/1/17</small>
                     <hr>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore,
-                        similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum.
-                        Sequi mollitia, necessitatibus quae sint natus.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
                     <small class="text-muted">Posted by Anonymous on 3/1/17</small>
                     <hr>
                     <a href="#" class="btn btn-success">Leave a Review</a>
@@ -76,9 +75,7 @@
 
 
         <div class="col-lg-3">
-            <h1 class="my-4">
-                <div class="logo"><a href="indexx.php"><h3>Classic<span>4you.eu</span></h3></a></div>
-            </h1>
+            <h1 class="my-4"> <div class="logo"> <a href="indexx.php"><h3>Classic<span>4you.eu</span></h3></a> </div> </h1>
             <div class="list-group">
                 <a href="#" class="list-group-item">Dodaj do koszyka</a>
                 <a href="#" class="list-group-item">Category 2</a>
@@ -91,6 +88,8 @@
 
 </div>
 <!-- /.container -->
+
+
 
 
 <section class="cta py-5 bg-primary text-white">
@@ -107,12 +106,15 @@
 
 
 
+
 <script>
 
     var insert =
         {
-            data: function (resoult, place) {
-                if (resoult != '') {
+            data :function(resoult,place)
+            {
+                if(resoult != '')
+                {
                     document.getElementById(place).innerHTML = resoult;
                 }
 
@@ -121,8 +123,10 @@
 
     var insert_photo =
         {
-            photo: function (resoult, place) {
-                if (resoult != '') {
+            photo :function(resoult,place)
+            {
+                if(resoult != '')
+                {
                     document.getElementsByClassName(place)[0].src = resoult;
                     document.getElementsByClassName(place)[1].src = resoult;
                     document.getElementsByClassName(place)[2].src = resoult;
@@ -131,19 +135,19 @@
             }
         }
 
-    var ofer = <?php if (isset($_GET['oferta'])) echo $_GET['oferta']; else echo -1;  echo "ala ma kota"?>;
+    var ofer = <?php if(isset( $_GET['oferta'])) echo $_GET['oferta']; else echo -1;  ?>;
 
-    $(document).ready(function () {
+    $(document).ready(function() {
         $.ajax({
             type: "POST",
             url: '../app/views/main/item.php',
             data: {id_oferta: ofer},
 
 
-            success: function (data) {
-                alert("vcv");
+            success: function(data)
+            {
                 re = jQuery.parseJSON(data);
-                var nazwa = ' ' + re[0].marka + ' ' + re[0].model;
+                var nazwa =' '+ re[0].marka +' '+re[0].model;
                 var cena = Number(re[0].cena);
 
 
@@ -153,7 +157,7 @@
                 );
 
                 insert.data(
-                    cena.toLocaleString() + " PLN",
+                    cena.toLocaleString()+ " PLN",
                     'cena',
                 );
 
@@ -168,7 +172,7 @@
                 );
 
                 insert_photo.photo(
-                    '/public/img/' + re[0].zdjecie,
+                    '../../../public/img/'+re[0].zdjecie,
                     'zdjecie',
                 );
             }
@@ -178,4 +182,5 @@
 
 
 </script>
+
 

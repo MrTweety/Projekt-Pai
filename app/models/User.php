@@ -40,9 +40,45 @@ class User extends Model
 
     }
 
+
+
+    public function get_name()
+    {
+        $q = "SELECT uzytkownik.imie, uzytkownik.nazwisko, uzytkownik.id_typ FROM uzytkownik
+                LEFT JOIN sesja ON sesja.id_uzyt = uzytkownik.id_uzyt
+                WHERE
+                sesja.id = :id ";
+        $stmt = $this->db->prepare($q);
+        $stmt->bindParam(':id', $_COOKIE['id']);
+//        $stmt->bindParam(':REMOTE_ADDR', $_SERVER['REMOTE_ADDR']);
+//        $stmt->bindParam(':HTTP_USER_AGENT', $_SERVER['HTTP_USER_AGENT']);
+        $stmt->execute();
+
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($stmt->rowCount() > 0) {return $result;}
+        return 0;
+    }
+
+
+
+
     public function get_id()
     {
-        return $_SESSION['user_id'];
+        $q = "SELECT uzytkownik.id_uzyt, uzytkownik.id_typ FROM uzytkownik
+                LEFT JOIN sesja ON sesja.id_uzyt = uzytkownik.id_uzyt
+                WHERE
+                sesja.id = :id ";
+        $stmt = $this->db->prepare($q);
+        $stmt->bindParam(':id', $_COOKIE['id']);
+//        $stmt->bindParam(':REMOTE_ADDR', $_SERVER['REMOTE_ADDR']);
+//        $stmt->bindParam(':HTTP_USER_AGENT', $_SERVER['HTTP_USER_AGENT']);
+        $stmt->execute();
+
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($stmt->rowCount() > 0) {return $result['id_uzyt'];}
+        return 0;
     }
 
 
@@ -64,8 +100,11 @@ class User extends Model
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($stmt->rowCount() > 0) {return $result['id_typ'];}
-        return false;
+        return 0;
     }
+
+
+
 
     public function logout()
     {

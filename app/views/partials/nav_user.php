@@ -29,7 +29,7 @@
                 <a  class=" btn btn-dark dropdown-toggle" data-toggle="dropdown" style="color: white;">
                     <img src="/public/img/avatar/userK.png" alt="Avatar" class="avatar">
 
-                    <span class="hidden-xs">User User</span> <b class="caret"></b>
+                    <span class="hidden-xs"><?php echo $dataP['imie'].' '.$dataP['nazwisko'] ?></span> <b class="caret"></b>
                 </a>
 
                 <ul class="dropdown-menu" style="z-index: 100 !important; background-color: white">
