@@ -180,7 +180,7 @@ class User extends Model
                 $stmt->bindParam(':HTTP_USER_AGENT', $_SERVER['HTTP_USER_AGENT']);
                 $stmt->execute();
 
-                setcookie("id", $id);
+                setcookie("id", $id,time()+3600,'/',"localhost",false);
 
 //                $_SESSION['id_uzyt'] = $result['id_uzyt'];
                 return true;

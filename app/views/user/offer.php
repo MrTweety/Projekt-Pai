@@ -1,4 +1,8 @@
 
+
+
+<?php //if(!isset( $_GET['oferta'])) {header("location: /app/views/home" ); exit();} ?><!--;-->
+
 <!-- Page Content -->
 <div class="container" style="margin-top: 66px">
 
@@ -135,7 +139,7 @@
             }
         }
 
-    var ofer = <?php if(isset( $_GET['oferta'])) echo $_GET['oferta']; else echo -1;  ?>;
+    var ofer = <?php if(isset( $_GET['oferta'])) echo $_GET['oferta']; else echo -1; ?>;
 
     $(document).ready(function() {
         $.ajax({

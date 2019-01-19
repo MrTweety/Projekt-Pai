@@ -10,16 +10,40 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $this->partial('header');
-        $this->partial('nav');
+        $this->partial("header");
+        $user = $this->model('User');
+        if (!$user->is_logged_in()) {
+            $this->partial("nav");
+        } else {
+
+            switch ($user->get_type()) {
+
+                case User::$ADMIN_TYPE:
+                    $dataP=$user->get_name();
+                    $this->partial("nav_admin",$dataP);
+                    break;
+                case '2':
+                    $dataP=$user->get_name();
+                    $this->partial("nav_user",$dataP);
+                    break;
+            }
+
+
+        }
         $this->view('home/index');
-        $this->partial('footer');
-
-//        $this->view('main/indexx');
-
+        $this->partial("footer");
 
     }
 
+
+
+
+
+
+
+
+
+//    @TODO sprawdzić czy funkcje poniżej sa używane
     public function isLogin(){
         $this->partial('header');
         $this->partial('nav');
@@ -38,8 +62,4 @@ class HomeController extends Controller
         $this->partial('nav');
         $this->view("home/registered");
     }
-
-
-
-
 }

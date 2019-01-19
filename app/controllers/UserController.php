@@ -16,25 +16,22 @@ class UserController extends Controller
 
             switch ($user->get_type()) {
 
-                case '1':
-                    $dataP=$user->get_name();
-                    $this->partial("nav_admin",$dataP);
+                case User::$ADMIN_TYPE:
+                    $dataP = $user->get_name();
+                    $this->partial("nav_admin", $dataP);
                     break;
-                case '2':
-                    $dataP=$user->get_name();
-                    $this->partial("nav_user",$dataP);
+                case User::$CLIENT_TYPE:
+                    $dataP = $user->get_name();
+                    $this->partial("nav_user", $dataP);
                     break;
                 default:
                     $this->partial("nav");
             }
 
             $this->view('user/index');
-            echo "\nzalogowano";
-            $this->partial("footer");
+//            $this->partial("footer");
 
-            echo $user->get_id();
         }
-
     }
 
 
@@ -46,13 +43,18 @@ class UserController extends Controller
     public function register()
     {
 
-        $this->partial('header');
-        $this->partial('nav');
+        $user = $this->model('User');
+        if (!$user->is_logged_in()) {
+            $this->partial('header');
+            $this->partial('nav');
 
-        $this->view('user/register');
-        $this->partial('footer');
+            $this->view('user/register');
+            $this->partial('footer');
 
+        } else {
 
+            $this->redirect("/");
+        }
     }
 
     public function auth()
@@ -104,24 +106,31 @@ class UserController extends Controller
     }
 
 
-//search page
+//search page @TODO jak zostanie czas stworzyć własny kontroler dla ofert
     public function search()
     {
-
-
+        $this->partial("header");
         $user = $this->model('User');
         if (!$user->is_logged_in()) {
-            $this->partial('header');
-            $this->partial('nav');
-            $this->view("user/search");
-            $this->partial('footer');
+            $this->partial("nav");
         } else {
 
-            $this->partial('header');
-            $this->partial('nav_admin');
-            $this->view("user/search");
-            $this->partial('footer');
+            switch ($user->get_type()) {
+
+                case User::$ADMIN_TYPE:
+                    $dataP = $user->get_name();
+                    $this->partial("nav_admin", $dataP);
+                    break;
+                case '2':
+                    $dataP = $user->get_name();
+                    $this->partial("nav_user", $dataP);
+                    break;
+            }
+
+
         }
+        $this->view('user/search');
+        $this->partial("footer");
 
 
     }
@@ -137,13 +146,13 @@ class UserController extends Controller
 
             switch ($user->get_type()) {
 
-                case '1':
-                    $dataP=$user->get_name();
-                    $this->partial("nav_admin",$dataP);
+                case User::$ADMIN_TYPE:
+                    $dataP = $user->get_name();
+                    $this->partial("nav_admin", $dataP);
                     break;
                 case '2':
-                    $dataP=$user->get_name();
-                    $this->partial("nav_user",$dataP);
+                    $dataP = $user->get_name();
+                    $this->partial("nav_user", $dataP);
                     break;
             }
 
@@ -157,18 +166,24 @@ class UserController extends Controller
 
 
 
-    public function check($params =[],$params2 =[])
+
+    /**
+     * Funkcja @check wykozrystywana jedynie do testowania MVC @TODO usunąć w finalnej wersji
+     * @param array $params
+     * @param array $params2
+     */
+    public function check($params = [], $params2 = [])
     {
 
         $user = $this->model('User');
-        $aa= $user->get_name();
+        $aa = $user->get_name();
         echo $aa['imie'];
 
-        echo "\n\nwitaj ".$params.$params2;
-        $order="ala";
-        $this->view('home/isLogin',$order);
+        echo "\n\nwitaj " . $params . $params2;
+        $order = "ala";
+        $this->view('home/isLogin', $order);
 
-        $this->partial('footer',$order);
+        $this->partial('footer', $order);
 
 
     }

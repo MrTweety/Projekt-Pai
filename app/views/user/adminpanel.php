@@ -1,4 +1,3 @@
-<!--@TODO panel klienta-->
 
 
 <div id="wrapper">
@@ -7,14 +6,43 @@
             <li class="nav-item active">
                 <a class="nav-link active" data-toggle="tab" href="#dashboard1">
                     <i class="fa fa-dashboard"></i>
-                    <span>Profil</span>
+                    <span>Dashboard</span>
                 </a>
             </li>
             <li class="nav-item ">
                 <a class="nav-link " data-toggle="tab" href="#oferta">
                     <i class="fa fa-table"></i>
-                    <span>Edytuj Profil</span>
+                    <span>Oferta</span>
                 </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle " href="#" id="pagesDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-folder"></i>
+                    <span>Pages</span>
+                    <i class="fa fa-chevron-down "></i>
+                </a>
+                <div class="dropdown-menu">
+                    <h6 class="dropdown-header">Oferta:</h6>
+                    <a class="dropdown-item " data-toggle="tab" href="#usersAdmin">Użytkownicy</a>
+                    <a class="dropdown-item" data-toggle="tab" href="#menu1">Menu 1</a>
+                    <a class="dropdown-item" data-toggle="tab" href="#menu2">Menu 2</a>
+                    <!--                    <h6 class="dropdown-header">Other Pages:</h6>-->
+                    <!--                    <a class="dropdown-item" href="404.html">404 Page</a>-->
+
+                    <!--                    <div class="dropdown-divider"></div>-->
+                    <!--                    <a class="dropdown-item" href="blank.html">Blank Page</a>-->
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#charts">
+                    <i class="fa fa-area-chart"></i>
+                    <span>Charts</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tables">
+                    <i class="fa fa-table"></i>
+                    <span>Tables</span></a>
             </li>
         </ul>
 
@@ -299,6 +327,268 @@
 
 
                 </div>
+
+
+                <script>
+
+                    $('#reset').click(function () {
+                        $('#model').attr('disabled', true);
+                    });
+
+
+                    $(document).ready(function () {
+                        oferta = $('#tabOferta').DataTable({
+
+                            "ajax": {"url": "../app/views/main/admin_select.php", "type": "POST", "data": {"select": 'oferta'}},
+                            "columns": [
+                                {"data": "id_oferta"},
+                                {"data": "imgg"},
+                                {"data": "marka"},
+                                {"data": "model"},
+                                {"data": "kraj"},
+                                {"data": "cena_netto"},
+                                {"data": "opis"},
+                                {"data": "cechy"},
+                                {"data": "usun"},
+                            ]
+                        });
+                    });
+
+
+                </script>
+
+                <script>
+
+
+                    $(document).ready(function () {
+                        $(".myAddOfert").hide();
+                        $("#sidebarToggle").show();
+
+                    });
+
+                    $('#button_1').click(function () {
+                        $(".myAddOfert").toggle();
+                    });
+
+                    $("#sidebarToggle").click(function () {
+                        $("#sidebar").toggle();
+                    });
+
+
+                    function myFunction(id, name) {
+                        //alert(id+' '+name);
+                        if (parseInt(name) == 2) {
+                            var select = "oferta";
+                        }
+
+                        var txt = 0;
+                        if (confirm("Czy na pewno chcesz usunąć pozycję o id = " + id + "?")) {
+                            txt = 1;
+                        } else {
+                            txt = 0;
+                        }
+
+                        if (parseInt(txt) == 1) {
+                            $.ajax({
+                                type: "POST",
+                                url: '../app/views/main/admin_delete.php',
+                                data: {select: select, oferta: id},
+
+
+                                success: function (php_script_response) {
+
+                                    var dane = jQuery.parseJSON(php_script_response);
+
+                                    if (parseInt(dane.flaga) == 1)
+                                        $("#alert2").html('<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                                            '  <strong>Well done! </strong>' + dane.Alert +
+                                            '</div>');
+                                    else
+                                        $("#alert2").html('<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                                            '  <strong>Warning! </strong>' + dane.Alert +
+                                            '</div>');
+                                }
+                                ,
+                                complete: function () {
+                                    oferta.ajax.reload();
+
+                                }
+
+
+                            });
+                        }
+
+
+                    }
+
+
+                    $('#button_dodaj').click(function () {
+
+                        var file_data = $('#profile_pic').prop('files')[0];
+                        var form_data = new FormData();
+                        form_data.append('fileToUpload', file_data);
+                        form_data.append('marka', $('#marka').val());
+                        form_data.append('model', $('#model').val());
+                        form_data.append('cena', $('#cena').val());
+                        form_data.append('kraj', $('#kraj').val());
+                        form_data.append('kolor', $('#kolor').val());
+                        form_data.append('naped', $('#naped').val());
+                        form_data.append('rok', $('#rok').val());
+                        form_data.append('pojemnosc', $('#pojemnosc').val());
+                        form_data.append('moc', $('#moc').val());
+                        form_data.append('drzwi', $('#drzwi').val());
+                        form_data.append('miejsca', $('#miejsca').val());
+                        form_data.append('przebieg', $('#przebieg').val());
+                        form_data.append('paliwo', $('#paliwo').val());
+                        form_data.append('skrzynia', $('#skrzynia').val());
+                        form_data.append('opis', $('#opis').val());
+                        form_data.append('nadwozie', $('#nadwozie').val());
+                        form_data.append('select', "oferta");
+                        //alert(form_data);
+
+
+                        $.ajax({
+                            type: "POST",
+                            url: '../app/views/main/admin_add.php',
+                            // dataType: 'text',
+                            cache: false,
+                            contentType: false,
+                            processData: false,
+                            data: form_data,
+
+                            success: function (php_script_response) {
+                                //alert(php_script_response);
+                                var dane = jQuery.parseJSON(php_script_response);
+
+
+                                if (parseInt(dane.flaga) == 1)
+                                    $("#alert").html('<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                                        '  <strong>Well done! </strong>' + dane.zdjecie +
+                                        '</div>');
+                                else
+                                    $("#alert").html('<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                                        '  <strong>Warning! </strong>' + dane.zdjecie +
+                                        '</div>');
+                            }
+                            ,
+                            complete: function () {
+                                oferta.ajax.reload();
+                                //alert("abxw");
+                            }
+
+
+                        });
+
+                    });
+
+
+                    $('#marka').ready(function () {
+                        $.ajax({
+                            type: "POST",
+                            url: '../app/views/main/search_select.php',
+                            data: {select: "marka"},
+                            success: function (data) {
+                                helpers.buildDropdown(
+                                    jQuery.parseJSON(data),
+                                    $('#marka'),
+                                    'Marka Pojazdu',
+                                    <?php if (isset($_GET['marka'])) echo $_GET['marka']; else echo -1;  ?>
+                                );
+                            }
+                        });
+
+
+                    });
+
+                    $('#model').ready(function () {
+
+                        $.ajax({
+                            type: "POST",
+                            url: '../app/views/main/search_select.php',
+                            data: {select: "model"},
+
+                            success: function (data) {
+                                helpers.buildDropdown(
+                                    jQuery.parseJSON(data),
+                                    $('#model'),
+                                    'Model Pojazdu',
+                                    <?php if (isset($_GET['model'])) echo $_GET['model']; else echo -1  ?>
+
+                                );
+                            }
+                        });
+
+                    });
+
+
+                    $('#kolor').ready(function () {
+
+                        $.ajax({
+                            type: "POST",
+                            url: '../app/views/main/search_select.php',
+                            data: {select: "kolor"},
+
+                            success: function (data) {
+                                helpers.buildDropdown(
+                                    jQuery.parseJSON(data),
+                                    $('#kolor'),
+                                    'Kolor Pojazdu',
+                                    <?php if (isset($_GET['kolor'])) echo '"' . $_GET['kolor'] . '"'; else echo -1; ?>
+
+
+                                );
+                            }
+                        });
+
+                    });
+
+                    $('#kraj').ready(function () {
+
+                        $.ajax({
+                            type: "POST",
+                            url: '../app/views/main/search_select.php',
+                            data: {select: "kraj"},
+
+
+                            success: function (data) {
+                                helpers.buildDropdown(
+                                    jQuery.parseJSON(data),
+                                    $('#kraj'),
+                                    'Kraj pochodzenia',
+                                    <?php if (isset($_GET['kraj'])) echo $_GET['kraj']; else echo -1  ?>
+
+                                );
+                            }
+                        });
+
+                    });
+
+
+                    $('#marka').change(function () {
+
+
+                        $.ajax({
+                            type: "POST",
+                            url: '../app/views/main/search_select.php',
+                            data: {marka: $('#marka').val(), select: "model"},
+
+                            success: function (data) {
+                                helpers.buildDropdown(
+                                    jQuery.parseJSON(data),
+                                    $('#model'),
+                                    'Model Pojazdu'
+                                );
+                            }
+                        });
+
+                        $('#model').attr('disabled', false);
+
+                    });
+
+
+                </script>
+
+
             </div>
 
             <div id="usersAdmin" class="tab-pane  w-100 fade "><br>
@@ -335,7 +625,74 @@
 
 
                 </div>
+                <script>
 
+                    function myFunction2(id, name) {
+                        //alert(id+' '+name);
+                        if (parseInt(name) == 3) {
+                            var select = "admin";
+                        }
+
+                        var txt = 0;
+                        if (confirm("Czy na pewno chcesz usunąć pozycję o id = " + id + "?")) {
+                            txt = 1;
+                        } else {
+                            txt = 0;
+                        }
+
+                        if (parseInt(txt) == 1) {
+                            $.ajax({
+                                type: "POST",
+                                url: '../app/views/main/admin_delete.php',
+                                data: {select: select, admin: id},
+
+
+                                success: function (data) {
+
+                                    var dane = jQuery.parseJSON(data);
+
+                                    if (parseInt(dane.flaga) == 1)
+                                        $("#alert3").html('<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                                            '  <strong>Well done! </strong>' + dane.Alert +
+                                            '</div>');
+                                    else
+                                        $("#alert3").html('<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                                            '  <strong>Warning! </strong>' + dane.Alert +
+                                            '</div>');
+                                },
+                                complete: function () {
+                                    admintab.ajax.reload();
+                                }
+
+
+                            });
+                        }
+
+
+                    }
+
+
+                </script>
+
+                <script>
+
+                    $(document).ready(function () {
+                        admintab = $('#tabAdmin').DataTable({
+
+                            "ajax": {"url": "../app/views/main/admin_select.php", "type": "POST", "data": {"select": "admin"}},
+                            "columns": [
+                                {"data": "id_uzyt"},
+                                {"data": "imie"},
+                                {"data": "nazwisko"},
+                                {"data": "email"},
+                                {"data": "login"},
+                                {"data": "typKonta"},
+                                {"data": "usun"},
+                            ]
+                        });
+                    });
+
+                </script>
             </div>
 
 
