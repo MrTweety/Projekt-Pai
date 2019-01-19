@@ -16,7 +16,8 @@ class Controller
 
     }
 
-    public function partial($part){
+
+    public function partial($part, $dataP = []){
         require_once 'app/views/partials/'.$part.'.php';
     }
 

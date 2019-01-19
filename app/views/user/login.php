@@ -1,5 +1,5 @@
 
-<form class="modal-content animate" action="user/auth" method="post">
+<form class="modal-content animate" action="/user/auth" method="post">
 
     <span onclick="document.getElementById('log_form').style.display='none';" class="close" title="Zamknij formularz">&times;</span>
     

@@ -8,99 +8,97 @@ class UserController extends Controller
     {
 
         $user = $this->model('User');
-        if (!$user->is_logged_in()){
+        if (!$user->is_logged_in()) {
             $this->redirect("/");
-        }else {
-
+        } else {
 
             $this->partial("header");
-            $this->partial("nav_user");
+
+            switch ($user->get_type()) {
+
+                case User::$ADMIN_TYPE:
+                    $dataP = $user->get_name();
+                    $this->partial("nav_admin", $dataP);
+                    break;
+                case User::$CLIENT_TYPE:
+                    $dataP = $user->get_name();
+                    $this->partial("nav_user", $dataP);
+                    break;
+                default:
+                    $this->partial("nav");
+            }
+
             $this->view('user/index');
-            echo "\nzalogowano";
-            $this->partial("footer");
-        }
+//            $this->partial("footer");
 
-    }
-
-    public function search(){
-
-
-        $user = $this->model('User');
-        if (!$user->is_logged_in()){
-            $this->partial('header');
-            $this->partial('nav');
-            $this->view("user/search");
-            $this->partial('footer');
-        }else {
-
-            $this->partial('header');
-            $this->partial('nav_user');
-            $this->view("user/search");
-            $this->partial('footer');
         }
     }
 
-    public function offer(){
 
-        $user = $this->model('User');
-        
-        if (!$user->is_logged_in()){
-            $this->partial('header');
-            $this->partial('nav');
-            $this->view("user/offer");
-            $this->partial('footer');
-        }else {
-
-            $this->partial('header');
-            $this->partial('nav_user');
-            $this->view("user/search");
-            $this->partial('footer');
-        }
-    }
-
-    public function login(){
+    public function login()
+    {
         $this->view('user/login');
     }
 
-    public function register(){
+    public function register()
+    {
 
-        $this->partial('header');
-        $this->partial('nav');
+        $user = $this->model('User');
+        if (!$user->is_logged_in()) {
+            $this->partial('header');
+            $this->partial('nav');
 
-        $this->view('user/register');
-        $this->partial('footer');
+            $this->view('user/register');
+            $this->partial('footer');
 
+        } else {
 
-
+            $this->redirect("/");
+        }
     }
 
-    public function auth(){
-        if (!isset($_POST) || empty($_POST)){
-        $this->redirect("/");
-        die();
-    }else{
+    public function auth()
+    {
+
+        if (!isset($_POST) || empty($_POST)) {
+            $this->redirect("/");
+            die();
+        } else {
             $user = $this->model('User');
-            if ($user->auth($_POST)){
-                $this->redirect("/user");
+            if ($user->auth($_POST)) {
+                $this->redirect("/user/index");
 
 
-            }else {
-                $this->redirect("/home/notLogin");
+            } else {
+                $this->redirect("/");
 
             }
         }
     }
 
-    public function create() {
-        if (!isset($_POST) || empty($_POST)){
+    public function logout()
+    {
+        if (!isset($_COOKIE['id'])) {
+            $this->redirect("/");
+        } else {
+            $user = $this->model('User');
+            if ($user->logout()) {
+                $this->redirect("/");
+            }
+        }
+    }
+
+    public function create()
+    {
+        if (!isset($_POST) || empty($_POST)) {
             $this->redirect("/");
             die();
-        }else {
+        } else {
             $user = $this->model('User');
-            if ($user->insert($_POST)){
+            if ($user->insert($_POST)) {
 //                $this->redirect("/home/Registered");
                 echo "1, Registered";
-            }else {
+            } else {
 //                $this->redirect("/home/notRegister");
                 echo "2, notRegister";
             }
@@ -108,6 +106,86 @@ class UserController extends Controller
     }
 
 
+//search page @TODO jak zostanie czas stworzyć własny kontroler dla ofert
+    public function search()
+    {
+        $this->partial("header");
+        $user = $this->model('User');
+        if (!$user->is_logged_in()) {
+            $this->partial("nav");
+        } else {
 
+            switch ($user->get_type()) {
+
+                case User::$ADMIN_TYPE:
+                    $dataP = $user->get_name();
+                    $this->partial("nav_admin", $dataP);
+                    break;
+                case '2':
+                    $dataP = $user->get_name();
+                    $this->partial("nav_user", $dataP);
+                    break;
+            }
+
+
+        }
+        $this->view('user/search');
+        $this->partial("footer");
+
+
+    }
+
+
+    public function offer()
+    {
+        $this->partial("header");
+        $user = $this->model('User');
+        if (!$user->is_logged_in()) {
+            $this->partial("nav");
+        } else {
+
+            switch ($user->get_type()) {
+
+                case User::$ADMIN_TYPE:
+                    $dataP = $user->get_name();
+                    $this->partial("nav_admin", $dataP);
+                    break;
+                case '2':
+                    $dataP = $user->get_name();
+                    $this->partial("nav_user", $dataP);
+                    break;
+            }
+
+
+        }
+        $this->view('user/offer');
+        $this->partial("footer");
+
+    }
+
+
+
+
+
+    /**
+     * Funkcja @check wykozrystywana jedynie do testowania MVC @TODO usunąć w finalnej wersji
+     * @param array $params
+     * @param array $params2
+     */
+    public function check($params = [], $params2 = [])
+    {
+
+        $user = $this->model('User');
+        $aa = $user->get_name();
+        echo $aa['imie'];
+
+        echo "\n\nwitaj " . $params . $params2;
+        $order = "ala";
+        $this->view('home/isLogin', $order);
+
+        $this->partial('footer', $order);
+
+
+    }
 
 }

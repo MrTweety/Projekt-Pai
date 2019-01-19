@@ -3,7 +3,7 @@
 $host = "localhost";
 $db_user = "root";
 $db_password = "";
-$db_name = "guma";
+$db_name = "mgaczorek";
 $where = 1;
 
 //$sql = "SELECT\n"

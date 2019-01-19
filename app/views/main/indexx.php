@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="pl">
-<head>s
+<head>
     <title>Strona glowna</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">

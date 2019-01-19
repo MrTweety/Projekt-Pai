@@ -1,8 +1,5 @@
-<!-- <div id="log_form" class="modal"></div> -->
-<br /><br />
-
 <!-- Page Content -->
-<div class="container">
+<div class="container" style="margin-top: 66px;">
 
     <div class="row">
 
@@ -79,6 +76,21 @@
             <div class="list-group">
             <a href="#" class="list-group-item" id="buy_button">Dodaj do koszyka</a>
             </div>
+      <div class="card-body">
+        <div class="d-flex justify-content-between">
+            <h3 class="card-title" id="nazwa_samochodu">Nazwa Samochodu</h3>
+            <h4 id="cena">cena</h4>
+        </div>
+        
+        <p class="card-text" id="opis">opis</p>
+
+        <div class="row justify-content-end">
+            <p>
+                Ilość wyświetleń:
+                <p id="ilosc_wyswietlen">
+                    liczba
+                </p>
+            </p>
         </div>
     </div>
     <!-- /.col-lg-3 -->
@@ -97,6 +109,9 @@
         </div>
     </div>
 </section>
+
+
+
 
 
 <script>
@@ -150,7 +165,7 @@ var ofer = <?php if(isset( $_GET['oferta'])) echo $_GET['oferta']; else echo -1;
 
 $(document).ready(function() {
 $.ajax({
-    type: "get",
+    type: "POST",
     url: '../app/views/main/item.php',
     data: {id_oferta: ofer},
 
@@ -159,7 +174,7 @@ $.ajax({
     {
         // alert(data);
         re = jQuery.parseJSON(data);
-        
+
         var nazwa =' '+ re[0].marka +' '+re[0].model;
         var cena = Number(re[0].cena);
 
@@ -208,20 +223,3 @@ $.ajax({
 </script>
 
 
-<script>
-    // $('#tabelka').hide();
-    
-    function load_login_form()
-    {
-        $("#log_form").load("../app/views/user/login.php");
-    }
-
-    $(document).ready( function() {
-        // $('.listing_box').hide();
-        $("#load_login_form").on("click", function() {
-            document.getElementById('log_form').style.display='block';
-            document.getElementById('indicators').style.display='none';
-
-        });
-    });
-    </script>
