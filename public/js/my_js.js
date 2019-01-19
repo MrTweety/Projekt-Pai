@@ -142,7 +142,7 @@ var build =
                         '                                            </div>'+
                         '                                            <div class="col-md-2 border-left h-100 ">'+
                         '                                                <ul class="list-unstyled">'+
-                        '                                                    <li><h3>'+ v.cena_netto +' zł '+'</h3></li>'+
+                        '                                                    <li><h3>'+ Number(v.cena_netto).toLocaleString() +' zł '+'</h3></li>'+
                         '                                                    <li class="text-secondary"><small>'+ v.wyswietlenia +' Reviews</small></li>'+
                         '                                                </ul>'+
                         '                                                <a href="/user/offer?oferta='+v.id_oferta+'" class="btn btn-outline-primary">Buy Now</a>'+
