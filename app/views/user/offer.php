@@ -74,14 +74,14 @@
             <br><br>
             <h1 class="my-4"> <div class="logo"> <a href="index.php"><h3>Classic<span>4you.eu</span></h3></a> </div> </h1>
             <div class="list-group">
-                <a onclick="add_to_cart()" href="#" class="list-group-item" id="buy_button"> <i class="fa fa-shopping-cart" style="text-align: left; font-size: 25px;"></i> Dodaj do koszyka</a>
+                <a onclick="add_to_cart()" class="list-group-item btn btn-success" id="buy_button"> <i class="fa fa-shopping-cart" style="text-align: left; font-size: 25px;"></i> Dodaj do koszyka</a>
             </div>
         </div>
     <!-- /.col-lg-3 -->
         <div class="sticky-top" style="z-index: 1">
             <div id="buy_alert" class="alert alert-danger alert-dismissible">
                 <div class="row">
-                    <div class="col-9"><strong>Uwaga!</strong> Musisz być zalogowany aby dodawać produkty do koszyka.</div>
+                    <div class="col-12"><strong>Uwaga!</strong> Musisz być zalogowany aby dodawać produkty do koszyka.</div>
                 </div>
             </div>
         </div>
@@ -90,7 +90,7 @@
 </div>
 <!-- /.container -->
 
-
+ 
 
 <br><br>
 <section class="cta py-5 bg-primary text-white">
@@ -229,7 +229,7 @@ function add_to_cart()
     {
         var cia  = "<?php if(isset($_COOKIE['id'])) echo $_COOKIE['id']; else echo -1; ?>";
         var ofer = <?php if(isset( $_GET['oferta'])) echo $_GET['oferta']; else echo -1;  ?>;
-        // alert(cia);
+        alert(cia);
         $.ajax({
             type: "POST",
             url: '../app/views/main/add_to_cart.php',

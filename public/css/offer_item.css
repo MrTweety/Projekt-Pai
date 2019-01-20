@@ -41,13 +41,12 @@
 #buy_alert
 {
 	display: none;
-	/* height: 100px; */
-	width: 70%;
+	text-align: center;
+	width: 80%;
 	padding: 15px;
 	position: absolute;
 	top: 200px;
 	right: 0;
-	/*bottom: 0;*/
 	left: 0;
 	margin: auto;
 	border-radius: 10px;

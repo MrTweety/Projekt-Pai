@@ -115,7 +115,7 @@ class User extends Model
 //        $stmt->bindParam(':REMOTE_ADDR', $_SERVER['REMOTE_ADDR']);
         $stmt->bindParam(':HTTP_USER_AGENT', $_SERVER['HTTP_USER_AGENT']);
         $stmt->execute();
-        setcookie("id", 0, time() - 1);
+        setcookie("id", 0, time() - 1,"/");
         unset($_COOKIE['id']);
         return true;
 
