@@ -9,7 +9,7 @@
                 <!-- <img class="card-img-top img-fluid" id ="zdjecie" src="http://placehold.it/900x400" alt=""> -->
 
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
+                    <ol class="carousel-indicators" style="z-index: 1;">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
@@ -74,29 +74,23 @@
             <br><br>
             <h1 class="my-4"> <div class="logo"> <a href="index.php"><h3>Classic<span>4you.eu</span></h3></a> </div> </h1>
             <div class="list-group">
-            <a href="#" class="list-group-item" id="buy_button">Dodaj do koszyka</a>
+                <a onclick="add_to_cart()" href="#" class="list-group-item" id="buy_button"> <i class="fa fa-shopping-cart" style="text-align: left; font-size: 25px;"></i> Dodaj do koszyka</a>
             </div>
-      <div class="card-body">
-        <div class="d-flex justify-content-between">
-            <h3 class="card-title" id="nazwa_samochodu">Nazwa Samochodu</h3>
-            <h4 id="cena">cena</h4>
         </div>
-        
-        <p class="card-text" id="opis">opis</p>
-
-        <div class="row justify-content-end">
-            <p>
-                Ilość wyświetleń:
-                <p id="ilosc_wyswietlen">
-                    liczba
-                </p>
-            </p>
+    <!-- /.col-lg-3 -->
+        <div class="sticky-top" style="z-index: 1">
+            <div id="buy_alert" class="alert alert-danger alert-dismissible">
+                <div class="row">
+                    <div class="col-9"><strong>Uwaga!</strong> Musisz być zalogowany aby dodawać produkty do koszyka.</div>
+                </div>
+            </div>
         </div>
     </div>
-    <!-- /.col-lg-3 -->
     </div>
 </div>
 <!-- /.container -->
+
+
 
 <br><br>
 <section class="cta py-5 bg-primary text-white">
@@ -161,6 +155,7 @@ var insert =
         }
 }
 
+
 var ofer = <?php if(isset( $_GET['oferta'])) echo $_GET['oferta']; else echo -1;  ?>;
 
 $(document).ready(function() {
@@ -213,11 +208,44 @@ $.ajax({
         insert.buildOffer(
             re,
             $('#offers'),
-        );
+            );
     }
 });
 
 });
+
+function add_to_cart()
+{
+    var is_logged = <?php if(isset($_COOKIE['id'])) echo 1;else echo -1; ?>;
+
+    if(is_logged<0)
+    {
+        document.getElementById('buy_alert').style.display='block';
+        $("#buy_alert").delay(3000).slideUp(200, function() {
+            document.getElementById('buy_alert').style.display='none';
+        });
+    }
+    else
+    {
+        var cia  = "<?php if(isset($_COOKIE['id'])) echo $_COOKIE['id']; else echo -1; ?>";
+        var ofer = <?php if(isset( $_GET['oferta'])) echo $_GET['oferta']; else echo -1;  ?>;
+        // alert(cia);
+        $.ajax({
+            type: "POST",
+            url: '../app/views/main/add_to_cart.php',
+            data: {id_oferta: ofer,
+                   id_sesja: cia},
+
+            success: function(data)
+            {
+                alert(data);
+            }
+        });
+    }
+
+}
+
+
 
 
 </script>

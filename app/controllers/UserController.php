@@ -162,6 +162,35 @@ class UserController extends Controller
         $this->partial("footer");
 
     }
+    
+    public function cart()
+    {
+        $user = $this->model('User');
+        if (!$user->is_logged_in()) {
+            // $this -> offer();
+        } else {
+
+            $this->partial("header");
+
+            switch ($user->get_type()) {
+
+                case User::$ADMIN_TYPE:
+                    $dataP = $user->get_name();
+                    $this->partial("nav_admin", $dataP);
+                    break;
+                case '2':
+                    $dataP = $user->get_name();
+                    $this->partial("nav_user", $dataP);
+                    break;
+            }
+
+        $this->view('user/cart');
+        $this->partial("footer");
+
+        }
+
+    }
+    
 
 
 
