@@ -33,10 +33,11 @@
                 </a>
 
                 <ul class="dropdown-menu" style="z-index: 100 !important; background-color: white">
-                    <li><a class="dropdown-item " href="/user/profile/" style="color: black;"><i class="fa fa-user"></i>Profil</a></li>
+                    <li><a class="dropdown-item " href="/user/profile/" style="color: black;"><i class="fa fa-user"></i>    Profil</a></li>
 <!--                    <li><a class="dropdown-item " href="#" style="color: black;"><i class="fa fa-cog"></i>Panel Admina</a></li>-->
                     <!--                    <li><a class="dropdown-item " href="#" style="color: black;"><i class="fa fa-envelope-o"></i>Messages</a></li>-->
-                    <li><a class="dropdown-item " href="/user/logout" style="color: black;"><i class="fa fa-power-off"></i>Wyloguj</a></li>
+                    <li><a class="dropdown-item " href="/user/logout" style="color: black;"><i class="fa fa-power-off"></i>    Wyloguj</a></li>
+                    <li><a class="dropdown-item " href="/user/cart" style="color: black;"><i class="fa fa-shopping-cart"></i>    Koszyk</a></li>
                 </ul>
             </div>
 
