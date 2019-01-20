@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: user
- * Date: 2018-12-15
- * Time: 19:27
- */
+
 
 class HomeController extends Controller
 {

@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * userController: michalkabionek
- * Date: 15.12.2017
- * Time: 14:17
- */
 
 class Model {
     private $host = "localhost";
