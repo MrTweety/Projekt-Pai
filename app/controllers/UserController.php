@@ -24,11 +24,9 @@ class UserController extends Controller
                     $dataP = $user->get_name();
                     $this->partial("nav_user", $dataP);
                     break;
-                default:
-                    $this->partial("nav");
             }
-
-            $this->view('user/index');
+            $data = $user->get_all();
+            $this->view('user/index',$data);
 //            $this->partial("footer");
 
         }
@@ -105,6 +103,23 @@ class UserController extends Controller
         }
     }
 
+
+    public function changePassword()
+    {
+        if (!isset($_POST) || empty($_POST)) {
+            $this->redirect("/");
+            die();
+        } else {
+            $user = $this->model('User');
+            if ($user->changePassword($_POST)) {
+//                $this->redirect("/home/Registered");
+                return true;
+            } else {
+//                $this->redirect("/home/notRegister");
+                return false;
+            }
+        }
+    }
 
 //search page @TODO jak zostanie czas stworzyć własny kontroler dla ofert
     public function search()

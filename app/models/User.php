@@ -15,6 +15,8 @@ class User extends Model
     public function __construct()
     {
         parent::__construct();
+        $this->db-> query ('SET NAMES utf8');
+//        $this->db-> query ('SET CHARACTER_SET utf8_unicode_ci');
     }
 
 
@@ -23,6 +25,7 @@ class User extends Model
     {
         if (!isset($_COOKIE['id'])) {
             return false;
+            exit();
         }
         $query = "select id_uzyt from sesja where id = :id and ip = :REMOTE_ADDR  AND web = :HTTP_USER_AGENT;";
         $stmt = $this->db->prepare($query);
@@ -32,6 +35,9 @@ class User extends Model
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         if (!empty($result['id_uzyt'])) {
+            $id=$_COOKIE['id'];
+//            setcookie("id", $id,time()+3600);
+          setcookie("id", $id,time()+3600,'/');
             return true;
         } else {
             return false;
@@ -71,8 +77,6 @@ class User extends Model
                 sesja.id = :id ";
         $stmt = $this->db->prepare($q);
         $stmt->bindParam(':id', $_COOKIE['id']);
-//        $stmt->bindParam(':REMOTE_ADDR', $_SERVER['REMOTE_ADDR']);
-//        $stmt->bindParam(':HTTP_USER_AGENT', $_SERVER['HTTP_USER_AGENT']);
         $stmt->execute();
 
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -90,8 +94,6 @@ class User extends Model
                 sesja.id = :id ";
         $stmt = $this->db->prepare($q);
         $stmt->bindParam(':id', $_COOKIE['id']);
-//        $stmt->bindParam(':REMOTE_ADDR', $_SERVER['REMOTE_ADDR']);
-//        $stmt->bindParam(':HTTP_USER_AGENT', $_SERVER['HTTP_USER_AGENT']);
         $stmt->execute();
 
 
@@ -103,6 +105,100 @@ class User extends Model
         return 0;
     }
 
+    public function get_all()
+    {
+
+        $sql = "SELECT\n"
+            . "uzytkownik.id_uzyt,\n"
+            . "uzytkownik.id_typ,\n"
+            . "uzytkownik.id_adres,\n"
+            . "uzytkownik.imie,\n"
+            . "uzytkownik.nazwisko,\n"
+            . "uzytkownik.email,\n"
+            . "uzytkownik.login,\n"
+            . "adres.kod_pocztowy,\n"
+            . "adres.nr_lokalu,\n"
+            . "adres.nr_domu,\n"
+            . "adres.ulica,\n"
+            . "adres.miejscowosc,\n"
+            . "typ_konta.typ_konta,\n"
+            . "uzytkownik.NIP,\n"
+            . "uzytkownik.nazwa_firmy\n"
+            . "FROM\n"
+            . "uzytkownik\n"
+            . "LEFT JOIN sesja ON sesja.id_uzyt = uzytkownik.id_uzyt\n"
+            . "LEFT JOIN adres ON uzytkownik.id_adres = adres.id_adres\n"
+            . "Left JOIN typ_konta ON uzytkownik.id_typ = typ_konta.id_typ_konta\n"
+            . "WHERE\n"
+            . "sesja.id = :id";
+
+
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(':id', $_COOKIE['id']);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+        if ($stmt->rowCount() > 0) {return $result;}
+        return 0;
+    }
+
+
+
+    public function changePassword($data)
+    {
+        $oldPassword = trim($data['oldPassword']);
+        $newPassword = trim($data['newPassword']);
+        $newPassword2 = trim($data['newPassword2']);
+
+        if( $newPassword!=$newPassword2){
+            echo "Hasła nie są identyczne.";
+            return false;
+        }
+
+        if( $newPassword==$oldPassword){
+            echo "Nowe hasło musi sie różnić.";
+            return false;
+        }
+
+        $sql = "SELECT uzytkownik.id_uzyt, uzytkownik.haslo FROM uzytkownik
+                LEFT JOIN sesja ON sesja.id_uzyt = uzytkownik.id_uzyt
+                WHERE
+                sesja.id = :id ";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(':id', $_COOKIE['id']);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($stmt->rowCount() > 0) {
+
+            if (password_verify($oldPassword, $result['haslo'])) {
+                $password = password_hash($newPassword, PASSWORD_DEFAULT);
+                $sql = "UPDATE `uzytkownik` SET `haslo` = :haslo WHERE `uzytkownik`.`id_uzyt` = :uzytkownik and `uzytkownik`.`haslo`= :oldhaslo ;";
+                $stmt = $this->db->prepare($sql);
+                $stmt->bindParam(':haslo', $password);
+                $stmt->bindParam(':oldhaslo', $result['haslo']);
+                $stmt->bindParam(':uzytkownik', $result['id_uzyt']);
+                if ($stmt->execute()) {
+                    echo 1;
+                    return true;
+                } else {
+                    echo "Coś poszło nie tak";
+                    return false;
+                }
+            }else{
+                echo "Podane hasło jest niepoprawne";
+                return false;
+            }
+
+        }else{
+            echo "Nie udało sie zmienić hasła.";
+            return false;
+        }
+
+    }
+
+
+
 
 
 
@@ -112,10 +208,9 @@ class User extends Model
         $q = "delete from sesja where id = :id and web = :HTTP_USER_AGENT;";
         $stmt = $this->db->prepare($q);
         $stmt->bindParam(':id', $_COOKIE['id']);
-//        $stmt->bindParam(':REMOTE_ADDR', $_SERVER['REMOTE_ADDR']);
         $stmt->bindParam(':HTTP_USER_AGENT', $_SERVER['HTTP_USER_AGENT']);
         $stmt->execute();
-        setcookie("id", 0, time() - 1);
+        setcookie("id", 0, time() - 1,"/");
         unset($_COOKIE['id']);
         return true;
 
@@ -180,7 +275,8 @@ class User extends Model
                 $stmt->bindParam(':HTTP_USER_AGENT', $_SERVER['HTTP_USER_AGENT']);
                 $stmt->execute();
 
-                setcookie("id", $id,time()+3600,'/',"localhost",false);
+                setcookie("id", $id,time()+3600,'/');
+
 
 //                $_SESSION['id_uzyt'] = $result['id_uzyt'];
                 return true;

@@ -20,6 +20,7 @@ class Model {
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
             );
             $this->db = new PDO("mysql:host=$this->host;dbname=$this->db_name", $this->username, $this->password, $opt);
+
         }catch(PDOException $e){
             print "Connection error!: " . $e->getMessage() . "<br/>";
             die();

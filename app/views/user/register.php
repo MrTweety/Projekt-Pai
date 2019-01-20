@@ -6,7 +6,7 @@
         <div class="row">
             <div class="form-block">
 <!--                <form class="login-form" method="POST" action="/user/create">-->
-                <form class="login-form">
+                <form class="login-form" action="#">
                     <div class="field"><h1>Sign up</h1></div>
                     <div class="field">
                         <label for="imie" >Imię:</label>
@@ -29,7 +29,7 @@
 
                     <div class="field">
                         <label for="password" >Password:</label>
-                        <input type="password" name="password" placeholder="Password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="W haśle musi wystąpić jedna duża, jedna mała litera oraz jedna cyfra." required />
+                        <input type="password" name="password" placeholder="Password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Hasło musi posiadac 8znaków. W haśle musi wystąpić jedna duża, jedna mała litera oraz jedna cyfra." required />
                     </div>
                     <div class="field">
                         <label for="cpassword" >Potwierdź hasło:</label>

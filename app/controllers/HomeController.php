@@ -22,7 +22,7 @@ class HomeController extends Controller
                     $dataP=$user->get_name();
                     $this->partial("nav_admin",$dataP);
                     break;
-                case '2':
+                case User::$CLIENT_TYPE:
                     $dataP=$user->get_name();
                     $this->partial("nav_user",$dataP);
                     break;

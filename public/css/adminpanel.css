@@ -1,12 +1,17 @@
+.collapse{
+  z-index: inherit;
+}
+
 html {
-  position: relative;
+  /*position: relative;*/
   min-height: 100%;
-  background-color: rgba(0,0,0,0.1)!important;
+  background-color: #c1c1c1!important;
 }
 
 body {
   height: 100%;
-  background-color: rgba(0,0,0,0.1)!important;
+  background-color: #c1c1c1!important;
+  z-index: -1;
 }
 
 .dashboard{
@@ -17,11 +22,11 @@ body {
 
 .tab-content{
   margin: 0!important;
-  background-color: rgba(0,0,0,0.1)!important;
+  background-color: #c1c1c1!important;
 }
 
 .tab-pane{
-  background-color: rgba(0,0,0,0.1)!important;
+  background-color: #c1c1c1!important;
   margin: 0px;
   padding: 15px;
 }
@@ -217,7 +222,7 @@ ul.nav-drop li a.dropdown-item.active{
     background-color: #212529;
   }
   .dropdown-toggle{
-    z-index: 100;
+    z-index: 100!important;
   }
   .sidebar .nav-item .nav-link {
     display: block;
@@ -285,7 +290,7 @@ ul.nav-drop li a.dropdown-item.active{
 
 .card-body-icon {
   position: absolute;
-  z-index: 0;
+  z-index: 0 !important;
   top: -1.25rem;
   right: -0.3rem;
   opacity: 0.4;
@@ -307,3 +312,4 @@ ul.nav-drop li a.dropdown-item.active{
   /*position: absolute;*/
   /*bottom: 0;*/
 /*}*/
+
