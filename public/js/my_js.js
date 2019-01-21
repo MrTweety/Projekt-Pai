@@ -10,9 +10,17 @@ $(document).ready( function() {
         document.getElementById('log_form').style.display='block';
         document.getElementById('indicators').style.display='none';
     });
+
 });
 
 
+$(document).ready( function() {
+
+    $("#load_login_form2").click( function() {
+        document.getElementById('log_form').style.display='block';
+        document.getElementById('indicators').style.display='none';
+    });
+});
 
 
 var helpers =
