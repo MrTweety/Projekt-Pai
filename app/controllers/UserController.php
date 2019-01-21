@@ -48,12 +48,13 @@ class UserController extends Controller
             $this->partial('nav');
 
             $this->view('user/register');
-            $this->partial('footer');
+//            $this->partial('footer');
 
         } else {
 
             $this->redirect("/");
         }
+
         $this->partial("noscript");
     }
 

@@ -35,7 +35,7 @@ class AdminController extends Controller
             $dataP=$user->get_name();
             $this->partial("header");
             $this->partial("nav_admin",$dataP);
-            $this->view("user/adminpanel");
+            $this->view("/admin/adminpanel");
         }
         else {
             $this->redirect('/');
