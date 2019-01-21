@@ -46,9 +46,9 @@
                             <div class="form-select-group">
 
                                 <select id="plec" class="form-control" name="plec">
-                                    <option selected="selected" value="3">Nie chce podawać</option>
-                                    <option value="1">Kobieta</option>
-                                    <option value="2">Mężczyzna</option>
+                                    <option selected="selected" value="N">Nie chce podawać</option>
+                                    <option value="K">Kobieta</option>
+                                    <option value="M">Mężczyzna</option>
                                 </select>
                                 <label for="plec">Podaj swoją płeć</label>
                             </div>
@@ -130,6 +130,64 @@
                         </div>
                     </div>
                 </div>
+                <div id="Adres_form" style="display: block;">
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" id="miejscowosc" class="form-control" placeholder="Miejscowosc" required>
+                                    <label for="miejscowosc">Miejscowosc</label>
+                                    <div class="invalid-feedback">
+                                        Wpisz poprawne dane
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" id="ulica" class="form-control" placeholder="Ulica"
+                                           required>
+                                    <label for="Ulica">Ulica</label>
+                                    <div class="invalid-feedback">
+                                        Wpisz poprawne dane
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-4">
+                                <div class="form-label-group">
+                                    <input type="text" id="zipcode" class="form-control" placeholder="Kod pocztowy" pattern="[0-9]{2}[\-]?[0-9]{3}" required>
+                                    <label for="zipcode">Kod pocztowy</label>
+                                    <div class="invalid-feedback">
+                                        Wpisz poprawne dane. (nn-nnn)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-label-group">
+                                    <input type="text" id="nrDomu" class="form-control" placeholder="Numer domu"
+                                           required>
+                                    <label for="nrDomu">Numer domu</label>
+                                    <div class="invalid-feedback">
+                                        Wpisz poprawne dane
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-label-group">
+                                    <input type="text" id="nrLok" class="form-control" placeholder="Numer lokalu"
+                                    >
+                                    <label for="nrLok">Numer lokalu</label>
+                                    <div class="invalid-feedback">
+                                        Wpisz poprawne dane.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <div id="RegisterFormAlert"></div>
                 <a class="btn btn-primary btn-block" id="btn-register">Register</a>
@@ -145,257 +203,8 @@
     </div>
 
 
-    <script>
 
 
+    <script src="../../../public/js/reg_js.js"></script>
 
-        $('#imie').blur(function () {
-            var element = document.getElementById("imie");
-            if(element.value!='') {
-                element.classList.remove("is-invalid");
-                element.classList.add("is-valid");
-
-            }else{
-                element.classList.add("is-invalid");
-                element.classList.remove("is-valid");
-            }
-
-        });
-
-        $('#nazwisko').blur(function () {
-            var element = document.getElementById("nazwisko");
-            if(element.value!='') {
-                element.classList.remove("is-invalid");
-                element.classList.add("is-valid");
-
-            }else{
-                element.classList.add("is-invalid");
-                element.classList.remove("is-valid");
-            }
-
-        });
-
-
-
-        $('#login').blur(function () {
-            var element = document.getElementById("login");
-            if($("#login")[0].checkValidity()) {
-
-                $.ajax({
-                    type: "POST",
-                    url: '/user/checkLogin',
-                    data: {
-                        login: $('#login').val(),
-                    },
-
-
-                    success: function (data) {
-
-                        if (parseInt(data) == 1) {
-                            element.classList.remove("is-invalid");
-                            element.classList.add("is-valid");}
-
-                        else{
-
-                            document.getElementById("Login-invalid-feedback").innerHTML = "Login jest zajety.";
-                            element.classList.add("is-invalid");
-                            element.classList.remove("is-valid");}
-
-
-
-                    }
-                });
-
-
-            }else{
-                element.classList.add("is-invalid");
-                element.classList.remove("is-valid");
-            }
-
-        });
-
-
-        $('#plec').blur(function () {
-            var element = document.getElementById("plec");
-
-                element.classList.remove("is-invalid");
-                element.classList.add("is-valid");
-
-        });
-
-
-
-
-        $('#inputEmail').blur(function () {
-            var element = document.getElementById("inputEmail");
-            if($("#inputEmail")[0].checkValidity()) {
-
-                $.ajax({
-                    type: "POST",
-                    url: '/user/checkEmail',
-                    data: {
-                        email: $('#inputEmail').val(),
-                    },
-
-
-                    success: function (data) {
-
-                        if (parseInt(data) == 1) {
-                            element.classList.remove("is-invalid");
-                            element.classList.add("is-valid");}
-
-                        else{
-
-                            document.getElementById("Email-invalid-feedback").innerHTML = "Email jest zajety.";
-                            element.classList.add("is-invalid");
-                            element.classList.remove("is-valid");}
-
-
-
-                    }
-                });
-
-
-            }else{
-                element.classList.add("is-invalid");
-                element.classList.remove("is-valid");
-            }
-
-        });
-
-
-
-
-
-
-        $('#inputPassword').blur(function () {
-            var element = document.getElementById("inputPassword");
-            if($("#inputPassword")[0].checkValidity()) {
-                element.classList.remove("is-invalid");
-                element.classList.add("is-valid");
-            }else{
-                element.classList.add("is-invalid");
-                element.classList.remove("is-valid");
-            }
-
-        });
-
-
-        $('#confirmPassword').blur(function () {
-            var element = document.getElementById("inputPassword");
-            var element2 = document.getElementById("confirmPassword");
-
-            if(element.value ==element2.value ) {
-                element2.classList.remove("is-invalid");
-                element2.classList.add("is-valid");
-            }else{
-                element2.classList.add("is-invalid");
-                element2.classList.remove("is-valid");
-            }
-        });
-
-
-
-
-        $('#inputEmail').blur(function () {
-            var element = document.getElementById("inputEmail");
-            if($("#inputEmail")[0].checkValidity()) {
-                element.classList.remove("is-invalid");
-                element.classList.add("is-valid");
-            }else{
-                element.classList.add("is-invalid");
-                element.classList.remove("is-valid");
-            }
-
-        });
-
-
-
-
-        $('#RodzajK').change(function () {
-            if (document.getElementById("RodzajK").value == 1) {
-                document.getElementById("Firm_form").style.display = "none";
-                document.getElementById("NIP").required = false;
-                document.getElementById("nazwa_firmy").required = false;
-
-            } else {
-                document.getElementById("Firm_form").style.display = "block";
-                document.getElementById("NIP").required = true;
-                document.getElementById("nazwa_firmy").required = true;
-            }
-        });
-
-
-        $('#NIP').blur(function () {
-            var element = document.getElementById("NIP");
-            if($("#NIP")[0].checkValidity()) {
-                element.classList.remove("is-invalid");
-                element.classList.add("is-valid");
-            }else{
-                element.classList.add("is-invalid");
-                element.classList.remove("is-valid");
-            }
-
-        });
-
-        $('#nazwa_firmy').blur(function () {
-            var element = document.getElementById("nazwa_firmy");
-            if(element.value!='') {
-                element.classList.remove("is-invalid");
-                element.classList.add("is-valid");
-
-            }else{
-                element.classList.add("is-invalid");
-                element.classList.remove("is-valid");
-            }
-
-        });
-
-
-
-        $('#btn-register').click(function () {
-
-            if($("#RegisterForm")[0].checkValidity()) {
-                $.ajax({
-                    type: "POST",
-                    url: '/user/create',
-                    data: {
-                        login: $('#login').val(),
-                        cpassword: $('#confirmPassword').val(),
-                        password: $('#inputPassword').val(),
-
-                        imie: $('#imie').val(),
-                        nazwisko: $('#nazwisko').val(),
-                        email: $('#inputEmail').val(),
-                        NIP: $('#NIP').val(),
-                        nazwa_firmy: $('#nazwa_firmy').val(),
-                    },
-
-
-                    success: function (data) {
-
-
-                        if (parseInt(data) == 1)
-                            $("#RegisterFormAlert").html('<div class="alert alert-success alert-dismissible  " role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                                '  <strong>Well done! </strong>' + "Możesz sie zalogować" +
-                                '</div>');
-                        else
-                            $("#RegisterFormAlert").html('<div class="alert alert-danger alert-dismissible  " role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                                '  <strong>Warning! </strong>' + "Coś poszło nie tak." +
-                                '</div>');
-
-
-                    }
-                });
-
-            }else {
-                $("#RegisterFormAlert").html('<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                    '  <strong>Warning! </strong>' + 'Wpisz poprawne dane!' +
-                    '</div>');
-            }
-
-
-        });
-
-    </script>
 </div>

@@ -5,15 +5,15 @@ class User extends Model
 {
     public static $ADMIN_TYPE = 1;
     public static $CLIENT_TYPE = 2;
+
 //    public static $MY_TYPE = 3;
 
     public function __construct()
     {
         parent::__construct();
-        $this->db-> query ('SET NAMES utf8');
+        $this->db->query('SET NAMES utf8');
 //        $this->db-> query ('SET CHARACTER_SET utf8_unicode_ci');
     }
-
 
 
     public function is_logged_in()
@@ -30,9 +30,9 @@ class User extends Model
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         if (!empty($result['id_uzyt'])) {
-            $id=$_COOKIE['id'];
+            $id = $_COOKIE['id'];
 //            setcookie("id", $id,time()+3600);
-          setcookie("id", $id,time()+3600,'/');
+            setcookie("id", $id, time() + 3600, '/');
             return true;
         } else {
             return false;
@@ -40,7 +40,6 @@ class User extends Model
 
 
     }
-
 
 
     public function get_name()
@@ -57,11 +56,11 @@ class User extends Model
 
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($stmt->rowCount() > 0) {return $result;}
+        if ($stmt->rowCount() > 0) {
+            return $result;
+        }
         return 0;
     }
-
-
 
 
     public function get_id()
@@ -76,7 +75,9 @@ class User extends Model
 
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($stmt->rowCount() > 0) {return $result['id_uzyt'];}
+        if ($stmt->rowCount() > 0) {
+            return $result['id_uzyt'];
+        }
         return 0;
     }
 
@@ -92,11 +93,11 @@ class User extends Model
         $stmt->execute();
 
 
-
-
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($stmt->rowCount() > 0) {return $result['id_typ'];}
+        if ($stmt->rowCount() > 0) {
+            return $result['id_typ'];
+        }
         return 0;
     }
 
@@ -134,10 +135,11 @@ class User extends Model
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
-        if ($stmt->rowCount() > 0) {return $result;}
+        if ($stmt->rowCount() > 0) {
+            return $result;
+        }
         return 0;
     }
-
 
 
     public function changePassword($data)
@@ -146,12 +148,12 @@ class User extends Model
         $newPassword = trim($data['newPassword']);
         $newPassword2 = trim($data['newPassword2']);
 
-        if( $newPassword!=$newPassword2){
+        if ($newPassword != $newPassword2) {
             echo "Hasła nie są identyczne.";
             return false;
         }
 
-        if( $newPassword==$oldPassword){
+        if ($newPassword == $oldPassword) {
             echo "Nowe hasło musi sie różnić.";
             return false;
         }
@@ -180,18 +182,17 @@ class User extends Model
                     echo "Coś poszło nie tak";
                     return false;
                 }
-            }else{
+            } else {
                 echo "Podane hasło jest niepoprawne";
                 return false;
             }
 
-        }else{
+        } else {
             echo "Nie udało sie zmienić hasła.";
             return false;
         }
 
     }
-
 
 
     public function logout()
@@ -202,13 +203,12 @@ class User extends Model
         $stmt->bindParam(':id', $_COOKIE['id']);
         $stmt->bindParam(':HTTP_USER_AGENT', $_SERVER['HTTP_USER_AGENT']);
         $stmt->execute();
-        setcookie("id", 0, time() - 1,"/");
+        setcookie("id", 0, time() - 1, "/");
         unset($_COOKIE['id']);
         return true;
 
 
     }
-
 
 
     public function find_by_email($email)
@@ -267,7 +267,7 @@ class User extends Model
                 $stmt->bindParam(':HTTP_USER_AGENT', $_SERVER['HTTP_USER_AGENT']);
                 $stmt->execute();
 
-                setcookie("id", $id,time()+3600,'/');
+                setcookie("id", $id, time() + 3600, '/');
 
 
 //                $_SESSION['id_uzyt'] = $result['id_uzyt'];
@@ -290,7 +290,7 @@ class User extends Model
         $imie = trim($data['imie']);
         $nazwisko = trim($data['nazwisko']);
 
-
+        $plec = trim($data['plec']);
         $email = trim($data['email']);
         $email = strtolower($email);
         $login = trim($data['login']);
@@ -302,33 +302,61 @@ class User extends Model
 
         $NIP = trim($data['NIP']);
         $nazwa_firmy = trim($data['nazwa_firmy']);
-        if($nazwa_firmy=='') $nazwa_firmy=NULL;
-        if($NIP=='') $NIP=NULL;
-
+        if ($nazwa_firmy == '') $nazwa_firmy = NULL;
+        if ($NIP == '') $NIP = NULL;
 
 
         if ($this->find_by_email($email) or ($password != $cpassword) or $this->find_by_login($login)) {
             return false;
         } else {
+            try {
 
 
-            $query = "INSERT INTO uzytkownik (`id_uzyt`,`id_adres`, `id_typ`, `imie`, `nazwisko`, `email`, `login`, `haslo`,`NIP`,`nazwa_firmy`) VALUES (NULL, NULL,2,:imie,:nazwisko,:email,:login,:password,:NIP,:nazwa_firmy)";
-            $password = password_hash($password, PASSWORD_DEFAULT);
-            $stmt = $this->db->prepare($query);
+                $this->db->beginTransaction();
+
+                $query = "INSERT INTO `adres`(`id_adres`, `miejscowosc`, `ulica`, `nr_domu`, `nr_lokalu`, `kod_pocztowy`) VALUES (NULL,:miejscowosc,:ulica,:nrDomu,:nrLok,:zipcode)";
+                $ulica = trim($data['ulica']);
+                $miejscowosc = trim($data['miejscowosc']);
+                $zipcode = trim($data['zipcode']);
+                $nrDomu = trim($data['nrDomu']);
+                $nrLok = trim($data['nrLok']);
+                $stmt = $this->db->prepare($query);
+
+                $stmt->bindParam(":miejscowosc", $miejscowosc);
+                $stmt->bindParam(":ulica", $ulica);
+                $stmt->bindParam(":zipcode", $zipcode);
+                $stmt->bindParam(":nrDomu", $nrDomu);
+                $stmt->bindParam(":nrLok", $nrLok);
+                $stmt->execute();
+                $lastIdAddres = $this->db->lastInsertId();
 
 
-            $stmt->bindParam(":imie", $imie);
-            $stmt->bindParam(":nazwisko", $nazwisko);
-            $stmt->bindParam(":email", $email);
-            $stmt->bindParam(":login", $login);
-            $stmt->bindParam(":password", $password);
-            $stmt->bindParam(":NIP", $NIP);
-            $stmt->bindParam(":nazwa_firmy", $nazwa_firmy);
+
+                $query = "INSERT INTO uzytkownik (`id_uzyt`,`id_adres`, `id_typ`, `imie`, `nazwisko`,`plec`, `email`, `login`, `haslo`,`NIP`,`nazwa_firmy`) VALUES (NULL, :adres,2,:imie,:nazwisko,:plec,:email,:login,:password,:NIP,:nazwa_firmy)";
+                $password = password_hash($password, PASSWORD_DEFAULT);
+                $stmt = $this->db->prepare($query);
+
+                $stmt->bindParam(":adres", $lastIdAddres);
+                $stmt->bindParam(":imie", $imie);
+                $stmt->bindParam(":nazwisko", $nazwisko);
+                $stmt->bindParam(":plec", $plec);
+                $stmt->bindParam(":email", $email);
+                $stmt->bindParam(":login", $login);
+                $stmt->bindParam(":password", $password);
+                $stmt->bindParam(":NIP", $NIP);
+                $stmt->bindParam(":nazwa_firmy", $nazwa_firmy);
 
 
-            $stmt->execute();
+                $stmt->execute();
+                $this->db->commit();
+                return true;
+            } catch (PDOExecption $e) {
+                $this->db->rollback();
+                print "Error!: " . $e->getMessage() . "</br>";
+                return false;
+            }
 
-            return true;
+
         }
 
     }

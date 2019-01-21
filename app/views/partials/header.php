@@ -42,6 +42,8 @@
     <link rel="stylesheet" href="../../../public/css/adminpanel.css" type="text/css">
 
     <script src="../../../public/js/my_js.js"></script>
+
+
     <!--    <script src="app/js/skrypty.js"></script>-->
 
 
