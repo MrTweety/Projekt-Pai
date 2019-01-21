@@ -146,7 +146,7 @@
                                 <div class="form-label-group">
                                     <input type="text" id="ulica" class="form-control" placeholder="Ulica"
                                            required>
-                                    <label for="Ulica">Ulica</label>
+                                    <label for="ulica">Ulica</label>
                                     <div class="invalid-feedback">
                                         Wpisz poprawne dane
                                     </div>
@@ -205,6 +205,6 @@
 
 
 
-    <script src="../../../public/js/reg_js.js"></script>
+    <script src="/public/js/reg_js.js"></script>
 
 </div>
