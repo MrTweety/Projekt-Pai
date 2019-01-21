@@ -1,220 +1,164 @@
 <!--@TODO do zrobienie od nowa, name i id inputu zaleceane zostawić bez zmian, proces rejestracji dziala, ajax działa zajebiscie z MVC!!!!!! -->
 <!--@TODO dodac adres-->
 
+
 <!--<div id="Register" class="container tab-pane"  style="margin-top: 66px;"><br>-->
-    <div class="container" style="margin-top: 80px;">
-        <div class="card card-outline-secondary my-4">
-            <div class="card-header">
-                <h3>Zmień hasło</h3>
-            </div>
-            <div class="card-body">
-                <form  id="changePasswordForm" class="login-form">
+<div class="container" style="margin-top: 80px;">
+    <div class="card card-outline-secondary my-4">
 
-                    <div class="d-flex justify-content-between">
-                        <h4>Stare hasło </h4>
-                        <div class="form-group mb-2">
-                            <input type="password" class="form-control" id="oldPassword"
-                                   placeholder="Stare hasło">
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="d-flex justify-content-between">
-                        <h4>Nowe hasło </h4>
-                        <div class="form-group mb-2">
-                            <input type="password" class="form-control" id="newPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="W haśle musi wystąpić jedna duża, jedna mała litera oraz jedna cyfra."  placeholder="Nowe hasło" required >
-                            <div class="invalid-feedback">
-                                W haśle musi wystąpić:<br />  duża litera, mała litera, cyfra, 8 znaków.
+        <div class="card-header">Register an Account</div>
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="form-label-group">
+                                <input type="text" id="imie" class="form-control" placeholder="Imię" required="required"
+                                       autofocus="autofocus">
+                                <label for="imie">Imię</label>
                             </div>
                         </div>
-                    </div>
-                    <hr>
-                    <div class="d-flex justify-content-between">
-                        <h4>Powtórz hasło </h4>
-                        <div class="form-group mb-2">
-                            <input type="password" class="form-control" id="newPassword2" placeholder="Powtórz hasło">
-                            <div class="invalid-feedback">
-                                Hasła nie są identyczne.
+                        <div class="col-md-6">
+                            <div class="form-label-group">
+                                <input type="text" id="nazwisko" class="form-control" placeholder="Nazwisko"
+                                       required="required">
+                                <label for="nazwisko">Nazwisko</label>
                             </div>
                         </div>
-                    </div>
-
-                </form>
-                <hr>
-                <div class="d-flex justify-content-between">
-                    <h4>
-                        <div id="changePasswordAlert"></div>
-                    </h4>
-                    <div class="form-group mb-2">
-                        <button id="changePassword" type="submit"  value="Submit"  class="btn btn-dark mb-2">Zmień hasło</button>
                     </div>
                 </div>
-                <script>
+
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="form-label-group">
+                                <input type="text" id="login" class="form-control" placeholder="Login"
+                                       required="required" autofocus="autofocus">
+                                <label for="login">Login</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-label-group">
+
+                                <select id="plec" class="form-control" name="plec">
+                                    <option selected="selected" value="3">Nie chce podawać</option>
+                                    <option value="1">Kobieta</option>
+                                    <option value="2">Mężczyzna</option>
+                                </select>
+                                <label for="plec">Podaj swoją płeć</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-label-group">
+                        <input type="email" id="inputEmail" class="form-control" placeholder="Adres email"
+                               required="required">
+                        <label for="inputEmail">Adres email</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="form-label-group">
+                                <input type="password" id="inputPassword" class="form-control" placeholder="Hasło"
+                                       required="required">
+                                <label for="inputPassword">Hasło</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-label-group">
+                                <input type="password" id="confirmPassword" class="form-control"
+                                       placeholder="Potwierdź hasło" required="required">
+                                <label for="confirmPassword">Potwierdź hasło</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="form-label-group">
+
+                                <select id="RodzajK" class="form-control" name="RodzajK">
+                                    <option value="1">Prywatne</option>
+                                    <option value="2">Firmowe</option>
+                                </select>
+                                <label for="RodzajK">Rodzaj konta</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Firm_form" style="display: none;">
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" id="NIP" class="form-control" placeholder="NIP"
+                                           required="required">
+                                    <label for="NIP">NIP</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" id="nazwa_firmy" class="form-control" placeholder="Nazwa firmy"
+                                           required="required">
+                                    <label for="nazwa_firmy">Nazwa firmy</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 
-
-
-                    $('#newPassword').blur(function () {
-                        var element = document.getElementById("newPassword");
-                        if($("#changePasswordForm")[0].checkValidity()) {
-                            element.classList.remove("is-invalid");
-                        }else{
-                            element.classList.add("is-invalid");
-                        }
-
-                    });
-
-                    $('#newPassword2').blur(function () {
-                        var element = document.getElementById("newPassword");
-                        var element2 = document.getElementById("newPassword2");
-
-                        if(element.value ==element2.value ) {
-                            element2.classList.remove("is-invalid");
-                        }else{
-                            element2.classList.add("is-invalid");
-                        }
-                    });
-
-
-                    $('#changePassword').click(function () {
-
-                        if($("#changePasswordForm")[0].checkValidity()) {
-                            $.ajax({
-                                type: "post",
-                                url: '/user/changePassword',
-                                data: {
-                                    oldPassword: $('#oldPassword').val(),
-                                    newPassword: $('#newPassword').val(),
-                                    newPassword2: $('#newPassword2').val(),
-                                },
-
-
-                                success: function (data) {
-                                    alert(data);
-
-                                    if (parseInt(data) == 1)
-                                        $("#changePasswordAlert").html('<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                                            '  <strong>Well done! </strong>' + "hasło zostało zmienione" +
-                                            '</div>');
-                                    else
-                                        $("#changePasswordAlert").html('<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                                            '  <strong>Warning! </strong>' + data +
-                                            '</div>');
-
-
-                                }
-                            });
-
-                        }else {
-                            $("#changePasswordAlert").html('<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                                '  <strong>Warning! </strong>' + 'Wpisz poprawne dane!' +
-                                '</div>');
-                        }
-
-
-                    });
-
-                </script>
+                <a class="btn btn-primary btn-block" id="btn-register">Register</a>
+            </form>
+            <div class="text-center">
+                <a class="d-block small mt-3" href="login.html">Login Page</a>
+                <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
             </div>
-
-
         </div>
 
 
+    </div>
 
 
+    <script>
+        $('#RodzajK').change(function () {
+            if (document.getElementById("RodzajK").value == 1) {
+                document.getElementById("Firm_form").style.display = "none";
+            } else {
+                document.getElementById("Firm_form").style.display = "block";
+            }
+        });
+
+        
+        $('#btn-register').click(function () {
+
+            $.ajax({
+                type: "POST",
+                url: '/user/create',
+                data: {
+                    login: $('#login').val(),
+                    cpassword: $('#confirmPassword').val(),
+                    password: $('#inputPassword').val(),
+
+                    imie: $('#imie').val(),
+                    nazwisko: $('#nazwisko').val(),
+                    email: $('#inputEmail').val(),
+                    NIP: $('#NIP').val(),
+                    nazwa_firmy: $('#nazwa_firmy').val(),
+                },
+                // data: {marka : 1 , model: -1},
 
 
+                success: function (data) {
+                    alert(data);
+                }
+            });
 
+        });
 
-
-
-
-<!--        <div class="row">-->
-<!--            <div class="form-block">-->
-<!--                <form class="login-form" action="#">-->
-<!--                    <div class="field"><h1>Sign up</h1></div>-->
-<!--                    <div class="field">-->
-<!--                        <label for="imie" >Imię:</label>-->
-<!--                        <input type="text" name="imie" placeholder="Imię" id="imie"  />-->
-<!--                    </div>-->
-<!--                    <div class="field">-->
-<!--                        <label for="nazwisko" >Nazwisko:</label>-->
-<!--                        <input type="text" name="nazwisko" placeholder="Nazwisko" id="nazwisko"  />-->
-<!--                    </div>-->
-<!---->
-<!--                    <div class="field">-->
-<!--                        <label for="email" >Email:</label>-->
-<!--                        <input type="email" name="email" placeholder="e-mail" id="email"  />-->
-<!--                    </div>-->
-<!---->
-<!--                    <div class="field">-->
-<!--                        <label for="login" >Login:</label>-->
-<!--                        <input type="text" name="login" placeholder="Login" id="login"  />-->
-<!--                    </div>-->
-<!---->
-<!--                    <div class="field">-->
-<!--                        <label for="password" >Password:</label>-->
-<!--                        <input type="password" name="password" placeholder="Password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Hasło musi posiadac 8znaków. W haśle musi wystąpić jedna duża, jedna mała litera oraz jedna cyfra." required />-->
-<!--                    </div>-->
-<!--                    <div class="field">-->
-<!--                        <label for="cpassword" >Potwierdź hasło:</label>-->
-<!--                        <input type="password" name="cpassword" placeholder="Potwierdź hasło" id="cpassword"  />-->
-<!--                    </div>-->
-<!---->
-<!--                    <div class="field">-->
-<!--                        <label for="NIP" >NIP:</label>-->
-<!--                        <input type="text" name="NIP" placeholder="NIP" id="NIP"  />-->
-<!--                    </div>-->
-<!---->
-<!--                    <div class="field">-->
-<!--                        <label for="nazwa_firmy" >Nazwa firmy:</label>-->
-<!--                        <input type="text" name="nazwa_firmy" placeholder="Nazwa firmy" id="nazwa_firmy"  />-->
-<!--                    </div>-->
-<!---->
-<!---->
-<!---->
-<!--                    <div class="field">-->
-<!--                        <button class="btn" id="login-btn" type="button">Register</button>-->
-<!--                    </div>-->
-<!--                </form>-->
-<!---->
-<!---->
-<!---->
-<!---->
-<!---->
-<!---->
-<!---->
-<!--                <script>-->
-<!---->
-<!--                    $('#login-btn').click(function () {-->
-<!---->
-<!--                        $.ajax({-->
-<!--                            type: "POST",-->
-<!--                            url: '/user/create',-->
-<!--                            data: {-->
-<!--                                login: $('#login').val(),-->
-<!--                                cpassword: $('#cpassword').val(),-->
-<!--                                password: $('#password').val(),-->
-<!---->
-<!--                                imie: $('#imie').val(),-->
-<!--                                nazwisko: $('#nazwisko').val(),-->
-<!--                                email: $('#email').val(),-->
-<!--                                NIP: $('#NIP').val(),-->
-<!--                                nazwa_firmy: $('#nazwa_firmy').val(),-->
-<!--                            },-->
-<!--                            // data: {marka : 1 , model: -1},-->
-<!---->
-<!---->
-<!--                            success: function (data) {-->
-<!--                                alert(data);-->
-<!--                            }-->
-<!--                        });-->
-<!---->
-<!--                    });-->
-<!---->
-<!--                </script>-->
-<!--                -->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
+    </script>
 </div>
