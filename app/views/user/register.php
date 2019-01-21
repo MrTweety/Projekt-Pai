@@ -43,7 +43,7 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-label-group">
+                            <div class="form-select-group">
 
                                 <select id="plec" class="form-control" name="plec">
                                     <option selected="selected" value="3">Nie chce podawać</option>
@@ -93,7 +93,7 @@
                 <div class="form-group">
                     <div class="form-row">
                         <div class="col-md-6">
-                            <div class="form-label-group">
+                            <div class="form-select-group">
 
                                 <select id="RodzajK" class="form-control" name="RodzajK">
                                     <option value="1">Prywatne</option>
@@ -395,6 +395,6 @@
 
 
         });
-        
+
     </script>
 </div>
