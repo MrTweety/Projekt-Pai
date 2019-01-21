@@ -38,6 +38,7 @@ $link -> query ('SET NAMES utf8');
 $link -> query ('SET CHARACTER_SET utf8_unicode_ci');
 if( isset($_POST["id_oferta"]) )
 {
+
     $id_oferta =  mysqli_real_escape_string($link, $_POST["id_oferta"]);
     $sql = $sql
         ." AND \n"

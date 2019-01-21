@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40583a97-bec7-44ec-862b-7037cc11a83b" name="Default" comment="add Order">
-      <change afterPath="$PROJECT_DIR$/app/models/Admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/home/isLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/isLogin.php" afterDir="false" />
+    <list default="true" id="40583a97-bec7-44ec-862b-7037cc11a83b" name="Default" comment="paneladmina-&gt;chart">
+      <change beforePath="$PROJECT_DIR$/app/views/main/item.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/main/item.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/user/adminpanel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/user/adminpanel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/user/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/user/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/user/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/user/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/user/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/user/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/my_js.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/my_js.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,8 +34,8 @@
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/public/js/my_js.js">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="113">
-                    <caret line="213" column="19" selection-start-line="213" selection-start-column="19" selection-end-line="213" selection-end-column="29" />
+                  <state relative-caret-position="674">
+                    <caret line="246" column="41" selection-start-line="246" selection-start-column="41" selection-end-line="246" selection-end-column="41" />
                   </state>
                 </provider>
               </entry>
@@ -90,10 +83,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/user/adminpanel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
+            <state relative-caret-position="2057">
               <caret line="187" column="56" lean-forward="true" selection-start-line="187" selection-start-column="56" selection-end-line="187" selection-end-column="56" />
               <folding>
                 <element signature="e#121#128#1" expanded="true" />
@@ -103,6 +96,15 @@
                 <element signature="e#121#128#1" expanded="true" />
                 <element signature="e#120#127#1" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/main/item.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="680">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
             </state>
           </provider>
         </entry>
@@ -125,11 +127,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/chart.js/chart-area-demo.js">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/js/chart.js/chart-area-data.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="95" column="36" lean-forward="true" selection-start-line="95" selection-start-column="36" selection-end-line="95" selection-end-column="36" />
+            <state relative-caret-position="229">
+              <caret line="83" column="9" lean-forward="true" selection-start-line="83" selection-start-column="9" selection-end-line="83" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -227,8 +229,6 @@
         <option value="$PROJECT_DIR$/app/core/Controller.php" />
         <option value="$PROJECT_DIR$/app/views/main/adminpanel.php" />
         <option value="$PROJECT_DIR$/app/views/user/profile.php" />
-        <option value="$PROJECT_DIR$/public/js/my_js.js" />
-        <option value="$PROJECT_DIR$/app/views/main/item.php" />
         <option value="$PROJECT_DIR$/app/views/user/offer.php" />
         <option value="$PROJECT_DIR$/app/views/home/error-404.php" />
         <option value="$PROJECT_DIR$/app/views/home/error-500.php" />
@@ -252,6 +252,8 @@
         <option value="$PROJECT_DIR$/public/js/chart.js/chart-area-demo.js" />
         <option value="$PROJECT_DIR$/app/models/Admin.php" />
         <option value="$PROJECT_DIR$/app/views/user/adminpanel.php" />
+        <option value="$PROJECT_DIR$/app/views/main/item.php" />
+        <option value="$PROJECT_DIR$/public/js/my_js.js" />
       </list>
     </option>
   </component>
@@ -684,7 +686,14 @@
       <option name="project" value="LOCAL" />
       <updated>1547948139444</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="paneladmina-&gt;chart">
+      <created>1548075098956</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1548075098956</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -708,7 +717,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="356073000" />
+    <option name="totallyTimeSpent" value="356293000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -811,7 +820,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="4x4" />
     <MESSAGE value="Search" />
     <MESSAGE value="Logowanie" />
     <MESSAGE value="Rejestracja" />
@@ -836,7 +844,8 @@
     <MESSAGE value="error page" />
     <MESSAGE value="changePassword" />
     <MESSAGE value="add Order" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Order" />
+    <MESSAGE value="paneladmina-&gt;chart" />
+    <option name="LAST_COMMIT_MESSAGE" value="paneladmina-&gt;chart" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/views/user/profile.php">
@@ -1062,13 +1071,6 @@
     <entry file="file://$PROJECT_DIR$/app/views/main/search.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/main/item.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="40" column="57" selection-start-line="40" selection-start-column="57" selection-end-line="40" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/main/indexx.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1117,24 +1119,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/my_js.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="213" column="19" selection-start-line="213" selection-start-column="19" selection-end-line="213" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/home/isLogin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/chart.js/chart-area-demo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="95" column="36" lean-forward="true" selection-start-line="95" selection-start-column="36" selection-end-line="95" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -1154,7 +1142,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user/adminpanel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
+        <state relative-caret-position="2057">
           <caret line="187" column="56" lean-forward="true" selection-start-line="187" selection-start-column="56" selection-end-line="187" selection-end-column="56" />
           <folding>
             <element signature="e#121#128#1" expanded="true" />
@@ -1164,6 +1152,27 @@
             <element signature="e#121#128#1" expanded="true" />
             <element signature="e#120#127#1" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/main/item.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/chart.js/chart-area-data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="83" column="9" lean-forward="true" selection-start-line="83" selection-start-column="9" selection-end-line="83" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/my_js.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="674">
+          <caret line="246" column="41" selection-start-line="246" selection-start-column="41" selection-end-line="246" selection-end-column="41" />
         </state>
       </provider>
     </entry>

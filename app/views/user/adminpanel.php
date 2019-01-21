@@ -818,7 +818,7 @@
 
 </div>
 <script src="/public/js/chart.js/Chart.min.js"></script>
-<script src="/public/js/chart.js/chart-area-demo.js"></script>
+<script src="/public/js/chart.js/chart-area-data.js"></script>
 
 </body>
 </html>

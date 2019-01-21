@@ -245,10 +245,6 @@ var build =
                         '            </div>'+
                         '            </a>'+
                         '        </div>')
-
-
-
-
                 });
 
                 var toSlider = $('#indexToSlider');
