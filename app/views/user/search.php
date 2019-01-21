@@ -39,65 +39,18 @@
 
                 <div class="form-group col-sm-3">
                     <label for="cena_od">Cena od</label>
-                    <!--                            <select id="cena_od" class="form-control" name="cena_od">-->
-                    <!--                            </select>-->
-                    <!--                            <input type="number" class="form-control" id="cena_od" placeholder="Cena od">-->
+
                     <select id="cena_od" class="form-control" name="cena_od">
                         <option selected="" value="-1">Cena od</option>
-                        <option value="2000">2,000</option>
-                        <option value="4000">4,000</option>
-                        <option value="6000">6,000</option>
-                        <option value="8000">8,000</option>
-                        <option value="10000">10,000</option>
-                        <option value="15000">15,000</option>
-                        <option value="20000">20,000</option>
-                        <option value="25000">25,000</option>
-                        <option value="30000">30,000</option>
-                        <option value="35000">35,000</option>
-                        <option value="40000">40,000</option>
-                        <option value="45000">45,000</option>
-                        <option value="50000">50,000</option>
-                        <option value="60000">60,000</option>
-                        <option value="70000">70,000</option>
-                        <option value="80000">80,000</option>
-                        <option value="90000">90,000</option>
-                        <option value="100000">100,000</option>
-                        <option value="125000">125,000</option>
-                        <option value="150000">150,000</option>
-                        <option value="175000">175,000</option>
 
                     </select>
                 </div>
 
                 <div class="form-group col-sm-3">
                     <label for="cena_do">Cena do</label>
-                    <!--                            <select id="cena_do" class="form-control" name="cena_do">-->
-                    <!--                            </select>-->
-                    <!--                            <input type="number" class="form-control" id="cena_do" placeholder="Cena do">-->
+
                     <select id="cena_do" class="form-control" name="cena_od">
-                        <option selected="" value="-1">Cena od</option>
-                        <option value="2000">2,000</option>
-                        <option value="4000">4,000</option>
-                        <option value="6000">6,000</option>
-                        <option value="8000">8,000</option>
-                        <option value="10000">10,000</option>
-                        <option value="15000">15,000</option>
-                        <option value="20000">20,000</option>
-                        <option value="25000">25,000</option>
-                        <option value="30000">30,000</option>
-                        <option value="35000">35,000</option>
-                        <option value="40000">40,000</option>
-                        <option value="45000">45,000</option>
-                        <option value="50000">50,000</option>
-                        <option value="60000">60,000</option>
-                        <option value="70000">70,000</option>
-                        <option value="80000">80,000</option>
-                        <option value="90000">90,000</option>
-                        <option value="100000">100,000</option>
-                        <option value="125000">125,000</option>
-                        <option value="150000">150,000</option>
-                        <option value="175000">175,000</option>
-                        <option value="1000000">1000000</option>
+
                     </select>
                 </div>
 
