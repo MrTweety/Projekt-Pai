@@ -98,10 +98,10 @@ class UserController extends Controller
             $user = $this->model('User');
             if ($user->insert($_POST)) {
 //                $this->redirect("/home/Registered");
-                echo "1, Registered";
+                echo "1";
             } else {
 //                $this->redirect("/home/notRegister");
-                echo "2, notRegister";
+                echo "2";
             }
         }
     }
@@ -123,6 +123,38 @@ class UserController extends Controller
             }
         }
     }
+
+    public function checkLogin()
+    {
+        if (!isset($_POST) || empty($_POST)) {
+            $this->redirect("/");
+            die();
+        } else {
+            $user = $this->model('User');
+            if (!$user->find_by_login($_POST['login'])) {
+                echo 1;
+            } else {
+                echo 0;
+            }
+        }
+    }
+
+    public function checkEmail()
+    {
+        if (!isset($_POST) || empty($_POST)) {
+            $this->redirect("/");
+            die();
+        } else {
+            $user = $this->model('User');
+            if (!$user->find_by_email($_POST['email'])) {
+                echo 1;
+            } else {
+                echo 0;
+            }
+        }
+    }
+
+
 
 
     public function noscript(){
