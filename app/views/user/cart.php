@@ -104,7 +104,7 @@ var build2 =
             listing.append(
                 '<div class="card" style="padding: 10px;">'+
                     '<div class="d-flex justify-content-between">'+
-                    '    <div style="margin: 5px">Ilość produktów w koszyku: '+count+'</div>'+
+                    '    <div style="margin: 5px">Ilość produktów w koszyku: <b id="ilosc">'+count+'</b></div>'+
                     '    <div>'+
                     '        <a href="" class="btn btn-success pull-right">Kup teraz</a>'+
                     '        <div class="pull-right" style="margin: 5px">'+
@@ -148,6 +148,7 @@ function usun_z_koszyka(id,cena)
 
     
     var koszt = document.getElementById("koszt2").innerHTML;
+    var ilosc = document.getElementById("ilosc").innerHTML;
 
     if (parseInt(txt) == 1)
     {
@@ -158,10 +159,11 @@ function usun_z_koszyka(id,cena)
 
             success: function (data) 
             {
-                alert(data);
+                // alert(data);
                 document.getElementById(oferta).innerHTML = '';
                 document.getElementById("koszt1").innerHTML = (koszt - cena).toLocaleString();
                 document.getElementById("koszt2").innerHTML = (koszt - cena);
+                document.getElementById("ilosc").innerHTML = ilosc - 1;
             }
         });
     }
