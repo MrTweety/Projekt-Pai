@@ -27,7 +27,7 @@ class HomeController extends Controller
         }
         $this->view('home/index');
         $this->partial("footer");
-
+        $this->partial("noscript");
     }
 
 
@@ -57,12 +57,13 @@ class HomeController extends Controller
         }
         $this->view('home/error-404');
         $this->partial("footer");
-
+        $this->partial("noscript");
     }
 
     public function error500()
     {
         $this->view('home/error-500');
+
     }
 
 

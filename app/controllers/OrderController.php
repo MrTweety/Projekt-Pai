@@ -29,6 +29,7 @@ class OrderController extends Controller
             //TODO Order/index.php
 
         }
+        $this->partial("noscript");
     }
 
 

@@ -13,7 +13,8 @@
     <!--    bootstrap,jquery-->
 
     <!--font-->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
     <!--font-->
 
     <!--    footer-->
@@ -22,7 +23,7 @@
     <!--    footer-->
 
     <!--    gallery-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css"/>
     <link rel="stylesheet" href="../../../public/css/compact-gallery.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <!--    gallery-->
@@ -42,9 +43,7 @@
 
 
     <script src="../../../public/js/my_js.js"></script>
-<!--    <script src="app/js/skrypty.js"></script>-->
-
-
+    <!--    <script src="app/js/skrypty.js"></script>-->
 
 
     <style>
@@ -53,7 +52,27 @@
             width: 100%;
             max-height: 500px;
         }
+
+        #noscript-description, noscript{
+            width: 60% !important;
+            height: auto;
+            padding: 15px !important;
+            position: absolute !important;
+            top: 30px !important;
+            right: 0 !important;
+            /*bottom: 30px!important;*/
+            left: 0 !important;
+            margin: auto !important;
+            border-radius: 10px !important;
+            background-color: white;
+            box-shadow: 0px 0px 40px 4px rgba(0, 0, 0, 0.75) !important;
+            z-index: 1000;
+        }
+
+
     </style>
 
 </head>
 <body>
+
+

@@ -30,6 +30,7 @@ class UserController extends Controller
 //            $this->partial("footer");
 
         }
+        $this->partial("noscript");
     }
 
 
@@ -53,6 +54,7 @@ class UserController extends Controller
 
             $this->redirect("/");
         }
+        $this->partial("noscript");
     }
 
     public function auth()
@@ -121,6 +123,12 @@ class UserController extends Controller
         }
     }
 
+
+    public function noscript(){
+        $this->partial("header");
+        $this->partial("noscriptinfo");
+    }
+
 //search page @TODO jak zostanie czas stworzyć własny kontroler dla ofert
     public function search()
     {
@@ -146,6 +154,7 @@ class UserController extends Controller
         }
         $this->view('user/search');
         $this->partial("footer");
+        $this->partial("noscript");
 
 
     }
@@ -176,6 +185,7 @@ class UserController extends Controller
         }
         $this->view('user/offer',$login);
         $this->partial("footer");
+        $this->partial("noscript");
 
     }
     
@@ -201,6 +211,7 @@ class UserController extends Controller
 
         $this->view('user/cart');
         $this->partial("footer");
+        $this->partial("noscript");
 
         }
 
@@ -218,7 +229,7 @@ class UserController extends Controller
      */
     public function check($params = [], $params2 = [])
     {
-
+        $this->partial("header");
 //        $user = $this->model('User');
 //        $aa = $user->get_name();
 //        echo $aa['imie'];

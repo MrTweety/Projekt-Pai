@@ -23,9 +23,6 @@ class AdminController extends Controller
                     $this->redirect('/');
                     break;
             }
-
-
-
         }
     }
 
@@ -43,7 +40,7 @@ class AdminController extends Controller
         else {
             $this->redirect('/');
         }
-
+        $this->partial("noscript");
     }
 
 

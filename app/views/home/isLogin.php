@@ -6,3 +6,9 @@ $monthI=2;
 $a=date('m', strtotime("-1 month"));
 echo  (int)date('Y', strtotime("-1 month"))."\n";
 echo date('M', strtotime("-".$monthI." month"));
+?>
+<div id="ss"></div>
+<script>
+    document.getElementById("ss").innerText ="aaa";
+</script>
+
