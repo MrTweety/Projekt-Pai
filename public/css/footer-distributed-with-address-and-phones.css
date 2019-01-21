@@ -42,12 +42,12 @@
 	color:  #ffffff;
 	margin: 20px 0 12px;
 	padding: 0;
+	text-decoration: none;
 }
 
 .footer-distributed .footer-links a{
 	display:inline-block;
 	line-height: 1.8;
-	text-decoration: none;
 	color:  inherit;
 }
 

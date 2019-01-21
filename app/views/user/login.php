@@ -1,7 +1,7 @@
 
 <form class="modal-content animate" action="/user/auth" method="post">
 
-    <span onclick="document.getElementById('log_form').style.display='none';  document.getElementById('indicators').style.display='block';" class="close" title="Zamknij formularz">&times;</span>
+    <span onclick="document.getElementById('log_form').style.display='none';" class="close" title="Zamknij formularz">&times;</span>
     
     <div class="log_container">
         <label for="login"><b>Nazwa użytkownika</b></label>
@@ -22,9 +22,9 @@
     </div>
 
     <div class="log_margins">
-      <button type="button" class="btn btn-danger" onclick="document.getElementById('log_form').style.display='none';document.getElementById('indicators').style.display='block';">Anuluj</button>
+      <button class="btn btn-danger" onclick="document.getElementById('log_form').style.display='none';">Anuluj</button>
       <span class="psw">Nie masz konta? <a href="/user/register">Zarejestruj się</a></span>
     </div>
-  </form>
+</form>
 
 

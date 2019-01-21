@@ -3,7 +3,7 @@
 
     <div class="footer-left">
 
-        <h3>Classic<span>4you</span></h3>
+    <a href="index.php" class="footer-links"><h3>Classic<span>4you</span></h3></a>
 
         <p class="footer-links">
             <a href="#">Strona główna</a>

@@ -1,103 +1,103 @@
 <!-- Page Content -->
 <div class="container" style="margin-top: 66px;">
 
-<div class="row">
+    <div class="row">
 
+        <div class="col-lg-9">
 
-  <div class="col-lg-9">
+            <div class="card mt-4">
+                <!-- <img class="card-img-top img-fluid" id ="zdjecie" src="http://placehold.it/900x400" alt=""> -->
 
-    <div class="card mt-4">
-      <!-- <img class="card-img-top img-fluid" id ="zdjecie" src="http://placehold.it/900x400" alt=""> -->
-
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                <img class="d-block w-100 zdjecie" src="http://placehold.it/900x400" alt="First slide">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators" style="z-index: 1;">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100 zdjecie" src="http://placehold.it/900x400" alt="First slide">
+                        </div>
+                        <div class="carousel-item">
+                             <img class="d-block w-100 zdjecie" src="http://placehold.it/900x400" alt="Second slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100 zdjecie" src="http://placehold.it/900x400" alt="Third slide">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
-                <div class="carousel-item">
-                <img class="d-block w-100 zdjecie" src="http://placehold.it/900x400" alt="Second slide">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <h3 class="card-title" id="nazwa_samochodu">Nazwa Samochodu</h3>
+                        <h4 id="cena">cena</h4>
+                    </div>
+
+                    <p class="card-text" id="opis">opis</p>
+
+                    <div class="row justify-content-end">
+                        <p>
+                            Ilość wyświetleń:
+                            <p id="ilosc_wyswietlen">
+                                liczba
+                            </p>
+                        </p>
+                    </div>
                 </div>
-                <div class="carousel-item">
-                <img class="d-block w-100 zdjecie" src="http://placehold.it/900x400" alt="Third slide">
+            </div><!-- /.card -->
+
+            <div class="card card-outline-secondary my-4">
+                <div class="card-header">
+                    <h3>Szczegółowy opis:</h3>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <h4>Kraj pochodzenia: </h4>
+                        <div id="kraj">Kraj</div>
+                    </div>
+                    <div id="offers">
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
+        </div><!-- /.card -->
+    </div><!-- /.col-lg-9 -->
 
 
-      <div class="card-body">
-        <div class="d-flex justify-content-between">
-            <h3 class="card-title" id="nazwa_samochodu">Nazwa Samochodu</h3>
-            <h4 id="cena">cena</h4>
+    <div class="col-lg-3">
+        <div class="sticky-top" style="z-index: 1">
+            <br><br>
+            <h1 class="my-4"> <div class="logo"> <a href="index.php"><h3>Classic<span>4you.eu</span></h3></a> </div> </h1>
+            <div class="list-group">
+                <a onclick="add_to_cart()" class="list-group-item btn btn-success" id="buy_button"> <i class="fa fa-shopping-cart" style="text-align: left; font-size: 25px;"></i> Dodaj do koszyka</a>
+            </div>
+            <div id="buy_alert" class="alert alert-danger alert-dismissible">
+                <div class="row">
+                    <div class="col-12"><strong>Uwaga!</strong> Musisz być zalogowany aby dodawać produkty do koszyka.</div>
+                </div>
+            </div>
         </div>
-        
-        <p class="card-text" id="opis">opis</p>
-
-        <div class="row justify-content-end">
-            <p>
-                Ilość wyświetleń:
-                <p id="ilosc_wyswietlen">
-                    liczba
-                </p>
-            </p>
-        </div>
-      </div>
+    <!-- /.col-lg-3 -->
+<!--        <div class="sticky-top" style="z-index: 1">-->
+<!--            <div id="buy_alert" class="alert alert-danger alert-dismissible">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-12"><strong>Uwaga!</strong> Musisz być zalogowany aby dodawać produkty do koszyka.</div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
     </div>
-    <!-- /.card -->
-
-    <div class="card card-outline-secondary my-4">
-      <div class="card-header">
-        <h3>Szczegółowy opis:</h3>
-      </div>
-      <div class="card-body">
-        <div class="d-flex justify-content-between">
-            <h4>Kraj pochodzenia: </h4>
-            <div id="kraj">Kraj</div>
-        </div>
-
-        <div id="offers">
-
-        </div>
-
-      </div>
     </div>
-    <!-- /.card -->
-
-  </div>
-  <!-- /.col-lg-9 -->
-
-
-  <div class="col-lg-3">
-    <div class="sticky-top" style="z-index: 1">
-        <br><br>
-        <h1 class="my-4"> <div class="logo"> <a href="indexx.php"><h3>Classic<span>4you.eu</span></h3></a> </div> </h1>
-        <div class="list-group">
-        <a href="#" class="list-group-item" id="buy_button">Dodaj do koszyka</a>
-        </div>
-    </div>
-  </div>
-  <!-- /.col-lg-3 -->
-
-</div>
-
 </div>
 <!-- /.container -->
 
 
 
-
+<br><br>
 <section class="cta py-5 bg-primary text-white">
     <div class="container">
         <div class="row text-center">
@@ -149,7 +149,7 @@ var insert =
                     listing.append(
                         '<hr>'+
                         '<div class="d-flex justify-content-between">'+
-                            '<h4>'+ result[x].a +'</h4>'+
+                            '<h4>'+ result[x].a +': '+'</h4>'+
                             '<div >' + result[x].b +'</div>'+
                         '</div>'
 
@@ -159,6 +159,7 @@ var insert =
             }
         }
 }
+
 
 var ofer = <?php if(isset( $_GET['oferta'])) echo $_GET['oferta']; else echo -1;  ?>;
 
@@ -182,7 +183,7 @@ $.ajax({
             nazwa,
             'nazwa_samochodu',
             );
-        
+
         insert.data(
             cena.toLocaleString()+ " PLN",
             'cena',
@@ -212,11 +213,46 @@ $.ajax({
         insert.buildOffer(
             re,
             $('#offers'),
-        );
+            );
     }
 });
 
 });
+</script>
+<script>
+
+function add_to_cart()
+{
+    //var is_logged = <?php //if(isset($_COOKIE['id'])) echo 1;else echo -1; ?>//;
+
+    if(<?php if($data) echo 0; else echo 1;?>)
+    {
+        document.getElementById('buy_alert').style.display='block';
+        $("#").delay(3000).slideUp(200, function() {
+            document.getElementById('buy_alert').style.display='none';
+        });
+    }
+    else
+    {
+        var cia  = "<?php if(isset($_COOKIE['id'])) echo $_COOKIE['id']; else echo -1; ?>";
+        var ofer = <?php if(isset( $_GET['oferta'])) echo $_GET['oferta']; else echo -1;  ?>;
+        alert(cia);
+        $.ajax({
+            type: "POST",
+            url: '../app/views/main/add_to_cart.php',
+            data: {id_oferta: ofer,
+                   id_sesja: cia},
+
+            success: function(data)
+            {
+                alert(data);
+            }
+        });
+    }
+
+}
+
+
 
 
 </script>

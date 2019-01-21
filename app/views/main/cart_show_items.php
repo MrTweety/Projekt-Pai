@@ -6,6 +6,8 @@ $db_name = "mgaczorek";
 $where = 1;
 
 $sql = "SELECT DISTINCT\n"
+    . "oferta.id_oferta,\n"
+    . "oferta.data_zlozenia,\n"
     . "Oferta.img,\n"
     . "Oferta.wyswietlenia,\n"
     . "Oferta.opis,\n"
@@ -15,6 +17,7 @@ $sql = "SELECT DISTINCT\n"
     . "Marka.marka_nazwa\n"
     . "FROM\n"
     . "Oferta\n"
+    . "INNER JOIN koszyk ON koszyk.id_oferta = oferta.id_oferta\n"
     . "INNER JOIN Samochod ON Oferta.id_samoch = Samochod.id_samoch\n"
     . "INNER JOIN Model ON Samochod.id_model = Model.id_model\n"
     . "INNER JOIN Marka ON Model.id_marka = Marka.id_marka\n"
@@ -22,41 +25,35 @@ $sql = "SELECT DISTINCT\n"
     . "INNER JOIN Cechy ON Cechy_somochod.id_cechy = Cechy.id_cechy\n"
     . "INNER JOIN Kraj_pochodzenia ON Samochod.id_kraj = Kraj_pochodzenia.id_kraj\n"
     . "WHERE oferta.data_zakonczenia IS NULL\n"
+    . "and koszyk.id_uzyt =\n"
+    . "(SELECT sesja.id_uzyt FROM sesja WHERE sesja.id ="
 ;
-$sql_cechy = "SELECT\n"
-    . "cechy.nazwa_cechy,\n"
-    . "cechy_somochod.wartosc\n"
-    . "FROM\n"
-    . "cechy\n"
-    . "LEFT JOIN cechy_somochod on cechy.id_cechy = cechy_somochod.id_cechy\n"
-    . "LEFT JOIN samochod on cechy_somochod.id_samochod = samochod.id_samoch\n"
-    . "LEFT JOIN oferta on samochod.id_samoch = oferta.id_oferta\n"
-    . "WHERE Oferta.id_oferta = "
-;
-$sql_cechy_size = "SELECT count(*) FROM cechy";
+
 
 $link = mysqli_connect($host, $db_user, $db_password, $db_name) or die();
 $link -> query ('SET NAMES utf8');
 $link -> query ('SET CHARACTER_SET utf8_unicode_ci');
-if( isset($_POST["id_oferta"]) )
-{
 
-    $id_oferta =  mysqli_real_escape_string($link, $_POST["id_oferta"]);
-    $sql = $sql
-        ." AND \n"
-        ." Oferta.id_oferta =".$id_oferta;
+if( isset($_POST["id_sesja"]) )
+{
+    $id_sesja =  mysqli_real_escape_string($link, $_POST["id_sesja"]);
+
+    $sql = $sql ."\"". $id_sesja."\");";
 
     $result = $link->query($sql);
 
     $data = [];
     $data_place = 0;
+
     if (mysqli_num_rows($result) > 0)
     {
         // output data of each row
 
         while ($row = mysqli_fetch_assoc($result))
         {
-            $data[$data_place]['zdjecie'] = $row['img'];
+            $data[$data_place]['id_oferta'] = $row['id_oferta'];
+            $data[$data_place]['data_zlozenia'] = $row['data_zlozenia'];
+            $data[$data_place]['zdjecie'] = '../../../public/img/'. $row['img'];
             $data[$data_place]['wyswietlenia'] = $row['wyswietlenia'];
             $data[$data_place]['opis'] = $row['opis'];
             $data[$data_place]['cena'] = $row['cena_netto'];
@@ -66,34 +63,7 @@ if( isset($_POST["id_oferta"]) )
             $data_place++;
         }
     }
-        $sql_cechy = $sql_cechy
-        ." ".$id_oferta." \n"
-        ." AND \n";
 
-        $features_size = $link->query($sql_cechy_size);
-        $features_size = mysqli_fetch_assoc($features_size)["count(*)"];
-
-        for($x = 1; $x <= $features_size; $x++)
-        {
-            $result_2 = zapytanie($sql_cechy, $x, $link);
-            if(mysqli_num_rows($result_2) > 0)
-            {
-                while ( $row = mysqli_fetch_assoc($result_2))
-                {
-                    $data[$data_place]['a'] = $row['nazwa_cechy'];
-                    $data[$data_place]['b'] = $row['wartosc'];
-                }
-                $data_place++;
-            }
-        }
-
-        echo json_encode($data);
-    
-}
-function zapytanie($sql_que, $feature_number, $data_table)
-{
-    $sql_que = $sql_que
-        ." cechy.id_cechy = ".$feature_number;
-    return $data_table->query($sql_que);
+    echo json_encode($data);
 }
 ?>
