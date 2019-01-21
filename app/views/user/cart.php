@@ -5,7 +5,7 @@
         <div class="row">
 
             <div class="col-md-12">
-                <div class="row ">
+                <div class="d-flex justify-content-center">
                     <div id="listing">
 
 
@@ -69,6 +69,7 @@ var build2 =
                         '                                                <ul class="list-unstyled">'+
                         '                                                    <li><h3>'+ Number(v.cena).toLocaleString() +' zł '+'</h3></li>'+
                         '                                                    <li class="text-secondary"><small>'+ v.wyswietlenia +' Reviews</small></li>'+
+                        '                                                    <li style="left: 0;"><br><a onclick="usun_z_koszyka('+v.id_oferta+','+Number(v.cena)+')" class="btn btn-success pull-right">Usuń z koszyka</a></li>'+
                         '                                                </ul>'+
                         '                                            </div>'+
                         '                                        </div>'+
@@ -85,6 +86,20 @@ var build2 =
 
                 });
             }
+            else
+            {
+                listing.append(
+                        '                        <div class="row">'+
+                        '                            <div class="col">'+
+                        '                                <div class="card">'+
+                        '                                    <div class="card-body" style="text-align: center;">'+
+                        '                                       <div>Brak produktów w koszyku</div>'+                                        
+                        '                                    </div>'+
+                        '                                </div>'+
+                        '                            </div>'+
+                        '                        </div>'
+                )
+            }
 
             listing.append(
                 '<div class="card" style="padding: 10px;">'+
@@ -93,7 +108,8 @@ var build2 =
                     '    <div>'+
                     '        <a href="" class="btn btn-success pull-right">Kup teraz</a>'+
                     '        <div class="pull-right" style="margin: 5px">'+
-                    '            Cena końcowa: <b>'+whole_cost.toLocaleString() +' zł '+'</b>'+
+                    '            Cena końcowa: <b id="koszt1">'+whole_cost.toLocaleString() +'</b><b>zł '+'</b>'+
+                    '             <div id="koszt2" style="display: none;">'+whole_cost+'</div'+
                     '        </div>'+
                 '       </div>'+
                     '</div>'+
@@ -120,6 +136,35 @@ $(document).ready(function() {
 });
 
 
+function usun_z_koszyka(id,cena) 
+{
+    var txt = 0;
+    var oferta ="oferta"+id;
+    if (confirm("Czy na pewno chcesz ofertę o id: " + id + "?")) {
+        txt = 1;
+    } else {
+        txt = 0;
+    }
 
+    
+    var koszt = document.getElementById("koszt2").innerHTML;
+
+    if (parseInt(txt) == 1)
+    {
+        $.ajax({
+            type: "POST",
+            url: '../app/views/main/cart_delete.php',
+            data: {id_oferta: id},
+
+            success: function (data) 
+            {
+                alert(data);
+                document.getElementById(oferta).innerHTML = '';
+                document.getElementById("koszt1").innerHTML = (koszt - cena).toLocaleString();
+                document.getElementById("koszt2").innerHTML = (koszt - cena);
+            }
+        });
+    }
+}
 </script>
 
