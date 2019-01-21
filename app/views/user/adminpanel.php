@@ -1,5 +1,6 @@
 
 
+
 <div id="wrapper">
     <div id="sidebar">
         <ul class="nav flex-column nav-pills sidebar" role="tablist">
@@ -61,6 +62,17 @@
                 </ol>
 
 
+                <!--                <div id="aabb"></div>-->
+                <script>
+                    //        function getCookie(name) {
+                    //            var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+                    //            return v ? v[2] : null;
+                    //        }
+                    //
+                    //var b = "<?php //echo $_COOKIE['id']; ?>//";
+                    //        var a = getCookie('id');
+                    //        document.getElementById('aabb').innerHTML = a+" "+b;
+                </script>
 
 
                 <div class="row">
@@ -70,14 +82,17 @@
                                 <div class="card-body-icon">
                                     <i class="fa fa-fw fa-comments"></i>
                                 </div>
-                                <div class="mr-5">26 Aktywnych Użytkowników!</div>
+                                <div class="mr-5">
+                                    <div id="aktU"></div>
+                                    Aktywnych Użytkowników!
+                                </div>
                             </div>
-                            <a class="card-footer text-white clearfix small z-1" href="#">
-                                <span class="float-left">View Details</span>
-                                <span class="float-right">
-                                    <i class="fa fa-angle-right"></i>
-                                </span>
-                            </a>
+                            <!--                            <a class="card-footer text-white clearfix small z-1" href="#">-->
+                            <!--                                <span class="float-left">View Details</span>-->
+                            <!--                                <span class="float-right">-->
+                            <!--                                    <i class="fa fa-angle-right"></i>-->
+                            <!--                                </span>-->
+                            <!--                            </a>-->
                         </div>
                     </div>
                     <div class="col-xl-3 col-sm-6 mb-3">
@@ -86,14 +101,17 @@
                                 <div class="card-body-icon">
                                     <i class="fa fa-fw fa-list"></i>
                                 </div>
-                                <div class="mr-5">11 Nowych Ofert!</div>
+                                <div class="mr-5">
+                                    <div id="nowO"></div>
+                                    Nowych Ofert!
+                                </div>
                             </div>
-                            <a class="card-footer text-white clearfix small z-1" href="#">
-                                <span class="float-left">View Details</span>
-                                <span class="float-right">
-                    <i class="fa fa-angle-right"></i>
-                  </span>
-                            </a>
+                            <!--                            <a class="card-footer text-white clearfix small z-1" href="#">-->
+                            <!--                                <span class="float-left">View Details</span>-->
+                            <!--                                <span class="float-right">-->
+                            <!--                    <i class="fa fa-angle-right"></i>-->
+                            <!--                  </span>-->
+                            <!--                            </a>-->
                         </div>
                     </div>
                     <div class="col-xl-3 col-sm-6 mb-3">
@@ -102,14 +120,17 @@
                                 <div class="card-body-icon">
                                     <i class="fa fa-fw fa-shopping-cart"></i>
                                 </div>
-                                <div class="mr-5">123 Nowych Zamówień!</div>
+                                <div class="mr-5">
+                                    <div id="nowZ"></div>
+                                    Nowych Zamówień!
+                                </div>
                             </div>
-                            <a class="card-footer text-white clearfix small z-1" href="#">
-                                <span class="float-left">View Details</span>
-                                <span class="float-right">
-                    <i class="fa fa-angle-right"></i>
-                  </span>
-                            </a>
+                            <!--                            <a class="card-footer text-white clearfix small z-1" href="#">-->
+                            <!--                                <span class="float-left">View Details</span>-->
+                            <!--                                <span class="float-right">-->
+                            <!--                    <i class="fa fa-angle-right"></i>-->
+                            <!--                  </span>-->
+                            <!--                            </a>-->
                         </div>
                     </div>
                     <div class="col-xl-3 col-sm-6 mb-3">
@@ -118,18 +139,59 @@
                                 <div class="card-body-icon">
                                     <i class="fa fa-user"></i>
                                 </div>
-                                <div class="mr-5">13 Nowych Użytkowników!</div>
+                                <div class="mr-5">
+                                    <div id="nowU"></div>
+                                    Nowych Użytkowników!
+                                </div>
                             </div>
-                            <a class="card-footer text-white clearfix small z-1" href="#">
-                                <span class="float-left">View Details</span>
-                                <span class="float-right">
-                    <i class="fa fa-angle-right"></i>
-                  </span>
-                            </a>
+                            <!--                            <a class="card-footer text-white clearfix small z-1" href="#">-->
+                            <!--                                <span class="float-left">View Details</span>-->
+                            <!--                                <span class="float-right">-->
+                            <!--                    <i class="fa fa-angle-right"></i>-->
+                            <!--                  </span>-->
+                            <!--                            </a>-->
                         </div>
                     </div>
+
+                    <script>
+
+                        $(document).ready(function () {
+
+                            $.ajax({
+                                type: "POST",
+                                url: '/admin/dashboardInfo',
+
+                                success: function (data) {
+                                    dane = jQuery.parseJSON(data);
+                                    $('#aktU').append(dane.CountActiveUser);
+                                    $('#nowO').append(dane.CnewOrder);
+                                    $('#nowZ').append(dane.CountNewOrder);
+                                    $('#nowU').append(dane.CountNewUser);
+
+
+                                }
+                            });
+
+                        });
+                    </script>
+
+
                 </div>
 
+
+                <div id="myChart"></div>
+
+
+                <!-- Area Chart Example-->
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <i class="fa fa-area-chart"></i>
+                        Nowi Użytkownicy!</div>
+                    <div class="card-body">
+                        <canvas id="myAreaChart" width="100%" height="30"></canvas>
+                    </div>
+                    <div class="card-footer small text-muted">Updated <?php echo date("Y-m-d H:i:s"); ?></div>
+                </div>
 
             </div>
 
@@ -339,7 +401,11 @@
                     $(document).ready(function () {
                         oferta = $('#tabOferta').DataTable({
 
-                            "ajax": {"url": "../app/views/main/admin_select.php", "type": "POST", "data": {"select": 'oferta'}},
+                            "ajax": {
+                                "url": "../app/views/main/admin_select.php",
+                                "type": "POST",
+                                "data": {"select": 'oferta'}
+                            },
                             "columns": [
                                 {"data": "id_oferta"},
                                 {"data": "imgg"},
@@ -679,7 +745,11 @@
                     $(document).ready(function () {
                         admintab = $('#tabAdmin').DataTable({
 
-                            "ajax": {"url": "../app/views/main/admin_select.php", "type": "POST", "data": {"select": "admin"}},
+                            "ajax": {
+                                "url": "../app/views/main/admin_select.php",
+                                "type": "POST",
+                                "data": {"select": "admin"}
+                            },
                             "columns": [
                                 {"data": "id_uzyt"},
                                 {"data": "imie"},
@@ -747,7 +817,8 @@
     </div>
 
 </div>
-
+<script src="/public/js/chart.js/Chart.min.js"></script>
+<script src="/public/js/chart.js/chart-area-demo.js"></script>
 
 </body>
 </html>

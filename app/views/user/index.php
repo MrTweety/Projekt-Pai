@@ -130,7 +130,7 @@
                             <h1 class="my-4">
                                 <div class="logo">
                                     <div class="logo">
-                                        <img src="/public/img/avatar/userK.png" class="bigavatar"/>
+                                        <?php if($data['id_typ']==1) echo '<img src="/public/img/avatar/adminM.png" class="bigavatar"/>'; else echo '<img src="/public/img/avatar/userM.png" class="bigavatar"/>'; ?>
                                     </div>
                                 </div>
                             </h1>
@@ -150,9 +150,9 @@
 
             <ol class="breadcrumb">
                 <li class="breadcrumb-item" style="color: #66AAFF;">
-                    Dashboard
+                    Użytkownik
                 </li>
-                <li class="breadcrumb-item active">Oferta</li>
+                <li class="breadcrumb-item active">Edytuj Profil</li>
             </ol>
 
             <!-- edycja profilu-->

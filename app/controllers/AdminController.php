@@ -46,4 +46,34 @@ class AdminController extends Controller
 
     }
 
+
+
+public function dashboardInfo()
+{
+    $user = $this->model('User');
+    $adminrModel = $this->model('Admin');
+    if($user->get_type()== User::$ADMIN_TYPE) {
+
+        $adminrModel->dashboardInfo();
+
+    }else {
+        $this->redirect('/');
+    }
+
+}
+
+    public function Chart()
+    {
+        $user = $this->model('User');
+        $adminrModel = $this->model('Admin');
+        if($user->get_type()== User::$ADMIN_TYPE) {
+
+            $adminrModel->Chart();
+
+        }else {
+            $this->redirect('/');
+        }
+
+    }
+
 }

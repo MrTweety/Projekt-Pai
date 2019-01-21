@@ -190,15 +190,15 @@ class UserController extends Controller
     public function check($params = [], $params2 = [])
     {
 
-        $user = $this->model('User');
-        $aa = $user->get_name();
-        echo $aa['imie'];
+//        $user = $this->model('User');
+//        $aa = $user->get_name();
+//        echo $aa['imie'];
 
-        echo "\n\nwitaj " . $params . $params2;
-        $order = "ala";
-        $this->view('home/isLogin', $order);
+//        echo "\n\nwitaj " . $params . $params2;
+//        $order = "ala";
+        $this->view('home/isLogin');
 
-        $this->partial('footer', $order);
+//        $this->partial('footer', $order);
 
 
     }

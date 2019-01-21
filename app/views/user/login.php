@@ -22,7 +22,7 @@
     </div>
 
     <div class="log_margins">
-      <button class="btn btn-danger" onclick="document.getElementById('log_form').style.display='none';document.getElementById('indicators').style.display='block';">Anuluj</button>
+      <button type="button" class="btn btn-danger" onclick="document.getElementById('log_form').style.display='none';document.getElementById('indicators').style.display='block';">Anuluj</button>
       <span class="psw">Nie masz konta? <a href="/user/register">Zarejestruj się</a></span>
     </div>
   </form>

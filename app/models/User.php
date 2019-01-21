@@ -194,9 +194,6 @@ class User extends Model
 
 
 
-
-
-
     public function logout()
     {
 
@@ -305,6 +302,9 @@ class User extends Model
 
         $NIP = trim($data['NIP']);
         $nazwa_firmy = trim($data['nazwa_firmy']);
+        if($nazwa_firmy=='') $nazwa_firmy=NULL;
+        if($NIP=='') $NIP=NULL;
+
 
 
         if ($this->find_by_email($email) or ($password != $cpassword) or $this->find_by_login($login)) {
@@ -319,13 +319,12 @@ class User extends Model
 
             $stmt->bindParam(":imie", $imie);
             $stmt->bindParam(":nazwisko", $nazwisko);
-
             $stmt->bindParam(":email", $email);
             $stmt->bindParam(":login", $login);
             $stmt->bindParam(":password", $password);
-
             $stmt->bindParam(":NIP", $NIP);
             $stmt->bindParam(":nazwa_firmy", $nazwa_firmy);
+
 
             $stmt->execute();
 
