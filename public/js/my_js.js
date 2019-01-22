@@ -345,12 +345,22 @@ var build =
                     '<div class="d-flex justify-content-between">'+
                     '    <div style="margin: 5px">Ilość produktów w koszyku: <b id="ilosc">'+count+'</b></div>'+
                     '    <div>'+
-                    '        <a href="/user/buy?ilosc_w_koszyku='+count+'" class="btn btn-success pull-right">Kup teraz</a>'+
+                    '        <a onclick="kup('+whole_cost+')" class="btn btn-success pull-right">Kup teraz</a>'+
                     '        <div class="pull-right" style="margin: 5px">'+
                     '            Cena końcowa: <b id="koszt1">'+whole_cost.toLocaleString() +'</b><b>zł '+'</b>'+
                     '             <div id="koszt2" style="display: none;">'+whole_cost+'</div'+
                     '        </div>'+
                 '       </div>'+
+                    '</div>'+
+                    '<div id="feedback_alert_cart" class="alert alert-danger alert-dismissible my_alert" style="top: 70px;">'+
+                        '<div class="row">'+
+                            // '<div class="d-flex justify-content-between">'+
+                                '<div class="col-12" id="feedback_alert_text_cart" style="padding: 5px;"></div>'+
+                                '<div class="col-12" style="padding: 5px;">'+
+                                    '<a id="feedback_alert_button_cart"  href="/user/buy?ilosc_w_koszyku='+count+'" class="btn btn-success">Przejdz do płatności</a>'+
+                                '</div>'+
+                            // '</div>'+
+                        '</div>'+
                     '</div>'+
                 '</div>'
                 );
