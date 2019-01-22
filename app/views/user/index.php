@@ -287,21 +287,160 @@
 
                                 </script>
                             </div>
-
-
                         </div>
                     </div>
 
                     <div id="menu1" class="container tab-pane fade"><br>
-                        <h3>Menu 1</h3>
-                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                            commodo consequat.</p>
+
                     </div>
 
                     <div id="menu2" class="container tab-pane fade"><br>
-                        <h3>Menu 2</h3>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                            laudantium, totam rem aperiam.</p>
+                        <div class="card card-outline-secondary my-4">
+                            <div class="card-header">
+                                <h3>Zmień Dane Firmy</h3>
+                            </div>
+                            <div class="card-body">
+                                <form  id="changeCompanyForm" class="login-form">
+
+                                    <div class="d-flex justify-content-between">
+                                        <h4>Nowy NIP </h4>
+                                        <div class="form-group mb-2">
+                                            <input type="text" id="NIP" class="form-control" placeholder="NIP" pattern="(?=.*\d).{10}?" onkeyup="this.value=this.value.replace(/\D/g,'')" required>
+                                            <div class="invalid-feedback">
+                                                NIP skłąda sie z 10 cyfr.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="d-flex justify-content-between">
+                                        <h4>Nowa nazwa firmy</h4>
+                                        <div class="form-group mb-2">
+                                            <input type="text" id="nazwa_firmy" class="form-control" placeholder="Nazwa firmy" required>
+                                            <div class="invalid-feedback">
+                                                Wpisz nazwę firmy.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="d-flex justify-content-between">
+                                        <h4>Podaj hasło </h4>
+                                        <div class="form-group mb-2">
+                                            <input type="password" class="form-control" id="Password" placeholder="hasło" required>
+<!--                                            <div class="invalid-feedback">-->
+<!--                                                Wpisz poprawne hasło.-->
+<!--                                            </div>-->
+                                        </div>
+                                    </div>
+
+                                </form>
+                                <hr>
+                                <div class="d-flex justify-content-between">
+                                    <h4>
+                                        <div id="changeCompanyAlert"></div>
+                                    </h4>
+                                    <div class="form-group mb-2">
+                                        <button id="changeCompany" type="submit"  value="Submit"  class="btn btn-dark mb-2">Zmień hasło</button>
+                                    </div>
+                                </div>
+                                <script>
+
+
+
+
+                                    $('#NIP').blur(function () {
+                                        var element = document.getElementById("NIP");
+                                        var element2 = document.getElementById("nazwa_firmy");
+                                        if(element.value==''){
+                                            element.required = false;
+                                            element2.required = false;
+                                        }
+                                        else{
+                                            element.required = true;
+                                            element2.required = true;
+                                        }
+
+                                        if($("#NIP")[0].checkValidity()) {
+                                            element.classList.remove("is-invalid");
+                                            element.classList.add("is-valid");
+                                        }else{
+                                            element.classList.add("is-invalid");
+                                            element.classList.remove("is-valid");
+                                        }
+
+                                    });
+
+                                    $('#nazwa_firmy').blur(function () {
+                                        var element = document.getElementById("NIP");
+                                        var element2 = document.getElementById("nazwa_firmy");
+                                        if(element2.value==''){
+                                            ;
+                                        }
+                                        else{
+                                            element.required = true;
+                                            element2.required = true;
+                                        }
+
+                                        if($("#nazwa_firmy")[0].checkValidity()) {
+                                            element2.classList.remove("is-invalid");
+                                            element2.classList.add("is-valid");
+                                        }else{
+                                            element2.classList.add("is-invalid");
+                                            element2.classList.remove("is-valid");
+                                        }
+
+                                    });
+
+
+                                    $('#changeCompany').click(function () {
+                                        var element = document.getElementById("NIP").value;
+                                        var element2 = document.getElementById("nazwa_firmy").value;
+
+                                        if($("#changeCompanyForm")[0].checkValidity() && ((element == '' && element2=='') || (element != '' && element2!='')) ) {
+
+                                            $("#changeCompanyAlert").html('<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                                                '  <strong>Warning! </strong>' + 'yupi!' +
+                                                '</div>');
+
+                                            // $.ajax({
+                                            //     type: "post",
+                                            //     url: '/user/changePassword',
+                                            //     data: {
+                                            //         oldPassword: $('#oldPassword').val(),
+                                            //         newPassword: $('#newPassword').val(),
+                                            //         newPassword2: $('#newPassword2').val(),
+                                            //     },
+                                            //
+                                            //
+                                            //     success: function (data) {
+                                            //         alert(data);
+                                            //
+                                            //         if (parseInt(data) == 1)
+                                            //             $("#changePasswordAlert").html('<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                                            //                 '  <strong>Well done! </strong>' + "hasło zostało zmienione" +
+                                            //                 '</div>');
+                                            //         else
+                                            //             $("#changePasswordAlert").html('<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                                            //                 '  <strong>Warning! </strong>' + data +
+                                            //                 '</div>');
+                                            //
+                                            //
+                                            //     }
+                                            // });
+
+                                        }else {
+                                            $("#changeCompanyAlert").html('<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                                                '  <strong>Warning! </strong>' + 'Wpisz poprawne dane.' +
+                                                '</div>');
+                                        }
+
+
+                                    });
+
+                                </script>
+                            </div>
+
+
+                        </div>
                     </div>
                 </div>
             </div>

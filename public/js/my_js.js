@@ -198,7 +198,7 @@ var build =
                     listing.append(
 
                         '<div class="col-md-6 col-lg-4 item zoom-on-hover" id ="oferta'+v.id_oferta+'">'+
-                        '                    <a class="lightbox" href="'+ v.imgg + '">'+
+                        '                    <a class="lightbox" href="/user/offer?oferta='+v.id_oferta+'">'+
                         '                        <img class="img-fluid image" src="'+ v.imgg + '">'+
                         '                        <span class="description">'+
                         '                            <span class="description-heading">'+ v.marka+' '+v.model +'</span>'+

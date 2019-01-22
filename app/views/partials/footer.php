@@ -60,6 +60,5 @@
 
 </footer>
 <!-- Footer -->
-
 </body>
 </html>

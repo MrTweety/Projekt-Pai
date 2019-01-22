@@ -292,7 +292,7 @@ class UserController extends Controller
      */
     public function check($params = [], $params2 = [])
     {
-        $this->partial("header");
+//        $this->partial("header");
 //        $user = $this->model('User');
 //        $aa = $user->get_name();
 //        echo $aa['imie'];
@@ -302,7 +302,7 @@ class UserController extends Controller
         $this->view('home/isLogin');
 
 //        $this->partial('footer', $order);
-
+//        $this->partial("noscript");
 
     }
 
