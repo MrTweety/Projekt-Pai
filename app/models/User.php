@@ -44,7 +44,7 @@ class User extends Model
 
     public function get_name()
     {
-        $q = "SELECT uzytkownik.imie, uzytkownik.nazwisko, uzytkownik.id_typ FROM uzytkownik
+        $q = "SELECT uzytkownik.imie, uzytkownik.nazwisko,uzytkownik.plec, uzytkownik.id_typ FROM uzytkownik
                 LEFT JOIN sesja ON sesja.id_uzyt = uzytkownik.id_uzyt
                 WHERE
                 sesja.id = :id ";
@@ -110,6 +110,7 @@ class User extends Model
             . "uzytkownik.id_adres,\n"
             . "uzytkownik.imie,\n"
             . "uzytkownik.nazwisko,\n"
+            . "uzytkownik.plec,\n"
             . "uzytkownik.email,\n"
             . "uzytkownik.login,\n"
             . "adres.kod_pocztowy,\n"
@@ -193,6 +194,54 @@ class User extends Model
         }
 
     }
+
+
+    public function changeCompany($data)
+    {
+
+        $NIP = trim($data['NIP']);
+        $nazwaFirmy = trim($data['nazwaFirmy']);
+        $password = trim($data['password']);
+
+        $sql = "SELECT uzytkownik.id_uzyt, uzytkownik.haslo FROM uzytkownik
+                LEFT JOIN sesja ON sesja.id_uzyt = uzytkownik.id_uzyt
+                WHERE
+                sesja.id = :id ";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(':id', $_COOKIE['id']);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($stmt->rowCount() > 0) {
+
+            if (password_verify($password, $result['haslo'])) {
+
+
+
+                $sql = "CALL EditCompany(:uzytkownik,:NIP,:nazwaFirmy)";
+                $stmt = $this->db->prepare($sql);
+                $stmt->bindParam(':NIP', $NIP);
+                $stmt->bindParam(':nazwaFirmy', $nazwaFirmy);
+                $stmt->bindParam(':uzytkownik', $result['id_uzyt']);
+                if ($stmt->execute()) {
+                    echo 1;
+                    return true;
+                } else {
+                    echo "Coś poszło nie tak";
+                    return false;
+                }
+            } else {
+                echo "Podane hasło jest niepoprawne";
+                return false;
+            }
+
+        } else {
+            echo "Nie udało sie zmienić danych Firmy.";
+            return false;
+        }
+
+    }
+
+
 
 
     public function logout()

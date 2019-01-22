@@ -33,8 +33,14 @@
 
             <div class=" dropdown profile-dropdown" style="z-index: 100;background-color: #343a40!important;">
                 <a  id="profile-dropdown" class= " btn btn-dark dropdown-toggle" data-toggle="dropdown" style="color: white !important;" >
-                    <img src="/public/img/avatar/adminM.png" alt="Avatar" class="avatar">
+                    <?php
+                    $plikT ="admin";
+                    $plikP = "M.png";
+                    if($dataP['plec']=="K") $plikP = "K.png";
 
+                    echo '<img src="/public/img/avatar/'.$plikT.$plikP.'" alt="Avatar" class="avatar"/>';
+
+                    ?>
                     <span class="hidden-xs"><?php echo $dataP['imie'].' '.$dataP['nazwisko'] ?></span> <b class="caret"></b>
                 </a>
 

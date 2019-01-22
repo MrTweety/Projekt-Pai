@@ -27,7 +27,14 @@
 
             <div class=" dropdown profile-dropdown" style="z-index: 1000 !important;">
                 <a  class=" btn btn-dark dropdown-toggle" data-toggle="dropdown" style="color: white;">
-                    <img src="/public/img/avatar/userK.png" alt="Avatar" class="avatar">
+                    <?php
+                    $plikT ="user";
+                    $plikP = "M.png";
+                    if($dataP['plec']=="K") $plikP = "K.png";
+
+                    echo '<img src="/public/img/avatar/'.$plikT.$plikP.'" alt="Avatar" class="avatar"/>';
+
+                    ?>
 
                     <span class="hidden-xs"><?php echo $dataP['imie'].' '.$dataP['nazwisko'] ?></span> <b class="caret"></b>
                 </a>

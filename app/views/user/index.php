@@ -130,7 +130,15 @@
                             <h1 class="my-4">
                                 <div class="logo">
                                     <div class="logo">
-                                        <?php if($data['id_typ']==1) echo '<img src="/public/img/avatar/adminM.png" class="bigavatar"/>'; else echo '<img src="/public/img/avatar/userM.png" class="bigavatar"/>'; ?>
+                                        <?php
+                                        $plikT ="user";
+                                        $plikP = "M.png";
+                                        if($data['id_typ']==User::$ADMIN_TYPE) $plikT ="admin";
+                                        if($data['plec']=="K") $plikP ="K.png";
+
+                                        echo '<img src="/public/img/avatar/'.$plikT.$plikP.'" class="bigavatar"/>';
+
+                                        ?>
                                     </div>
                                 </div>
                             </h1>
@@ -325,7 +333,7 @@
                                     <div class="d-flex justify-content-between">
                                         <h4>Podaj hasło </h4>
                                         <div class="form-group mb-2">
-                                            <input type="password" class="form-control" id="Password" placeholder="hasło" required>
+                                            <input type="password" class="form-control" id="password" placeholder="hasło" required>
 <!--                                            <div class="invalid-feedback">-->
 <!--                                                Wpisz poprawne hasło.-->
 <!--                                            </div>-->
@@ -397,39 +405,35 @@
 
                                         if($("#changeCompanyForm")[0].checkValidity() && ((element == '' && element2=='') || (element != '' && element2!='')) ) {
 
-                                            $("#changeCompanyAlert").html('<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                                                '  <strong>Warning! </strong>' + 'yupi!' +
-                                                '</div>');
+                                            $.ajax({
+                                                type: "post",
+                                                url: '/user/changeCompany',
+                                                data: {
+                                                    NIP: $('#NIP').val(),
+                                                    nazwaFirmy: $('#nazwa_firmy').val(),
+                                                    password: $('#password').val(),
+                                                },
 
-                                            // $.ajax({
-                                            //     type: "post",
-                                            //     url: '/user/changePassword',
-                                            //     data: {
-                                            //         oldPassword: $('#oldPassword').val(),
-                                            //         newPassword: $('#newPassword').val(),
-                                            //         newPassword2: $('#newPassword2').val(),
-                                            //     },
-                                            //
-                                            //
-                                            //     success: function (data) {
-                                            //         alert(data);
-                                            //
-                                            //         if (parseInt(data) == 1)
-                                            //             $("#changePasswordAlert").html('<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                                            //                 '  <strong>Well done! </strong>' + "hasło zostało zmienione" +
-                                            //                 '</div>');
-                                            //         else
-                                            //             $("#changePasswordAlert").html('<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                                            //                 '  <strong>Warning! </strong>' + data +
-                                            //                 '</div>');
-                                            //
-                                            //
-                                            //     }
-                                            // });
+
+                                                success: function (data) {
+                                                    alert(data);
+
+                                                    if (parseInt(data) == 1)
+                                                        $("#changeCompanyAlert").html('<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                                                            '  <strong>Well done! </strong>' + "Dane zostały zmienione." +
+                                                            '</div>');
+                                                    else
+                                                        $("#changeCompanyAlert").html('<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                                                            '  <strong>Uwaga! </strong>' + data +
+                                                            '</div>');
+
+
+                                                }
+                                            });
 
                                         }else {
                                             $("#changeCompanyAlert").html('<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                                                '  <strong>Warning! </strong>' + 'Wpisz poprawne dane.' +
+                                                '  <strong>Uwaga! </strong>' + 'Wpisz poprawne dane.' +
                                                 '</div>');
                                         }
 
