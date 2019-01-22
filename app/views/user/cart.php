@@ -27,6 +27,7 @@ $(document).ready(function() {
 
             success: function(data)
             {
+                alert(data);
                 build.buildListing_cart(
                     jQuery.parseJSON(data),
                     $('#listing'),

@@ -33,8 +33,14 @@
 
             <div class=" dropdown profile-dropdown" style="z-index: 100;background-color: #343a40!important;">
                 <a  id="profile-dropdown" class= " btn btn-dark dropdown-toggle" data-toggle="dropdown" style="color: white !important;" >
-                    <img src="/public/img/avatar/adminM.png" alt="Avatar" class="avatar">
+                    <?php
+                    $plikT ="admin";
+                    $plikP = "M.png";
+                    if($dataP['plec']=="K") $plikP = "K.png";
 
+                    echo '<img src="/public/img/avatar/'.$plikT.$plikP.'" alt="Avatar" class="avatar"/>';
+
+                    ?>
                     <span class="hidden-xs"><?php echo $dataP['imie'].' '.$dataP['nazwisko'] ?></span> <b class="caret"></b>
                 </a>
 
@@ -42,6 +48,7 @@
                     <li><a class="dropdown-item " href="/user/index" style="color: black;"><i class="fa fa-user"></i>Profil</a></li>
                     <li><a class="dropdown-item " href="/admin/adminpanel" style="color: black;"><i class="fa fa-cog"></i>Panel Admina</a></li>
 <!--                    <li><a class="dropdown-item " href="#" style="color: black;"><i class="fa fa-envelope-o"></i>Messages</a></li>-->
+                    <li><a class="dropdown-item " href="/user/cart" style="color: black;"><i class="fa fa-shopping-cart"></i>    Koszyk</a></li>
                     <li><a class="dropdown-item " href="/user/logout" style="color: black;"><i class="fa fa-power-off"></i>Wyloguj</a></li>
                 </ul>
             </div>

@@ -1,23 +1,10 @@
-@media (min-width: 576px) {
-	.card-columns {
-		-webkit-column-count: 1;
-		column-count: 1;
+@media(max-width: 767px) {
+	input {
+		margin-bottom: 10px;
 	}
 }
 
-@media (min-width: 768px) {
-	.card-columns {
-		-webkit-column-count: 2;
-		column-count: 2;
-	}
-}
 
-@media (min-width: 1200px) {
-	.card-columns {
-		-webkit-column-count: 2;
-		column-count: 2;
-	}
-}
 
 :root {
 	--input-padding-x: 0.75rem;
@@ -87,81 +74,17 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (min-width: 576px) {
-	.card-columns {
-		-webkit-column-count: 1;
-		column-count: 1;
-	}
-}
-
-@media (min-width: 768px) {
-	.card-columns {
-		-webkit-column-count: 2;
-		column-count: 2;
-	}
-}
-
-@media (min-width: 1200px) {
-	.card-columns {
-		-webkit-column-count: 2;
-		column-count: 2;
-	}
-}
-
-:root {
-	--input-padding-x: 0.75rem;
-	--input-padding-y: 0.75rem;
-}
-
-.card-login {
-	max-width: 25rem;
-}
-
-.card-register {
-	max-width: 40rem;
-}
-
-.form-label-group {
+.form-select-group {
 	position: relative;
 }
 
-.form-label-group > select,
-.form-label-group > label {
+.form-select-group > select,
+.form-select-group > label {
 	padding: var(--input-padding-y) var(--input-padding-x);
 	height: auto;
 }
 
-.form-label-group > label {
+.form-select-group > label {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -177,28 +100,28 @@
 	transition: all 0.1s ease-in-out;
 }
 
-.form-label-group select::-webkit-input-placeholder {
+.form-select-group select::-webkit-input-placeholder {
 	color: transparent;
 }
 
-.form-label-group select:-ms-input-placeholder {
+.form-select-group select:-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-label-group select::-ms-input-placeholder {
+.form-select-group select::-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-label-group select::placeholder {
+.form-select-group select::placeholder {
 	color: transparent;
 }
 
-.form-label-group select:not(:placeholder-shown) {
+.form-select-group select:not(:placeholder-shown) {
 	padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
 	padding-bottom: calc(var(--input-padding-y) / 3);
 }
 
-.form-label-group select:not(:placeholder-shown) ~ label {
+.form-select-group select:not(:placeholder-shown) ~ label {
 	padding-top: calc(var(--input-padding-y) / 3);
 	padding-bottom: calc(var(--input-padding-y) / 3);
 	font-size: 12px;

@@ -97,10 +97,8 @@ class UserController extends Controller
         } else {
             $user = $this->model('User');
             if ($user->insert($_POST)) {
-//                $this->redirect("/home/Registered");
                 echo "1";
             } else {
-//                $this->redirect("/home/notRegister");
                 echo "2";
             }
         }
@@ -115,14 +113,32 @@ class UserController extends Controller
         } else {
             $user = $this->model('User');
             if ($user->changePassword($_POST)) {
-//                $this->redirect("/home/Registered");
                 return true;
             } else {
-//                $this->redirect("/home/notRegister");
                 return false;
             }
         }
     }
+
+
+    public function changeCompany()
+    {
+        if (!isset($_POST) || empty($_POST)) {
+            $this->redirect("/");
+            die();
+        } else {
+            $user = $this->model('User');
+            if ($user->changeCompany($_POST)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+
+
+
 
     public function checkLogin()
     {
@@ -292,7 +308,7 @@ class UserController extends Controller
      */
     public function check($params = [], $params2 = [])
     {
-        $this->partial("header");
+//        $this->partial("header");
 //        $user = $this->model('User');
 //        $aa = $user->get_name();
 //        echo $aa['imie'];
@@ -302,7 +318,7 @@ class UserController extends Controller
         $this->view('home/isLogin');
 
 //        $this->partial('footer', $order);
-
+//        $this->partial("noscript");
 
     }
 

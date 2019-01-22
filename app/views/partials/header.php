@@ -36,19 +36,22 @@
     <!--    dataTables-->
 
 
-    <link rel="stylesheet" href="../../../public/css/home_page.css" type="text/css">
-    <link rel="stylesheet" href="../../../public/css/login.css" type="text/css">
-    <link rel="stylesheet" href="../../../public/css/offer_item.css" type="text/css">
-    <link rel="stylesheet" href="../../../public/css/adminpanel.css" type="text/css">
+    <link rel="stylesheet" href="/public/css/home_page.css" type="text/css">
+    <link rel="stylesheet" href="/public/css/login.css" type="text/css">
+    <link rel="stylesheet" href="/public/css/offer_item.css" type="text/css">
+    <link rel="stylesheet" href="/public/css/adminpanel.css" type="text/css">
+    <link rel="stylesheet" href="/public/css/register.css" type="text/css">
+    <link rel="stylesheet" href="/public/css/cookiealert.css" type="text/css">
 
-    <script src="../../../public/js/my_js.js"></script>
-    <!--    <script src="app/js/skrypty.js"></script>-->
+
+    <script src="/public/js/my_js.js"></script>
+    <script src="/public/js/cookiealert.js"></script>
 
 
 <!--    test-->
-    <link rel="stylesheet" href="/public/css/register.css" type="text/css">
-
-
+<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.css">-->
+<!--    <script src="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.js"></script>-->
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css">-->
 
     <style>
         /* Make the image fully responsive */
