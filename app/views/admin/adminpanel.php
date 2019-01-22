@@ -1,6 +1,5 @@
 
 
-
 <div id="wrapper">
     <div id="sidebar">
         <ul class="nav flex-column nav-pills sidebar" role="tablist">
