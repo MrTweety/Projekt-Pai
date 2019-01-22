@@ -33,40 +33,55 @@ $(document).ready(function() {
                     $('#listing'),
                 );
             }
-        });
+        });  
 });
 
 function usun_z_koszyka(id,cena) 
 {
     var txt = 0;
     var oferta ="oferta"+id;
-    if (confirm("Czy na pewno chcesz ofertę o id: " + id + "?")) {
-        txt = 1;
-    } else {
-        txt = 0;
-    }
+    
 
     
     var koszt = document.getElementById("koszt2").innerHTML;
     var ilosc = document.getElementById("ilosc").innerHTML;
 
-    if (parseInt(txt) == 1)
-    {
-        $.ajax({
-            type: "POST",
-            url: '../app/views/main/cart_delete.php',
-            data: {id_oferta: id},
+    $.ajax({
+        type: "POST",
+        url: '../app/views/main/cart_delete.php',
+        data: {id_oferta: id},
 
-            success: function (data) 
-            {
+        success: function (data) 
+        {
                 // alert(data);
-                document.getElementById(oferta).innerHTML = '';
-                document.getElementById("koszt1").innerHTML = (koszt - cena).toLocaleString();
-                document.getElementById("koszt2").innerHTML = (koszt - cena);
-                document.getElementById("ilosc").innerHTML = ilosc - 1;
+            document.getElementById(oferta).innerHTML = '';
+            document.getElementById("koszt1").innerHTML = (koszt - cena).toLocaleString();
+            document.getElementById("koszt2").innerHTML = (koszt - cena);
+            document.getElementById("ilosc").innerHTML = ilosc - 1;
+        }
+    });
+}
+
+function kup(do_zaplaty) 
+{
+    var cia  = "<?php if(isset($_COOKIE['id'])) echo $_COOKIE['id']; else echo -1; ?>";
+
+    $.ajax({
+            type: "POST",
+            url: '../app/views/main/buy_verification.php',
+            data: {id_sesja: cia,
+                   kwota_do_zaplaty: do_zaplaty},
+
+            success: function(data)
+            {
+                document.getElementById('feedback_alert_cart').style.display='block';
+                document.getElementById('feedback_alert_text_cart').innerHTML = data;
+                // document.getElementById('feedback_alert_button_cart').style.display='none';
+               
             }
         });
-    }
 }
+
+
 </script>
 

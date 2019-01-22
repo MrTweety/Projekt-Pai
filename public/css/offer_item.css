@@ -37,19 +37,3 @@
 {
 	background-color: #006aee;
 }
-
-#buy_alert
-{
-	display: none;
-	text-align: center;
-	width: 80%;
-	padding: 15px;
-	position: absolute;
-	top: 200px;
-	right: 0;
-	left: 0;
-	margin: auto;
-	border-radius: 10px;
-	box-shadow: 0px 0px 40px 4px rgba(0,0,0,0.75);
-	z-index: 3;
-}

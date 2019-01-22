@@ -76,9 +76,14 @@
             <div class="list-group">
                 <a onclick="add_to_cart()" class="list-group-item btn btn-success" id="buy_button"> <i class="fa fa-shopping-cart" style="text-align: left; font-size: 25px;"></i> Dodaj do koszyka</a>
             </div>
-            <div id="buy_alert" class="alert alert-danger alert-dismissible">
+            <div id="buy_alert" class="alert alert-danger alert-dismissible my_alert">
                 <div class="row">
                     <div class="col-12"><strong>Uwaga!</strong> Musisz być zalogowany aby dodawać produkty do koszyka.</div>
+                </div>
+            </div>
+            <div id="feedback_alert" class="alert alert-danger alert-dismissible my_alert">
+                <div class="row">
+                    <div class="col-12" id="feedback_alert_text"></div>
                 </div>
             </div>
         </div>
@@ -87,7 +92,7 @@
 <!--            <div id="buy_alert" class="alert alert-danger alert-dismissible">-->
 <!--                <div class="row">-->
 <!--                    <div class="col-12"><strong>Uwaga!</strong> Musisz być zalogowany aby dodawać produkty do koszyka.</div>-->
-<!--                </div>-->
+<!--                </div>-->  
 <!--            </div>-->
 <!--        </div>-->
     </div>
@@ -245,7 +250,11 @@ function add_to_cart()
 
             success: function(data)
             {
-                alert(data);
+                document.getElementById('feedback_alert').style.display='block';
+                document.getElementById('feedback_alert_text').innerHTML = data;
+                $("#feedback_alert").delay(3000).slideUp(200, function() {
+                document.getElementById('feedback_alert').style.display='none';
+                });
             }
         });
     }
