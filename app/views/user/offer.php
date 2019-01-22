@@ -228,7 +228,7 @@ function add_to_cart()
     if(<?php if($data) echo 0; else echo 1;?>)
     {
         document.getElementById('buy_alert').style.display='block';
-        $("#").delay(3000).slideUp(200, function() {
+        $("#buy_alert").delay(3000).slideUp(200, function() {
             document.getElementById('buy_alert').style.display='none';
         });
     }
@@ -236,7 +236,7 @@ function add_to_cart()
     {
         var cia  = "<?php if(isset($_COOKIE['id'])) echo $_COOKIE['id']; else echo -1; ?>";
         var ofer = <?php if(isset( $_GET['oferta'])) echo $_GET['oferta']; else echo -1;  ?>;
-        alert(cia);
+        // alert(cia);
         $.ajax({
             type: "POST",
             url: '../app/views/main/add_to_cart.php',
