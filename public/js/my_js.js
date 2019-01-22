@@ -345,7 +345,7 @@ var build =
                     '<div class="d-flex justify-content-between">'+
                     '    <div style="margin: 5px">Ilość produktów w koszyku: <b id="ilosc">'+count+'</b></div>'+
                     '    <div>'+
-                    '        <a href="" class="btn btn-success pull-right">Kup teraz</a>'+
+                    '        <a href="/user/buy?ilosc_w_koszyku='+count+'" class="btn btn-success pull-right">Kup teraz</a>'+
                     '        <div class="pull-right" style="margin: 5px">'+
                     '            Cena końcowa: <b id="koszt1">'+whole_cost.toLocaleString() +'</b><b>zł '+'</b>'+
                     '             <div id="koszt2" style="display: none;">'+whole_cost+'</div'+
@@ -354,8 +354,59 @@ var build =
                     '</div>'+
                 '</div>'
                 );
-        }
+        },
 
+
+        
+
+          
+
+        buildListing_buy: function(result, listing )
+        {
+            
+            listing.html('');
+            var count = 0;
+            var whole_cost = 0;
+            
+            if(result != '')
+            {
+                listing.append(
+                   ' <h4 class="d-flex justify-content-between align-items-center mb-3">'+
+                        '<span class="text-muted">Twój koszyk</span>'+
+                        '<span class="badge badge-secondary badge-pill" id="ilosc_w_koszyku"></span>'+
+                    '</h4>'+
+                    '<ul class="list-group mb-3" ></ul>'
+                );
+                
+                $.each(result, function(k, v) {
+                    
+                    ++count;
+                    whole_cost += Number(v.cena);
+
+                    listing.append(
+
+                        '<li class="list-group-item d-flex justify-content-between lh-condensed">'+
+                            '<div>'+
+                                '<h6 class="my-0">'+v.marka+' '+v.model+'</h6>'+
+                                '<small class="text-muted">Brief description</small>'+
+                            '</div>'+
+                            '<span class="text-muted">'+Number(v.cena).toLocaleString()+' zł</span>'+
+                        '</li>'
+                    );
+                });
+
+                listing.append(
+                    '</ul>'+
+                   ' <li class="list-group-item d-flex justify-content-between">'+
+                        '<span>Całkowity koszt (PLN):</span>'+
+                        '<strong>'+whole_cost.toLocaleString()+'</strong>'+
+                    '</li>'
+                );
+            }
+
+
+                document.getElementById("ilosc_w_koszyku").innerHTML = count;
+        }
 
 
 

@@ -226,6 +226,7 @@ class UserController extends Controller
     {
         $user = $this->model('User');
         if (!$user->is_logged_in()) {
+            $this->redirect("/");
         } else {
 
             $this->partial("header");
@@ -243,6 +244,35 @@ class UserController extends Controller
             }
 
         $this->view('user/cart');
+        $this->partial("footer");
+        $this->partial("noscript");
+
+        }
+
+    }
+
+    public function buy()
+    {
+        $user = $this->model('User');
+        if (!$user->is_logged_in()) {
+            $this->redirect("/");
+        } else {
+
+            $this->partial("header");
+
+            switch ($user->get_type()) {
+
+                case User::$ADMIN_TYPE:
+                    $dataP = $user->get_name();
+                    $this->partial("nav_admin", $dataP);
+                    break;
+                case User::$CLIENT_TYPE:
+                    $dataP = $user->get_name();
+                    $this->partial("nav_user", $dataP);
+                    break;
+            }
+
+        $this->view('user/buy');
         $this->partial("footer");
         $this->partial("noscript");
 

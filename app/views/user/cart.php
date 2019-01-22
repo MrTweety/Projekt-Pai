@@ -35,7 +35,6 @@ $(document).ready(function() {
         });
 });
 
-
 function usun_z_koszyka(id,cena) 
 {
     var txt = 0;
