@@ -87,7 +87,7 @@ if( isset($_POST["id_sesja"]) && isset($_POST["kwota_do_zaplaty"]) )
         }
     }
 
-    echo "dziala";
+    echo "Gratulację! Zakup przebiegł poprawnie.";
 }
 
 function UpdateOffer($sql_que, $id_offer, $time_n, $data_table)
