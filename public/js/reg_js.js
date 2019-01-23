@@ -267,7 +267,32 @@ $('#zipcode').blur(function () {
 
 
 
+ function hashCodeVerbose (s) {
+    var hash = 0,
+        i, char;
+    if (s.length == 0) return hash;
+    for (i = 0, l = s.length; i < l; i++) {
+        char = s.charCodeAt(i);
+        hash = ((hash << 5) - hash) + char;
+        hash |= 0; // Convert to 32bit integer
+    }
+    return hash;
+}
+
+
+
+
 $('#btn-register').click(function () {
+
+
+
+
+
+   var confirmPassword = hashCodeVerbose($('#confirmPassword').val());
+
+   var inputPassword = hashCodeVerbose($('#inputPassword').val());
+
+
 
     if($("#RegisterForm")[0].checkValidity()) {
         $.ajax({
@@ -275,8 +300,8 @@ $('#btn-register').click(function () {
             url: '/user/create',
             data: {
                 login: $('#login').val(),
-                cpassword: $('#confirmPassword').val(),
-                password: $('#inputPassword').val(),
+                cpassword: confirmPassword,
+                password: inputPassword,
                 plec:$('#plec').val(),
                 imie: $('#imie').val(),
                 nazwisko: $('#nazwisko').val(),

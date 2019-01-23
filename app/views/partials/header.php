@@ -45,7 +45,9 @@
 
 
     <script src="/public/js/my_js.js"></script>
+<!--    <script src="/public/js/reg_js.js"></script>-->
     <script src="/public/js/cookiealert.js"></script>
+
 
 
 <!--    test-->

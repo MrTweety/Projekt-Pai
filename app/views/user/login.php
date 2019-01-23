@@ -13,11 +13,11 @@
         <label for="passwod"><b>Hasło</b></label>
         <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-            <input type="password" class="form-control" placeholder="Podaj hasło" name="password" id="password" required>
+            <input type="password" class="form-control" placeholder="Podaj hasło" name="" id="password" required>
         </div>
-
+        <input type="hidden" class="form-control" placeholder="Podaj hasło" name="password" id="passwordID" >
       <div class="log_margins">
-        <button type="submit" class="btn btn-primary btn-block">Zaloguj</button>
+        <button type="submit"  onclick="document.getElementById('password').disabled='disabled'; document.getElementById('passwordID').value = hashCodeVerbose($('#password').val());"   class="btn btn-primary btn-block">Zaloguj</button>
       </div>
     </div>
 

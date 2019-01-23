@@ -233,6 +233,8 @@
 
 
 
+
+
                                     $('#newPassword').blur(function () {
                                         var element = document.getElementById("newPassword");
                                         if($("#changePasswordForm")[0].checkValidity()) {
@@ -257,19 +259,24 @@
 
                                     $('#changePassword').click(function () {
 
+
+                                        var oldPassword = hashCodeVerbose($('#oldPassword').val());
+                                        var newPassword = hashCodeVerbose($('#newPassword').val());
+                                        var newPassword2 = hashCodeVerbose($('#newPassword2').val());
+
                                         if($("#changePasswordForm")[0].checkValidity()) {
                                             $.ajax({
                                                 type: "post",
                                                 url: '/user/changePassword',
                                                 data: {
-                                                    oldPassword: $('#oldPassword').val(),
-                                                    newPassword: $('#newPassword').val(),
-                                                    newPassword2: $('#newPassword2').val(),
+                                                    oldPassword: oldPassword,
+                                                    newPassword: newPassword,
+                                                    newPassword2: newPassword2,
                                                 },
 
 
                                                 success: function (data) {
-                                                    alert(data);
+                                                    // alert(data);
 
                                                     if (parseInt(data) == 1)
                                                         $("#changePasswordAlert").html('<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>' +
@@ -402,6 +409,7 @@
                                     $('#changeCompany').click(function () {
                                         var element = document.getElementById("NIP").value;
                                         var element2 = document.getElementById("nazwa_firmy").value;
+                                        var password = hashCodeVerbose($('#password').val());
 
                                         if($("#changeCompanyForm")[0].checkValidity() && ((element == '' && element2=='') || (element != '' && element2!='')) ) {
 
@@ -411,12 +419,12 @@
                                                 data: {
                                                     NIP: $('#NIP').val(),
                                                     nazwaFirmy: $('#nazwa_firmy').val(),
-                                                    password: $('#password').val(),
+                                                    password: password,
                                                 },
 
 
                                                 success: function (data) {
-                                                    alert(data);
+                                                    // alert(data);
 
                                                     if (parseInt(data) == 1)
                                                         $("#changeCompanyAlert").html('<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>' +
