@@ -32,6 +32,31 @@ class OrderController extends Controller
         $this->partial("noscript");
     }
 
+    public function buyVerification()
+    {
+        $user = $this->model('User');
+        $orderModel = $this->model('Order');
+        if (!$user->is_logged_in()) {
+            $this->redirect("/");
+        } else {
+            if (!isset($_POST) || empty($_POST)) {
+                $this->redirect("/");
+                die();
+            } else {
+                $user = $this->model('User');
+                if ($orderModel->buyVerification($_POST)) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+        }
+        return false;
+    }
+
+
+
 
 
 

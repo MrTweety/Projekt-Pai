@@ -32,6 +32,8 @@ $link -> query ('SET CHARACTER_SET utf8_unicode_ci');
 
 if( isset($_POST["id_sesja"]) && isset($_POST["kwota_do_zaplaty"]) )
 {
+
+    ////////////////
     $id_sesja =  mysqli_real_escape_string($link, $_POST["id_sesja"]);
     $kwota =  mysqli_real_escape_string($link, $_POST["kwota_do_zaplaty"]);
 
@@ -39,11 +41,11 @@ if( isset($_POST["id_sesja"]) && isset($_POST["kwota_do_zaplaty"]) )
 
     $id_uzyt = $link->query($sql_id_uzyt);
     $id_uzyt = mysqli_fetch_assoc($id_uzyt)["id_uzyt"];
-
+////////////////////////////////////////////
     $sql = $sql .$id_uzyt.";";
 
     $result  = $link->query($sql);
-    
+    //////////////////////////
     $data = [];
     $data_place = 0;
 

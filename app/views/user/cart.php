@@ -68,7 +68,7 @@ function kup(do_zaplaty)
 
     $.ajax({
             type: "POST",
-            url: '../app/views/main/buy_verification.php',
+            url: '/order/buyVerification/',
             data: {id_sesja: cia,
                    kwota_do_zaplaty: do_zaplaty},
 
