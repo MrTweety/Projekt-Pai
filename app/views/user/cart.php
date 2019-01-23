@@ -74,10 +74,17 @@ function kup(do_zaplaty)
 
             success: function(data)
             {
-                document.getElementById('feedback_alert_cart').style.display='block';
-                document.getElementById('feedback_alert_text_cart').innerHTML = data;
-                // document.getElementById('feedback_alert_button_cart').style.display='none';
-               
+
+                if (parseInt(data) == 1){
+                    document.getElementById('feedback_alert_cart').style.display='block';
+                    document.getElementById('feedback_alert_text_cart').innerHTML = "Gratulację! Zakup przebiegł poprawnie.";
+                }else{
+                    document.getElementById('feedback_alert_cart').style.display='block';
+                    document.getElementById('feedback_alert_text_cart').innerHTML = data;
+                    document.getElementById('feedback_alert_button_cart').style.display='none';
+                }
+
+
             }
         });
 }

@@ -34,7 +34,9 @@ class Order extends Model
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         if (!empty($result['id_uzyt'])) {
             try {
-                $this->db->setAttribute(PDO::ATTR_AUTOCOMMIT,0);
+
+
+                $this->db->setAttribute(PDO::ATTR_AUTOCOMMIT, 0);
                 $this->db->beginTransaction();
 
                 $time_now = (new \DateTime())->format('Y-m-d H:i:s');
@@ -44,92 +46,140 @@ class Order extends Model
                     . "FROM\n"
                     . "Oferta\n"
                     . "INNER JOIN koszyk ON koszyk.id_oferta = oferta.id_oferta\n"
-                    . "WHERE oferta.data_zakonczenia IS NULL AND koszyk.id_uzyt = :idUzyt for UPDATE";
+                    . "WHERE koszyk.id_uzyt = :idUzyt for UPDATE;";
                 $stmt = $this->db->prepare($sql);
                 $stmt->bindParam(':idUzyt', $id_uzyt);
-                if( !$stmt->execute() )
-                {
+                if (!$stmt->execute()) {
                     echo "Błąd przy aktualizacji1";
+                    $this->db->rollback();
+                    $this->DeleteKoszyk($id_uzyt);
                     return 0;
                 }
-                $data = [];
-                $data_place = 0;
 
-                if ($stmt->rowCount() > 0)
-                {
-                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
-                    {
-                        $data[$data_place]['id_oferta'] = $row['id_oferta'];
-                        $data_place++;
-                    }
-                }
+                $rowCount1 = $stmt->rowCount();
 
-                $sql_update_offer = "UPDATE oferta SET oferta.data_zakonczenia= :dataZ WHERE oferta.id_oferta = :idOferta;";
-                $stmt = $this->db->prepare($sql_update_offer);
-                for($i = 0; $i <$data_place; $i++ )
-                {
-                    $stmt->bindParam(':dataZ', $time_now);
-                    $stmt->bindParam(':idOferta', $data[$i]['id_oferta']);
+                $sql = "SELECT DISTINCT\n"
+                    . "oferta.id_oferta\n"
+                    . "FROM\n"
+                    . "Oferta\n"
+                    . "INNER JOIN koszyk ON koszyk.id_oferta = oferta.id_oferta\n"
+                    . "WHERE oferta.data_zakonczenia IS NULL AND koszyk.id_uzyt = :idUzyt";
 
-                    if( !$stmt->execute() )
-                    {
-                        echo "Błąd przy aktualizacji2";
-                        $this->db->rollback();
-                        return 0;
-                    }
-                }
-
-
-                $sql_in = "insert into transakcja(id_kupujacego, kwota, data_transakcji) values(:idUzyt, :kwota, :dataZ);";
-                $stmt = $this->db->prepare($sql_in);
-                $stmt->bindParam(':dataZ', $time_now);
+                $stmt = $this->db->prepare($sql);
                 $stmt->bindParam(':idUzyt', $id_uzyt);
-                $stmt->bindParam(':kwota', $kwota);
-                if( !$stmt->execute() )
-                {
-                    echo "Błąd przy aktualizacji3";
+                if (!$stmt->execute()) {
+                    echo "Błąd przy aktualizacji1";
+                    $this->db->rollback();
+                    $this->DeleteKoszyk($id_uzyt);
+                    return 0;
+                }
+                $rowCount2 = $stmt->rowCount();
+
+                if ($rowCount2 != $rowCount1) {
+                    echo "Ktoś był szybszy";
                     $this->db->rollback();
                     return 0;
                 }
-                $lastIdTrans = $this->db->lastInsertId();
 
 
-                $sql_in_pos ="INSERT INTO posrednia(id_oferta,id_transakcja) VALUES (:idOferta,:idTrans);";
-                $stmt = $this->db->prepare($sql_in_pos);
-                for($i = 0; $i <$data_place; $i++ )
-                {
-                    $stmt->bindParam(':idOferta', $data[$i]['id_oferta']);
-                    $stmt->bindParam(':idTrans', $lastIdTrans);
+                $data = [];
+                $data_place = 0;
 
-                    if( !$stmt->execute())
-                    {
-                        echo "Błąd przy aktualizacji";
+                if ($stmt->rowCount() > 0) {
+                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                        $data[$data_place]['id_oferta'] = $row['id_oferta'];
+                        $data_place++;
+                    }
+
+
+                    $sql_update_offer = "UPDATE oferta SET oferta.data_zakonczenia= :dataZ WHERE oferta.id_oferta = :idOferta;";
+                    $stmt = $this->db->prepare($sql_update_offer);
+                    for ($i = 0; $i < $data_place; $i++) {
+                        $stmt->bindParam(':dataZ', $time_now);
+                        $stmt->bindParam(':idOferta', $data[$i]['id_oferta']);
+
+                        if (!$stmt->execute()) {
+                            echo "Błąd przy aktualizacji2";
+                            $this->db->rollback();
+                            $this->DeleteKoszyk($id_uzyt);
+                            return 0;
+                        }
+                    }
+
+
+                    $sql_in = "insert into transakcja(id_kupujacego, kwota, data_transakcji) values(:idUzyt, :kwota, :dataZ);";
+                    $stmt = $this->db->prepare($sql_in);
+                    $stmt->bindParam(':dataZ', $time_now);
+                    $stmt->bindParam(':idUzyt', $id_uzyt);
+                    $stmt->bindParam(':kwota', $kwota);
+                    if (!$stmt->execute()) {
+                        echo "Błąd przy aktualizacji3";
                         $this->db->rollback();
+                        $this->DeleteKoszyk($id_uzyt);
                         return 0;
                     }
-                }
+                    $lastIdTrans = $this->db->lastInsertId();
 
-                echo json_encode($data);
-                $this->db->commit();
-                echo "Gratulację! Zakup przebiegł poprawnie.";
-                return true;
+
+                    $sql_in_pos = "INSERT INTO posrednia(id_oferta,id_transakcja) VALUES (:idOferta,:idTrans);";
+                    $stmt = $this->db->prepare($sql_in_pos);
+                    for ($i = 0; $i < $data_place; $i++) {
+                        $stmt->bindParam(':idOferta', $data[$i]['id_oferta']);
+                        $stmt->bindParam(':idTrans', $lastIdTrans);
+
+                        if (!$stmt->execute()) {
+                            echo "Błąd przy aktualizacji4";
+                            $this->db->rollback();
+                            $this->DeleteKoszyk($id_uzyt);
+                            return 0;
+                        }
+                    }
+
+
+                    $this->DeleteKoszyk($id_uzyt);
+
+//                    echo json_encode($data);
+                    $this->db->commit();
+                    echo 1;
+                    return true;
+                }
 
 
             } catch (PDOExecption $e) {
                 $this->db->rollback();
+                $this->DeleteKoszyk($id_uzyt);
                 print "Error!: " . $e->getMessage() . "</br>";
-                echo "no sory1";
+                echo "Coś poszło nie tak";
                 return false;
             }
         } else {
-            echo "no sory2";
+            echo "Sesja wygasła";
+
             return false;
         }
 
-        echo "no sory3";
+        echo "Twój koszyk jest pusty.";
+        $this->DeleteKoszyk($id_uzyt);
         return false;
     }
 
+
+    public function DeleteKoszyk($idUzyt){
+        $sql = "DELETE koszyk FROM\n"
+            . "koszyk \n"
+            . "left JOIN oferta ON koszyk.id_oferta = oferta.id_oferta\n"
+            . "WHERE oferta.data_zakonczenia is not NULL AND koszyk.id_uzyt=:idUzyt";
+
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(':idUzyt', $idUzyt);
+        if (!$stmt->execute()) {
+            echo "Błąd przy aktualizacji5";
+            $this->db->rollback();
+            return 0;
+        }
+        return true;
+
+    }
 
 }
 
