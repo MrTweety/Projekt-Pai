@@ -6,7 +6,7 @@
 <div class="container" style="margin-top: 80px;">
     <div class="card card-outline-secondary my-4">
 
-        <div class="card-header">Register an Account</div>
+        <div class="card-header">Zarejestruj swoje konto</div>
         <div class="card-body">
             <form id="RegisterForm">
                 <div class="form-group">
@@ -190,11 +190,11 @@
                 </div>
 
                 <div id="RegisterFormAlert"></div>
-                <a class="btn btn-primary btn-block" id="btn-register">Register</a>
+                <a class="btn btn-primary btn-block" id="btn-register">Zarejestruj</a>
             </form>
             <div class="text-center">
 
-                <a href="#" onclick="load_login_form()" id="load_login_form2" class="d-block small mt-3" >Login Page</a>
+                <a href="#" onclick="load_login_form()" id="load_login_form2" class="d-block small mt-3" >Strona logowania</a>
 <!--                <a class="d-block small" href="#">Forgot Password?</a>-->
             </div>
         </div>

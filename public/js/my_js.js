@@ -151,7 +151,7 @@ var build =
                         '                                            <div class="col-md-2 border-left h-100 ">'+
                         '                                                <ul class="list-unstyled">'+
                         '                                                    <li><h3>'+ Number(v.cena_netto).toLocaleString() +' zł '+'</h3></li>'+
-                        '                                                    <li class="text-secondary"><small>'+ v.wyswietlenia +' Reviews</small></li>'+
+                        '                                                    <li class="text-secondary"><small>'+ v.wyswietlenia +' Odsłon</small></li>'+
                         '                                                </ul>'+
                         '                                                <a href="/user/offer?oferta='+v.id_oferta+'" class="btn btn-outline-primary">Buy Now</a>'+
                         '                                            </div>'+
@@ -315,7 +315,7 @@ var build =
                         '                                            <div class="col-md-2 border-left h-100 ">'+
                         '                                                <ul class="list-unstyled">'+
                         '                                                    <li><h3>'+ Number(v.cena).toLocaleString() +' zł '+'</h3></li>'+
-                        '                                                    <li class="text-secondary"><small>'+ v.wyswietlenia +' Reviews</small></li>'+
+                        '                                                    <li class="text-secondary"><small>'+ v.wyswietlenia +' Odsłon</small></li>'+
                         '                                                    <li style="left: 0;"><br><a onclick="usun_z_koszyka('+v.id_oferta+','+Number(v.cena)+')" class="btn btn-success pull-right">Usuń z koszyka</a></li>'+
                         '                                                </ul>'+
                         '                                            </div>'+
