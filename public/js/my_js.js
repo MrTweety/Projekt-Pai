@@ -374,6 +374,100 @@ var build =
                 );
         },
 
+        buildListing_user: function(result, listing )
+        {
+            
+            listing.html('');
+            var count = 0;
+            var whole_cost = 0;
+            
+            if(result != '')
+            {
+                
+                $.each(result, function(k, v) {
+                    
+                    ++count;
+                    whole_cost += Number(v.cena);
+
+                    listing.append(
+
+                        '<div class ="listing_box" id ="oferta'+v.id_oferta+'" >'+
+                        '                        <div class="row mb-3">'+
+                        '                            <div class="col-md-12">'+
+                        '                                <div class="card">'+
+                        '                                    <div class="card-body">'+
+                        '                                        <div class="row">'+
+                        '                                            <div class="col-md-4">'+
+                        '<img src="'+ v.zdjecie + '"/>'+
+                        '                                            </div>'+
+                        '                                            <div class="col-md-6  card-body">'+
+                        '                                                <div class="list-title">'+
+                        '                                                    <ul class="list-inline list-unstyled">'+
+                        '                                                        <li class="list-inline-item"><a href="/user/offer?oferta='+v.id_oferta+'"><h4>'+ v.marka+' '+v.model +'</h4></a></li>'+
+                        '                                                    </ul>'+
+                        '                                                </div>'+
+                        '                                                <div class="list-location">'+
+                        '                                                    <a href="#"><i class="fa fa-map-marker"></i><small> '+ v.kraj+' '+v.data_zlozenia +'</small> </a>'+
+                        '                                                </div>'+
+                        '                                                <div class="list-descrip">'+
+                        '                                                    <small>'+v.opis.substring(0,137)+'...<br /><br />'+
+                        '                                                </div>'+
+                        '</small>'+
+                        ''+
+                        ''+
+                        '                                            </div>'+
+                        '                                            <div class="col-md-2 border-left h-100 ">'+
+                        '                                                <ul class="list-unstyled">'+
+                        '                                                    <li><h3>'+ Number(v.cena).toLocaleString() +' zł '+'</h3></li>'+
+                        '                                                </ul>'+
+                        '                                            </div>'+
+                        '                                        </div>'+
+                        '                                    </div>'+
+                        '                                </div>'+
+                        '                            </div>'+
+                        '                        </div>'+
+                        '                        </div>'
+
+                    );
+
+
+
+
+                });
+            }
+            else
+            {
+                listing.append(
+                        '                        <div class="row">'+
+                        '                            <div class="col">'+
+                        '                                <div class="card">'+
+                        '                                    <div class="card-body" style="text-align: center;">'+
+                        '                                       <div>Jeszcze nic nie kupiłeś.</div>'+                                        
+                        '                                    </div>'+
+                        '                                </div>'+
+                        '                            </div>'+
+                        '                        </div>'
+                )
+            }
+
+            if(result != '')
+            {
+                listing.append(
+                    '<div class="card" style="padding: 10px;">'+
+                        '<div class="d-flex justify-content-between">'+
+                        '    <div style="margin: 5px">Ilość kupionych produktów: <b id="ilosc">'+count+'</b></div>'+
+                        '    <div>'+
+                        '        <div class="pull-right" style="margin: 5px">'+
+                        '            Zapłaciłeś: <b id="koszt1">'+whole_cost.toLocaleString() +'</b><b>zł '+'</b>'+
+                        '             <div id="koszt2" style="display: none;">'+whole_cost+'</div'+
+                        '        </div>'+
+                    '       </div>'+
+                        '</div>'+
+                    '</div>'
+                    );
+            }
+        },
+
 
         
 

@@ -7,14 +7,6 @@
 
         <p class="footer-links">
             <a href="#">Strona główna</a>
-            ·
-            <a href="#">About</a>
-            ·
-            <a href="#">projects</a>
-            ·
-            <a href="#">Faq</a>
-            ·
-            <a href="#">Contact</a>
         </p>
 
         <p class="footer-company-name">Classic4you &copy; 2019</p>
@@ -43,7 +35,7 @@
     <div class="footer-right">
 
         <p class="footer-company-about">
-            <span>About the company</span>
+            <span>O firmie</span>
             Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
         </p>
 

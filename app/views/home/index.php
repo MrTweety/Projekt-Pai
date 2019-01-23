@@ -55,7 +55,7 @@
         <form id ="form_search" class="" method="GET" action="/user/search">
             <div class="form-row text-center">
                 <div class="form-group col-12">
-                    <a href="/user/search" class="link-dark"><h4><i class="fa fa-car"></i> Search Options</h4></a>
+                    <a href="/user/search" class="link-dark"><h4><i class="fa fa-car"></i> Opcje wyszukiwania </h4></a>
                 </div>
 
                 <div class="form-group col-md-6">
@@ -69,7 +69,7 @@
                 </div>
                 <div class="form-group col-md-12">
                     <button id="sub" type="submit" class="btn btn-info " >
-                        <span class="glyphicon glyphicon-search"></span> Search
+                        <span class="glyphicon glyphicon-search"></span> Szukaj
                     </button>
                 </div>
             </div>

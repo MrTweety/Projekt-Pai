@@ -13,15 +13,6 @@
                             class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Projects</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-            </li>
-            <li class="nav-item">
                 <a  id="sidebarToggle" class="btn btn btn-dark my-2 my-sm-0 mr-sm-2 " style="color: white; display: none;"><i class="fa fa-bars"></i>
                     Panel boczny</a>
             </li>
