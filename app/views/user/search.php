@@ -7,7 +7,7 @@
             <div class="row">
                 <div class=" col-sm-12  ">
 
-                    <h4><i class="fa fa-car"></i> Search Options</h4>
+                    <h4><i class="fa fa-car"></i> Opcje wyszukiwania</h4>
                 </div>
 
 
@@ -88,7 +88,7 @@
                 <div class="col-sm-12">
                     <!--                <button type="submit" class="btn btn-info ">-->
                     <a href="#" id="button_search" class="btn btn-info"><i class="fa fa-sign-in"></i> <span
-                                class="glyphicon glyphicon-search"></span> Search</a>
+                                class="glyphicon glyphicon-search"></span> Szukaj</a>
 
                     <!--                </button>-->
                 </div>

@@ -10,16 +10,6 @@
             <li class="nav-item active" id="home_page">
                 <a class="nav-link" href="/" ><i class='fa fa-home'></i> Strona główna <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/">About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/">Projects</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/">Contact</a>
-            </li>
-
         </ul>
 
         <form class="form-inline my-2 my-lg-0" style="z-index: 100 !important;">

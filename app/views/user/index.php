@@ -16,6 +16,12 @@
                     <span>Edytuj Profil</span>
                 </a>
             </li>
+            <li class="nav-item ">
+                <a class="nav-link " data-toggle="tab" href="#kupione">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span>Kupione</span>
+                </a>
+            </li>
         </ul>
 
     </div>
@@ -457,6 +463,52 @@
                 </div>
             </div>
 
+
+        </div>
+
+        <div id="kupione" class="tab-pane  dashboard"
+             style="height:auto; background-color: white; width: 100%!important;"><br>
+
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item" style="color: #66AAFF;">
+                    Użytkownik
+                </li>
+                <li class="breadcrumb-item ">Kupione</li>
+            </ol>
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="d-flex justify-content-center">
+                            <div id="listing">
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+
+                $(document).ready(function() 
+                {
+                    var cia  = "<?php if(isset($_COOKIE['id'])) echo $_COOKIE['id']; else echo -1; ?>";
+                        $.ajax({
+                                type: "POST",
+                                url: '../app/views/main/user_show_items.php',
+                                data: {id_sesja: cia},
+
+                                success: function(data)
+                                {
+                                build.buildListing_user(
+                                    jQuery.parseJSON(data),
+                                    $('#listing'),
+                                );
+                            }
+                        });  
+                });
+            </script>
 
         </div>
 
