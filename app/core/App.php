@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * userController: michalkabionek
- * Date: 15.12.2017
- * Time: 11:26
- */
 
 class App
 {
@@ -32,7 +26,7 @@ class App
                 $this->method = $url[1];
                 unset($url[1]);
             }else{ // default
-                $this->controller->redirect('/');
+                $this->controller->redirect('/'); //NOT PAGE
             }
         }
 
@@ -49,4 +43,5 @@ class App
             return explode('/', filter_var(rtrim($_GET['url'], '/'), FILTER_SANITIZE_URL));
         }
     }
+
 }

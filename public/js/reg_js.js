@@ -1,10 +1,11 @@
+
 $('#imie').blur(function () {
     var element = document.getElementById("imie");
-    if (element.value != '') {
+    if(element.value!='') {
         element.classList.remove("is-invalid");
         element.classList.add("is-valid");
 
-    } else {
+    }else{
         element.classList.add("is-invalid");
         element.classList.remove("is-valid");
     }
@@ -13,11 +14,11 @@ $('#imie').blur(function () {
 
 $('#nazwisko').blur(function () {
     var element = document.getElementById("nazwisko");
-    if (element.value != '') {
+    if(element.value!='') {
         element.classList.remove("is-invalid");
         element.classList.add("is-valid");
 
-    } else {
+    }else{
         element.classList.add("is-invalid");
         element.classList.remove("is-valid");
     }
@@ -25,9 +26,10 @@ $('#nazwisko').blur(function () {
 });
 
 
+
 $('#login').blur(function () {
     var element = document.getElementById("login");
-    if ($("#login")[0].checkValidity()) {
+    if($("#login")[0].checkValidity()) {
 
         $.ajax({
             type: "POST",
@@ -41,20 +43,21 @@ $('#login').blur(function () {
 
                 if (parseInt(data) == 1) {
                     element.classList.remove("is-invalid");
-                    element.classList.add("is-valid");
-                } else {
+                    element.classList.add("is-valid");}
+
+                else{
 
                     document.getElementById("Login-invalid-feedback").innerHTML = "Login jest zajety.";
                     element.classList.add("is-invalid");
-                    element.classList.remove("is-valid");
-                }
+                    element.classList.remove("is-valid");}
+
 
 
             }
         });
 
 
-    } else {
+    }else{
         element.classList.add("is-invalid");
         element.classList.remove("is-valid");
     }
@@ -71,9 +74,11 @@ $('#plec').blur(function () {
 });
 
 
+
+
 $('#inputEmail').blur(function () {
     var element = document.getElementById("inputEmail");
-    if ($("#inputEmail")[0].checkValidity()) {
+    if($("#inputEmail")[0].checkValidity()) {
 
         $.ajax({
             type: "POST",
@@ -87,20 +92,21 @@ $('#inputEmail').blur(function () {
 
                 if (parseInt(data) == 1) {
                     element.classList.remove("is-invalid");
-                    element.classList.add("is-valid");
-                } else {
+                    element.classList.add("is-valid");}
+
+                else{
 
                     document.getElementById("Email-invalid-feedback").innerHTML = "Email jest zajety.";
                     element.classList.add("is-invalid");
-                    element.classList.remove("is-valid");
-                }
+                    element.classList.remove("is-valid");}
+
 
 
             }
         });
 
 
-    } else {
+    }else{
         element.classList.add("is-invalid");
         element.classList.remove("is-valid");
     }
@@ -108,12 +114,16 @@ $('#inputEmail').blur(function () {
 });
 
 
+
+
+
+
 $('#inputPassword').blur(function () {
     var element = document.getElementById("inputPassword");
-    if ($("#inputPassword")[0].checkValidity()) {
+    if($("#inputPassword")[0].checkValidity()) {
         element.classList.remove("is-invalid");
         element.classList.add("is-valid");
-    } else {
+    }else{
         element.classList.add("is-invalid");
         element.classList.remove("is-valid");
     }
@@ -125,27 +135,31 @@ $('#confirmPassword').blur(function () {
     var element = document.getElementById("inputPassword");
     var element2 = document.getElementById("confirmPassword");
 
-    if (element.value == element2.value) {
+    if(element.value ==element2.value ) {
         element2.classList.remove("is-invalid");
         element2.classList.add("is-valid");
-    } else {
+    }else{
         element2.classList.add("is-invalid");
         element2.classList.remove("is-valid");
     }
 });
 
 
+
+
 $('#inputEmail').blur(function () {
     var element = document.getElementById("inputEmail");
-    if ($("#inputEmail")[0].checkValidity()) {
+    if($("#inputEmail")[0].checkValidity()) {
         element.classList.remove("is-invalid");
         element.classList.add("is-valid");
-    } else {
+    }else{
         element.classList.add("is-invalid");
         element.classList.remove("is-valid");
     }
 
 });
+
+
 
 
 $('#RodzajK').change(function () {
@@ -164,10 +178,10 @@ $('#RodzajK').change(function () {
 
 $('#NIP').blur(function () {
     var element = document.getElementById("NIP");
-    if ($("#NIP")[0].checkValidity()) {
+    if($("#NIP")[0].checkValidity()) {
         element.classList.remove("is-invalid");
         element.classList.add("is-valid");
-    } else {
+    }else{
         element.classList.add("is-invalid");
         element.classList.remove("is-valid");
     }
@@ -176,11 +190,11 @@ $('#NIP').blur(function () {
 
 $('#nazwa_firmy').blur(function () {
     var element = document.getElementById("nazwa_firmy");
-    if (element.value != '') {
+    if(element.value!='') {
         element.classList.remove("is-invalid");
         element.classList.add("is-valid");
 
-    } else {
+    }else{
         element.classList.add("is-invalid");
         element.classList.remove("is-valid");
     }
@@ -189,11 +203,11 @@ $('#nazwa_firmy').blur(function () {
 
 $('#ulica').blur(function () {
     var element = document.getElementById("ulica");
-    if (element.value != '') {
+    if(element.value!='') {
         element.classList.remove("is-invalid");
         element.classList.add("is-valid");
 
-    } else {
+    }else{
         element.classList.add("is-invalid");
         element.classList.remove("is-valid");
     }
@@ -202,11 +216,11 @@ $('#ulica').blur(function () {
 
 $('#miejscowosc').blur(function () {
     var element = document.getElementById("miejscowosc");
-    if (element.value != '') {
+    if(element.value!='') {
         element.classList.remove("is-invalid");
         element.classList.add("is-valid");
 
-    } else {
+    }else{
         element.classList.add("is-invalid");
         element.classList.remove("is-valid");
     }
@@ -216,16 +230,17 @@ $('#miejscowosc').blur(function () {
 
 $('#nrDomu').blur(function () {
     var element = document.getElementById("nrDomu");
-    if (element.value != '') {
+    if(element.value!='') {
         element.classList.remove("is-invalid");
         element.classList.add("is-valid");
 
-    } else {
+    }else{
         element.classList.add("is-invalid");
         element.classList.remove("is-valid");
     }
 
 });
+
 
 
 $('#nrLok').blur(function () {
@@ -234,12 +249,15 @@ $('#nrLok').blur(function () {
 });
 
 
+
+
+
 $('#zipcode').blur(function () {
     var element = document.getElementById("zipcode");
-    if ($("#zipcode")[0].checkValidity()) {
+    if($("#zipcode")[0].checkValidity()) {
         element.classList.remove("is-invalid");
         element.classList.add("is-valid");
-    } else {
+    }else{
         element.classList.add("is-invalid");
         element.classList.remove("is-valid");
     }
@@ -247,7 +265,9 @@ $('#zipcode').blur(function () {
 });
 
 
-function hashCodeVerbose(s) {
+
+
+ function hashCodeVerbose (s) {
     var hash = 0,
         i, char;
     if (s.length == 0) return hash;
@@ -260,15 +280,21 @@ function hashCodeVerbose(s) {
 }
 
 
+
+
 $('#btn-register').click(function () {
 
 
-    var confirmPassword = hashCodeVerbose($('#confirmPassword').val());
-
-    var inputPassword = hashCodeVerbose($('#inputPassword').val());
 
 
-    if ($("#RegisterForm")[0].checkValidity()) {
+
+   var confirmPassword = hashCodeVerbose($('#confirmPassword').val());
+
+   var inputPassword = hashCodeVerbose($('#inputPassword').val());
+
+
+
+    if($("#RegisterForm")[0].checkValidity()) {
         $.ajax({
             type: "POST",
             url: '/user/create',
@@ -276,7 +302,7 @@ $('#btn-register').click(function () {
                 login: $('#login').val(),
                 cpassword: confirmPassword,
                 password: inputPassword,
-                plec: $('#plec').val(),
+                plec:$('#plec').val(),
                 imie: $('#imie').val(),
                 nazwisko: $('#nazwisko').val(),
                 email: $('#inputEmail').val(),
@@ -307,7 +333,7 @@ $('#btn-register').click(function () {
             }
         });
 
-    } else {
+    }else {
         $("#RegisterFormAlert").html('<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>' +
             '  <strong>Warning! </strong>' + 'Wpisz poprawne dane!' +
             '</div>');

@@ -1,11 +1,12 @@
-$(document).ready(function () {
+
+$(document).ready(function(){
     "use strict";
 
-    var cookieAlert = document.getElementById("cookiealert");
+    var cookieAlert = document.getElementById("cookiealert")
     var acceptCookies = document.getElementById("acceptcookies");
 
     if (!cookieAlert) {
-        return;
+       return;
     }
 
     cookieAlert.offsetHeight;

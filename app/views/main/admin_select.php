@@ -5,12 +5,12 @@ $db_user = "root";
 $db_password = "";
 $db_name = "mgaczorek";
 $link = mysqli_connect($host, $db_user, $db_password, $db_name) or die();
-$link->query('SET NAMES utf8');
-$link->query('SET CHARACTER_SET utf8_unicode_ci');
+$link -> query ('SET NAMES utf8');
+$link -> query ('SET CHARACTER_SET utf8_unicode_ci');
 $data = [];
 
 
-if ($_POST["select"] == "admin") {
+if($_POST["select"] == "admin") {
     $sql = "SELECT\n"
         . "uzytkownik.id_uzyt,\n"
         . "uzytkownik.imie,\n"
@@ -42,7 +42,7 @@ if ($_POST["select"] == "admin") {
             $data[$i]['email'] = $row['email'];
             $data[$i]['login'] = $row['login'];
             $data[$i]['typKonta'] = $row['typ_konta'];
-            $data[$i]['usun'] = '<button type="button" class="btn btn-danger " value="' . $row['id_uzyt'] . ' "onclick="myFunction2(' . $row['id_uzyt'] . ',3)">Usuń</button>';//'<a class="btn btn-success" style="margin:2px;" href = "?edit='.$row['id_uzyt'].'">edit</a>'.'<a class="btn btn-danger" style="margin:2px;" href = "?usun='.$row['id_uzyt'].'">unuń</a>';
+            $data[$i]['usun'] = '<button type="button" class="btn btn-danger " value="'.$row['id_uzyt'].' "onclick="myFunction2('.$row['id_uzyt'].',3)">Usuń</button>';//'<a class="btn btn-success" style="margin:2px;" href = "?edit='.$row['id_uzyt'].'">edit</a>'.'<a class="btn btn-danger" style="margin:2px;" href = "?usun='.$row['id_uzyt'].'">unuń</a>';
 //        $data[$i]['model'] = $row['model_nazwa'];
 //        $data[$i]['marka'] = $row['marka_nazwa'];
 //        $data[$i]['opis'] = $row['opis'];
@@ -52,7 +52,7 @@ if ($_POST["select"] == "admin") {
         echo json_encode(['data' => $data]);
     }
 
-} elseif ($_POST["select"] == "oferta") {
+}elseif ($_POST["select"] == "oferta"){
 
     $sql = "SELECT\n"
 
@@ -79,7 +79,7 @@ if ($_POST["select"] == "admin") {
         . "LEFT JOIN Cechy ON Cechy_somochod.id_cechy = Cechy.id_cechy\n"
         . "LEFT JOIN Kraj_pochodzenia ON Samochod.id_kraj = Kraj_pochodzenia.id_kraj\n"
         . "WHERE oferta.data_zakonczenia IS NULL\n"
-        . "group by Oferta.id_oferta\n";
+    . "group by Oferta.id_oferta\n";
     $result = $link->query($sql);
 
     if (mysqli_num_rows($result) > 0) {
@@ -89,21 +89,22 @@ if ($_POST["select"] == "admin") {
             $data[$i]['id_oferta'] = $row['id_oferta'];
             $data[$i]['cena_netto'] = $row['cena_netto'];
             $data[$i]['data_zlozenia'] = $row['data_zlozenia'];
-            $data[$i]['imgg'] = '<img src="../../../public/img/' . $row['img'] . '"  style="width:150px;"/>';
-            $data[$i]['imga'] = $row['img'];
+            $data[$i]['imgg'] = '<img src="../../../public/img/'.$row['img'].'"  style="width:150px;"/>';
+            $data[$i]['imga'] = $row['img'] ;
             $data[$i]['wyswietlenia'] = $row['wyswietlenia'];
             $data[$i]['kraj'] = $row['pl'];
             $data[$i]['model'] = $row['model_nazwa'];
             $data[$i]['marka'] = $row['marka_nazwa'];
-            $data[$i]['opis'] = '<p style="width: 300px;">' . $row['opis'] . '</p>';
-            $data[$i]['cechy'] = '<p style="width: 300px;">' . $row['Result'] . '</p>';
-            $data[$i]['usun'] = '<button type="button" class="btn btn-danger " value="' . $row['id_oferta'] . ' "onclick="myFunction(' . $row['id_oferta'] . ',2)">Usuń</button>';//'<a class="btn btn-success" style="margin:2px;" href = "?edit='.$row['id_oferta'].'">edit</a>'.'<a class="btn btn-danger" style="margin:2px;" href = "?usun='.$row['id_oferta'].'">unuń</a>';
+            $data[$i]['opis'] = '<p style="width: 300px;">'.$row['opis'].'</p>';
+            $data[$i]['cechy'] = '<p style="width: 300px;">'.$row['Result'].'</p>';
+            $data[$i]['usun'] = '<button type="button" class="btn btn-danger " value="'.$row['id_oferta'].' "onclick="myFunction('.$row['id_oferta'].',2)">Usuń</button>';//'<a class="btn btn-success" style="margin:2px;" href = "?edit='.$row['id_oferta'].'">edit</a>'.'<a class="btn btn-danger" style="margin:2px;" href = "?usun='.$row['id_oferta'].'">unuń</a>';
 
             $i++;
         }
 
         echo json_encode(['data' => $data]);
     }
+
 
 
 }

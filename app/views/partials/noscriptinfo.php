@@ -1,3 +1,5 @@
+
+
 <div id="noscript-description">
     <div id="noscript" style="text-align: center; color: #a53221; font-size: 40px">Jak włączyć obsługę JavaScript w
         przeglądarce?

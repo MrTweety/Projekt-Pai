@@ -1,288 +1,138 @@
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <div id="indicators">
-        <ol class="carousel-indicators" >
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
-        </ol>
-    </div>
+<div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel" style="margin-top: 56px" >
+    <!--<div id="myCarousel" class="carousel slide " data-ride="carousel" style="margin-top: 56px" >-->
+    <ul class="carousel-indicators" id="indexToSlider">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ul>
 
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
+    <div class="carousel-inner" id="indexCarousel" >
 
-        <div class="item active">
-            <img src="https://placehold.it/1200x400?text=IMAGE" alt="Image">
-            <div class="carousel-caption">
-                <h3>Zdjęcie 1</h3>
-                <p>Money Money.</p>
-            </div>
-        </div>
 
-        <div class="item">
-            <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
-            <div class="carousel-caption">
-                <h3>Zdjęcie 2</h3>
-                <p>Lorem ipsum...</p>
-            </div>
-        </div>
-
-        <div class="item">
-            <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
-            <div class="carousel-caption">
-                <h3>Zdjęcie 3</h3>
-                <p>Lorem ipsum...</p>
-            </div>
-        </div>
-
-        <div class="item">
-            <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
-            <div class="carousel-caption">
-                <h3>Zdjęcie 4</h3>
-                <p>Lorem ipsum...</p>
-            </div>
-        </div>
 
     </div>
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" title="poprzednia oferta">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
+    <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
     </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next" title="następna oferta">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
+    <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
     </a>
 </div>
+
 
 <div id="log_form" class="modal"></div>
 
 
-<div class=" bestCar ">
+<div class="bestCar ">
 
-    <h3>What We Do</h3><br>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6 col-md-5 col-md-offset-1">
-                <figure>
-                    <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                    <figcaption><p>Tekst</p></figcaption>
-                </figure>
-            </div>
-
-            <div class="col-sm-6 col-md-5">
-
-                <figure>
-                    <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                    <figcaption><p>Tekst</p></figcaption>
-                </figure>
-
-            </div>
-
-            <div class="col-sm-6 col-md-4">
-
-                <figure>
-                    <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                    <figcaption><p>Tekst</p></figcaption>
-                </figure>
-
-            </div>
-
-            <div class="col-sm-6 col-md-4">
-
-                <figure>
-                    <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                    <figcaption><p>Tekst</p></figcaption>
-                </figure>
-
+    <section class="gallery-block compact-gallery">
+        <div class="container">
+            <div class="heading">
+                <h2>Proponowane Oferty:</h2>
             </div>
 
 
-            <div class="col-sm-6 col-md-4">
-
-                <figure>
-                    <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                    <figcaption><p>Tekst</p></figcaption>
-                </figure>
-
-            </div>
-
-            <div class="col-sm-6 col-md-4">
-
-                <figure>
-                    <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                    <figcaption><p>Tekst</p></figcaption>
-                </figure>
-
-            </div>
-
-            <div class="col-sm-6 col-md-4">
-
-                <figure>
-                    <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                    <figcaption><p>Tekst</p></figcaption>
-                </figure>
-
-            </div>
-
-            <div class="col-sm-6 col-md-4">
-
-                <figure>
-                    <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                    <figcaption><p>Tekst</p></figcaption>
-                </figure>
-
-            </div>
-
-            <div class="col-sm-6 col-md-3">
-
-                <figure>
-                    <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                    <figcaption><p>Tekst</p></figcaption>
-                </figure>
-
-            </div>
-
-            <div class="col-sm-6 col-md-3">
-
-                <figure>
-                    <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                    <figcaption><p>Tekst</p></figcaption>
-                </figure>
-
-            </div>
-
-            <div class="col-sm-6 col-md-3">
-
-                <figure>
-                    <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                    <figcaption><p>Tekst</p></figcaption>
-                </figure>
-
-            </div>
-
-            <div class="col-sm-6 col-md-3">
-
-                <figure>
-                    <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                    <figcaption><p>Tekst</p></figcaption>
-                </figure>
-
-            </div>
-
-            <div class="col-sm-6 col-md-3">
-
-                <figure>
-                    <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                    <figcaption><p>Tekst</p></figcaption>
-                </figure>
-
-            </div>
-
-            <div class="col-sm-6 col-md-3">
-
-                <figure>
-                    <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                    <figcaption><p>Tekst</p></figcaption>
-                </figure>
-
-            </div>
-
-            <div class="col-sm-6 col-md-3">
-
-                <figure>
-                    <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                    <figcaption><p>Tekst</p></figcaption>
-                </figure>
-
-            </div>
-
-            <div class="col-sm-6 col-md-3">
-
-                <figure>
-                    <a href="#"><img src="https://placehold.it/150x80?text=IMAGE" class="img-fluid" alt="Image"></a>
-                    <figcaption><p>Tekst</p></figcaption>
-                </figure>
+            <div class="row no-gutters" id="indexOffer">
 
             </div>
 
         </div>
-    </div>
+    </section>
+
+
+
+
 </div>
 
 <br />
 
 
-<div class = "search" >
+
+<div class = "search bg-white" >
     <div class="container">
-        <form class="container-fluid text-center" action="../../../index.php">
 
-            <div class="row card-body py-2 mb-3 bg-dark twhite">
-                <a href="#" class="link-dark"><h4><i class="fa fa-car"></i> Search Options</h4></a>
+
+        <form id ="form_search" class="" method="GET" action="/user/search">
+            <div class="form-row text-center">
+                <div class="form-group col-12">
+                    <a href="/user/search" class="link-dark"><h4><i class="fa fa-car"></i> Opcje wyszukiwania </h4></a>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="marka">Marka Pojazdu</label>
+                    <select id="marka" class="form-control" name="marka"
+                    ></select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="model">Model Pojazdu</label>
+                    <select id="model" class="form-control" name="model" ></select>
+                </div>
+                <div class="form-group col-md-12">
+                    <button id="sub" type="submit" class="btn btn-info " >
+                        <span class="glyphicon glyphicon-search"></span> Szukaj
+                    </button>
+                </div>
             </div>
-
-            <div class="form-group col-sm-6">
-                <label for="mark">Marka Pojazdu</label>
-                <select id="mark" class="form-control" name="mark">
-
-                </select>
-            </div>
-
-            <div class="form-group col-sm-6">
-                <label for="model">Model Pojazdu</label>
-                <select id="model" class="form-control" name="model">
-
-                </select>
-            </div>
-
-
-
-
-            <div class="form-group row py-2 mb-3">
-                <button type="button" class="btn btn-info ">
-                    <span class="glyphicon glyphicon-search"></span> Search
-                </button>
-            </div>
-
         </form>
     </div>
 </div>
 
-
-
-<br />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <script>
 
+    $(document).ready(function() {
 
+        $.ajax({
+            type: "get",
+            url: 'app/views/main/search_easy.php',
+            data:{page:"index"},
 
-    $('#mark').ready(function() {
+            success: function(data)
+            {
+                //alert(window.location.pathname );
+
+                build.buildIndexOffer(
+                    jQuery.parseJSON(data),
+                    $('#indexOffer'),
+
+                );
+            }
+        });
+
+    });
+
+    $(document).ready(function() {
 
         $.ajax({
             type: "POST",
-            url: 'search_marka.php',
+            url: 'app/views/main/slider.php',
+
+            success: function(data)
+            {
+                //alert(window.location.pathname );
+
+                build.buildIndexSlider(
+                    jQuery.parseJSON(data),
+                    $('#indexCarousel'),
+
+                );
+            }
+        });
+
+    });
+
+
+    $('#marka').ready(function() {
+
+        $.ajax({
+            type: "POST",
+            url: 'app/views/main/search_select.php',
+            data:{select:"marka"},
 
             success: function(data)
             {
                 helpers.buildDropdown(
                     jQuery.parseJSON(data),
-                    $('#mark'),
+                    $('#marka'),
                     'Marka Pojazdu'
 
                 );
@@ -295,7 +145,8 @@
 
         $.ajax({
             type: "POST",
-            url: 'search_model.php',
+            url: 'app/views/main/search_select.php',
+            data:{select:"model"},
 
             success: function(data)
             {
@@ -311,13 +162,13 @@
     });
 
 
-    $('#mark').change(function() {
+    $('#marka').change(function() {
 
 
         $.ajax({
             type: "POST",
-            url: 'search_model.php',
-            data: {marka :$('#mark').val()},
+            url: 'app/views/main/search_select.php',
+            data: {marka :$('#marka').val(), select:"model"},
 
             success: function(data)
             {
@@ -327,39 +178,24 @@
                     'Model Pojazdu'
 
                 );
-            }
+            },
+            complete: function() {}
         });
 
     });
 
-
-
-
-
-    var helpers =
-        {
-            buildDropdown: function(result, dropdown, emptyMessage)
-            {
-                // Remove current options
-                dropdown.html('');
-                // Add the empty option with the empty message
-                dropdown.append('<option value="-1">' + emptyMessage + '</option>');
-                // Check result isnt empty
-                if(result != '')
-                {
-                    // Loop through each of the results and append the option to the dropdown
-                    $.each(result, function(k, v) {
-                        dropdown.append('<option value="' + v.id_tab + '">' + v.name_tab + '</option>');
-                    });
-                }
-            }
-        }
-
 </script>
 
 
+<script>
+
+    $('.carousel').carousel({
+        interval: 3000
+    })
 
 
+    $( document ).ajaxComplete(function() {
+        baguetteBox.run('.compact-gallery', { animation: 'slideIn'});
+    });
 
-
-
+</script>

@@ -1,35 +1,39 @@
+
 /* The company logo */
 
-.logo {
+.logo
+{
     text-align: center;
     font: bold 16px sans-serif;
+} 
+
+.logo h3{
+	color:  #ffffff;
+	font: normal 36px 'Cookie', cursive;
+	margin: 0;
 }
 
-.logo h3 {
-    color: #ffffff;
-    font: normal 36px 'Cookie', cursive;
-    margin: 0;
-}
-
-.logo h3 span {
-    color: #5383d3;
+.logo h3 span{
+	color:  #5383d3;
 }
 
 
-.logo a {
-    display: inline-block;
-    line-height: 1.8;
-    text-decoration: none;
-    color: inherit;
+.logo a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
 }
 
-#buy_button {
-    background-color: #007bff;
-    color: #ffffff;
-    text-align: center;
-    z-index: 1;
+#buy_button
+{
+	background-color: #007bff;
+	color: #ffffff;
+	text-align: center;
+	z-index: 1;
 }
 
-#buy_button:hover {
-    background-color: #006aee;
+#buy_button:hover
+{
+	background-color: #006aee;
 }
