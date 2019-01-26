@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40583a97-bec7-44ec-862b-7037cc11a83b" name="Default" comment="edit buy">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/main/add_to_cart.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/main/admin_add.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/main/admin_delete.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/main/admin_select.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/main/item.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/main/user_show_items.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/partials/nav_admin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/partials/nav_user.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/partials/noscript.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/partials/noscriptinfo.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,35 +34,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/user/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-397">
-              <caret line="62" selection-start-line="62" selection-end-line="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/user/register.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="50" selection-start-line="50" selection-end-line="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1587">
-              <caret line="47" selection-start-line="47" selection-end-line="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -256,17 +237,6 @@
             <path>
               <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
               <item name="htdocs" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="htdocs" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
-              <item name="javascripts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="htdocs" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -367,13 +337,6 @@
       <workItem from="1546612011464" duration="13429000" />
       <workItem from="1546687982987" duration="13021000" />
       <workItem from="1546715314453" duration="22909000" />
-    </task>
-    <task id="LOCAL-00006" summary="4x4">
-      <created>1545948937801</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1545948937801</updated>
     </task>
     <task id="LOCAL-00007" summary="4x4">
       <created>1545950163569</created>
@@ -711,7 +674,14 @@
       <option name="project" value="LOCAL" />
       <updated>1548497427385</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="edit buy">
+      <created>1548497493979</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1548497493979</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -735,7 +705,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="418944000" />
+    <option name="totallyTimeSpent" value="419244000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -752,11 +722,11 @@
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.15831557" />
       <window_info id="Structure" order="2" weight="0.24962178" />
-      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.50053304" side_tool="true" weight="0.32502708" />
+      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.50053304" side_tool="true" weight="0.32719395" />
       <window_info anchor="bottom" id="Version Control" order="1" sideWeight="0.49946696" weight="0.2112676" />
       <window_info anchor="bottom" id="Terminal" order="2" weight="0.32827735" />
       <window_info anchor="bottom" id="Message" order="3" />
-      <window_info anchor="bottom" id="Find" order="4" weight="0.32719395" />
+      <window_info anchor="bottom" id="Find" order="4" sideWeight="0.49946696" visible="true" weight="0.32719395" />
       <window_info anchor="bottom" id="Run" order="5" weight="0.32827735" />
       <window_info anchor="bottom" id="Debug" order="6" weight="0.39934355" />
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
@@ -977,13 +947,6 @@
     <entry file="file://$PROJECT_DIR$/app/views/main/item.php" />
     <entry file="file://$PROJECT_DIR$/app/views/main/admin_delete.php" />
     <entry file="file://$PROJECT_DIR$/app/models/Order.php" />
-    <entry file="file://$PROJECT_DIR$/app/models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1587">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/OrderController.php" />
     <entry file="file://$PROJECT_DIR$/app/views/user/cart.php" />
     <entry file="file://$PROJECT_DIR$/app/views/user/login.php">
@@ -1034,13 +997,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-397">
-          <caret line="62" selection-start-line="62" selection-end-line="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dashboard/javascripts/all.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="677">
@@ -1080,8 +1036,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user/register.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
+        <state relative-caret-position="763">
           <caret line="50" selection-start-line="50" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-991">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
+          <folding>
+            <element signature="e#6#86#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
