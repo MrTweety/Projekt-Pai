@@ -170,8 +170,10 @@
             data: {id_oferta: ofer},
             
             success: function (data) {
-                if(data!=1)
-                    document.getElementById("buy_button").style.display ='none';
+                if(data!=1) {
+                    document.getElementById("DivBuyButton").style.display = 'none';
+                    document.getElementById("DivBuyButton").innerText = '';
+                }
 
             }
         });
