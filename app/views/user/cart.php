@@ -20,6 +20,7 @@
 
 $(document).ready(function() {
     var cia  = "<?php if(isset($_COOKIE['id'])) echo $_COOKIE['id']; else echo -1; ?>";
+
     $.ajax({
             type: "POST",
             url: '../app/views/main/cart_show_items.php',
@@ -40,7 +41,7 @@ function usun_z_koszyka(id,cena)
 {
     var txt = 0;
     var oferta ="oferta"+id;
-    
+    var cia  = "<?php if(isset($_COOKIE['id'])) echo $_COOKIE['id']; else echo -1; ?>";
 
     
     var koszt = document.getElementById("koszt2").innerHTML;
@@ -49,7 +50,7 @@ function usun_z_koszyka(id,cena)
     $.ajax({
         type: "POST",
         url: '../app/views/main/cart_delete.php',
-        data: {id_oferta: id},
+        data: {id_oferta: id, id_sesja: cia},
 
         success: function (data) 
         {

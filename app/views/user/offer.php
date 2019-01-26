@@ -19,7 +19,7 @@
                             <img class="d-block w-100 zdjecie" src="http://placehold.it/900x400" alt="First slide">
                         </div>
                         <div class="carousel-item">
-                             <img class="d-block w-100 zdjecie" src="http://placehold.it/900x400" alt="Second slide">
+                            <img class="d-block w-100 zdjecie" src="http://placehold.it/900x400" alt="Second slide">
                         </div>
                         <div class="carousel-item">
                             <img class="d-block w-100 zdjecie" src="http://placehold.it/900x400" alt="Third slide">
@@ -45,9 +45,9 @@
                     <div class="row justify-content-end">
                         <p>
                             Ilość wyświetleń:
-                            <p id="ilosc_wyswietlen">
-                                liczba
-                            </p>
+                        <p id="ilosc_wyswietlen">
+                            liczba
+                        </p>
                         </p>
                     </div>
                 </div>
@@ -63,43 +63,48 @@
                         <div id="kraj">Kraj</div>
                     </div>
                     <div id="offers">
+                    </div>
                 </div>
-            </div>
-        </div><!-- /.card -->
-    </div><!-- /.col-lg-9 -->
+            </div><!-- /.card -->
+        </div><!-- /.col-lg-9 -->
 
 
-    <div class="col-lg-3">
-        <div class="sticky-top" style="z-index: 1">
-            <br><br>
-            <h1 class="my-4"> <div class="logo"> <a href="index.php"><h3>Classic<span>4you.eu</span></h3></a> </div> </h1>
-            <div class="list-group">
-                <a onclick="add_to_cart()" class="list-group-item btn btn-success" id="buy_button"> <i class="fa fa-shopping-cart" style="text-align: left; font-size: 25px;"></i> Dodaj do koszyka</a>
-            </div>
-            <div id="buy_alert" class="alert alert-danger alert-dismissible my_alert">
-                <div class="row">
-                    <div class="col-12"><strong>Uwaga!</strong> Musisz być zalogowany aby dodawać produkty do koszyka.</div>
+        <div class="col-lg-3">
+            <div class="sticky-top" style="z-index: 1">
+                <br><br>
+                <h1 class="my-4">
+                    <div class="logo"><a href="index.php"><h3>Classic<span>4you.eu</span></h3></a></div>
+                </h1>
+                <div class="list-group" id="DivBuyButton">
+                    <a onclick="add_to_cart()" class="list-group-item btn btn-success" id="buy_button"> <i
+                                class="fa fa-shopping-cart" style="text-align: left; font-size: 25px;"></i> Dodaj do
+                        koszyka</a>
+                </div>
+                <div id="buy_alert" class="alert alert-danger alert-dismissible my_alert">
+                    <div class="row">
+                        <div class="col-12"><strong>Uwaga!</strong> Musisz być zalogowany aby dodawać produkty do
+                            koszyka.
+                        </div>
+                    </div>
+                </div>
+                <div id="feedback_alert" class="alert alert-danger alert-dismissible my_alert">
+                    <div class="row">
+                        <div class="col-12" id="feedback_alert_text"></div>
+                    </div>
                 </div>
             </div>
-            <div id="feedback_alert" class="alert alert-danger alert-dismissible my_alert">
-                <div class="row">
-                    <div class="col-12" id="feedback_alert_text"></div>
-                </div>
-            </div>
+            <!-- /.col-lg-3 -->
+            <!--        <div class="sticky-top" style="z-index: 1">-->
+            <!--            <div id="buy_alert" class="alert alert-danger alert-dismissible">-->
+            <!--                <div class="row">-->
+            <!--                    <div class="col-12"><strong>Uwaga!</strong> Musisz być zalogowany aby dodawać produkty do koszyka.</div>-->
+            <!--                </div>-->
+            <!--            </div>-->
+            <!--        </div>-->
         </div>
-    <!-- /.col-lg-3 -->
-<!--        <div class="sticky-top" style="z-index: 1">-->
-<!--            <div id="buy_alert" class="alert alert-danger alert-dismissible">-->
-<!--                <div class="row">-->
-<!--                    <div class="col-12"><strong>Uwaga!</strong> Musisz być zalogowany aby dodawać produkty do koszyka.</div>-->
-<!--                </div>-->  
-<!--            </div>-->
-<!--        </div>-->
-    </div>
     </div>
 </div>
 <!-- /.container -->
-
 
 
 <br><br>
@@ -115,153 +120,153 @@
 </section>
 
 
-
-
-
 <script>
 
-var insert =
-{
-    data :function(resoult,place)
-    {
-        if(resoult != '')
+    var insert =
         {
-            document.getElementById(place).innerHTML = resoult;
-        }
-
-    },
-
-    photo :function(resoult,place)
-    {
-        if(resoult != '')
-        {
-            document.getElementsByClassName(place)[0].src = resoult;
-            document.getElementsByClassName(place)[1].src = resoult;
-            document.getElementsByClassName(place)[2].src = resoult;
-        }
-
-    },
-
-    buildOffer: function(result, listing)
-        {
-            // Remove current options
-            listing.html('');
-            var size = Object.keys(result).length;
-            if(result != '')
-            {
-                for(var x = 1; x<=size; x++)
-                {
-                    listing.append(
-                        '<hr>'+
-                        '<div class="d-flex justify-content-between">'+
-                            '<h4>'+ result[x].a +': '+'</h4>'+
-                            '<div >' + result[x].b +'</div>'+
-                        '</div>'
-
-                    );
+            data: function (resoult, place) {
+                if (resoult != '') {
+                    document.getElementById(place).innerHTML = resoult;
                 }
 
+            },
+
+            photo: function (resoult, place) {
+                if (resoult != '') {
+                    document.getElementsByClassName(place)[0].src = resoult;
+                    document.getElementsByClassName(place)[1].src = resoult;
+                    document.getElementsByClassName(place)[2].src = resoult;
+                }
+
+            },
+
+            buildOffer: function (result, listing) {
+                // Remove current options
+                listing.html('');
+                var size = Object.keys(result).length;
+                if (result != '') {
+                    for (var x = 1; x <= size; x++) {
+                        listing.append(
+                            '<hr>' +
+                            '<div class="d-flex justify-content-between">' +
+                            '<h4>' + result[x].a + ': ' + '</h4>' +
+                            '<div >' + result[x].b + '</div>' +
+                            '</div>'
+                        );
+                    }
+
+                }
             }
         }
-}
+
+    // document.getElementById("DivBuyButton").style.display ='none';
+    var ofer = <?php if (isset($_GET['oferta'])) echo $_GET['oferta']; else echo -1;  ?>;
 
 
-var ofer = <?php if(isset( $_GET['oferta'])) echo $_GET['oferta']; else echo -1;  ?>;
+    $(document).ready(function () {
+        $.ajax({
+            type: "POST",
+            url: '../app/views/main/buyButton.php',
+            data: {id_oferta: ofer},
+            
+            success: function (data) {
+                if(data!=1)
+                    document.getElementById("buy_button").style.display ='none';
 
-$(document).ready(function() {
-$.ajax({
-    type: "POST",
-    url: '../app/views/main/item.php',
-    data: {id_oferta: ofer},
-
-
-    success: function(data)
-    {
-        // alert(data);
-        re = jQuery.parseJSON(data);
-
-        var nazwa =' '+ re[0].marka +' '+re[0].model;
-        var cena = Number(re[0].cena);
+            }
+        });
+    });
 
 
-        insert.data(
-            nazwa,
-            'nazwa_samochodu',
-            );
 
-        insert.data(
-            cena.toLocaleString()+ " PLN",
-            'cena',
-            );
+    $(document).ready(function () {
+        $.ajax({
+            type: "POST",
+            url: '../app/views/main/item.php',
+            data: {id_oferta: ofer},
 
-        insert.data(
-            re[0].opis,
-            // re[4].kolor,
-            'opis',
-            );
 
-        insert.data(
-            re[0].kraj,
-            'kraj',
-            );
+            success: function (data) {
+                // alert(data);
+                re = jQuery.parseJSON(data);
 
-        insert.data(
-            re[0].wyswietlenia,
-            'ilosc_wyswietlen',
-            );
+                var nazwa = ' ' + re[0].marka + ' ' + re[0].model;
+                var cena = Number(re[0].cena);
 
-        insert.photo(
-            '../../../public/img/'+re[0].zdjecie,
-            'zdjecie',
-            );
 
-        insert.buildOffer(
-            re,
-            $('#offers'),
-            );
-    }
-});
+                insert.data(
+                    nazwa,
+                    'nazwa_samochodu',
+                );
 
-});
+                insert.data(
+                    cena.toLocaleString() + " PLN",
+                    'cena',
+                );
+
+                insert.data(
+                    re[0].opis,
+                    // re[4].kolor,
+                    'opis',
+                );
+
+                insert.data(
+                    re[0].kraj,
+                    'kraj',
+                );
+
+                insert.data(
+                    re[0].wyswietlenia,
+                    'ilosc_wyswietlen',
+                );
+
+                insert.photo(
+                    '../../../public/img/' + re[0].zdjecie,
+                    'zdjecie',
+                );
+
+                insert.buildOffer(
+                    re,
+                    $('#offers'),
+                );
+            }
+        });
+
+    });
 </script>
 <script>
 
-function add_to_cart()
-{
-    //var is_logged = <?php //if(isset($_COOKIE['id'])) echo 1;else echo -1; ?>//;
+    function add_to_cart() {
+        //var is_logged = <?php //if(isset($_COOKIE['id'])) echo 1;else echo -1; ?>//;
 
-    if(<?php if($data) echo 0; else echo 1;?>)
-    {
-        document.getElementById('buy_alert').style.display='block';
-        $("#buy_alert").delay(3000).slideUp(200, function() {
-            document.getElementById('buy_alert').style.display='none';
-        });
+        if (<?php if ($data) echo 0; else echo 1;?>) {
+            document.getElementById('buy_alert').style.display = 'block';
+            $("#buy_alert").delay(3000).slideUp(200, function () {
+                document.getElementById('buy_alert').style.display = 'none';
+            });
+        } else {
+            var cia = "<?php if (isset($_COOKIE['id'])) echo $_COOKIE['id']; else echo -1; ?>";
+            var ofer = <?php if (isset($_GET['oferta'])) echo $_GET['oferta']; else echo -1;  ?>;
+            // alert(cia);
+            $.ajax({
+                type: "POST",
+                url: '../app/views/main/add_to_cart.php',
+                data: {
+                    id_oferta: ofer,
+                    id_sesja: cia
+                },
+
+                success: function (data) {
+                    document.getElementById('feedback_alert').style.display = 'block';
+                    document.getElementById('feedback_alert_text').innerHTML = data;
+                    $("#feedback_alert").delay(3000).slideUp(200, function () {
+                        document.getElementById('feedback_alert').style.display = 'none';
+                    });
+                }
+            });
+        }
+
     }
-    else
-    {
-        var cia  = "<?php if(isset($_COOKIE['id'])) echo $_COOKIE['id']; else echo -1; ?>";
-        var ofer = <?php if(isset( $_GET['oferta'])) echo $_GET['oferta']; else echo -1;  ?>;
-        // alert(cia);
-        $.ajax({
-            type: "POST",
-            url: '../app/views/main/add_to_cart.php',
-            data: {id_oferta: ofer,
-                   id_sesja: cia},
-
-            success: function(data)
-            {
-                document.getElementById('feedback_alert').style.display='block';
-                document.getElementById('feedback_alert_text').innerHTML = data;
-                $("#feedback_alert").delay(3000).slideUp(200, function() {
-                document.getElementById('feedback_alert').style.display='none';
-                });
-            }
-        });
-    }
-
-}
-
-
 
 
 </script>

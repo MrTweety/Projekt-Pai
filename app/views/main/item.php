@@ -21,7 +21,7 @@ $sql = "SELECT DISTINCT\n"
     . "INNER JOIN Cechy_somochod ON Cechy_somochod.id_samochod = Samochod.id_samoch\n"
     . "INNER JOIN Cechy ON Cechy_somochod.id_cechy = Cechy.id_cechy\n"
     . "INNER JOIN Kraj_pochodzenia ON Samochod.id_kraj = Kraj_pochodzenia.id_kraj\n"
-    . "WHERE oferta.data_zakonczenia IS NULL\n"
+    . "WHERE "
 ;
 $sql_cechy = "SELECT\n"
     . "cechy.nazwa_cechy,\n"
@@ -43,7 +43,7 @@ if( isset($_POST["id_oferta"]) )
 
     $id_oferta =  mysqli_real_escape_string($link, $_POST["id_oferta"]);
     $sql = $sql
-        ." AND \n"
+//        ." AND \n"
         ." Oferta.id_oferta =".$id_oferta;
 
     $result = $link->query($sql);
