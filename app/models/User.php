@@ -6,13 +6,13 @@ class User extends Model
     public static $ADMIN_TYPE = 1;
     public static $CLIENT_TYPE = 2;
 
-//    public static $MY_TYPE = 3;
+
 
     public function __construct()
     {
         parent::__construct();
         $this->db->query('SET NAMES utf8');
-//        $this->db-> query ('SET CHARACTER_SET utf8_unicode_ci');
+
     }
 
 
@@ -31,7 +31,6 @@ class User extends Model
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         if (!empty($result['id_uzyt'])) {
             $id = $_COOKIE['id'];
-//            setcookie("id", $id,time()+3600);
             setcookie("id", $id, time() + 3600, '/');
             return true;
         } else {
@@ -50,8 +49,6 @@ class User extends Model
                 sesja.id = :id ";
         $stmt = $this->db->prepare($q);
         $stmt->bindParam(':id', $_COOKIE['id']);
-//        $stmt->bindParam(':REMOTE_ADDR', $_SERVER['REMOTE_ADDR']);
-//        $stmt->bindParam(':HTTP_USER_AGENT', $_SERVER['HTTP_USER_AGENT']);
         $stmt->execute();
 
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -295,13 +292,10 @@ class User extends Model
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-//        echo $password;
-//        echo $result['haslo'];
 
         if ($stmt->rowCount() > 0) {
-//            if ($password == $result['haslo'])
+
             if (password_verify($password, $result['haslo'])) {
-                //@TODO CIESTECZKAv1
                 $id = sha1(time() . time() . microtime() . rand(100, 200) . $_SERVER['REMOTE_ADDR']);
 
                 $q2 = "delete from sesja where id_uzyt = :id_uzyt";
@@ -319,14 +313,12 @@ class User extends Model
                 setcookie("id", $id, time() + 3600, '/');
 
 
-//                $_SESSION['id_uzyt'] = $result['id_uzyt'];
+
                 return true;
             } else {
-//                $this->errors[] = "Invalid email or password";
                 return false;
             }
         } else {
-//            $this->errors[] = "Invalid email or password";
             return false;
         }
     }

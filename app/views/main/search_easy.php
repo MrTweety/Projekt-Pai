@@ -6,23 +6,6 @@ $db_password = "";
 $db_name = "mgaczorek";
 $where = 1;
 
-//$sql = "SELECT\n"
-////    . "Oferta.id_oferta,\n"
-////    . "Oferta.cena_netto,\n"
-////    . "Oferta.data_zlozenia,\n"
-////    . "Oferta.img,\n"
-////    . "Oferta.wyswietlenia,\n"
-////    . "Kraj_pochodzenia.pl,\n"
-////    . "Model.model_nazwa,\n"
-////    . "Marka.marka_nazwa,\n"
-////    . "Samochod.rok_produkcji\n"
-////    . "FROM\n"
-////    . "Oferta\n"
-////    . "INNER JOIN Samochod ON Oferta.id_samoch = Samochod.id_samoch\n"
-////    . "INNER JOIN Kraj_pochodzenia ON Samochod.id_kraj = Kraj_pochodzenia.id_kraj\n"
-////    . "INNER JOIN Model ON Samochod.id_model = Model.id_model\n"
-////    . "INNER JOIN Marka ON Model.id_marka = Marka.id_marka\n";
-
 
 $sql = "SELECT\n"
 
@@ -95,8 +78,6 @@ elseif (( $_GET["marka"] == -1) && ( $_GET["model"] != -1))
 
 
 
-//CENA
-//if ( !empty($_GET["cenaOd"]) && !empty($_GET["cenaDo"]) && ($_GET["cenaDo"]!=' ' && $_GET["cenaOd"]!=' ') )
 if(isset($_GET["cenaOd"]) && isset($_GET["cenaDo"]))
 if (( $_GET["cenaOd"] != -1) && ( $_GET["cenaDo"] != -1))
 {
@@ -139,9 +120,8 @@ elseif (( $_GET["cenaOd"] != -1) && ( $_GET["cenaDo"] == -1))
 
 
 
-//ROK
 
-//if ( (!empty($_GET["rokOd"]) && !empty($_GET["rokDo"])) && ($_GET["rokDo"]!=' ' && $_GET["rokOd"]!=' ') )
+
 if(isset($_GET["cenaOd"]) && isset($_GET["cenaDo"]))
 if (( $_GET["rokOd"] != -1) && ( $_GET["rokDo"] != -1))
 {
@@ -224,8 +204,6 @@ elseif (( $_GET["rokOd"] != -1) && ( $_GET["rokDo"] == -1))
 
 
 
-//przebieg
-//if ( !empty($_GET["przebiegOd"]) && !empty($_GET["przebiegDo"])  && ($_GET["przebiegDo"]!=' ' && $_GET["przebiegOd"]!=' ') )
 if(isset($_GET["cenaOd"]) && isset($_GET["cenaDo"]))
 if (( $_GET["przebiegOd"] != -1) && ( $_GET["przebiegDo"] != -1))
 {
@@ -310,8 +288,6 @@ elseif (( $_GET["przebiegOd"] != -1) && ( $_GET["przebiegDo"] == -1))
 }
 
 
-//kraj
-//if ( !empty($_GET["kraj"]) && ( $_GET["kraj"] != -1) )
 if ( isset($_GET["kraj"]) && ($_GET["kraj"] != -1) )
 {
     $kraj =  mysqli_real_escape_string($link, $_GET["kraj"]);
@@ -324,8 +300,7 @@ if ( isset($_GET["kraj"]) && ($_GET["kraj"] != -1) )
 }
 
 
-//kolor
-//if ( !empty($_GET["kolor"]) && ( $_GET["kolor"] != -1) )
+
 if (isset($_GET["kolor"]) && ( $_GET["kolor"] != -1) )
 {
     $kolor = mysqli_real_escape_string($link, $_GET["kolor"]);
@@ -352,7 +327,6 @@ $sql= $sql . "group by Oferta.id_oferta\n";
 
 if(isset($_GET["page"]) && $_GET["page"] =="index" ){
     $sql= $sql . "ORDER BY RAND()\n LIMIT 9\n";
-    //$sql= $sql . "ORDER BY data_zlozenia DESC Limit 9\n";
 }
 
 
@@ -362,7 +336,6 @@ $data = [];
 
 
 if (mysqli_num_rows($result) > 0) {
-    // output data of each row
     $i = 0;
     while ($row = mysqli_fetch_assoc($result)) {
         $data[$i]['id_oferta'] = $row['id_oferta'];
@@ -379,7 +352,6 @@ if (mysqli_num_rows($result) > 0) {
         $i++;
     }
 }
-//echo json_encode(['data' => $data]);
 echo json_encode($data);
 
 ?>

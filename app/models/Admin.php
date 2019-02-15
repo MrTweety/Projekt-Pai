@@ -6,13 +6,11 @@ class Admin extends Model
     public static $ADMIN_TYPE = 1;
     public static $CLIENT_TYPE = 2;
 
-//    public static $MY_TYPE = 3;
 
     public function __construct()
     {
         parent::__construct();
         $this->db->query('SET NAMES utf8');
-//        $this->db-> query ('SET CHARACTER_SET utf8_unicode_ci');
     }
 
 
@@ -63,12 +61,8 @@ class Admin extends Model
             $data[$i]['monthVal'] =$result['monthVal'];
 
         }
-//
-//
-        echo json_encode(['Chart' => $data]);
-//        return 5;
 
-//        echo json_encode($data);
+        echo json_encode(['Chart' => $data]);
         return 5;
     }
 

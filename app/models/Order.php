@@ -6,15 +6,12 @@ class Order extends Model
     public static $ADMIN_TYPE = 1;
     public static $CLIENT_TYPE = 2;
 
-//    public static $MY_TYPE = 3;
-
     public function __construct()
     {
         parent::__construct();
         $this->db->query('SET NAMES utf8');
-//        $this->db-> query ('SET CHARACTER_SET utf8_unicode_ci');
-    }
 
+    }
 
     public function buyVerification()
     {
@@ -22,7 +19,6 @@ class Order extends Model
             return false;
             exit();
         }
-        $id_sesja = trim($_POST["id_sesja"]);
         $kwota = trim($_POST["kwota_do_zaplaty"]);
 
         $query = "select id_uzyt from sesja where id = :id and ip = :REMOTE_ADDR  AND web = :HTTP_USER_AGENT;";
@@ -135,10 +131,8 @@ class Order extends Model
                         }
                     }
 
-
                     $this->DeleteKoszyk($id_uzyt);
 
-//                    echo json_encode($data);
                     $this->db->commit();
                     echo 1;
                     return true;

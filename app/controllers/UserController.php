@@ -178,7 +178,6 @@ class UserController extends Controller
         $this->partial("noscriptinfo");
     }
 
-//search page @TODO jak zostanie czas stworzyć własny kontroler dla ofert
     public function search()
     {
         $this->partial("header");
@@ -293,32 +292,6 @@ class UserController extends Controller
         $this->partial("noscript");
 
         }
-
-    }
-    
-
-
-
-
-
-    /**
-     * Funkcja @check wykozrystywana jedynie do testowania MVC @TODO usunąć w finalnej wersji
-     * @param array $params
-     * @param array $params2
-     */
-    public function check($params = [], $params2 = [])
-    {
-//        $this->partial("header");
-//        $user = $this->model('User');
-//        $aa = $user->get_name();
-//        echo $aa['imie'];
-
-//        echo "\n\nwitaj " . $params . $params2;
-//        $order = "ala";
-        $this->view('home/isLogin');
-
-//        $this->partial('footer', $order);
-//        $this->partial("noscript");
 
     }
 

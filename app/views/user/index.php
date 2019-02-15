@@ -1,6 +1,3 @@
-<!--@TODO panel klienta-->
-
-<!--<div class="logo"><img src="/public/img/avatar/userK.png" class="bigavatar"/>-->
 <div id="wrapper">
     <div id="sidebar">
         <ul class="nav flex-column nav-pills sidebar" role="tablist">

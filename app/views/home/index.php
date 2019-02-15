@@ -1,5 +1,4 @@
 <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel" style="margin-top: 56px" >
-    <!--<div id="myCarousel" class="carousel slide " data-ride="carousel" style="margin-top: 56px" >-->
     <ul class="carousel-indicators" id="indexToSlider">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -88,7 +87,6 @@
 
             success: function(data)
             {
-                //alert(window.location.pathname );
 
                 build.buildIndexOffer(
                     jQuery.parseJSON(data),
@@ -108,7 +106,6 @@
 
             success: function(data)
             {
-                //alert(window.location.pathname );
 
                 build.buildIndexSlider(
                     jQuery.parseJSON(data),

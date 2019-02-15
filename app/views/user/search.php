@@ -24,17 +24,13 @@
                 </div>
 
                 <div class="form-group col-sm-3">
-                    <!--                            <label for="rok_od">Rok prod. od</label>-->
                     <select id="rok_od" class="form-control" name="rok_od">
                     </select>
-                    <!--                            <input type="number" class="form-control" id="rok_od" placeholder="Rok prod. od">-->
                 </div>
 
                 <div class="form-group col-sm-3">
-                    <!--                            <label for="rok_do">Rok prod. do</label>-->
                     <select id="rok_do" class="form-control" name="rok_do">
                     </select>
-                    <!--                            <input type="number" class="form-control" id="rok_do" placeholder="Rok prod. do">-->
                 </div>
 
                 <div class="form-group col-sm-3">
@@ -73,7 +69,6 @@
                     <select id="przebieg_od" class="form-control" name="przebieg_od">
 
                     </select>
-                    <!--                <input type="number" class="form-control" id="przebieg_od" placeholder="Przebieg od">-->
                 </div>
 
                 <div class="form-group col-sm-3">
@@ -81,16 +76,14 @@
                     <select id="przebieg_do" class="form-control" name="przebieg_do">
 
                     </select>
-                    <!--                <input type="number" class="form-control" id="przebieg_do" placeholder="Przebieg do">-->
                 </div>
 
 
                 <div class="col-sm-12">
-                    <!--                <button type="submit" class="btn btn-info ">-->
                     <a href="#" id="button_search" class="btn btn-info"><i class="fa fa-sign-in"></i> <span
                                 class="glyphicon glyphicon-search"></span> Szukaj</a>
 
-                    <!--                </button>-->
+
                 </div>
             </div>
         </form>
@@ -100,83 +93,7 @@
 
 </section>
 
-
 <br/>
-
-<!--<div id="tabelka">-->
-<!--    <table id="example" class="display" style="width:100%">-->
-<!--        <thead>-->
-<!--        <tr>-->
-<!--            <th>Imie</th>-->
-<!--            <th>Tekst</th>-->
-<!--            <th>Login</th>-->
-<!--            <th>Hasło.</th>-->
-<!--            <th>Imie</th>-->
-<!--            <th>Tekst</th>-->
-<!--            <th>Login</th>-->
-<!--            <th>Hasło.</th>-->
-<!--        </tr>-->
-<!--        </thead>-->
-<!---->
-<!--        <tfoot>-->
-<!--        <tr>-->
-<!--            <th>Imie</th>-->
-<!--            <th>Tekst</th>-->
-<!--            <th>Login</th>-->
-<!--            <th>Hasło.</th>-->
-<!--            <th>Imie</th>-->
-<!--            <th>Tekst</th>-->
-<!--            <th>Login</th>-->
-<!--            <th>Hasło.</th>-->
-<!--        </tr>-->
-<!--        </tfoot>-->
-<!--    </table>-->
-<!---->
-<!---->
-<!---->
-<!--</div>-->
-<script>
-
-    //// szukajka na start database!!!!!
-    //$(document).ready(function()
-    //{
-    //    var mar = <?php //if(isset( $_POST['marka'])) echo $_POST['marka']; else echo -1  ?>//;
-    //    var mod = <?php //if(isset( $_POST['model'])) echo $_POST['model']; else echo -1  ?>//;
-    //
-    //
-    //    $.ajax(
-    //        {
-    //            type: "POST",
-    //            url: 'search_easy.php',
-    //            data: {marka :mar , model: mod},
-    //
-    //
-    //            success: function(data)
-    //            {
-    //                var dane = jQuery.parseJSON(data);
-    //                table = $('#example').DataTable(
-    //                    {
-    //                        "data": dane,
-    //                        "dom": "<tabelka>",
-    //                        "columns": [
-    //                            { "data": "id_oferta" },
-    //                            { "data": "imgg" },
-    //                            { "data": "marka" },
-    //                            { "data": "model" },
-    //                            { "data": "kraj" },
-    //                            { "data": "wyswietlenia" },
-    //                            { "data": "cena_netto" },
-    //                            { "data": "data_zlozenia" },
-    //
-    //                        ]
-    //                    } );
-    //            }
-    //        });
-    //
-    //});
-
-</script>
-
 
 <section class="listings">
     <div class="container">
@@ -222,10 +139,7 @@
     var przebiegDo = <?php if (isset($_GET['przebiegDo'])) echo $_GET['przebiegDo']; else echo -1; ?> ;
     var kolor =  <?php if (isset($_GET['kolor'])) echo '"' . $_GET['kolor'] . '"'; else echo -1; ?>;
     var kraj = <?php if (isset($_GET['kraj'])) echo $_GET['kraj']; else echo -1  ?>;
-    // kolor ="niebieski";
 
-    console.log(kolor);
-    console.log(mod);
 
     $(document).ready(function () {
 
@@ -248,7 +162,7 @@
 
 
             success: function (data) {
-                //alert(window.location.pathname );
+
 
                 build.buildListing(
                     jQuery.parseJSON(data),
@@ -277,18 +191,12 @@
                 kolor: $('#kolor').val(),
                 kraj: $('#kraj').val()
             },
-            // data: {marka : 1 , model: -1},
+
 
 
             success: function (data) {
 
-                // var url_string = "http://www.example.com/t.html?a=1&b=3&c=m2-m3-m4-m5"; //window.location.href
-                // var url = new URL(url_string);
-                // var c = url.searchParams.get("c");
-                // console.log(c);
 
-
-                // window.location.replace(window.location.pathname+this.url.substring(15));
                 history.pushState({}, "search", window.location.pathname + this.url.substring(33));
                 build.buildListing(
                     jQuery.parseJSON(data),
@@ -420,27 +328,6 @@
     });
 
 
-    // var helpers =
-    //     {
-    //         buildDropdown: function(result, dropdown, emptyMessage, def = -1)
-    //         {
-    //
-    //             dropdown.html('');
-    //             dropdown.append('<option value="-1">' + emptyMessage + '</option>');
-    //             if(result != '' )
-    //             {
-    //                 $.each(result, function(k, v) {
-    //                     if (v.id_tab!= def)
-    //                         dropdown.append('<option value="' + v.id_tab + '">' + v.name_tab + '</option>');
-    //                     else
-    //                         dropdown.append('<option selected="selected" value="' + v.id_tab + '">' + v.name_tab + '</option>');
-    //
-    //                 });
-    //             }
-    //         }
-    //     }
-
-
     $(document).ready(function () {
 
         $.ajax({
@@ -523,20 +410,18 @@
 
 
 <script>
-    // $('#tabelka').hide();
     $('#strony').hide();
 
-    // ===== Scroll to Top ====
     $(window).scroll(function () {
-        if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
-            $('#return-to-top').fadeIn(200);    // Fade in the arrow
+        if ($(this).scrollTop() >= 50) {
+            $('#return-to-top').fadeIn(200);
         } else {
-            $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+            $('#return-to-top').fadeOut(200);
         }
     });
-    $('#return-to-top').click(function () {      // When arrow is clicked
+    $('#return-to-top').click(function () {
         $('body,html').animate({
-            scrollTop: 0                       // Scroll to top of body
+            scrollTop: 0
         }, 500);
     });
 

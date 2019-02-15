@@ -27,7 +27,6 @@ if($_POST["select"] == "admin") {
     }
 
 
-    //mysqli_rollback($link);
 
     if($flaga==1) {
         mysqli_commit($link);
@@ -37,7 +36,6 @@ if($_POST["select"] == "admin") {
     else{
         mysqli_rollback($link);
         $data['flaga'] = 0;
-        //$data['Alert'] = "Nie udało sie usunąć oferty.";
     }
 
 
@@ -108,18 +106,15 @@ if($_POST["select"] == "admin") {
 
         }
         else {
-            //$flaga = 0;
             throw new Exception(" Plik nie istnieje.");
         }
 
 
     }
     catch (Exception $e) {
-        //$flaga = 0;
         $data['Alert'] = $data['Alert'].$e->getMessage();
     }
 
-//mysqli_rollback($link);
 
     if($flaga==1) {
         mysqli_commit($link);
@@ -129,12 +124,9 @@ if($_POST["select"] == "admin") {
     else{
        mysqli_rollback($link);
         $data['flaga'] = 0;
-        //$data['Alert'] = "Nie udało sie usunąć oferty.";
     }
-    //mysqli_rollback($link);
 }
 
-//echo $id_oferta.' '.$id_samochodu.' '.$data['flaga'];
 echo json_encode($data);
 
 ?>

@@ -6,7 +6,6 @@
         <div class="col-lg-9">
 
             <div class="card mt-4">
-                <!-- <img class="card-img-top img-fluid" id ="zdjecie" src="http://placehold.it/900x400" alt=""> -->
 
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators" style="z-index: 1;">
@@ -93,14 +92,7 @@
                     </div>
                 </div>
             </div>
-            <!-- /.col-lg-3 -->
-            <!--        <div class="sticky-top" style="z-index: 1">-->
-            <!--            <div id="buy_alert" class="alert alert-danger alert-dismissible">-->
-            <!--                <div class="row">-->
-            <!--                    <div class="col-12"><strong>Uwaga!</strong> Musisz być zalogowany aby dodawać produkty do koszyka.</div>-->
-            <!--                </div>-->
-            <!--            </div>-->
-            <!--        </div>-->
+
         </div>
     </div>
 </div>
@@ -141,7 +133,6 @@
             },
 
             buildOffer: function (result, listing) {
-                // Remove current options
                 listing.html('');
                 var size = Object.keys(result).length;
                 if (result != '') {
@@ -159,7 +150,6 @@
             }
         }
 
-    // document.getElementById("DivBuyButton").style.display ='none';
     var ofer = <?php if (isset($_GET['oferta'])) echo $_GET['oferta']; else echo -1;  ?>;
 
 
@@ -239,7 +229,7 @@
 <script>
 
     function add_to_cart() {
-        //var is_logged = <?php //if(isset($_COOKIE['id'])) echo 1;else echo -1; ?>//;
+
 
         if (<?php if ($data) echo 0; else echo 1;?>) {
             document.getElementById('buy_alert').style.display = 'block';

@@ -46,7 +46,6 @@ if(isset($_POST["select"])){
         $typ =[];
 
         if (mysqli_num_rows($result) > 0) {
-            // output data of each row
             $i = 0;
             while($row = mysqli_fetch_assoc($result)) {
                 $typ[$i]['id_tab'] = $row['id_model'];
@@ -75,7 +74,6 @@ if(isset($_POST["select"])){
 
 
         if (mysqli_num_rows($result) > 0) {
-            // output data of each row
             $i = 0;
             while($row = mysqli_fetch_assoc($result)) {
                 $typ[$i]['id_tab'] = $row['wartosc'];
@@ -98,7 +96,6 @@ if(isset($_POST["select"])){
         $typ =[];
 
         if (mysqli_num_rows($result) > 0) {
-            // output data of each row
             $i = 0;
             while($row = mysqli_fetch_assoc($result)) {
                 $typ[$i]['id_tab'] = $row['id_kraj'];
@@ -121,7 +118,6 @@ if(isset($_POST["select"])){
         $typ =[];
 
         if (mysqli_num_rows($result) > 0) {
-            // output data of each row
             $row = mysqli_fetch_assoc($result);
             $typ[0]['id_tab'] = $row['MaxR'];
             $typ[0]['name_tab'] = $row['MinR'];
@@ -140,7 +136,6 @@ if(isset($_POST["select"])){
         $typ =[];
 
         if (mysqli_num_rows($result) > 0) {
-            // output data of each row
             $row = mysqli_fetch_assoc($result);
             $typ[0]['id_tab'] = $row['MaxP'];
             $typ[0]['name_tab'] = $row['MinP'];
@@ -158,20 +153,13 @@ if(isset($_POST["select"])){
         $typ =[];
 
         if (mysqli_num_rows($result) > 0) {
-            // output data of each row
             $row = mysqli_fetch_assoc($result);
             $typ[0]['id_tab'] = $row['MaxC'];
             $typ[0]['name_tab'] = $row['MinC'];
         }
     }
 
-
-
-
-
     echo json_encode($typ);
-
-
 }
 
 

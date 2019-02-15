@@ -121,15 +121,11 @@ var build =
 
         buildListing: function(result, listing )
         {
-            // Remove current options
             listing.html('');
             var count = 0;
-            // Check result isnt empty
             if(result != '')
             {
-                // Loop through each of the results and append the option to the dropdown
                 $.each(result, function(k, v) {
-                    //listing.append('<div class="ada"><img src="../../../public/img/'+v.imga +'.jpg"/></div>');
                     ++count;
                     listing.append(
 
@@ -146,8 +142,6 @@ var build =
                         '                                                <div class="list-title">'+
                         '                                                    <ul class="list-inline list-unstyled">'+
                         '                                                        <li class="list-inline-item"><a href="/user/offer?oferta='+v.id_oferta+'"><h4>'+ v.marka+' '+v.model +'</h4></a></li>'+
-                        // '                                                        <li class="list-inline-item text-warning"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half"></i></li>'+
-                        // '                                                        <li class="list-inline-item text-success"><i class="fa fa-thumbs-up"></i></li>'+
                         '                                                    </ul>'+
                         '                                                </div>'+
                         '                                                <div class="list-location">'+
@@ -197,15 +191,11 @@ var build =
 
         buildIndexOffer: function(result, listing )
         {
-            // Remove current options
             listing.html('');
             var count = 0;
-            // Check result isnt empty
             if(result != '')
             {
-                // Loop through each of the results and append the option to the dropdown
                 $.each(result, function(k, v) {
-                    //listing.append('<div class="ada"><img src="../../../public/img/'+v.imga +'.jpg"/></div>');
                     ++count;
                     if(count <= 9)
                     listing.append(
@@ -231,15 +221,11 @@ var build =
 
         buildIndexSlider: function(result, listing )
         {
-            // Remove current options
             listing.html('');
             var count = 0;
-            // Check result isnt empty
             if(result != '')
             {
-                // Loop through each of the results and append the option to the dropdown
                 $.each(result, function(k, v) {
-                    //listing.append('<div class="ada"><img src="../../../public/img/'+v.imga +'.jpg"/></div>');
                     ++count;
                     if(count<=1)
                     listing.append(
@@ -375,12 +361,10 @@ var build =
                     '</div>'+
                     '<div id="feedback_alert_cart" class="alert alert-danger alert-dismissible my_alert" style="top: 70px;">'+
                         '<div class="row">'+
-                            // '<div class="d-flex justify-content-between">'+
                                 '<div class="col-12" id="feedback_alert_text_cart" style="padding: 5px;"></div>'+
                                 '<div class="col-12" style="padding: 5px;">'+
                                     '<a id="feedback_alert_button_cart"  href="/user/buy?ilosc_w_koszyku='+count+'" class="btn btn-success">Przejdz do płatności</a>'+
                                 '</div>'+
-                            // '</div>'+
                         '</div>'+
                     '</div>'+
                 '</div>'

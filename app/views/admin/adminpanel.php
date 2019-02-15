@@ -27,11 +27,6 @@
                     <a class="dropdown-item " data-toggle="tab" href="#usersAdmin">Użytkownicy</a>
                     <a class="dropdown-item" data-toggle="tab" href="#menu1">Menu 1</a>
                     <a class="dropdown-item" data-toggle="tab" href="#menu2">Menu 2</a>
-                    <!--                    <h6 class="dropdown-header">Other Pages:</h6>-->
-                    <!--                    <a class="dropdown-item" href="404.html">404 Page</a>-->
-
-                    <!--                    <div class="dropdown-divider"></div>-->
-                    <!--                    <a class="dropdown-item" href="blank.html">Blank Page</a>-->
                 </div>
             </li>
             <li class="nav-item">
@@ -60,20 +55,6 @@
                     <li class="breadcrumb-item active">Overview</li>
                 </ol>
 
-
-                <!--                <div id="aabb"></div>-->
-                <script>
-                    //        function getCookie(name) {
-                    //            var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
-                    //            return v ? v[2] : null;
-                    //        }
-                    //
-                    //var b = "<?php //echo $_COOKIE['id']; ?>//";
-                    //        var a = getCookie('id');
-                    //        document.getElementById('aabb').innerHTML = a+" "+b;
-                </script>
-
-
                 <div class="row">
                     <div class="col-xl-3 col-sm-6 mb-3">
                         <div class="card text-white bg-primary o-hidden h-100">
@@ -86,12 +67,7 @@
                                     Aktywnych Użytkowników!
                                 </div>
                             </div>
-                            <!--                            <a class="card-footer text-white clearfix small z-1" href="#">-->
-                            <!--                                <span class="float-left">View Details</span>-->
-                            <!--                                <span class="float-right">-->
-                            <!--                                    <i class="fa fa-angle-right"></i>-->
-                            <!--                                </span>-->
-                            <!--                            </a>-->
+
                         </div>
                     </div>
                     <div class="col-xl-3 col-sm-6 mb-3">
@@ -105,12 +81,7 @@
                                     Nowych Ofert!
                                 </div>
                             </div>
-                            <!--                            <a class="card-footer text-white clearfix small z-1" href="#">-->
-                            <!--                                <span class="float-left">View Details</span>-->
-                            <!--                                <span class="float-right">-->
-                            <!--                    <i class="fa fa-angle-right"></i>-->
-                            <!--                  </span>-->
-                            <!--                            </a>-->
+
                         </div>
                     </div>
                     <div class="col-xl-3 col-sm-6 mb-3">
@@ -124,12 +95,7 @@
                                     Nowych Zamówień!
                                 </div>
                             </div>
-                            <!--                            <a class="card-footer text-white clearfix small z-1" href="#">-->
-                            <!--                                <span class="float-left">View Details</span>-->
-                            <!--                                <span class="float-right">-->
-                            <!--                    <i class="fa fa-angle-right"></i>-->
-                            <!--                  </span>-->
-                            <!--                            </a>-->
+
                         </div>
                     </div>
                     <div class="col-xl-3 col-sm-6 mb-3">
@@ -143,12 +109,7 @@
                                     Nowych Użytkowników!
                                 </div>
                             </div>
-                            <!--                            <a class="card-footer text-white clearfix small z-1" href="#">-->
-                            <!--                                <span class="float-left">View Details</span>-->
-                            <!--                                <span class="float-right">-->
-                            <!--                    <i class="fa fa-angle-right"></i>-->
-                            <!--                  </span>-->
-                            <!--                            </a>-->
+
                         </div>
                     </div>
 
@@ -265,7 +226,7 @@
                             </div>
                             <div class="form-group col-sm-3">
                                 <label for="paliwo">Rodzaj paliwa</label>
-                                <!--                                <input type="number" class="form-control" id="paliwo" placeholder="Rodzaj paliwa">-->
+
                                 <select id="paliwo" class="form-control" name="paliwo">
                                     <option selected value="-1">Rodzaj paliwa</option>
                                     <option value="benzyna"> benzyna</option>
@@ -275,7 +236,6 @@
 
                             <div class="form-group col-sm-3">
                                 <label for="nadwozie">Typ nadwozia</label>
-                                <!--                                <input type="number" class="form-control" id="nadwozie" placeholder="Typ nadwozia">-->
                                 <select id="nadwozie" class="form-control" name="nadwozie">
                                     <option selected value="-1">Typ nadwozia</option>
                                     <option value="pick up"> pick up</option>
@@ -286,7 +246,6 @@
 
                             <div class="form-group col-sm-3">
                                 <label for="skrzynia">Typ skrzyni</label>
-                                <!--                                <input type="number" class="form-control" id="skrzynia" placeholder="Typ skrzyni">-->
                                 <select id="skrzynia" class="form-control" name="skrzynia">
                                     <option selected value="-1">Typ nadwozia</option>
                                     <option value="manualna"> manualna</option>
@@ -327,8 +286,7 @@
                                 <label for="Zdjecie">Zdjecie</label>
                                 <input type="file" class="form-control-file border" id="profile_pic" name="profile_pic"
                                        accept=".jpg, .jpeg, .png">
-                                <!--                                    <input type="file" class="custom-file-input" id="customFile">-->
-                                <!--                                    <label class="custom-file-label" for="customFile">Choose file</label>-->
+
                             </div>
 
 
@@ -340,12 +298,10 @@
 
 
                             <div class="col-sm-12">
-                                <!--                <button type="submit" class="btn btn-info ">-->
                                 <a href="#" id="button_dodaj" class="btn btn-info"><i class="fa fa-sign-in"></i> <span
                                             class="glyphicon glyphicon-search"></span>Dodaj</a>
                                 <button id="reset" type="reset" class="btn btn-info" value="Reset">Reset</button>
 
-                                <!--                </button>-->
                             </div>
 
                             <div id="alert"></div>
@@ -441,7 +397,7 @@
 
 
                     function myFunction(id, name) {
-                        //alert(id+' '+name);
+
                         if (parseInt(name) == 2) {
                             var select = "oferta";
                         }
@@ -509,7 +465,6 @@
                         form_data.append('opis', $('#opis').val());
                         form_data.append('nadwozie', $('#nadwozie').val());
                         form_data.append('select', "oferta");
-                        //alert(form_data);
 
 
                         $.ajax({
@@ -522,7 +477,6 @@
                             data: form_data,
 
                             success: function (php_script_response) {
-                                //alert(php_script_response);
                                 var dane = jQuery.parseJSON(php_script_response);
 
 
@@ -538,7 +492,6 @@
                             ,
                             complete: function () {
                                 oferta.ajax.reload();
-                                //alert("abxw");
                             }
 
 
@@ -693,7 +646,6 @@
                 <script>
 
                     function myFunction2(id, name) {
-                        //alert(id+' '+name);
                         if (parseInt(name) == 3) {
                             var select = "admin";
                         }

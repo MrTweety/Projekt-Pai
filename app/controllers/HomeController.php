@@ -1,6 +1,5 @@
 <?php
 
-
 class HomeController extends Controller
 {
     public function index()
@@ -67,25 +66,9 @@ class HomeController extends Controller
     }
 
 
-
-
-//    @TODO sprawdzić czy funkcje poniżej sa używane
-    public function isLogin(){
-        $this->partial('header');
-        $this->partial('nav');
-        $this->view("home/isLogin");
-    }
-
     public function notLogin(){
         $this->redirect('/');
     }
 
-    public function notRegister(){
-        $this->view("home/index");
-    }
-    public function Registered(){
-        $this->partial('header');
-        $this->partial('nav');
-        $this->view("home/registered");
-    }
+
 }

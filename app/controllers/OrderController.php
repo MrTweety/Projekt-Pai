@@ -26,7 +26,6 @@ class OrderController extends Controller
                     break;
             }
 
-            //TODO Order/index.php
 
         }
         $this->partial("noscript");

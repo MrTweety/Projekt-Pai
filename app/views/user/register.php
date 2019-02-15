@@ -1,8 +1,3 @@
-<!--@TODO do zrobienie od nowa, name i id inputu zaleceane zostawić bez zmian, proces rejestracji dziala, ajax działa zajebiscie z MVC!!!!!! -->
-<!--@TODO dodac adres-->
-
-
-<!--<div id="Register" class="container tab-pane"  style="margin-top: 66px;"><br>-->
 <div class="container" style="margin-top: 80px;">
     <div class="card card-outline-secondary my-4">
 
@@ -71,7 +66,6 @@
                         <div class="col-md-6">
                             <div class="form-label-group">
                                 <input type="password" class="form-control" id="inputPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="W haśle musi wystąpić jedna duża, jedna mała litera oraz jedna cyfra."  placeholder="Nowe hasło" required >
-<!--                                <input type="password" id="inputPassword" class="form-control" placeholder="Hasło" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="W haśle musi wystąpić jedna duża, jedna mała litera oraz jedna cyfra." required="required">-->
                                 <label for="inputPassword">Hasło</label>
                                 <div class="invalid-feedback">
                                     W haśle musi wystąpić:<br />  duża litera, mała litera, cyfra, 8 znaków.
@@ -195,7 +189,6 @@
             <div class="text-center">
 
                 <a href="#" onclick="load_login_form()" id="load_login_form2" class="d-block small mt-3" >Strona logowania</a>
-<!--                <a class="d-block small" href="#">Forgot Password?</a>-->
             </div>
         </div>
 

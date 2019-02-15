@@ -17,7 +17,6 @@ $data = [];
 
 
 if (mysqli_num_rows($result) > 0) {
-    // output data of each row
     $i = 0;
     while ($row = mysqli_fetch_assoc($result)) {
         $data[$i]['id_slider'] = $row['id_slider'];
@@ -30,7 +29,6 @@ if (mysqli_num_rows($result) > 0) {
         $i++;
     }
 }
-//echo json_encode(['data' => $data]);
 echo json_encode($data);
 
 ?>
